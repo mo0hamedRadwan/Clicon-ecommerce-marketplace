@@ -9,9 +9,11 @@ export type BaseLayoutProps = {
  * Base layout can be used to wrap all pages
  */
 export default function BaseLayout({ children }: BaseLayoutProps) {
+  // const paths = currentRoute().split("/");
   return (
     <>
       <Header />
+      {/* <Breadcrump paths={path} /> */}
       <main>{children}</main>
       <Footer />
     </>

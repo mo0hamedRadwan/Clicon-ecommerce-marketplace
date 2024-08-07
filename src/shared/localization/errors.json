@@ -1,0 +1,18 @@
+{
+  "pageNotFound": {
+    "en": "Page not found",
+    "ar": "الصفحة غير موجودة"
+  },
+  "error404Message": {
+    "en": "Something went wrong. It's look that your requested could not be found. It's look like the link is broken or the page is removed",
+    "ar": "لقد حدث خطأ ما. يبدو أنه لم يتم العثور على طلبك. يبدو أن الرابط معطل أو أن الصفحة تمت إزالتها"
+  },
+  "goToHome": {
+    "en": "Go To Home",
+    "ar": "أذهب الى الصفحة الرئيسية"
+  },
+  "goBack": {
+    "en": "Go Back",
+    "ar": "أذهب إلى الصفحة السابقة"
+  }
+}

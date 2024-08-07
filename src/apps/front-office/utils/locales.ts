@@ -1,4 +1,5 @@
 import { groupedTranslations, trans } from "@mongez/localization";
+import errorsTranslation from "shared/localization/errors.json";
 import footerTranslation from "shared/localization/footer.json";
 import headerTranslation from "shared/localization/header.json";
 import mainTranslation from "shared/localization/index.json";
@@ -16,4 +17,5 @@ groupedTranslations({
   // add your common localization here
   ...headerTranslation,
   ...footerTranslation,
+  ...errorsTranslation,
 });
