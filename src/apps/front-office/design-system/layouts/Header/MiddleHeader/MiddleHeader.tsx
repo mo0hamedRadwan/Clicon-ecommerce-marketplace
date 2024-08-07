@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import { images, middleHeaderIcons } from "shared/data/headerData";
+import headerLogo from "assets/images/HeaderLogo.png";
+import { middleHeaderIcons } from "shared/data/headerData";
 
 export default function MiddleHeader() {
   return (
@@ -8,7 +9,7 @@ export default function MiddleHeader() {
       <div className="container h-full space-between-center">
         <div className="w-[177px] h-12">
           <img
-            src={images.logo}
+            src={headerLogo}
             alt="Clicon Logo image"
             className="w-full h-full"
           />

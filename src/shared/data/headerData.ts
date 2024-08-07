@@ -1,9 +1,3 @@
-import logo from "assets/images/Logo.png";
-
-export const images = {
-  logo,
-};
-
 export const socialMediaIcons = [
   { name: "Twitter", icon: "bxl-twitter", link: "https://www.twitter.com" },
   {

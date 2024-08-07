@@ -1,3 +1,11 @@
+import CopyrightFooter from "./CopyrightFooter";
+import FooterSection from "./FooterSection";
+
 export default function Footer() {
-  return <></>;
+  return (
+    <div className="bg-gray-950 text-gray-200">
+      <FooterSection />
+      <CopyrightFooter />
+    </div>
+  );
 }

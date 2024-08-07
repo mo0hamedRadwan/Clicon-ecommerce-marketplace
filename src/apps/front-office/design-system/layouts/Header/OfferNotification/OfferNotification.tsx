@@ -9,11 +9,12 @@ type OfferNotificationPropsType = {
 export default function OfferNotification({
   discount = 50,
 }: OfferNotificationPropsType) {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [closeNotification, setCloseNotification] = useState(false);
   return (
     <>
       {!closeNotification && (
-        <div className="h-20 bg-gray-900 text-white">
+        <div className="h-20 bg-gray-950 text-white">
           <div className="container h-full space-between-center">
             <div className="center-y gap-x-2 text-2xl font-semibold">
               <span className="py-1 px-3 bg-yellow-300 text-black -rotate-6">
