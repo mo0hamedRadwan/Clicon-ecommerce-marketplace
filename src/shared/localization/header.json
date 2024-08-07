@@ -1,0 +1,62 @@
+{
+  "black": {
+    "en": "Black",
+    "ar": "بلاك"
+  },
+  "friday": {
+    "en": "Friday",
+    "ar": "فرايداي"
+  },
+  "upTo": {
+    "en": "up to",
+    "ar": "حتى"
+  },
+  "off": {
+    "en": "off",
+    "ar": "عروض"
+  },
+  "shopNow": {
+    "en": "Shop Now",
+    "ar": "تسوق الأن"
+  },
+  "welcomeTo": {
+    "en": "Welcome to",
+    "ar": "مرحبا بكم في"
+  },
+  "onlineStore": {
+    "en": "Online Ecommerce Store",
+    "ar": "متجر إلكترونى"
+  },
+  "followUs": {
+    "en": "Follow Us",
+    "ar": "تابعنا"
+  },
+  "searchFor": {
+    "en": "Search for",
+    "ar": "البحث عن"
+  },
+  "products": {
+    "en": "Products",
+    "ar": "منتجات"
+  },
+  "allCategories": {
+    "en": "All Categories",
+    "ar": "كل التصنيفات"
+  },
+  "trackOrder": {
+    "en": "Track Order",
+    "ar": "تتبع الطلب"
+  },
+  "compare": {
+    "en": "Compare",
+    "ar": "مقارنة"
+  },
+  "customerSupport": {
+    "en": "Customer Support",
+    "ar": "دعم العملاء"
+  },
+  "needHelp": {
+    "en": "Need Help?",
+    "ar": "أي مساعدة ؟"
+  }
+}

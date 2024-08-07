@@ -8,13 +8,13 @@ export const topCategories = [
 ];
 
 export const quickLinks = [
-  { name: "Shop Product", link: "#" },
-  { name: "Shoping Cart", link: "#" },
-  { name: "Wishlist", link: "#" },
-  { name: "Compare", link: "#" },
-  { name: "Track Order", link: "#" },
-  { name: "Customer Help", link: "#" },
-  { name: "About Us", link: "#" },
+  { name: "shopProducts", link: "#" },
+  { name: "shopingCart", link: "#" },
+  { name: "wishlist", link: "#" },
+  { name: "compare", link: "#" },
+  { name: "trackOrder", link: "#" },
+  { name: "customerHelp", link: "#" },
+  { name: "aboutUs", link: "#" },
 ];
 
 export const popularTags = [

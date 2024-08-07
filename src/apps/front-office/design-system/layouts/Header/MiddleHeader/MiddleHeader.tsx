@@ -18,7 +18,7 @@ export default function MiddleHeader() {
           <input
             type="text"
             className="w-full py-3 px-5 rounded outline-none "
-            placeholder={trans("searchForAnyThing")}
+            placeholder={`${trans("searchFor")} ${trans("products")}`}
           />
           <span className="absolute top-2 right-6 text-3xl">
             <i className="bx bx-search"></i>

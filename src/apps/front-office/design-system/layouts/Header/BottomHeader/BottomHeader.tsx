@@ -28,7 +28,7 @@ export default function BottomHeader() {
                 <span>
                   <i className={`bx ${item.icon}`}></i>
                 </span>
-                <span>{item.name}</span>
+                <span>{trans(item.name)}</span>
               </Link>
             </li>
           ))}

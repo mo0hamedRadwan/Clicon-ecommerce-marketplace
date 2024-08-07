@@ -6,8 +6,7 @@ export default function TopHeader() {
   return (
     <div className="h-10 bg-sky-700 text-white border-b border-white border-opacity-15">
       <div className="container h-full space-between-center">
-        <p>Welcome to Clicon online eCommerce store.</p>
-        {/* <p>{trans("welcome")}</p> */}
+        <p>{`${trans("welcomeTo")} CLICON ${trans("onlineStore")}`}</p>
         <div className="center-y gap-x-3">
           <ul className="center-y gap-x-2">
             <li>{trans("followUs")}:</li>

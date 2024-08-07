@@ -17,7 +17,9 @@ export default function FooterSection() {
           />
         </div>
         <p>
-          <span className="text-sm text-gray-500">Customer Supports:</span>
+          <span className="text-sm text-gray-500">
+            {trans("customerSupports")}
+          </span>
           <br />
           <span className="text-lg">(629) 555-0129</span>
         </p>
@@ -48,11 +50,11 @@ export default function FooterSection() {
         <div>
           <h3 className="mb-4">{trans("quickLinks").toUpperCase()}</h3>
           <ul className="text-gray-500 flex flex-col gap-y-2">
-            {quickLinks.map(category => (
+            {quickLinks.map(quickLink => (
               <li
-                key={category.name}
+                key={quickLink.name}
                 className="hover:text-white hover:underline duration-300">
-                <Link to={category.link}>{category.name}</Link>
+                <Link to={quickLink.link}>{trans(quickLink.name)}</Link>
               </li>
             ))}
           </ul>

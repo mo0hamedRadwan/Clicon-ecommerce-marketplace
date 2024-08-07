@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 
 type OfferNotificationPropsType = {
@@ -14,8 +15,8 @@ export default function OfferNotification({
   return (
     <>
       {!closeNotification && (
-        <div className="h-20 bg-gray-950 text-white">
-          <div className="container h-full space-between-center">
+        <div className="h-20 relative center-y bg-gray-950 text-white">
+          <div className="container h-full center-y justify-around 2xl:justify-between">
             <div className="center-y gap-x-2 text-2xl font-semibold">
               <span className="py-1 px-3 bg-yellow-300 text-black -rotate-6">
                 {trans("black")}
@@ -36,6 +37,11 @@ export default function OfferNotification({
               </span>
             </Link>
           </div>
+          <button
+            className={`absolute ${isRTL() ? "left-5" : "right-5"} p-3 bg-gray-800 rounded`}
+            onClick={() => setCloseNotification(!closeNotification)}>
+            X
+          </button>
         </div>
       )}
     </>
