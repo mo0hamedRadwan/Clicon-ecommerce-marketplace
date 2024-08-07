@@ -1,9 +1,15 @@
-import type { Config } from "tailwindcss";
-
-const config = {
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-} satisfies Config;
-
-export default config;
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1480px",
+      },
+    },
+    extend: {},
+  },
+  plugins: [],
+};
