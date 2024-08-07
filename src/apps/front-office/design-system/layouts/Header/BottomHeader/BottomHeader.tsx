@@ -7,11 +7,11 @@ import { callUs, navigateItems } from "shared/data/headerData";
 export default function BottomHeader() {
   const [openCategoriesMenu, setOpenCategoriesMenu] = useState<boolean>(false);
   return (
-    <div className="h-20 shadow-1">
+    <div className="hidden md:block h-20 shadow-1">
       <div className="container h-full space-between-center">
-        <ul className="center-y gap-x-6 text-lg text-gray-500">
+        <ul className="center-y gap-x-2 text-base lg:text-lg text-gray-500">
           <li
-            className="cursor-pointer center-y gap-x-2 text-gray-900"
+            className="center-y gap-x-2 navItem bg-gray-200 px-5"
             onClick={() => setOpenCategoriesMenu(!openCategoriesMenu)}>
             <span>{trans("allCategories")}</span>
             <span>
@@ -23,8 +23,8 @@ export default function BottomHeader() {
             </span>
           </li>
           {navigateItems.map(item => (
-            <li key={item.name}>
-              <Link to={item.link} className="center-y gap-x-3">
+            <li key={item.name} className="navItem px-3">
+              <Link to={item.link} className="center-y gap-x-1 xl:gap-x-3">
                 <span>
                   <i className={`bx ${item.icon}`}></i>
                 </span>
@@ -33,11 +33,12 @@ export default function BottomHeader() {
             </li>
           ))}
         </ul>
-        <p className="text-2xl center-y gap-x-2">
-          <span className={`text-4xl ${isRTL() ? "-rotate-90" : ""}`}>
+        <p className="hidden lg:center-y gap-x-2">
+          <span
+            className={`text-2xl xl:text-4xl ${isRTL() ? "-rotate-90" : "rotate-0"}`}>
             <i className={`bx ${callUs.icon}`}></i>
           </span>
-          <span>{callUs.number}</span>
+          <span className="text-lg xl:text-2xl">{callUs.number}</span>
         </p>
       </div>
     </div>

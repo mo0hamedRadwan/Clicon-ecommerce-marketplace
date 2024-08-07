@@ -6,8 +6,8 @@ export default function TopHeader() {
   return (
     <div className="h-10 bg-sky-700 text-white border-b border-white border-opacity-15">
       <div className="container h-full space-between-center">
-        <p>{`${trans("welcomeTo")} CLICON ${trans("onlineStore")}`}</p>
-        <div className="center-y gap-x-3">
+        <p className="hidden md:block">{`${trans("welcomeTo")} CLICON ${trans("onlineStore")}`}</p>
+        <div className="flex-grow md:flex-grow-0 space-between-center gap-x-3">
           <ul className="center-y gap-x-2">
             <li>{trans("followUs")}:</li>
             {socialMediaIcons.map(social => (

@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { isRTL } from "apps/front-office/utils/helpers";
 import headerLogo from "assets/images/HeaderLogo.png";
 import { middleHeaderIcons } from "shared/data/headerData";
 
@@ -14,13 +15,14 @@ export default function MiddleHeader() {
             className="w-full h-full"
           />
         </div>
-        <div className="relative w-[650px] text-xl text-black">
+        <div className="relative hidden sm:block sm:w-[320px] lg:w-[500px] xl:w-[650px] text-xl text-black">
           <input
             type="text"
             className="w-full py-3 px-5 rounded outline-none "
             placeholder={`${trans("searchFor")} ${trans("products")}`}
           />
-          <span className="absolute top-2 right-6 text-3xl">
+          <span
+            className={`absolute top-2 ${isRTL() ? "left-6" : "right-6"} text-3xl`}>
             <i className="bx bx-search"></i>
           </span>
         </div>

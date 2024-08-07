@@ -7,7 +7,7 @@ import { popularTags, quickLinks, topCategories } from "shared/data/footerData";
 
 export default function FooterSection() {
   return (
-    <div className="container py-20 flex justify-between items-start">
+    <div className="container py-20 flex justify-between md:justify-evenly xl:justify-between items-start gap-10 md:gap-5 flex-wrap xl:flex-nowrap ">
       <div className="max-w-60 flex flex-col gap-y-2">
         <div className="w-[177px] h-12 mb-5">
           <img
@@ -28,7 +28,7 @@ export default function FooterSection() {
         </p>
         <p>info@kinbo.com</p>
       </div>
-      <div className="xl:w-80 space-between-center">
+      <div className="xl:w-80 space-between-center gap-x-5">
         <div>
           <h3 className="mb-4">{trans("topCategories").toUpperCase()}</h3>
           <ul className="text-gray-500 flex flex-col gap-y-2">
@@ -72,7 +72,7 @@ export default function FooterSection() {
             </Link>
           </div>
         </div>
-        <div className="xl:w-[300px]">
+        <div className="max-w-[450px] xl:w-[300px]">
           <h3 className="mb-4">{trans("popularTags").toUpperCase()}</h3>
           <ul className="flex flex-row flex-wrap gap-2">
             {popularTags.map(popularTag => (

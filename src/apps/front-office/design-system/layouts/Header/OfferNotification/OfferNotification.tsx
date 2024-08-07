@@ -15,7 +15,7 @@ export default function OfferNotification({
   return (
     <>
       {!closeNotification && (
-        <div className="h-20 relative center-y bg-gray-950 text-white">
+        <div className="h-20 relative hidden md:center-y bg-gray-950 text-white ">
           <div className="container h-full center-y justify-around 2xl:justify-between">
             <div className="center-y gap-x-2 text-2xl font-semibold">
               <span className="py-1 px-3 bg-yellow-300 text-black -rotate-6">
