@@ -1,7 +1,8 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
-import { Link, previousRoute } from "@mongez/react-router";
+import { previousRoute } from "@mongez/react-router";
 import error404 from "assets/images/Error404.png";
+import Button from "../components/Button";
 
 export default function NotFoundPage() {
   return (
@@ -19,22 +20,23 @@ export default function NotFoundPage() {
           <h2 className="text-3xl font-bold">404, {trans("pageNotFound")}</h2>
           <p className="my-5">{trans("error404Message")}</p>
           <div className="flex-center gap-x-5">
-            <Link
-              to={previousRoute()}
-              className="py-2 px-6 font-semibold bg-orange-500 hover:bg-white text-white hover:text-orange-500 border border-orange-500 duration-200">
-              <span className="mr-3">
-                <i className="bx bx-left-arrow-alt"></i>
-              </span>
-              <span>{trans("goBack").toUpperCase()}</span>
-            </Link>
-            <Link
-              to="/"
-              className="py-2 px-6 font-semibold hover:bg-orange-500 text-orange-500 hover:text-white border border-orange-500 duration-200">
-              <span className="mr-3">
-                <i className="bx bx-home"></i>
-              </span>
-              <span>{trans("goToHome").toUpperCase()}</span>
-            </Link>
+            {/* I Will Merge Buttons props to list and use map function */}
+            <Button
+              variant="contained"
+              size="large"
+              startIcon="bx-left-arrow-alt"
+              href={previousRoute()}
+              className="font-bold">
+              {trans("goBack").toUpperCase()}
+            </Button>
+            <Button
+              variant="outlined"
+              size="large"
+              startIcon="bx-home"
+              href="/"
+              className="font-bold">
+              {trans("goToHome").toUpperCase()}
+            </Button>
           </div>
         </div>
       </div>

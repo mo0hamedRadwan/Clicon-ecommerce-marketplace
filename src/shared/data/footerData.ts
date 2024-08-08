@@ -9,7 +9,7 @@ export const topCategories = [
 
 export const quickLinks = [
   { name: "shopProducts", link: "#" },
-  { name: "shopingCart", link: "#" },
+  { name: "shoppingCart", link: "#" },
   { name: "wishlist", link: "#" },
   { name: "compare", link: "#" },
   { name: "trackOrder", link: "#" },

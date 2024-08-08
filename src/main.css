@@ -21,6 +21,9 @@
   .shadow-1 {
     @apply shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)];
   }
+  .shadow-2 {
+    @apply shadow-[rgba(0,_0,_0,_0.24)_0px_3px_8px];
+  }
   .navItem {
     @apply py-2 rounded-lg cursor-pointer text-gray-900 hover:bg-orange-500 hover:text-white duration-300;
   }

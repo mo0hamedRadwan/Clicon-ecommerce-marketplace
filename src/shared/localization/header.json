@@ -15,9 +15,9 @@
     "en": "off",
     "ar": "عروض"
   },
-  "shopNow": {
-    "en": "Shop Now",
-    "ar": "تسوق الأن"
+  "shop": {
+    "en": "Shop",
+    "ar": "تسوق"
   },
   "welcomeTo": {
     "en": "Welcome to",
@@ -58,5 +58,21 @@
   "needHelp": {
     "en": "Need Help?",
     "ar": "أي مساعدة ؟"
+  },
+  "checkout": {
+    "en": "Checkout",
+    "ar": "التسليم"
+  },
+  "now": {
+    "en": "Now",
+    "ar": "الأن"
+  },
+  "subTotal": {
+    "en": "Subtotal",
+    "ar": "المبلغ الإجمالي"
+  },
+  "cart": {
+    "en": "Cart",
+    "ar": "عربة التسوق"
   }
 }

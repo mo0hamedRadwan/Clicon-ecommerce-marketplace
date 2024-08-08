@@ -4,6 +4,7 @@ import appStoreImg from "assets/images/appStore.png";
 import footerLogo from "assets/images/FooterLogo.png";
 import googlePlayImg from "assets/images/googlePlay.png";
 import { popularTags, quickLinks, topCategories } from "shared/data/footerData";
+import Button from "../../components/Button";
 
 export default function FooterSection() {
   return (
@@ -40,12 +41,14 @@ export default function FooterSection() {
               </li>
             ))}
           </ul>
-          <h3 className="mt-3 text-yellow-500 center-y gap-x-2">
-            <span>{trans("browseAllProducts")}</span>
-            <span>
-              <i className="bx bx-right-arrow-alt"></i>
-            </span>
-          </h3>
+          <Button
+            href="/shop"
+            variant="text"
+            size="small"
+            endIcon="bx-right-arrow-alt"
+            className="px-0 hover:px-1">
+            {trans("browseAllProducts")}
+          </Button>
         </div>
         <div>
           <h3 className="mb-4">{trans("quickLinks").toUpperCase()}</h3>
@@ -64,10 +67,10 @@ export default function FooterSection() {
         <div>
           <h3 className="mb-4">{trans("downloadApp").toUpperCase()}</h3>
           <div className="flex flex-col gap-y-3">
-            <Link to="" className="w-[176px] h-[70px]">
+            <Link to="" className="w-[176px] h-[70px] cursor-pointer">
               <img src={googlePlayImg} alt="" />
             </Link>
-            <Link to="" className="w-[176px] h-[70px]">
+            <Link to="" className="w-[176px] h-[70px] cursor-pointer">
               <img src={appStoreImg} alt="" />
             </Link>
           </div>

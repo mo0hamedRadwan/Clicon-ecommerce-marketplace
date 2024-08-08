@@ -1,5 +1,5 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
+import Button from "apps/front-office/design-system/components/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 
@@ -28,14 +28,20 @@ export default function OfferNotification({
               <span className="mx-2 text-yellow-500 text-5xl">{discount}%</span>
               <span className="text-2xl">{trans("off").toUpperCase()}</span>
             </div>
-            <Link
+            <Button
+              href="/shop"
+              endIcon="bx-right-arrow-alt"
+              className="bg-yellow-500 hover:bg-yellow-600">
+              {`${trans("shop")} ${trans("now")}`.toUpperCase()}
+            </Button>
+            {/* <Link
               to="/shop"
               className="py-3 px-6 bg-yellow-500 text-black font-semibold">
               <span className="">{trans("shopNow").toUpperCase()}</span>
               <span>
                 <i className="bx bx-right-arrow-alt"></i>
               </span>
-            </Link>
+            </Link> */}
           </div>
           <button
             className={`absolute ${isRTL() ? "left-5" : "right-5"} p-3 bg-gray-800 rounded`}

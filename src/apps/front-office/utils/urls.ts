@@ -25,6 +25,11 @@ const URLS = {
     viewRoute: "/pages/:slug",
     view: (page: any) => `/pages/${page.id}/${page.slug}`,
   },
+  cart: "/cart",
+  checkout: "/checkout",
+  account: "/account",
+  wishlist: "/wishlist",
+  compare: "/compare",
 };
 
 export default URLS;

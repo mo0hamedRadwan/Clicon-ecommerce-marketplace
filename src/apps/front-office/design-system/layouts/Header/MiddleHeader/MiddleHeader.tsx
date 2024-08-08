@@ -3,6 +3,9 @@ import { Link } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
 import headerLogo from "assets/images/HeaderLogo.png";
 import { middleHeaderIcons } from "shared/data/headerData";
+import AccountMenu from "./AccountMenu";
+import CartMenu from "./CartMenu";
+import WishlistMenu from "./WishlistMenu";
 
 export default function MiddleHeader() {
   return (
@@ -28,8 +31,15 @@ export default function MiddleHeader() {
         </div>
         <ul className="center-y gap-x-7 text-4xl">
           {middleHeaderIcons.map(icon => (
-            <li key={icon.name} className="relative">
-              <Link to={`/${icon.name}`}>
+            <li key={icon.name} className="relative pb-3 group">
+              {icon.name === "cart" ? (
+                <CartMenu />
+              ) : icon.name === "wishlist" ? (
+                <WishlistMenu />
+              ) : (
+                <AccountMenu />
+              )}
+              <Link to={`/${icon.name}`} className="">
                 <i className={`bx ${icon.icon}`}></i>
               </Link>
               {icon.numOfItems !== 0 && (
