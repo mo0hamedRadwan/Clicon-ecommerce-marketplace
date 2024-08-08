@@ -18,6 +18,10 @@ class User extends BaseUser implements UserInterface {
   public getCacheKey(): string {
     return "usr";
   }
+
+  public isGuest(): boolean {
+    return this.id === null;
+  }
 }
 
 const user: User = new User();
