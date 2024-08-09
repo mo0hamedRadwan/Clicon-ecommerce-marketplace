@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import Button from "apps/front-office/design-system/components/form/Button";
+import LinkAsButton from "apps/front-office/design-system/components/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { cartProducts } from "shared/data/testData";
@@ -49,12 +49,12 @@ export default function CartMenu() {
         <span className="font-semibold">${"1080.00"}</span>
       </div>
       <div className="mt-2 flex flex-col gap-y-2">
-        <Button variant="contained" href={URLS.checkout}>
+        <LinkAsButton variant="contained" href={URLS.checkout}>
           {`${trans("checkout")} ${trans("now")}`.toUpperCase()}
-        </Button>
-        <Button variant="outlined" href={URLS.cart}>
+        </LinkAsButton>
+        <LinkAsButton variant="outlined" href={URLS.cart}>
           {`${trans("view")} ${trans("cart")}`.toUpperCase()}
-        </Button>
+        </LinkAsButton>
       </div>
     </div>
   );

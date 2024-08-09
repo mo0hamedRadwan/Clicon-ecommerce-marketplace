@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
-import Button from "apps/front-office/design-system/components/form/Button";
+import LinkAsButton from "apps/front-office/design-system/components/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 
 type OfferNotificationPropsType = {
@@ -28,12 +29,12 @@ export default function OfferNotification({
               <span className="mx-2 text-yellow-450 text-5xl">{discount}%</span>
               <span className="text-2xl">{trans("off").toUpperCase()}</span>
             </div>
-            <Button
+            <LinkAsButton
+              href={URLS.shop}
               endIcon="bx-right-arrow-alt"
-              className="bg-yellow-450 hover:bg-yellow-500"
-              onClick={() => console.log("Add Route to Browse history")}>
+              className="bg-yellow-450 hover:bg-yellow-500">
               {`${trans("shop")} ${trans("now")}`.toUpperCase()}
-            </Button>
+            </LinkAsButton>
             {/* <Link
               to="/shop"
               className="py-3 px-6 bg-yellow-500 text-black font-semibold">

@@ -30,6 +30,7 @@ const URLS = {
   account: "/account",
   wishlist: "/wishlist",
   compare: "/compare",
+  shop: "/shop",
 };
 
 export default URLS;

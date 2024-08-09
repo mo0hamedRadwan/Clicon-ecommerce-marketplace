@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { previousRoute } from "@mongez/react-router";
 import error404 from "assets/images/Error404.png";
-import Button from "../components/form/Button";
+import LinkAsButton from "../components/LinkAsButton";
 
 export default function NotFoundPage() {
   return (
@@ -21,22 +21,22 @@ export default function NotFoundPage() {
           <p className="my-5">{trans("error404Message")}</p>
           <div className="flex-center gap-x-5">
             {/* I Will Merge Buttons props to list and use map function */}
-            <Button
+            <LinkAsButton
               variant="contained"
-              size="large"
+              size="lg"
               startIcon="bx-left-arrow-alt"
               href={previousRoute()}
               className="font-bold">
               {trans("goBack").toUpperCase()}
-            </Button>
-            <Button
+            </LinkAsButton>
+            <LinkAsButton
               variant="outlined"
-              size="large"
+              size="lg"
               startIcon="bx-home"
               href="/"
               className="font-bold">
               {trans("goToHome").toUpperCase()}
-            </Button>
+            </LinkAsButton>
           </div>
         </div>
       </div>
