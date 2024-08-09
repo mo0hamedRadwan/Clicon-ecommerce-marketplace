@@ -2,11 +2,13 @@
 
 Theme Link : <a href="https://www.figma.com/community/file/1271751279140741643">Clicon ecommerce marketplace</a>
 
+Website Demo: <a href="https://clicon-ecommerce-phi.vercel.app/en">Clicon Ecommerce</a>
+
 ## Tools
 
 #### 1. Vite (react-swc-ts)
 
-#### 2. Tailwindcss
+#### 2. Tailwindcss & tailwind-merge
 
 #### 3. <del>React-router-dom</del> Mongez/react-router
 
@@ -14,7 +16,7 @@ Theme Link : <a href="https://www.figma.com/community/file/1271751279140741643">
 
 #### 5. <del>Axios</del> Mongez/http
 
-#### 6. Json-server
+#### 6. <del>Json-server</del>
 
 #### 7. boxicons
 

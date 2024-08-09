@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import headerLogo from "assets/images/HeaderLogo.png";
 import { middleHeaderIcons } from "shared/data/headerData";
 import AccountMenu from "./AccountMenu";
@@ -9,14 +10,16 @@ import WishlistMenu from "./WishlistMenu";
 
 export default function MiddleHeader() {
   return (
-    <div className="h-[88px] bg-sky-700 text-white">
+    <div className="h-[88px] bg-sky-750 text-white">
       <div className="container h-full space-between-center">
         <div className="w-[177px] h-12">
-          <img
-            src={headerLogo}
-            alt="Clicon Logo image"
-            className="w-full h-full"
-          />
+          <Link to={URLS.home}>
+            <img
+              src={headerLogo}
+              alt="Clicon Logo image"
+              className="w-full h-full"
+            />
+          </Link>
         </div>
         <div className="relative hidden sm:block sm:w-[320px] lg:w-[500px] xl:w-[650px] text-xl text-black">
           <input

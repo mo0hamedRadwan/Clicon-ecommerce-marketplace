@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { previousRoute } from "@mongez/react-router";
 import error404 from "assets/images/Error404.png";
-import Button from "../components/Button";
+import Button from "../components/form/Button";
 
 export default function NotFoundPage() {
   return (

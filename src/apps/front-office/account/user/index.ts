@@ -19,7 +19,7 @@ class User extends BaseUser implements UserInterface {
     return "usr";
   }
 
-  public isGuest(): boolean {
+  public get isGuest(): boolean {
     return this.id === null;
   }
 }

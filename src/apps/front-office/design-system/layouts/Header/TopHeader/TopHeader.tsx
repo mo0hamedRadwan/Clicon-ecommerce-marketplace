@@ -1,8 +1,10 @@
 import { getCurrentLocaleCode, trans } from "@mongez/localization";
 import { Link, changeLocaleCode } from "@mongez/react-router";
-import Select from "apps/front-office/design-system/components/Select";
+import Select from "apps/front-office/design-system/components/form/Select";
 import { SelectOption } from "apps/front-office/design-system/types";
 import { localeCodesList } from "apps/front-office/utils/localization";
+import arabicFlag from "assets/images/flags/sa.png";
+import englishFlag from "assets/images/flags/uke.png";
 import { socialMediaIcons } from "shared/data/headerData";
 
 export default function TopHeader() {
@@ -12,8 +14,11 @@ export default function TopHeader() {
       label: localeCodesList[code].name,
     }),
   );
+
+  const languagesOptionsImages = [englishFlag, arabicFlag];
+
   return (
-    <div className="h-10 bg-sky-700 text-white border-b border-white border-opacity-15">
+    <div className="h-10 bg-sky-750 text-white border-b border-white border-opacity-15">
       <div className="container h-full space-between-center">
         <p className="hidden md:block">{`${trans("welcomeTo")} CLICON ${trans("onlineStore")}`}</p>
         <div className="flex-grow md:flex-grow-0 space-between-center gap-x-3">
@@ -31,10 +36,12 @@ export default function TopHeader() {
           <Select
             placeholder={localeCodesList[getCurrentLocaleCode()].name}
             options={languageOptions}
+            optionsImg={languagesOptionsImages}
             onValueChange={(value: string) =>
               getCurrentLocaleCode() !== value && changeLocaleCode(value)
             }
-            itemClassName="bg-sky-700"></Select>
+            itemClassName="bg-sky-750 text-white"
+          />
         </div>
       </div>
     </div>

@@ -9,7 +9,28 @@ export default {
         "2xl": "1480px",
       },
     },
-    extend: {},
+    extend: {
+      colors: {
+        amber: {
+          250: "#F3DE6D",
+        },
+        yellow: {
+          450: "#EBC80C",
+        },
+        sky: {
+          750: "#1B6392",
+        },
+        gray: {
+          150: "#F2F4F5",
+        },
+        neutral: {
+          750: "#303639",
+        },
+        orange: {
+          450: "#FA8232",
+        },
+      },
+    },
   },
   plugins: [],
 };
