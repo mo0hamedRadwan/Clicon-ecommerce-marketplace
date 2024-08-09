@@ -12,18 +12,22 @@ export default {
     extend: {
       colors: {
         amber: {
+          150: "#F7E99E",
           250: "#F3DE6D",
         },
         yellow: {
           450: "#EBC80C",
         },
         sky: {
+          550: "#2DA5F3",
           750: "#1B6392",
         },
         gray: {
           150: "#F2F4F5",
+          450: "#929FA5",
         },
         neutral: {
+          650: "#475156",
           750: "#303639",
         },
         orange: {

@@ -37,11 +37,11 @@
   },
   "products": {
     "en": "Products",
-    "ar": "منتجات"
+    "ar": "المنتجات"
   },
-  "allCategories": {
-    "en": "All Categories",
-    "ar": "كل التصنيفات"
+  "categories": {
+    "en": "Categories",
+    "ar": "التصنيفات"
   },
   "trackOrder": {
     "en": "Track Order",
@@ -74,5 +74,9 @@
   "cart": {
     "en": "Cart",
     "ar": "عربة التسوق"
+  },
+  "startingPrice": {
+    "en": "Starting Price",
+    "ar": "السعر الابتدائي"
   }
 }

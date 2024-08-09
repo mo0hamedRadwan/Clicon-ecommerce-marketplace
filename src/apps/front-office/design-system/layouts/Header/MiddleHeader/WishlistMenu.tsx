@@ -3,7 +3,7 @@ import { Link } from "@mongez/react-router";
 import LinkAsButton from "apps/front-office/design-system/components/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
-import { cartProducts } from "shared/data/testData";
+import { wishlistProducts } from "shared/data/testData";
 
 export default function WishlistMenu() {
   return (
@@ -15,7 +15,7 @@ export default function WishlistMenu() {
       </h3>
       <div className="mt-3 w-full h-[1px] bg-gray-300"></div>
       <ul className="py-3 flex flex-col gap-y-3">
-        {cartProducts.map(product => (
+        {wishlistProducts.map(product => (
           <li key={product.id} className="center-y">
             <Link
               to={"/productId"}

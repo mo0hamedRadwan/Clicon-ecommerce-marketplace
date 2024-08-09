@@ -21,7 +21,7 @@ export default function FooterSection() {
         </div>
         <p>
           <span className="text-sm text-gray-500">
-            {trans("customerSupports")}
+            {trans("customerSupport")}
           </span>
           <br />
           <span className="text-lg">(629) 555-0129</span>
@@ -33,7 +33,9 @@ export default function FooterSection() {
       </div>
       <div className="xl:w-96 center-y gap-x-10">
         <div className="w-44">
-          <h3 className="mb-4">{trans("topCategories").toUpperCase()}</h3>
+          <h3 className="mb-4">
+            {`${trans("top")} ${trans("categories")}`.toUpperCase()}
+          </h3>
           <ul className="text-gray-500 flex flex-col gap-y-2">
             {topCategories.map(category => (
               <li key={category.name} className="group center-y gap-x-1">
@@ -43,7 +45,7 @@ export default function FooterSection() {
             ))}
           </ul>
           <Link className="mt-2 center-y hover:bg-neutral-750 text-yellow-450 rounded cursor-pointer">
-            <span>{trans("browseAllProducts")}</span>
+            <span>{`${trans("browse")} ${trans("all")} ${trans("categories")}`}</span>
             <span className="relative top-[2px] ml-1">
               <i className="bx bx-right-arrow-alt"></i>
             </span>

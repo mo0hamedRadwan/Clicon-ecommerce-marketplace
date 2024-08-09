@@ -1,15 +1,11 @@
 {
-  "customerSupports": {
-    "en": "Customer Supports",
-    "ar": "الدعم الفني"
+  "top": {
+    "en": "Top",
+    "ar": "أفضل"
   },
-  "topCategories": {
-    "en": "Top Categories",
-    "ar": "أفضل الفئات"
-  },
-  "browseAllProducts": {
-    "en": "Browse All Products",
-    "ar": "أستكشف جميع المنتجات"
+  "browse": {
+    "en": "Browse",
+    "ar": "تصفح"
   },
   "quickLinks": {
     "en": "Quick Links",

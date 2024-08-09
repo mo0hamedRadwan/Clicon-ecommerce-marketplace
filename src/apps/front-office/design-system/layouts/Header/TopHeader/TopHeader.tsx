@@ -10,12 +10,11 @@ import { socialMediaIcons } from "shared/data/headerData";
 export default function TopHeader() {
   const languageOptions: SelectOption[] = Object.keys(localeCodesList).map(
     code => ({
+      img: code === "en" ? englishFlag : arabicFlag,
       value: code,
       label: localeCodesList[code].name,
     }),
   );
-
-  const languagesOptionsImages = [englishFlag, arabicFlag];
 
   return (
     <div className="h-10 bg-sky-750 text-white border-b border-white border-opacity-15">
@@ -36,7 +35,6 @@ export default function TopHeader() {
           <Select
             placeholder={localeCodesList[getCurrentLocaleCode()].name}
             options={languageOptions}
-            optionsImg={languagesOptionsImages}
             onValueChange={(value: string) =>
               getCurrentLocaleCode() !== value && changeLocaleCode(value)
             }

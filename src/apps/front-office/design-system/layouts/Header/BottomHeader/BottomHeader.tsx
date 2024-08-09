@@ -3,6 +3,7 @@ import { Link } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 import { callUs, navigateItems } from "shared/data/headerData";
+import AllCategoriesMenu from "./AllCategoriesMenu";
 
 export default function BottomHeader() {
   const [openCategoriesMenu, setOpenCategoriesMenu] = useState<boolean>(false);
@@ -11,9 +12,9 @@ export default function BottomHeader() {
       <div className="container h-full space-between-center">
         <ul className="center-y gap-x-2 text-base lg:text-lg text-gray-500">
           <li
-            className="center-y gap-x-2 navItem bg-gray-200 px-5"
+            className="center-y gap-x-2 navItem bg-gray-200 px-5 relative"
             onClick={() => setOpenCategoriesMenu(!openCategoriesMenu)}>
-            <span>{trans("allCategories")}</span>
+            <span>{`${trans("all")} ${trans("categories")}`}</span>
             <span>
               {openCategoriesMenu ? (
                 <i className="bx bx-chevron-up"></i>
@@ -21,6 +22,7 @@ export default function BottomHeader() {
                 <i className="bx bx-chevron-down"></i>
               )}
             </span>
+            {openCategoriesMenu && <AllCategoriesMenu />}
           </li>
           {navigateItems.map(item => (
             <li key={item.name} className="navItem px-3">

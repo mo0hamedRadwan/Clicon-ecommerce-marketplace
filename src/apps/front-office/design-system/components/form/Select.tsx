@@ -16,7 +16,6 @@ type SelectPropsType = {
 export default function Select({
   placeholder,
   options,
-  optionsImg,
   className,
   menuClassName,
   itemClassName,
@@ -53,7 +52,7 @@ export default function Select({
               "min-w-[100px] max-w-[200px] max-h-[200px] overflow-y-auto bg-white rounded shadow-2",
               menuClassName,
             )}>
-            {options.map((option, index) => (
+            {options.map(option => (
               <li
                 key={option.value}
                 className={twMerge(
@@ -61,9 +60,7 @@ export default function Select({
                   itemClassName,
                 )}
                 onClick={() => handleValueChange(option.value, option.label)}>
-                {optionsImg && (
-                  <img src={optionsImg[index]} className="w-6 h-6" />
-                )}
+                {option.img && <img src={option.img} className="w-6 h-6" />}
                 <span className="">{option.label}</span>
               </li>
             ))}

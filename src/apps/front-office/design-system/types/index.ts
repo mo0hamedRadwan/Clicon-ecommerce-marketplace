@@ -1,12 +1,37 @@
 export type SelectOption = {
+  img?: string;
   label: string;
   value: string;
 };
 
-export type CartProduct = {
+export type Product = {
   id: number;
   name: string;
   price: number;
+  oldPrice?: number;
+  rating?: number;
+  imageUrl?: string;
+  bannerImageUrl?: string;
+  shortDescription?: string;
+  description?: string;
+  slug?: string;
   quantity: number;
-  imageUrl: string;
+  inStock?: boolean;
+  discount?: number;
+};
+
+export type SubCategory = {
+  id: number;
+  name: string;
+  products: Product[];
+  slug: string;
+  topProduct: Product;
+};
+
+export type Category = {
+  id: number;
+  name: string;
+  subCategories: SubCategory[];
+  slug: string;
+  topProducts: Product[];
 };
