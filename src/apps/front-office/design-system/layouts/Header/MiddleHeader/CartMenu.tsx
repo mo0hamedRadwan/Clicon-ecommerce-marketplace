@@ -8,7 +8,7 @@ import { cartProducts } from "shared/data/testData";
 export default function CartMenu() {
   return (
     <div
-      className={`hidden group-hover:block z-20 absolute top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] p-4 bg-white text-black text-base rounded shadow-2`}>
+      className={`hidden xs:group-hover:block z-20 absolute top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] p-4 bg-white text-black text-base rounded shadow-2`}>
       <h3 className="text-xl font-semibold center-y gap-x-1">
         <span>{trans("shoppingCart")}</span>
         <span>(02)</span>

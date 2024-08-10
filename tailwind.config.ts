@@ -10,6 +10,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        xs: "480px",
+      },
       colors: {
         amber: {
           150: "#F7E99E",

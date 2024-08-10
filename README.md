@@ -26,6 +26,8 @@ Website Demo: <a href="https://clicon-ecommerce-phi.vercel.app/en">Clicon Ecomme
 
 #### 10. jsonwebtoken
 
+#### 11. Swiper (for Carousel)
+
 ## Theme Layout
 
 #### 1. Header

@@ -26,7 +26,7 @@ export default function SubCategoryMenu({
 
   return (
     <div
-      className={`absolute w-[900px] h-[440px] top-0 ${isRTL() ? "right-56" : "left-56"} rounded hidden group-hover:center-y font-normal`}>
+      className={`absolute w-[530px] xl:w-[900px] h-[440px] top-0 ${isRTL() ? "right-56" : "left-56"} rounded hidden group-hover:center-y font-normal`}>
       <div className="w-[40px] h-full bg-transparent"></div>
       <div className="p-5 w-[calc(100%-40px)] h-full bg-white space-between shadow-2 relative">
         <ul className="w-36">
@@ -57,7 +57,7 @@ export default function SubCategoryMenu({
                   className="w-[310px]"
                 />
                 <Banner
-                  className="w-[310px]"
+                  className="w-[310px] hidden xl:block"
                   product={
                     selectedSubCategoryId < subcategories.length
                       ? subcategories[selectedSubCategoryId].topProduct!

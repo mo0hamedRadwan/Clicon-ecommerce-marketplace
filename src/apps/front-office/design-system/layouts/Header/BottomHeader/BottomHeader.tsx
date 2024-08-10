@@ -12,7 +12,7 @@ export default function BottomHeader() {
       <div className="container h-full space-between-center">
         <ul className="center-y gap-x-2 text-base lg:text-lg text-gray-500">
           <li
-            className="center-y gap-x-2 navItem bg-gray-200 px-5 relative"
+            className="hidden md:center-y gap-x-2 navItem bg-gray-200 px-5 relative"
             onClick={() => setOpenCategoriesMenu(!openCategoriesMenu)}>
             <span>{`${trans("all")} ${trans("categories")}`}</span>
             <span>

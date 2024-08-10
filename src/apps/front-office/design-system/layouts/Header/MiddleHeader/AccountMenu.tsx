@@ -9,7 +9,7 @@ import URLS from "apps/front-office/utils/urls";
 export default function AccountMenu() {
   return (
     <div
-      className={`hidden group-hover:flex flex-col gap-y-4 z-20 absolute w-[420px] h-[440px] top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] p-6 bg-white text-black text-base font-semibold rounded shadow-2`}>
+      className={`hidden xs:group-hover:flex flex-col gap-y-4 z-20 absolute w-[420px] h-[440px] top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] p-6 bg-white text-black text-base font-semibold rounded shadow-2`}>
       <h3 className="text-center text-2xl">{`${trans("signIn")} ${trans("to")} ${trans("yourAccount")}`}</h3>
 
       <EmailInput />

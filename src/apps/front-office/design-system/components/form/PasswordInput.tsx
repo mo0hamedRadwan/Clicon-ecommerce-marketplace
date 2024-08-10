@@ -9,6 +9,7 @@ import {
   requiredRule,
   useFormControl,
 } from "@mongez/react-form";
+import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -41,7 +42,7 @@ export default function PasswordInput(props: PasswordInputPropsType) {
           )}
         />
         <span
-          className="absolute top-0 right-2 text-lg p-2 cursor-pointer"
+          className={`absolute top-0 ${isRTL() ? "left-2" : "right-2"} text-lg p-2 cursor-pointer`}
           onClick={() => setShowPassword(!showPassword)}>
           {showPassword ? (
             <i className="bx bxs-low-vision"></i>
