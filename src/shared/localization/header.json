@@ -78,5 +78,37 @@
   "startingPrice": {
     "en": "Starting Price",
     "ar": "السعر الابتدائي"
+  },
+  "signIn": {
+    "en": "Sign In",
+    "ar": "تسجيل الدخول"
+  },
+  "to": {
+    "en": "to",
+    "ar": "إلى"
+  },
+  "donot": {
+    "en": "Don't",
+    "ar": "لا يوجد"
+  },
+  "have": {
+    "en": "have",
+    "ar": "لديك"
+  },
+  "account": {
+    "en": "Account",
+    "ar": "حساب"
+  },
+  "emailAddress": {
+    "en": "Email Address",
+    "ar": "البريد الإلكتروني"
+  },
+  "yourAccount": {
+    "en": "Your Account",
+    "ar": "حسابك"
+  },
+  "forgetPassword": {
+    "en": "Forget Password?",
+    "ar": "نسيت كلمة المرور"
   }
 }

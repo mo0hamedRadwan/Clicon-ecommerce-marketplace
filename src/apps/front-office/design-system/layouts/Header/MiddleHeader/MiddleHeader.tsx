@@ -35,6 +35,8 @@ export default function MiddleHeader() {
         <ul className="center-y gap-x-7 text-4xl">
           {middleHeaderIcons.map(icon => (
             <li key={icon.name} className="relative pb-3 group">
+              {/* Object for Menus */}
+              {/* {NavMenu[icon.name]} */}
               {icon.name === "cart" ? (
                 <CartMenu />
               ) : icon.name === "wishlist" ? (
