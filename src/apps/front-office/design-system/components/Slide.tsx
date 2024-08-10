@@ -10,7 +10,6 @@ type SlidePropsType = {
 };
 
 export default function Slide({ product = sliderProduct }: SlidePropsType) {
-  console.log(product.bannerImageUrl);
   return (
     <div className="center-y justify-around md:justify-evenly gap-x-10 h-full">
       <div className="w-[380px] flex flex-col">

@@ -27,7 +27,7 @@ export default function BottomHeader() {
           {navigateItems.map(item => (
             <li key={item.name} className="navItem px-3">
               <Link to={item.link} className="center-y gap-x-1 xl:gap-x-3">
-                <span>
+                <span className="md:hidden lg:inline">
                   <i className={`bx ${item.icon}`}></i>
                 </span>
                 <span>{trans(item.name)}</span>

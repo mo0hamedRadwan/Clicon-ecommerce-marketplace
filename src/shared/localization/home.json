@@ -1,0 +1,34 @@
+{
+  "fastestDelivery": {
+    "en": "Fastest Delivery",
+    "ar": "أسرع توصيل"
+  },
+  "deliveryIn24": {
+    "en": "Delivery in 24 Hours",
+    "ar": "توصيل في 24 ساعة"
+  },
+  "24HoursReturn": {
+    "en": "24-hour Return ",
+    "ar": "العودة في 24 ساعة"
+  },
+  "100%MoneyBackGuarantee": {
+    "en": "100% Money-Back Guarantee",
+    "ar": "100% ضمان العودة للمال"
+  },
+  "securePayment": {
+    "en": "Secure Payment",
+    "ar": "دفع أمن"
+  },
+  "yourMoneyIsSafe": {
+    "en": "Your money is safe",
+    "ar": "مالك فى أمان "
+  },
+  "support": {
+    "en": "Support 24/7",
+    "ar": "24/7 الدعم"
+  },
+  "liveContact": {
+    "en": "Live Contact and Message",
+    "ar": "إتصال وتواصل مباشر"
+  }
+}
