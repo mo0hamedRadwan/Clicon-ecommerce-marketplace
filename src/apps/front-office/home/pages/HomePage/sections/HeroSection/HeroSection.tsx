@@ -10,8 +10,8 @@ export default function HeroSection() {
       </div>
       <div className="hidden xl:flex flex-col gap-y-5">
         <SmallBanner
-          variant="dark"
           product={smallBannerProduct1}
+          variant="dark"
           direction="left"
           showCaption
           showBadge

@@ -29,14 +29,14 @@ export default function SmallBanner({
         "w-[425px] h-[230px] space-between gap-x-3 rounded-md pt-10 shadow-1",
         direction === "left" ? "pl-10" : "pr-10",
         center && "p-10",
-        `bg-${variantStyle[variant].bgColor}`,
+        `${variantStyle[variant].bgColor}`,
       )}>
       <div className="w-[180px] flex flex-col gap-y-2">
         {showCaption && (
           <p
             className={twMerge(
               "text-sm line-clamp-1",
-              `text-${variantStyle[variant].captionColor}`,
+              `${variantStyle[variant].captionColor}`,
             )}>
             {product.caption?.toUpperCase()}
           </p>
@@ -44,7 +44,7 @@ export default function SmallBanner({
         <p
           className={twMerge(
             "text-xl font-semibold line-clamp-2",
-            `text-${variantStyle[variant].textColor}`,
+            `${variantStyle[variant].textColor}`,
           )}>
           {product.name}
         </p>
@@ -67,8 +67,7 @@ export default function SmallBanner({
             <p
               className={twMerge(
                 "py-2 px-3 font-semibold rounded-sm",
-                `bg-${variantStyle[variant].captionColor}`,
-                `text-${variantStyle[variant].badgeTextColor}`,
+                `${variantStyle[variant].badgeColor} ${variantStyle[variant].badgeTextColor}`,
               )}>
               {product.discount}% {trans("off").toUpperCase()}
             </p>
