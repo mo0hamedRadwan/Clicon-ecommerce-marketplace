@@ -3,7 +3,7 @@ import FooterSection from "./FooterSection";
 
 export default function Footer() {
   return (
-    <div className="bg-gray-950 text-gray-200">
+    <div className="bg-zinc-950 text-gray-200">
       <FooterSection />
       <CopyrightFooter />
     </div>

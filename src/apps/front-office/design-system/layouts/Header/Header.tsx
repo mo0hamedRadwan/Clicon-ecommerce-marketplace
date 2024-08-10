@@ -5,11 +5,11 @@ import TopHeader from "./TopHeader";
 
 export default function Header() {
   return (
-    <div className="mb-5">
+    <>
       <OfferNotification />
       <TopHeader />
       <MiddleHeader />
       <BottomHeader />
-    </div>
+    </>
   );
 }

@@ -14,8 +14,9 @@ export type Product = {
   bannerImageUrl?: string;
   shortDescription?: string;
   description?: string;
+  caption?: string;
   slug?: string;
-  quantity: number;
+  quantity?: number;
   inStock?: boolean;
   discount?: number;
 };

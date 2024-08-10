@@ -16,23 +16,27 @@ export default function OfferNotification({
   return (
     <>
       {!closeNotification && (
-        <div className="h-20 relative hidden md:center-y bg-gray-950 text-white ">
+        <div className="h-20 relative hidden md:center-y bg-zinc-950 text-white ">
           <div className="container h-full center-y justify-around 2xl:justify-between">
             <div className="center-y gap-x-2 text-2xl font-semibold">
-              <span className="py-1 px-3 bg-amber-250 text-black -rotate-6">
+              <span className="py-1 px-3 bg-amber-250 text-zinc-950 -rotate-6">
                 {trans("black")}
               </span>
               <span>{trans("friday")}</span>
             </div>
             <div className="center-y">
               <span>{trans("upTo")}</span>
-              <span className="mx-2 text-yellow-450 text-5xl">{discount}%</span>
-              <span className="text-2xl">{trans("off").toUpperCase()}</span>
+              <span className="mx-2 text-yellow-450 text-5xl font-semibold">
+                {discount}%
+              </span>
+              <span className="text-2xl font-semibold">
+                {trans("off").toUpperCase()}
+              </span>
             </div>
             <LinkAsButton
               href={URLS.shop}
-              endIcon="bx-right-arrow-alt"
-              className="bg-yellow-450 hover:bg-yellow-500">
+              endIcon={`bx-${isRTL() ? "left" : "right"}-arrow-alt`}
+              className="text-zinc-950 font-semibold p-3 bg-yellow-450 hover:bg-yellow-500">
               {`${trans("shop")} ${trans("now")}`.toUpperCase()}
             </LinkAsButton>
             {/* <Link

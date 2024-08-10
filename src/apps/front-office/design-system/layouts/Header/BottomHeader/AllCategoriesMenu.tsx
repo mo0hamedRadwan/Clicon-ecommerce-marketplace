@@ -5,7 +5,7 @@ import SubCategoryMenu from "./SubCategoryMenu";
 export default function AllCategoriesMenu() {
   return (
     <div
-      className={`absolute top-16 ${isRTL() ? "right-0" : "left-0"} w-60 py-2 bg-white rounded shadow-2`}>
+      className={`z-20 absolute top-16 ${isRTL() ? "right-0" : "left-0"} w-60 py-2 bg-white rounded shadow-2`}>
       <ul className=" text-sm flex flex-col text-black rounded">
         {categories.map(category => (
           <li

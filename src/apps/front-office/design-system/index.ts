@@ -8,6 +8,6 @@ if (current("localeCode") === "ar") {
   );
 } else {
   googleFont(
-    "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap",
+    "https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900",
   );
 }

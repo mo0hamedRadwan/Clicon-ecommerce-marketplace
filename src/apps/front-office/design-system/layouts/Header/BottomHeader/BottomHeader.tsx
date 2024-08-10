@@ -40,7 +40,7 @@ export default function BottomHeader() {
             className={`text-2xl xl:text-4xl ${isRTL() ? "-rotate-90" : "rotate-0"}`}>
             <i className={`bx ${callUs.icon}`}></i>
           </span>
-          <span className="text-lg xl:text-2xl">{callUs.number}</span>
+          <span className="text-base xl:text-2xl">{callUs.number}</span>
         </p>
       </div>
     </div>

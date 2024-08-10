@@ -42,6 +42,37 @@ const product4: Product = {
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur id possimus.",
 };
 
+export const sliderProduct: Product = {
+  id: 5,
+  name: "Product Product Product Product Product Product",
+  price: 299,
+  bannerImageUrl: productImages.productImg4,
+  caption: "top product in website caption caption caption",
+  shortDescription:
+    "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
+};
+
+export const smallBannerProduct1: Product = {
+  id: 6,
+  name: "Product Product Product Product Product Product",
+  price: 299,
+  imageUrl: productImages.productImg5,
+  discount: 19,
+  caption: "top product in website caption caption caption",
+  shortDescription:
+    "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
+};
+
+export const smallBannerProduct2: Product = {
+  id: 7,
+  name: "Product Product Product Product Product Product",
+  price: 299,
+  imageUrl: productImages.productImg6,
+  caption: "top product in website caption caption caption",
+  shortDescription:
+    "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
+};
+
 export const cartProducts: Product[] = [product1, product2, product3];
 
 export const wishlistProducts: Product[] = [product2, product3];

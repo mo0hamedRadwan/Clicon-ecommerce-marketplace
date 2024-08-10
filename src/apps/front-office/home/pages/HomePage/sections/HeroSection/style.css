@@ -1,0 +1,26 @@
+.swiper-pagination {
+  text-align: right;
+}
+
+@media (min-width: 640px) {
+  .swiper-pagination {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-pagination {
+    text-align: left;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #adb7bc;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: black;
+}

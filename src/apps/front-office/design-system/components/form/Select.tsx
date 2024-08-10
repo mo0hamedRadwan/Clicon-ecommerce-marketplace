@@ -1,3 +1,4 @@
+import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useClickOutside } from "../../hooks/use-click-outside";
@@ -32,7 +33,7 @@ export default function Select({
   };
 
   return (
-    <div className="relative ml-20" ref={menuRef}>
+    <div className={`relative ${isRTL() ? "mr-10" : "ml-10"}`} ref={menuRef}>
       <button
         className={twMerge("center-y", className)}
         onClick={() => setOpenMenu(!openMenu)}>
@@ -46,7 +47,8 @@ export default function Select({
         </span>
       </button>
       {openMenu && (
-        <div className="z-[999] absolute top-10 right-0">
+        <div
+          className={`z-[999] absolute top-10 ${isRTL() ? "left-0" : "right-0"}`}>
           <ul
             className={twMerge(
               "min-w-[100px] max-w-[200px] max-h-[200px] overflow-y-auto bg-white rounded shadow-2",

@@ -27,11 +27,11 @@ export const socialMediaIcons = [
   },
 ];
 
-export const middleHeaderIcons = [
-  { name: "cart", icon: "bx-cart", numOfItems: 2 },
-  { name: "wishlist", icon: "bx-heart", numOfItems: 2 },
-  { name: "account", icon: "bx bx-user", numOfItems: 0 },
-];
+// export const middleHeaderIcons = [
+//   { name: "cart", icon: "bx-cart", numOfItems: 2 },
+//   { name: "wishlist", icon: "bx-heart", numOfItems: 2 },
+//   { name: "account", icon: "bx bx-user", numOfItems: 0 },
+// ];
 
 export const navigateItems = [
   { name: "trackOrder", icon: "bx-map", link: "/track-order" },

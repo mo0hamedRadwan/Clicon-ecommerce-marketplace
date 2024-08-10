@@ -3,9 +3,9 @@ import { Link } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import headerLogo from "assets/images/HeaderLogo.png";
-import { middleHeaderIcons } from "shared/data/headerData";
 import AccountMenu from "./AccountMenu";
 import CartMenu from "./CartMenu";
+import NumOfItems from "./NumOfItems";
 import WishlistMenu from "./WishlistMenu";
 
 export default function MiddleHeader() {
@@ -33,10 +33,29 @@ export default function MiddleHeader() {
           </span>
         </div>
         <ul className="center-y gap-x-7 text-4xl">
-          {middleHeaderIcons.map(icon => (
+          <li className="relative pb-3 group">
+            <Link to={URLS.cart}>
+              <i className="bx bx-cart"></i>
+            </Link>
+            <NumOfItems number={3} />
+            <CartMenu />
+          </li>
+          <li className="relative pb-3 group">
+            <Link to={URLS.wishlist}>
+              <i className="bx bx-heart"></i>
+            </Link>
+            <NumOfItems number={2} />
+            <WishlistMenu />
+          </li>
+          <li className="relative pb-3 group">
+            <Link to={URLS.account}>
+              <i className="bx bx-user"></i>
+            </Link>
+            <AccountMenu />
+          </li>
+
+          {/* {middleHeaderIcons.map(icon => (
             <li key={icon.name} className="relative pb-3 group">
-              {/* Object for Menus */}
-              {/* {NavMenu[icon.name]} */}
               {icon.name === "cart" ? (
                 <CartMenu />
               ) : icon.name === "wishlist" ? (
@@ -53,7 +72,7 @@ export default function MiddleHeader() {
                 </span>
               )}
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
     </div>

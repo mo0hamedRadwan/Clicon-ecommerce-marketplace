@@ -17,6 +17,7 @@ export default {
         amber: {
           150: "#F7E99E",
           250: "#F3DE6D",
+          350: "#EFD33D",
         },
         yellow: {
           450: "#EBC80C",
@@ -35,6 +36,10 @@ export default {
         },
         orange: {
           450: "#FA8232",
+        },
+        zinc: {
+          450: "#929FA5",
+          950: "#191C1F",
         },
       },
     },
