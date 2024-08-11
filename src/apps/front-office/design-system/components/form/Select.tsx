@@ -5,7 +5,7 @@ import { useClickOutside } from "../../hooks/use-click-outside";
 import { SelectOption } from "../../types";
 
 type SelectPropsType = {
-  placeholder: string;
+  triggerValue: string;
   options: SelectOption[];
   optionsImg?: string[];
   className?: string;
@@ -15,14 +15,14 @@ type SelectPropsType = {
 };
 
 export default function Select({
-  placeholder,
+  triggerValue,
   options,
   className,
   menuClassName,
   itemClassName,
   onValueChange,
 }: SelectPropsType) {
-  const [selectedValue, setSelectedValue] = useState(placeholder);
+  const [selectedValue, setSelectedValue] = useState(triggerValue);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const menuRef = useClickOutside(() => setOpenMenu(false));
 

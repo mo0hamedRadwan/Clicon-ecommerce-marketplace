@@ -17,6 +17,10 @@ export default function Carousel() {
     <Swiper
       dir={isRTL() ? "rtl" : "ltr"}
       // spaceBetween={30}
+      // slidesPerView={3}
+      // pagination={{
+      //   clickable: true,
+      // }}
       effect={"fade"}
       centeredSlides={true}
       loop={true}

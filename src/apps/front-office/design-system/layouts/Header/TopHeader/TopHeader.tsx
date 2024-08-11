@@ -24,7 +24,9 @@ export default function TopHeader() {
           <ul className="center-y gap-x-2">
             <li>{trans("followUs")}:</li>
             {socialMediaIcons.map(social => (
-              <li key={social.name} className="hover:text-sky-400 duration-200">
+              <li
+                key={social.name}
+                className="hover:text-orange-450 duration-200">
                 <Link to={social.link}>
                   <i className={`bx ${social.icon}`}></i>
                 </Link>
@@ -33,7 +35,7 @@ export default function TopHeader() {
           </ul>
           <div className="w-[1px] h-6 bg-white bg-opacity-15"></div>
           <Select
-            placeholder={localeCodesList[getCurrentLocaleCode()].name}
+            triggerValue={localeCodesList[getCurrentLocaleCode()].name}
             options={languageOptions}
             onValueChange={(value: string) =>
               getCurrentLocaleCode() !== value && changeLocaleCode(value)

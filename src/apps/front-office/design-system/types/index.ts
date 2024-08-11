@@ -13,6 +13,7 @@ export type ProductType = {
   numOfReviews?: number;
   imageUrl?: string;
   bannerImageUrl?: string;
+  images?: string[];
   shortDescription?: string;
   description?: string;
   caption?: string;
@@ -20,6 +21,13 @@ export type ProductType = {
   quantity?: number;
   inStock?: boolean;
   discount?: number;
+  sku?: string;
+  brand?: string;
+  category: string;
+  colors?: string[];
+  sizes?: string[];
+  memories?: string[];
+  storages?: string[];
 };
 
 export type SubCategory = {

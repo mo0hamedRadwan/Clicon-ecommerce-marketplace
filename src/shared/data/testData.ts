@@ -1,8 +1,5 @@
-import {
-  Category,
-  ProductType,
-  SubCategory,
-} from "apps/front-office/design-system/types";
+import { Category, SubCategory } from "apps/front-office/design-system/types";
+import { ProductType } from "./../../apps/front-office/design-system/types/index";
 import { productImages } from "./images";
 
 const product1: ProductType = {
@@ -11,6 +8,7 @@ const product1: ProductType = {
   price: 100,
   quantity: 1,
   imageUrl: productImages.productImg1,
+  category: "category",
 };
 
 const product2: ProductType = {
@@ -19,6 +17,7 @@ const product2: ProductType = {
   price: 50,
   quantity: 2,
   imageUrl: productImages.productImg2,
+  category: "category",
 };
 
 const product3: ProductType = {
@@ -28,6 +27,7 @@ const product3: ProductType = {
   oldPrice: 250,
   quantity: 10,
   imageUrl: productImages.productImg1,
+  category: "category",
 };
 
 const product4: ProductType = {
@@ -40,6 +40,7 @@ const product4: ProductType = {
   bannerImageUrl: productImages.productImg3,
   shortDescription:
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur id possimus.",
+  category: "category",
 };
 
 export const sliderProduct: ProductType = {
@@ -50,6 +51,7 @@ export const sliderProduct: ProductType = {
   caption: "top product in website caption caption caption",
   shortDescription:
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
+  category: "category",
 };
 
 export const smallBannerProduct1: ProductType = {
@@ -61,6 +63,7 @@ export const smallBannerProduct1: ProductType = {
   caption: "top product in website caption caption caption",
   shortDescription:
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
+  category: "category",
 };
 
 export const smallBannerProduct2: ProductType = {
@@ -71,6 +74,40 @@ export const smallBannerProduct2: ProductType = {
   caption: "top product in website caption caption caption",
   shortDescription:
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
+  category: "category",
+};
+
+export const RealProduct: ProductType = {
+  id: 100,
+  name: "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
+  price: 1699,
+  oldPrice: 1999,
+  category: "Electronics Devices",
+  imageUrl: productImages.pMainImage,
+  images: [
+    productImages.pImage1,
+    productImages.pImage2,
+    productImages.pImage3,
+    productImages.pImage4,
+    productImages.pImage5,
+    productImages.pImage6,
+  ],
+  inStock: true,
+  sku: "A264671",
+  brand: "Apple",
+  colors: ["", ""],
+  sizes: ["13 inch", "15 inch", "17 inch", "21 inch"],
+  memories: [
+    "8GB unified memory",
+    "16GB unified memory",
+    "32GB unified memory",
+  ],
+  storages: [
+    "128GB SSD Storage",
+    "256GB SSD Storage",
+    "512GB SSD Storage",
+    "1TB SSD Storage",
+  ],
 };
 
 export const cartProducts: ProductType[] = [product1, product2, product3];

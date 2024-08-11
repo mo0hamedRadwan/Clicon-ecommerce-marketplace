@@ -5,6 +5,14 @@ import productImg4 from "assets/images/ProductsThumbs/product-4.png";
 import productImg5 from "assets/images/ProductsThumbs/product-5.png";
 import productImg6 from "assets/images/ProductsThumbs/product-6.png";
 
+import pImage1 from "assets/images/productImg/01.png";
+import pImage2 from "assets/images/productImg/02.png";
+import pImage3 from "assets/images/productImg/03.png";
+import pImage4 from "assets/images/productImg/04.png";
+import pImage5 from "assets/images/productImg/05.png";
+import pImage6 from "assets/images/productImg/06.png";
+import pMainImage from "assets/images/productImg/mainImage.png";
+
 export const productImages = {
   productImg1,
   productImg2,
@@ -12,4 +20,11 @@ export const productImages = {
   productImg4,
   productImg5,
   productImg6,
+  pMainImage,
+  pImage1,
+  pImage2,
+  pImage3,
+  pImage4,
+  pImage5,
+  pImage6,
 };

@@ -29,6 +29,7 @@ export default {
         gray: {
           150: "#F2F4F5",
           450: "#929FA5",
+          550: "#5F6C72",
         },
         neutral: {
           650: "#475156",

@@ -30,5 +30,21 @@
   "liveContact": {
     "en": "Live Contact and Message",
     "ar": "إتصال وتواصل مباشر"
+  },
+  "stars": {
+    "en": "Stars",
+    "ar": "نجوم"
+  },
+  "rating": {
+    "en": "Rating",
+    "ar": "تقييم"
+  },
+  "users": {
+    "en": "Users",
+    "ar": "المستخدمين"
+  },
+  "feedback": {
+    "en": "feedback",
+    "ar": "تقييمات"
   }
 }

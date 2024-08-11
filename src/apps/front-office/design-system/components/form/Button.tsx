@@ -8,6 +8,7 @@ export type ButtonPropsType = {
   startIcon?: string;
   endIcon?: string;
   className?: string;
+  iconClassName?: string;
   onClick: (e) => void;
   children: any;
 };
@@ -19,6 +20,7 @@ export default function Button({
   startIcon,
   endIcon,
   className = "",
+  iconClassName,
   onClick,
   children,
 }: ButtonPropsType) {
@@ -32,9 +34,9 @@ export default function Button({
         className,
       )}
       onClick={e => onClick(e)}>
-      {startIcon && <i className={`bx ${startIcon}`}></i>}
+      {startIcon && <i className={`bx ${startIcon} ${iconClassName}`}></i>}
       {children}
-      {endIcon && <i className={`bx ${endIcon}`}></i>}
+      {endIcon && <i className={`bx ${endIcon} ${iconClassName}`}></i>}
     </button>
   );
 }
