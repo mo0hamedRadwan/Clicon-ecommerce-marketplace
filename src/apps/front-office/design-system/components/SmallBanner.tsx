@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { isRTL } from "apps/front-office/utils/helpers";
 import { twMerge } from "tailwind-merge";
 import { Product } from "../types";
 import LinkAsButton from "./LinkAsButton";
@@ -17,7 +18,7 @@ type SmallBannerPropsType = {
 export default function SmallBanner({
   product,
   variant = "light",
-  direction = "left",
+  direction = "right",
   center = false,
   showPrice = false,
   showBadge = false,
@@ -27,7 +28,9 @@ export default function SmallBanner({
     <div
       className={twMerge(
         "w-[425px] h-[230px] space-between gap-x-3 rounded-md pt-10 shadow-1",
-        direction === "left" ? "pl-10" : "pr-10",
+        direction === "left" ? "pr-0 pl-10" : "pr-10 pl-0",
+        isRTL() ? "pl-0 pr-10" : "pr-0 pl-10",
+        direction === "right" ? "flex-row-reverse" : "",
         center && "p-10",
         `${variantStyle[variant].bgColor}`,
       )}>
@@ -54,10 +57,9 @@ export default function SmallBanner({
           </p>
         )}
         <div className="mt-1 flex">
-          <LinkAsButton
-            href="/product/:id"
-            size="md"
-            className="px-6">{`${trans("show")} ${trans("now")}`}</LinkAsButton>
+          <LinkAsButton href="/product/:id" size="md" className="px-6">
+            {`${trans("shop")} ${trans("now")}`.toUpperCase()}
+          </LinkAsButton>
         </div>
       </div>
       <div className="relative">

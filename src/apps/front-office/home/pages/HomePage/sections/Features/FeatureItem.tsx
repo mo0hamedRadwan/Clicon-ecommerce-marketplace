@@ -12,7 +12,7 @@ export default function FeatureItem({
   subtitle,
 }: FeatureItemPropsType) {
   return (
-    <div className="w-72 center-y gap-x-5">
+    <div className="w-60 md:w-72 center-y gap-x-5">
       <span className="text-5xl">
         <i className={`bx ${icon}`}></i>
       </span>
