@@ -1,11 +1,11 @@
 import {
   Category,
-  Product,
+  ProductType,
   SubCategory,
 } from "apps/front-office/design-system/types";
 import { productImages } from "./images";
 
-const product1: Product = {
+const product1: ProductType = {
   id: 1,
   name: "Product 1",
   price: 100,
@@ -13,7 +13,7 @@ const product1: Product = {
   imageUrl: productImages.productImg1,
 };
 
-const product2: Product = {
+const product2: ProductType = {
   id: 2,
   name: "Product 2",
   price: 50,
@@ -21,7 +21,7 @@ const product2: Product = {
   imageUrl: productImages.productImg2,
 };
 
-const product3: Product = {
+const product3: ProductType = {
   id: 3,
   name: "Product 3",
   price: 200,
@@ -30,7 +30,7 @@ const product3: Product = {
   imageUrl: productImages.productImg1,
 };
 
-const product4: Product = {
+const product4: ProductType = {
   id: 4,
   name: "Product 4",
   price: 200,
@@ -42,7 +42,7 @@ const product4: Product = {
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur id possimus.",
 };
 
-export const sliderProduct: Product = {
+export const sliderProduct: ProductType = {
   id: 5,
   name: "Product Product Product Product Product Product",
   price: 299,
@@ -52,7 +52,7 @@ export const sliderProduct: Product = {
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
 };
 
-export const smallBannerProduct1: Product = {
+export const smallBannerProduct1: ProductType = {
   id: 6,
   name: "Product Product Product Product Product Product",
   price: 299,
@@ -63,7 +63,7 @@ export const smallBannerProduct1: Product = {
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
 };
 
-export const smallBannerProduct2: Product = {
+export const smallBannerProduct2: ProductType = {
   id: 7,
   name: "Product Product Product Product Product Product",
   price: 299,
@@ -73,11 +73,11 @@ export const smallBannerProduct2: Product = {
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
 };
 
-export const cartProducts: Product[] = [product1, product2, product3];
+export const cartProducts: ProductType[] = [product1, product2, product3];
 
-export const wishlistProducts: Product[] = [product2, product3];
+export const wishlistProducts: ProductType[] = [product2, product3];
 
-export const products: Product[] = [product1, product2, product3];
+export const products: ProductType[] = [product1, product2, product3];
 
 const subcategories: SubCategory[] = [
   {

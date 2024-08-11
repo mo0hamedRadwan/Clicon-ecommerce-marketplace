@@ -1,12 +1,12 @@
 import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { twMerge } from "tailwind-merge";
-import { Product } from "../types";
+import { ProductType } from "../types";
 import LinkAsButton from "./LinkAsButton";
 import { variantStyle } from "./styles/bannerStyles";
 
 type SmallBannerPropsType = {
-  product: Product;
+  product: ProductType;
   variant?: "light" | "dark";
   center?: boolean;
   showPrice?: boolean;

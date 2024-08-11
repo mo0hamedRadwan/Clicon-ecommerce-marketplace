@@ -4,12 +4,13 @@ export type SelectOption = {
   value: string;
 };
 
-export type Product = {
+export type ProductType = {
   id: number;
   name: string;
   price: number;
   oldPrice?: number;
   rating?: number;
+  numOfReviews?: number;
   imageUrl?: string;
   bannerImageUrl?: string;
   shortDescription?: string;
@@ -24,9 +25,9 @@ export type Product = {
 export type SubCategory = {
   id: number;
   name: string;
-  products: Product[];
+  products: ProductType[];
   slug: string;
-  topProduct: Product;
+  topProduct: ProductType;
 };
 
 export type Category = {
@@ -34,5 +35,5 @@ export type Category = {
   name: string;
   subCategories: SubCategory[];
   slug: string;
-  topProducts: Product[];
+  topProducts: ProductType[];
 };

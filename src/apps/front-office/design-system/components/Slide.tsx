@@ -2,11 +2,11 @@ import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { sliderProduct } from "shared/data/testData";
 import { twMerge } from "tailwind-merge";
-import { Product } from "../types";
+import { ProductType } from "../types";
 import LinkAsButton from "./LinkAsButton";
 
 type SlidePropsType = {
-  product?: Product; // product is optional is temporary
+  product?: ProductType; // product is optional is temporary
 };
 
 export default function Slide({ product = sliderProduct }: SlidePropsType) {
