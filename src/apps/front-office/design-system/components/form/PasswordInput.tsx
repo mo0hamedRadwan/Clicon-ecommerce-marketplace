@@ -16,6 +16,7 @@ import { twMerge } from "tailwind-merge";
 type PasswordInputPropsType = FormControlProps & {
   className?: string;
   children?: any;
+  showLabel: boolean;
 };
 
 export default function PasswordInput(props: PasswordInputPropsType) {
@@ -25,7 +26,9 @@ export default function PasswordInput(props: PasswordInputPropsType) {
   return (
     <div className="flex flex-col gap-y-2">
       <div className="space-between-center">
-        <label htmlFor="password-id">{trans("password")}</label>
+        {props.showLabel && (
+          <label htmlFor="password-id">{trans("password")}</label>
+        )}
         {props.children}
       </div>
       <div className="relative">

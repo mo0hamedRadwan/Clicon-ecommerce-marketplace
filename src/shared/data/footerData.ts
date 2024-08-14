@@ -1,3 +1,11 @@
+import logo2 from "assets/images/logos/amazon.png";
+import logo1 from "assets/images/logos/google.png";
+import logo3 from "assets/images/logos/philips.png";
+import logo4 from "assets/images/logos/samsung.png";
+import logo5 from "assets/images/logos/toshiba.png";
+
+export const companyLogos = [logo1, logo2, logo3, logo4, logo5];
+
 export const topCategories = [
   { name: "Computer & Laptop", link: "#" },
   { name: "SmartPhone", link: "#" },

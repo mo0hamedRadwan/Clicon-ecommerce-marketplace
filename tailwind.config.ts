@@ -49,6 +49,9 @@ export default {
         green: {
           650: "#2db224",
         },
+        slate: {
+          350: "#BBD0DE",
+        },
       },
     },
   },
