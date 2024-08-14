@@ -4,7 +4,7 @@ import {
   SubCategory,
 } from "apps/front-office/design-system/types";
 import { ProductType } from "./../../apps/front-office/design-system/types/index";
-import { productImages } from "./images";
+import { categoryImages, productImages } from "./images";
 
 const product1: ProductType = {
   id: 1,
@@ -257,6 +257,7 @@ export const categories: Category[] = [
   {
     id: 1,
     name: "Computer & Laptop",
+    image: categoryImages.catImg1,
     subCategories: subcategories,
     slug: "computer-and-laptop",
     topProducts: products,
@@ -264,6 +265,7 @@ export const categories: Category[] = [
   {
     id: 2,
     name: "Computer Accessories",
+    image: categoryImages.catImg2,
     subCategories: subcategories,
     slug: "computer-accessories",
     topProducts: products,
@@ -271,6 +273,7 @@ export const categories: Category[] = [
   {
     id: 3,
     name: "SmartPhone",
+    image: categoryImages.catImg3,
     subCategories: subcategories,
     slug: "smartphone",
     topProducts: products,
@@ -278,6 +281,7 @@ export const categories: Category[] = [
   {
     id: 4,
     name: "Headphone",
+    image: categoryImages.catImg4,
     subCategories: subcategories,
     slug: "headphone",
     topProducts: products,
@@ -285,6 +289,7 @@ export const categories: Category[] = [
   {
     id: 5,
     name: "Mobile Accessories",
+    image: categoryImages.catImg5,
     subCategories: subcategories,
     slug: "mobile-accessories",
     topProducts: products,
@@ -292,6 +297,7 @@ export const categories: Category[] = [
   {
     id: 6,
     name: "Gaming Console",
+    image: categoryImages.catImg6,
     subCategories: subcategories,
     slug: "gaming-console",
     topProducts: products,
@@ -299,12 +305,14 @@ export const categories: Category[] = [
   {
     id: 7,
     name: "Camera & Photo",
+    image: categoryImages.catImg7,
     subCategories: subcategories,
     slug: "camera-and-photo",
     topProducts: products,
   },
   {
     id: 8,
+    image: categoryImages.catImg1,
     name: "TV & Homes Appliances",
     subCategories: subcategories,
     slug: "tv-and-homes-appliances",
@@ -313,6 +321,7 @@ export const categories: Category[] = [
   {
     id: 9,
     name: "Watchs & Accessories",
+    image: categoryImages.catImg2,
     subCategories: subcategories,
     slug: "watchs-and-accessories",
     topProducts: products,
@@ -320,6 +329,7 @@ export const categories: Category[] = [
   {
     id: 10,
     name: "GPS & Navigation",
+    image: categoryImages.catImg3,
     subCategories: subcategories,
     slug: "gps-and-navigation",
     topProducts: products,
@@ -327,6 +337,7 @@ export const categories: Category[] = [
   {
     id: 11,
     name: "Warable Technology",
+    image: categoryImages.catImg4,
     subCategories: subcategories,
     slug: "warable-technology",
     topProducts: products,

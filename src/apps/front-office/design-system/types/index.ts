@@ -42,6 +42,7 @@ export type SubCategory = {
 export type Category = {
   id: number;
   name: string;
+  image?: string;
   subCategories: SubCategory[];
   slug: string;
   topProducts: ProductType[];
