@@ -26,7 +26,7 @@ export default function LargeBanner({
           <div className="relative">
             <img src={product.imageUrl} alt="" />
             <p className="absolute top-5 left-5 w-24 h-24 bg-orange-250 rounded-full flex-center text-xl border-4 border-white">
-              S{product.price}
+              ${product.price}
             </p>
           </div>
         </div>
