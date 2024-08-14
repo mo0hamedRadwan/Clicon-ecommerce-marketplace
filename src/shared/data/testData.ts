@@ -1,4 +1,8 @@
-import { Category, SubCategory } from "apps/front-office/design-system/types";
+import {
+  Category,
+  DealsProductType,
+  SubCategory,
+} from "apps/front-office/design-system/types";
 import { ProductType } from "./../../apps/front-office/design-system/types/index";
 import { productImages } from "./images";
 
@@ -81,6 +85,8 @@ export const smallBannerProduct2: ProductType = {
 export const RealProduct: ProductType = {
   id: 100,
   name: "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
+  shortDescription:
+    "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
   price: 1699,
   oldPrice: 1999,
   category: "Electronics Devices",
@@ -113,11 +119,66 @@ export const RealProduct: ProductType = {
   ],
 };
 
+export const BestProduct: ProductType = {
+  id: 100,
+  name: "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
+  shortDescription:
+    "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
+  price: 1699,
+  oldPrice: 1999,
+  category: "Electronics Devices",
+  imageUrl: productImages.pMainImage2,
+  images: [
+    productImages.pMainImage2,
+    productImages.pImage1,
+    productImages.pImage2,
+    productImages.pImage3,
+    productImages.pImage4,
+    productImages.pImage5,
+    productImages.pImage6,
+  ],
+  badges: ["20% off", "hot"],
+  inStock: true,
+  sku: "A264671",
+  brand: "Apple",
+  colors: ["", ""],
+  sizes: ["13 inch", "15 inch", "17 inch", "21 inch"],
+  memories: [
+    "8GB unified memory",
+    "16GB unified memory",
+    "32GB unified memory",
+  ],
+  storages: [
+    "128GB SSD Storage",
+    "256GB SSD Storage",
+    "512GB SSD Storage",
+    "1TB SSD Storage",
+  ],
+};
+
 export const cartProducts: ProductType[] = [product1, product2, product3];
 
 export const wishlistProducts: ProductType[] = [product2, product3];
 
 export const products: ProductType[] = [product1, product2, product3];
+
+export const bestProducts: ProductType[] = [
+  BestProduct,
+  RealProduct,
+  RealProduct,
+  RealProduct,
+  RealProduct,
+  RealProduct,
+  RealProduct,
+  RealProduct,
+  RealProduct,
+  RealProduct,
+];
+
+export const bestDeals: DealsProductType = {
+  deadline: new Date(2025, 0, 0),
+  products: bestProducts,
+};
 
 const subcategories: SubCategory[] = [
   {

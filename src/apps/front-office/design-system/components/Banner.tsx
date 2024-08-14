@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
-import LinkAsButton from "./LinkAsButton";
+import LinkAsButton from "./ui/LinkAsButton";
 
 type BannerPropsType = {
   product: ProductType;

@@ -3,7 +3,7 @@ import FeatureItem from "./FeatureItem";
 
 export default function Features() {
   return (
-    <ul className="container hidden sm:space-between flex-wrap p-5 rounded shadow-2">
+    <ul className="container hidden sm:space-between flex-wrap py-5 rounded shadow-2">
       {features.map((feature, index) => (
         <li key={feature.title} className="center-y p-5 gap-x-5 text-black">
           {index > 0 && (

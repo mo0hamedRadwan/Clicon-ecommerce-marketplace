@@ -12,6 +12,7 @@ import pImage4 from "assets/images/productImg/04.png";
 import pImage5 from "assets/images/productImg/05.png";
 import pImage6 from "assets/images/productImg/06.png";
 import pMainImage from "assets/images/productImg/mainImage.png";
+import pMainImage2 from "assets/images/productImg/mainImage2.png";
 
 export const productImages = {
   productImg1,
@@ -21,6 +22,7 @@ export const productImages = {
   productImg5,
   productImg6,
   pMainImage,
+  pMainImage2,
   pImage1,
   pImage2,
   pImage3,

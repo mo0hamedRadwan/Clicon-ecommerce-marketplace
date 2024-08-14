@@ -46,3 +46,8 @@ export type Category = {
   slug: string;
   topProducts: ProductType[];
 };
+
+export type DealsProductType = {
+  deadline: Date;
+  products: ProductType[];
+};

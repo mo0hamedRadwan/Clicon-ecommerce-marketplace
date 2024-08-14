@@ -2,9 +2,9 @@ import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
-import LinkAsButton from "./LinkAsButton";
 import { variantStyle } from "./styles/bannerStyles";
 import Badge from "./ui/Badge";
+import LinkAsButton from "./ui/LinkAsButton";
 
 type SmallBannerPropsType = {
   product: ProductType;

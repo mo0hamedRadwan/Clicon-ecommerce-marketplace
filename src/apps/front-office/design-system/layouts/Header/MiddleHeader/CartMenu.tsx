@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import LinkAsButton from "apps/front-office/design-system/components/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import LinkAsButton from "components/ui/LinkAsButton";
 import { cartProducts } from "shared/data/testData";
 
 export default function CartMenu() {

@@ -1,11 +1,11 @@
 import { getCurrentLocaleCode, trans } from "@mongez/localization";
 import { Link, changeLocaleCode } from "@mongez/react-router";
-import Select from "apps/front-office/design-system/components/form/Select";
 import { SelectOption } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { localeCodesList } from "apps/front-office/utils/localization";
 import arabicFlag from "assets/images/flags/sa.png";
 import englishFlag from "assets/images/flags/uke.png";
+import Select from "components/form/Select";
 import { socialMediaIcons } from "shared/data/headerData";
 
 export default function TopHeader() {

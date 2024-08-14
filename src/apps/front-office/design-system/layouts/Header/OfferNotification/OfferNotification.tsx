@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
-import LinkAsButton from "apps/front-office/design-system/components/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import LinkAsButton from "components/ui/LinkAsButton";
 import { useState } from "react";
 
 type OfferNotificationPropsType = {

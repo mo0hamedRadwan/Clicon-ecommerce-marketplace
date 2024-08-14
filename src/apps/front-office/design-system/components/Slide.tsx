@@ -3,7 +3,7 @@ import { isRTL } from "apps/front-office/utils/helpers";
 import { sliderProduct } from "shared/data/testData";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
-import LinkAsButton from "./LinkAsButton";
+import LinkAsButton from "./ui/LinkAsButton";
 
 type SlidePropsType = {
   product?: ProductType; // product is optional is temporary

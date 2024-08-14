@@ -1,6 +1,6 @@
 import { Link } from "@mongez/react-router";
 import { twMerge } from "tailwind-merge";
-import { sizeClass, variantClass } from "./styles/buttonStyles";
+import { sizeClass, variantClass } from "../styles/buttonStyles";
 
 export type ButtonPropsType = {
   variant?: "text" | "contained" | "outlined";

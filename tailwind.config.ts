@@ -40,6 +40,7 @@ export default {
           550: "#EE5858",
         },
         orange: {
+          150: "#FFE7D6",
           450: "#FA8232",
         },
         zinc: {

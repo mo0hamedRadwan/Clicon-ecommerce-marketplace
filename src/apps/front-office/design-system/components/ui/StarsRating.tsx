@@ -4,18 +4,20 @@ type StarsRatingPropsType = {
   rating?: number;
   numOfReviews?: number;
   longRating?: boolean;
+  starClassName?: string;
 };
 
 export default function StarsRating({
   rating = 3.5,
   numOfReviews = 0,
   longRating = false,
+  starClassName,
 }: StarsRatingPropsType) {
   return (
     <div className="center-y gap-x-2">
       <ul className="center-y">
         {[1, 2, 3, 4, 5].map((star, idx) => (
-          <li key={idx} className="text-orange-450">
+          <li key={idx} className={`${starClassName}`}>
             {star <= rating ? (
               <i className="bx bxs-star"></i>
             ) : star === Math.ceil(rating) ? (

@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
-import LinkAsButton from "apps/front-office/design-system/components/LinkAsButton";
-import Button from "apps/front-office/design-system/components/form/Button";
-import EmailInput from "apps/front-office/design-system/components/form/EmailInput";
-import PasswordInput from "apps/front-office/design-system/components/form/PasswordInput";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import Button from "components/form/Button";
+import EmailInput from "components/form/EmailInput";
+import PasswordInput from "components/form/PasswordInput";
+import LinkAsButton from "components/ui/LinkAsButton";
 
 export default function AccountMenu() {
   return (

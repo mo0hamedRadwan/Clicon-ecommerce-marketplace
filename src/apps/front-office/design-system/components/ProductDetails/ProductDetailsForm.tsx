@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ProductType, SelectOption } from "../../types";
 import Button from "../form/Button";
 import Select from "../form/Select";
-import LinkAsButton from "../LinkAsButton";
+import LinkAsButton from "../ui/LinkAsButton";
 import QuantityInput from "../ui/QuantityInput";
 
 type ProductDetailsFormPropsType = {

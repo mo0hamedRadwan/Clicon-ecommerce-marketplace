@@ -1,11 +1,11 @@
 import { trans } from "@mongez/localization";
-import Banner from "apps/front-office/design-system/components/Banner";
-import ColumnProducts from "apps/front-office/design-system/components/ColumnProducts";
 import {
   ProductType,
   SubCategory,
 } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
+import Banner from "components/Banner";
+import ColumnProducts from "components/ColumnProducts";
 import { useState } from "react";
 
 type SubCategoryMenuPropsType = {
