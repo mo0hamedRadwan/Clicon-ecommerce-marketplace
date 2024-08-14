@@ -17,7 +17,9 @@ export default function FeatureItem({
         <i className={`bx ${icon}`}></i>
       </span>
       <div className="flex flex-col gap-y-2">
-        <span className="font-semibold">{trans(title).toUpperCase()}</span>
+        <span className="text-base md:text-xl font-semibold">
+          {trans(title).toUpperCase()}
+        </span>
         <span className="text-sm">{trans(subtitle)}</span>
       </div>
     </div>
