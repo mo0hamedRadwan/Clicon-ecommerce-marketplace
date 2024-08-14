@@ -100,7 +100,7 @@ export const RealProduct: ProductType = {
     productImages.pImage5,
     productImages.pImage6,
   ],
-  badges: ["20% off", "hot"],
+  badges: ["save up to 200$", "hot"],
   inStock: true,
   sku: "A264671",
   brand: "Apple",

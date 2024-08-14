@@ -41,7 +41,7 @@ export default function ShopCategories({
           className="mySwiper w-full h-full">
           {categories.map((category, index) => (
             <SwiperSlide key={index}>
-              <div className="p-5 w-60 h-60 cursor-pointer border">
+              <div className="p-5 w-60 h-60 cursor-pointer border hover:shadow-2">
                 <Link
                   to={"category/:id"}
                   className="flex-center flex-col gap-y-5">
@@ -54,12 +54,12 @@ export default function ShopCategories({
         </Swiper>
         <div className="">
           <button
-            className="z-20 absolute top-20 -left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-20 left-0 xl:-left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slidePrev()}>
             <i className="bx bx-left-arrow-alt"></i>
           </button>
           <button
-            className="z-20 absolute top-20 -right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-20 right-0 xl:-right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slideNext()}>
             <i className="bx bx-right-arrow-alt"></i>
           </button>

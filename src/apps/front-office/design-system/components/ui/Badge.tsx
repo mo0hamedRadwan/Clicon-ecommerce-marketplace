@@ -4,9 +4,10 @@ import { badgeStyles } from "../styles/badgeStyles";
 
 type BadgeType = {
   title: string;
+  className?: string;
 };
 
-export default function Badge({ title }: BadgeType) {
+export default function Badge({ title, className }: BadgeType) {
   return (
     <p
       className={twMerge(
@@ -14,6 +15,7 @@ export default function Badge({ title }: BadgeType) {
         Object.keys(badgeStyles).map(
           key => title.includes(key) && badgeStyles[key],
         ),
+        className,
       )}>
       {title.split(" ").map(key => trans(key).toUpperCase() + " ")}
     </p>
