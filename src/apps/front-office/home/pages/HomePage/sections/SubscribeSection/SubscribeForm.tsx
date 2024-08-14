@@ -8,7 +8,7 @@ export default function SubscribeForm() {
   return (
     <Form className="relative">
       <EmailInput
-        className="w-[550px] p-5 rounded"
+        className="w-[400px] md:w-[550px] p-5 rounded"
         placeholder={trans("email")}
       />
       <Button

@@ -5,8 +5,10 @@ import SubscribeForm from "./SubscribeForm";
 export default function SubscribeSection() {
   return (
     <div className="py-20 bg-sky-750 text-white ">
-      <div className="container w-[550px] flex-center flex-col gap-y-5 text-center">
-        <h3 className="text-3xl">{trans("subscribeToOurNewsletter")}</h3>
+      <div className="container w-[400px] md:w-[550px] flex-center flex-col gap-y-5 text-center">
+        <h3 className="text-2xl md:text-3xl">
+          {trans("subscribeToOurNewsletter")}
+        </h3>
         <p className="text-slate-350">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
           perferendis ab obcaecati repellendus maiores debitis doloribus libero

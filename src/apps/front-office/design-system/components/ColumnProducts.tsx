@@ -15,7 +15,7 @@ export default function ColumnProducts({
   return (
     <div className={twMerge("", className)}>
       <h3 className="text-lg font-semibold">{title.toUpperCase()}</h3>
-      <ul className="flex flex-col gap-y-3 mt-3">
+      <ul className="w-full flex flex-col gap-y-3 mt-3">
         {products.map(product => (
           <li
             key={product.id}
