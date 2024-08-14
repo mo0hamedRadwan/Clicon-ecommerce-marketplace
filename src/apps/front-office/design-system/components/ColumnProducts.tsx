@@ -1,9 +1,9 @@
 import { twMerge } from "tailwind-merge";
-import { Product } from "../types";
+import { ProductType } from "../types";
 
 type ColumnProductsPropsType = {
   title: string;
-  products: Product[];
+  products: ProductType[];
   className?: string;
 };
 

@@ -2,6 +2,7 @@ import { getCurrentLocaleCode, trans } from "@mongez/localization";
 import { Link, changeLocaleCode } from "@mongez/react-router";
 import Select from "apps/front-office/design-system/components/form/Select";
 import { SelectOption } from "apps/front-office/design-system/types";
+import { isRTL } from "apps/front-office/utils/helpers";
 import { localeCodesList } from "apps/front-office/utils/localization";
 import arabicFlag from "assets/images/flags/sa.png";
 import englishFlag from "assets/images/flags/uke.png";
@@ -34,14 +35,17 @@ export default function TopHeader() {
             ))}
           </ul>
           <div className="w-[1px] h-6 bg-white bg-opacity-15"></div>
-          <Select
-            triggerValue={localeCodesList[getCurrentLocaleCode()].name}
-            options={languageOptions}
-            onValueChange={(value: string) =>
-              getCurrentLocaleCode() !== value && changeLocaleCode(value)
-            }
-            itemClassName="bg-sky-750 text-white"
-          />
+          <div className={`${isRTL() ? "mr-10" : "ml-10"}`}>
+            <Select
+              triggerValue={localeCodesList[getCurrentLocaleCode()].name}
+              options={languageOptions}
+              onValueChange={(value: string) =>
+                getCurrentLocaleCode() !== value && changeLocaleCode(value)
+              }
+              className="w-[100px]"
+              itemClassName="bg-sky-750 text-white  hover:bg-yellow-450 hover:text-white"
+            />
+          </div>
         </div>
       </div>
     </div>

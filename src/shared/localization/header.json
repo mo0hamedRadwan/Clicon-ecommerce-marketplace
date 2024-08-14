@@ -12,7 +12,7 @@
     "ar": "حتى"
   },
   "off": {
-    "en": "off",
+    "en": "OFF",
     "ar": "عروض"
   },
   "shop": {
@@ -110,5 +110,45 @@
   "forgetPassword": {
     "en": "Forget Password?",
     "ar": "نسيت كلمة المرور"
+  },
+  "hot": {
+    "en": "Hot",
+    "ar": "مميز"
+  },
+  "sku": {
+    "en": "SKU",
+    "ar": "رقم المنتج"
+  },
+  "availability": {
+    "en": "Availability",
+    "ar": "متوفر"
+  },
+  "brand": {
+    "en": "Brand",
+    "ar": "الماركة"
+  },
+  "size": {
+    "en": "Size",
+    "ar": "الحجم"
+  },
+  "memory": {
+    "en": "Memory",
+    "ar": "الذاكرة"
+  },
+  "storage": {
+    "en": "Storage",
+    "ar": "مساحة تخزين"
+  },
+  "buy": {
+    "en": "Buy",
+    "ar": "شراء"
+  },
+  "share": {
+    "en": "Share",
+    "ar": "شارك"
+  },
+  "guaranteeSafe": {
+    "en": "Guarantee Safe",
+    "ar": "تضمن أمان"
   }
 }

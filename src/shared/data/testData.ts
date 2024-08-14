@@ -71,6 +71,7 @@ export const smallBannerProduct2: ProductType = {
   name: "Product Product Product Product Product Product",
   price: 299,
   imageUrl: productImages.productImg6,
+  badges: ["20% off", "hot"],
   caption: "top product in website caption caption caption",
   shortDescription:
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
@@ -85,6 +86,7 @@ export const RealProduct: ProductType = {
   category: "Electronics Devices",
   imageUrl: productImages.pMainImage,
   images: [
+    productImages.pMainImage,
     productImages.pImage1,
     productImages.pImage2,
     productImages.pImage3,
@@ -92,6 +94,7 @@ export const RealProduct: ProductType = {
     productImages.pImage5,
     productImages.pImage6,
   ],
+  badges: ["20% off", "hot"],
   inStock: true,
   sku: "A264671",
   brand: "Apple",

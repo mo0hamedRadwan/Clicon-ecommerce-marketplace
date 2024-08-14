@@ -14,6 +14,7 @@ export type ProductType = {
   imageUrl?: string;
   bannerImageUrl?: string;
   images?: string[];
+  badges?: string[];
   shortDescription?: string;
   description?: string;
   caption?: string;

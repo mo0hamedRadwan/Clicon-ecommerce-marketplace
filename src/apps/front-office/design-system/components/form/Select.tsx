@@ -33,9 +33,9 @@ export default function Select({
   };
 
   return (
-    <div className={`relative ${isRTL() ? "mr-10" : "ml-10"}`} ref={menuRef}>
+    <div className="relative" ref={menuRef}>
       <button
-        className={twMerge("center-y", className)}
+        className={twMerge("space-between-center p-2", className)}
         onClick={() => setOpenMenu(!openMenu)}>
         <span>{selectedValue}</span>
         <span>
@@ -48,17 +48,17 @@ export default function Select({
       </button>
       {openMenu && (
         <div
-          className={`z-[999] absolute top-10 ${isRTL() ? "left-0" : "right-0"}`}>
+          className={`z-[999] w-full absolute top-10 ${isRTL() ? "right-0" : "left-0"}`}>
           <ul
             className={twMerge(
-              "min-w-[100px] max-w-[200px] max-h-[200px] overflow-y-auto bg-white rounded shadow-2",
+              "w-full max-h-[200px] overflow-x-hidden overflow-y-auto bg-white rounded shadow-2",
               menuClassName,
             )}>
             {options.map(option => (
               <li
                 key={option.value}
                 className={twMerge(
-                  "text-black py-1 px-2 center-y gap-x-2 cursor-pointer hover:bg-yellow-450 hover:text-white duration-200 break-words ",
+                  "text-black py-1 px-2 center-y gap-x-2 cursor-pointer duration-200 break-words",
                   itemClassName,
                 )}
                 onClick={() => handleValueChange(option.value, option.label)}>

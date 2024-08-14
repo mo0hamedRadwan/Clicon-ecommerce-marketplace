@@ -4,6 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
 import LinkAsButton from "./LinkAsButton";
 import { variantStyle } from "./styles/bannerStyles";
+import Badge from "./ui/Badge";
 
 type SmallBannerPropsType = {
   product: ProductType;
@@ -64,15 +65,14 @@ export default function SmallBanner({
       </div>
       <div className="relative">
         <img src={product.imageUrl} alt="product image" className="h-full" />
-        {showBadge && product.discount && (
-          <div className="absolute -top-6 right-6">
-            <p
-              className={twMerge(
-                "py-2 px-3 font-semibold rounded-sm",
-                `${variantStyle[variant].badgeColor} ${variantStyle[variant].badgeTextColor}`,
-              )}>
-              {product.discount}% {trans("off").toUpperCase()}
-            </p>
+        {showBadge && product.badges && (
+          <div
+            className={twMerge(
+              "absolute -top-5 flex items-start",
+              direction === "left" ? "right-5" : "right-0",
+            )}>
+            {/* Small Banner with one badge */}
+            <Badge title={product.badges[0]} />
           </div>
         )}
       </div>
