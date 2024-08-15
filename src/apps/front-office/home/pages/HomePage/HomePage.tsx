@@ -1,4 +1,5 @@
 import { bestDeals, categories, RealProduct } from "shared/data/testData";
+import Banners from "./sections/Banners";
 import BestDeals from "./sections/BestDeals";
 import Features from "./sections/Features";
 import HeroSection from "./sections/HeroSection";
@@ -14,7 +15,8 @@ export default function HomePage() {
       <Features />
       <BestDeals bestDeals={bestDeals} />
       <ShopCategories categories={categories} />
-      <div className="h-[2000px]">Home Page</div>
+      {/* <div className="h-[2000px]">Home Page</div> */}
+      <Banners />
       <LargeBanner product={RealProduct} />
       <TopProducts />
       {/* <LatestNews /> */}

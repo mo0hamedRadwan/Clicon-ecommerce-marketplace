@@ -89,6 +89,7 @@ export const RealProduct: ProductType = {
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",
   price: 1699,
   oldPrice: 1999,
+  discount: 500,
   category: "Electronics Devices",
   imageUrl: productImages.pMainImage,
   images: [
