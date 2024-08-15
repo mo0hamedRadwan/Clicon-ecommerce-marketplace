@@ -22,7 +22,7 @@ export default function ShopCategories({
   return (
     <div className="container py-10 flex flex-col items-center gap-y-10">
       <h2 className="text-3xl font-semibold">{`${trans("shop")} ${trans("categories")}`}</h2>
-      <div className="relative w-full h-60">
+      <div className="relative w-[calc(100%+100px)] h-60">
         <Swiper
           onSwiper={swiper => {
             swiperRef.current = swiper;
@@ -36,7 +36,7 @@ export default function ShopCategories({
                   ? 3
                   : 2
           }
-          spaceBetween={40}
+          spaceBetween={20}
           loop={true}
           className="mySwiper w-full h-full">
           {categories.map((category, index) => (
@@ -46,7 +46,9 @@ export default function ShopCategories({
                   to={"category/:id"}
                   className="flex-center flex-col gap-y-5">
                   <img src={category.image} alt="" className="w-36 h-36" />
-                  <h3 className="text-lg font-semibold">{category.name}</h3>
+                  <h3 className="text-lg font-semibold text-center">
+                    {category.name}
+                  </h3>
                 </Link>
               </div>
             </SwiperSlide>
@@ -54,12 +56,12 @@ export default function ShopCategories({
         </Swiper>
         <div className="">
           <button
-            className="z-20 absolute top-20 left-0 xl:-left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-20 left-6 2xl:-left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slidePrev()}>
             <i className="bx bx-left-arrow-alt"></i>
           </button>
           <button
-            className="z-20 absolute top-20 right-0 xl:-right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-20 right-6 2xl:-right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slideNext()}>
             <i className="bx bx-right-arrow-alt"></i>
           </button>

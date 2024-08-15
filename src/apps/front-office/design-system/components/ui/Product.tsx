@@ -87,7 +87,7 @@ export default function Product({
       )}
 
       {viewProduct && (
-        <div className="z-50 absolute top-0 left-0 min-w-full min-h-full flex-center bg-[rgba(0,0,0,0.8)] border border-red-400">
+        <div className="z-50 absolute top-0 left-0 min-w-full min-h-full flex-center bg-[rgba(0,0,0,0.8)]">
           <QuickView product={product} setCloseViewProduct={setViewProduct} />
         </div>
       )}

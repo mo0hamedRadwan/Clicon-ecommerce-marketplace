@@ -25,7 +25,7 @@ export default function AccountMenu() {
       {/* Login User */}
       <Button
         onClick={() => console.log("login")}
-        endIcon="bx-right-arrow-alt"
+        endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
         className="w-full tracking-widest">
         {trans("login").toUpperCase()}
       </Button>

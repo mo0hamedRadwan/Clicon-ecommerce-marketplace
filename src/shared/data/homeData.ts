@@ -24,8 +24,8 @@ export const features = [
 ];
 
 export const topProducts = [
-  { title: "flash sale today", products: products },
-  { title: "best sellers", products: products },
-  { title: "top rated", products: products },
-  { title: "new arrival", products: products },
+  { title: "flashSalesToday", products: products },
+  { title: "bestSellers", products: products },
+  { title: "topRated", products: products },
+  { title: "newArrival", products: products },
 ];

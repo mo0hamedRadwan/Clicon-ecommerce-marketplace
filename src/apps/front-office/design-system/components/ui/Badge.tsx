@@ -17,7 +17,10 @@ export default function Badge({ title, className }: BadgeType) {
         ),
         className,
       )}>
-      {title.split(" ").map(key => trans(key).toUpperCase() + " ")}
+      {title
+        .replace("up to", "upTo")
+        .split(" ")
+        .map(key => trans(key).toUpperCase() + " ")}
     </p>
   );
 }

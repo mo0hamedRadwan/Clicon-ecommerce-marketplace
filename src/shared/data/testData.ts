@@ -6,7 +6,7 @@ import {
 import { ProductType } from "./../../apps/front-office/design-system/types/index";
 import { categoryImages, productImages } from "./images";
 
-const product1: ProductType = {
+export const product1: ProductType = {
   id: 1,
   name: "Product 1",
   price: 100,
@@ -15,7 +15,7 @@ const product1: ProductType = {
   category: "category",
 };
 
-const product2: ProductType = {
+export const product2: ProductType = {
   id: 2,
   name: "Product 2",
   price: 50,
@@ -24,7 +24,7 @@ const product2: ProductType = {
   category: "category",
 };
 
-const product3: ProductType = {
+export const product3: ProductType = {
   id: 3,
   name: "Product 3",
   price: 200,
@@ -34,7 +34,7 @@ const product3: ProductType = {
   category: "category",
 };
 
-const product4: ProductType = {
+export const product4: ProductType = {
   id: 4,
   name: "Product 4",
   price: 200,

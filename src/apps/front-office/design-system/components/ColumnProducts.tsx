@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
 
@@ -14,7 +15,7 @@ export default function ColumnProducts({
 }: ColumnProductsPropsType) {
   return (
     <div className={twMerge("", className)}>
-      <h3 className="text-lg font-semibold">{title.toUpperCase()}</h3>
+      <h3 className="text-lg font-semibold">{trans(title).toUpperCase()}</h3>
       <ul className="w-full flex flex-col gap-y-3 mt-3">
         {products.map(product => (
           <li

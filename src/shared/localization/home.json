@@ -58,5 +58,49 @@
   "endIn": {
     "en": "Ends in",
     "ar": "تنتهي بعد"
+  },
+  "save": {
+    "en": "Save",
+    "ar": "خصم"
+  },
+  "for": {
+    "en": "For",
+    "ar": "على"
+  },
+  "electronicsProducts": {
+    "en": "Electronics Products",
+    "ar": "الإجهزة إلالكترونية"
+  },
+  "offers": {
+    "en": "Offers",
+    "ar": "العروض"
+  },
+  "introducting": {
+    "en": "Introducing",
+    "ar": "معروض"
+  },
+  "summerSales": {
+    "en": "Summer sales",
+    "ar": "مبيعات الصيف"
+  },
+  "only": {
+    "en": "Only",
+    "ar": "فقط"
+  },
+  "newArrival": {
+    "en": "New Arrival",
+    "ar": "وصل حديثا"
+  },
+  "topRated": {
+    "en": "Top Rated",
+    "ar": "الأعلى تقييم"
+  },
+  "bestSellers": {
+    "en": "Bestsellers",
+    "ar": "الأكثر مبيعا"
+  },
+  "flashSalesToday": {
+    "en": "Flash Sales Today",
+    "ar": "التسوق السريع اليوم"
   }
 }

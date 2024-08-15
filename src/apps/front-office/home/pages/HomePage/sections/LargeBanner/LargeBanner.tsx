@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { ProductType } from "apps/front-office/design-system/types";
+import { isRTL } from "apps/front-office/utils/helpers";
 import Badge from "components/ui/Badge";
 import { RealProduct } from "shared/data/testData";
 
@@ -19,7 +20,9 @@ export default function LargeBanner({
             {product.badges && <Badge title={product.badges[0]} />}
             <h2 className="text-4xl font-bold">{product.category}</h2>
             <h3>{product.name}</h3>
-            <LinkAsButton href="/product/:id">
+            <LinkAsButton
+              href="/product/:id"
+              endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}>
               {`${trans("shop")} ${trans("now")}`.toUpperCase()}
             </LinkAsButton>
           </div>

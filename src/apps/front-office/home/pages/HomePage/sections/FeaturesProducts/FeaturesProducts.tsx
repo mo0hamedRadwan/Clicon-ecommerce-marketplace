@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
+import { isRTL } from "apps/front-office/utils/helpers";
 import TabsWithBanner from "components/TabsWithBanner";
 import { homeImages } from "shared/data/images";
 
@@ -13,7 +14,7 @@ export default function FeaturesProducts() {
             {`${trans("computer")} & ${trans("accessories")}`.toUpperCase()}
           </h2>
           <h3 className="text-4xl font-semibold">{`32% ${trans("discount")}`}</h3>
-          <p className="mt-5">{`${trans("for")} ${trans("all")} ${trans("electonics")} ${trans("products")}`}</p>
+          <p className="mt-5">{`${trans("for")} ${trans("all")} ${trans("electronicsProducts")}`}</p>
           <p className="my-5 center-y gap-x-2 text-lg">
             <span className="text-sm">{`${trans("offers")} ${trans("endIn")}`}</span>
             <span className="p-2 bg-white font-semibold">{`${trans("endsOf")} ${"chirstmas"}`}</span>
@@ -21,9 +22,9 @@ export default function FeaturesProducts() {
           <LinkAsButton
             size="lg"
             href="/category/:id"
-            endIcon="bx-right-arrow-alt"
+            endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
             className="inline-block"
-            iconClassName="ml-3 text-xl">{`${trans("show")} ${trans("now")}`}</LinkAsButton>
+            iconClassName="ml-3 text-xl">{`${trans("shop")} ${trans("now")}`}</LinkAsButton>
         </div>
         <div>
           <img src={homeImages.productsImage} alt="" />

@@ -61,6 +61,7 @@ export default function SubCategoryMenu({
                 />
                 <Banner
                   className="w-[310px] hidden xl:block"
+                  showTitle
                   product={
                     selectedSubCategoryId < subcategories.length
                       ? subcategories[selectedSubCategoryId].topProduct!

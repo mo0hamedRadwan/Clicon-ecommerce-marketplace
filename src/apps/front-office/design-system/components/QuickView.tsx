@@ -13,7 +13,7 @@ export default function QuickView({
   setCloseViewProduct,
 }: QuickViewPropsType) {
   return (
-    <div className="relative border-2 border-blue-500 ">
+    <div className="relative">
       <button
         onClick={() => setCloseViewProduct(false)}
         className={twMerge(

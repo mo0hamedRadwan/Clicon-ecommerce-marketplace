@@ -28,7 +28,7 @@ export default function SmallBanner({
   return (
     <div
       className={twMerge(
-        "w-[425px] h-[230px] space-between gap-x-3 rounded-md pt-10 shadow-1",
+        "w-[425px] h-[230px] space-between gap-x-3 rounded-md pt-10 shadow-1 group",
         direction === "left" ? "pr-0 pl-10" : "pr-10 pl-0",
         isRTL() ? "pl-0 pr-10" : "pr-0 pl-10",
         direction === "right" ? "flex-row-reverse" : "",
@@ -58,13 +58,21 @@ export default function SmallBanner({
           </p>
         )}
         <div className="mt-1 flex">
-          <LinkAsButton href="/product/:id" size="md" className="px-6">
+          <LinkAsButton
+            href="/product/:id"
+            size="md"
+            endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
+            className="px-6">
             {`${trans("shop")} ${trans("now")}`.toUpperCase()}
           </LinkAsButton>
         </div>
       </div>
-      <div className="relative">
-        <img src={product.imageUrl} alt="product image" className="h-full" />
+      <div className="relative overflow-hidden">
+        <img
+          src={product.imageUrl}
+          alt="product image"
+          className="h-full group-hover:scale-110 duration-200"
+        />
         {showBadge && product.badges && (
           <div
             className={twMerge(

@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { DealsProductType } from "apps/front-office/design-system/types";
+import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Product from "components/ui/Product";
 import BestDealsGrid from "./BestDealsGrid";
@@ -24,6 +25,7 @@ export default function BestDeals({ bestDeals }: BestDealsPropsType) {
         <LinkAsButton
           variant="text"
           href={URLS.deals}
+          endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
           className="p-0 text-sky-550 hover:bg-sky-200">{`${trans("browse")} ${trans("all")} ${trans("products")}`}</LinkAsButton>
       </div>
 

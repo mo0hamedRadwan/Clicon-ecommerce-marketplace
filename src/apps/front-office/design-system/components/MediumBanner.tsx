@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { ProductType } from "apps/front-office/design-system/types";
+import { isRTL } from "apps/front-office/utils/helpers";
 import Badge from "components/ui/Badge";
 import { twMerge } from "tailwind-merge";
 
@@ -25,10 +26,12 @@ export default function MediumBanner({
           : "bg-zinc-950 text-gray-150",
       )}>
       <div className="flex flex-col items-start gap-y-5">
-        <Badge title="Introducing" className="bg-sky-550 text-white" />
+        <Badge title="introducting" className="bg-sky-550 text-white" />
         <h3 className="text-2xl font-semibold line-clamp-2">{product.name}</h3>
         <p className="line-clamp-2">{product.shortDescription}</p>
-        <LinkAsButton href="/product/:id">
+        <LinkAsButton
+          href="/product/:id"
+          endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}>
           {`${trans("shop")} ${trans("now")}`.toUpperCase()}
         </LinkAsButton>
       </div>

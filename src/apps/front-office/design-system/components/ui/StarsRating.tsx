@@ -11,7 +11,7 @@ export default function StarsRating({
   rating = 3.5,
   numOfReviews = 0,
   longRating = false,
-  starClassName,
+  starClassName = "text-orange-450",
 }: StarsRatingPropsType) {
   return (
     <div className="center-y gap-x-2">

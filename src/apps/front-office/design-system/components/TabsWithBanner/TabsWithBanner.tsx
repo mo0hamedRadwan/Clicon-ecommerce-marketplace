@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
+import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { bestProducts, categories } from "shared/data/testData";
 import { twMerge } from "tailwind-merge";
@@ -37,7 +38,7 @@ export default function TabsWithBanner({
             <LinkAsButton
               variant="text"
               href={URLS.deals}
-              endIcon="bx-right-arrow-alt"
+              endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
               className="p-0">{`${trans("browse")} ${trans("all")} ${trans("products")}`}</LinkAsButton>
           </div>
         </div>

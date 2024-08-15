@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { isRTL } from "apps/front-office/utils/helpers";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
 import LinkAsButton from "./ui/LinkAsButton";
@@ -22,11 +23,11 @@ export default function Banner({
         "p-5 flex-center flex-col gap-y-3 bg-amber-150 text-center rounded-lg",
         className,
       )}>
-      <div className="w-64 h-24">
+      <div className="w-64 h-24 flex-center">
         <img
-          src={product.bannerImageUrl}
+          src={product.bannerImageUrl || product.imageUrl}
           alt="product Image"
-          className="w-full h-full"
+          className="h-full"
         />
       </div>
       {showTitle && (
@@ -46,7 +47,7 @@ export default function Banner({
       </p>
       <LinkAsButton
         href="/product/:id"
-        endIcon="bx-right-arrow-alt"
+        endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
         className="w-full">{`${trans("shop")} ${trans("now")}`}</LinkAsButton>
     </div>
   );
