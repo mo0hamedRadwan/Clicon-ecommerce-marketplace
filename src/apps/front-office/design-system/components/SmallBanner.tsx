@@ -62,25 +62,31 @@ export default function SmallBanner({
             href="/product/:id"
             size="md"
             endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-            className="px-6">
+            className="px-6 py-3 text-base">
             {`${trans("shop")} ${trans("now")}`.toUpperCase()}
           </LinkAsButton>
         </div>
       </div>
-      <div className="relative overflow-hidden">
-        <img
-          src={product.imageUrl}
-          alt="product image"
-          className="h-full group-hover:scale-110 duration-200"
-        />
-        {showBadge && product.badges && (
+      <div className="relative">
+        <div className="h-full overflow-hidden">
+          <img
+            src={product.imageUrl}
+            alt="product image"
+            className="h-full group-hover:scale-110 duration-200"
+          />
+        </div>
+        {showBadge && (
           <div
             className={twMerge(
               "absolute -top-5 flex items-start",
               direction === "left" ? "right-5" : "right-0",
             )}>
             {/* Small Banner with one badge */}
-            <Badge title={product.badges[0]} />
+            {product.badges ? (
+              <Badge title={product.badges[0]} />
+            ) : (
+              <Badge title={`${product.discount}% ${trans("off")}`} />
+            )}
           </div>
         )}
       </div>

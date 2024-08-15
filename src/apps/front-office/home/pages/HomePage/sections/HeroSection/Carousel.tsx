@@ -22,7 +22,7 @@ export default function Carousel() {
       //   clickable: true,
       // }}
       effect={"fade"}
-      centeredSlides={true}
+      // centeredSlides={true}
       loop={true}
       autoplay={{
         delay: 2000,

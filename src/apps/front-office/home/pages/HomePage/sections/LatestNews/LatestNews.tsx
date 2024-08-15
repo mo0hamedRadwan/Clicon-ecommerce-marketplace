@@ -6,7 +6,7 @@ export default function LatestNews() {
   return (
     <div className="py-20 bg-gray-150">
       <div className="container">
-        <h2 className="text-3xl font-semibold text-center">{`${trans("latest")} ${trans("news")}`}</h2>
+        <h2 className="text-4xl font-semibold text-center">{`${trans("latest")} ${trans("news")}`}</h2>
         <ul className="mt-5 center-y justify-center gap-5 flex-wrap xl:flex-nowrap">
           {news.map(newsBlog => (
             <li key={newsBlog.id}>

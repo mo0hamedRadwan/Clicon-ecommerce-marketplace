@@ -10,7 +10,7 @@ export default function FeaturesProducts() {
       {/* Banner */}
       <div className="hidden lg:flex flex-col gap-y-5 justify-between content-between min-w-[310px] bg-amber-250 text-center">
         <div className="pt-5 px-5 bg-amber-250">
-          <h2 className="mt-3 text-red-550 text-base">
+          <h2 className="mt-4 mb-2 text-red-550 text-sm font-semibold">
             {`${trans("computer")} & ${trans("accessories")}`.toUpperCase()}
           </h2>
           <h3 className="text-4xl font-semibold">{`32% ${trans("discount")}`}</h3>

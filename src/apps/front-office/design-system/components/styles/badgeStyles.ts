@@ -1,5 +1,5 @@
 export const badgeStyles = {
-  off: "text-black bg-amber-350",
+  off: "text-zinc-950 bg-amber-350",
   sale: "text-white bg-green-650",
   sold: "text-white bg-gray-450",
   best: "text-white bg-sky-550",

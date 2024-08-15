@@ -12,21 +12,27 @@ type MediumBannerPropsType = {
   className?: string;
 };
 
+const styles = {
+  primary: {
+    theme: "bg-gray-150 text-zinc-950",
+    badge: "bg-sky-550 text-gray-150",
+  },
+  secondary: {
+    theme: "bg-zinc-950 text-gray-150 font-semibold",
+    badge: "bg-amber-350 text-zinc-950 font-semibold",
+  },
+};
+
 export default function MediumBanner({
   product,
   varient = "primary",
   showDiscount = false,
 }: MediumBannerPropsType) {
   return (
-    <div
-      className={twMerge(
-        "p-10 space-between",
-        varient === "primary"
-          ? "bg-gray-150 text-zinc-950"
-          : "bg-zinc-950 text-gray-150",
-      )}>
+    <div className={twMerge("p-10 space-between", styles[varient].theme)}>
       <div className="flex flex-col items-start gap-y-5">
-        <Badge title="introducting" className="bg-sky-550 text-white" />
+        {/* get badge title from product badge */}
+        <Badge title="introducting" className={styles[varient].badge} />
         <h3 className="text-2xl font-semibold line-clamp-2">{product.name}</h3>
         <p className="line-clamp-2">{product.shortDescription}</p>
         <LinkAsButton

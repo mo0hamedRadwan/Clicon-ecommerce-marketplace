@@ -47,7 +47,7 @@ export default function NewsCard({ news }: NewsCardPropsType) {
         endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
         iconClassName="text-2xl"
         href="blog/:id">
-        {`${trans("read")} ${trans("more")}`.toUpperCase()}
+        {trans("readMore").toUpperCase()}
       </LinkAsButton>
     </div>
   );

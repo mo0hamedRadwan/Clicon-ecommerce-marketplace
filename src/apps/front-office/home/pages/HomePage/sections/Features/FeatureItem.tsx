@@ -13,7 +13,7 @@ export default function FeatureItem({
 }: FeatureItemPropsType) {
   return (
     <div className="w-60 md:w-72 center-y gap-x-5">
-      <span className="text-5xl">
+      <span className="text-5xl font-thin">
         <i className={`bx ${icon}`}></i>
       </span>
       <div className="flex flex-col gap-y-2">

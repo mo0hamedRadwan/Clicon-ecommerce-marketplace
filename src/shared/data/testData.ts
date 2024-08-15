@@ -64,7 +64,7 @@ export const smallBannerProduct1: ProductType = {
   name: "Product Product Product Product Product Product",
   price: 299,
   imageUrl: productImages.productImg5,
-  discount: 19,
+  discount: 29,
   caption: "top product in website caption caption caption",
   shortDescription:
     "ullam similique totam recusandae labore, architecto iure est laborum expedita consectetur.",

@@ -20,7 +20,7 @@ export default function Slide({ product = sliderProduct }: SlidePropsType) {
         <h2 className="text-xl sm:text-3xl font-semibold line-clamp-2">
           {product.name}
         </h2>
-        <p className="my-5 text-base sm:text-lg line-clamp-3">
+        <p className="my-5 text-base sm:text-lg text-neutral-650 line-clamp-3">
           {product.shortDescription}
         </p>
         <div className="flex ">
@@ -42,7 +42,7 @@ export default function Slide({ product = sliderProduct }: SlidePropsType) {
             "hidden lg:flex-center absolute top-0 w-24 h-24 bg-sky-550 text-white border-4 border-white rounded-full",
             isRTL() ? "-left-2 2xl:-left-10" : "-right-2 2xl:-right-10",
           )}>
-          <span className="text-3xl">${product.price}</span>
+          <span className="text-xl">${product.price}</span>
         </p>
       </div>
     </div>

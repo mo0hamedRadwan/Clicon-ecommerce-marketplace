@@ -102,5 +102,17 @@
   "flashSalesToday": {
     "en": "Flash Sales Today",
     "ar": "التسوق السريع اليوم"
+  },
+  "latest": {
+    "en": "Latest",
+    "ar": "أحدث"
+  },
+  "news": {
+    "en": "News",
+    "ar": "الأخبار"
+  },
+  "readMore": {
+    "en": "Read More",
+    "ar": "قراءة المزيد"
   }
 }
