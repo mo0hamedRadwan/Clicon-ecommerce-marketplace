@@ -5,10 +5,17 @@ import LinkAsButton from "./ui/LinkAsButton";
 
 type BannerPropsType = {
   product: ProductType;
-  className: string;
+  showTitle?: boolean;
+  showDiscount?: boolean;
+  className?: string;
 };
 
-export default function Banner({ product, className = "" }: BannerPropsType) {
+export default function Banner({
+  product,
+  showTitle,
+  showDiscount,
+  className = "",
+}: BannerPropsType) {
   return (
     <div
       className={twMerge(
@@ -22,12 +29,15 @@ export default function Banner({ product, className = "" }: BannerPropsType) {
           className="w-full h-full"
         />
       </div>
-      {product.discount && (
+      {showTitle && (
+        <h3 className="text-3xl font-bold line-clamp-2">{product.name}</h3>
+      )}
+      {showDiscount && (
         <h3 className="text-2xl font-bold">
           {product.discount}% {trans("Discount")}
         </h3>
       )}
-      <p className="text-base text-neutral-650 line-clamp-3">
+      <p className="text-base text-neutral-650 line-clamp-2">
         {product.shortDescription}
       </p>
       <p className="my-3 center-y gap-x-2">
@@ -35,7 +45,8 @@ export default function Banner({ product, className = "" }: BannerPropsType) {
         <span className="py-1 px-2 rounded bg-white">${product.price}</span>
       </p>
       <LinkAsButton
-        href=""
+        href="/product/:id"
+        endIcon="bx-right-arrow-alt"
         className="w-full">{`${trans("shop")} ${trans("now")}`}</LinkAsButton>
     </div>
   );

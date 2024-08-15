@@ -1,5 +1,5 @@
+import MediumBanner from "components/MediumBanner";
 import { RealProduct } from "shared/data/testData";
-import MediumBanner from "./MediumBanner";
 
 export default function Banners() {
   return (

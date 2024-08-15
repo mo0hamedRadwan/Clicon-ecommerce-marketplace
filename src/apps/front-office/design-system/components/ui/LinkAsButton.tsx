@@ -8,6 +8,7 @@ export type ButtonPropsType = {
   startIcon?: string;
   endIcon?: string;
   className?: string;
+  iconClassName?: string;
   href: string;
   children: any;
 };
@@ -18,6 +19,7 @@ export default function LinkAsButton({
   startIcon,
   endIcon,
   className = "",
+  iconClassName,
   href,
   children,
 }: ButtonPropsType) {
@@ -30,9 +32,9 @@ export default function LinkAsButton({
         "flex-center gap-x-2 rounded duration-200",
         className,
       )}>
-      {startIcon && <i className={`bx ${startIcon}`}></i>}
+      {startIcon && <i className={`bx ${startIcon} ${iconClassName}`}></i>}
       {children}
-      {endIcon && <i className={`bx ${endIcon}`}></i>}
+      {endIcon && <i className={`bx ${endIcon} ${iconClassName}`}></i>}
     </Link>
   );
 }

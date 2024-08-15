@@ -38,6 +38,7 @@ export default {
         },
         red: {
           550: "#EE5858",
+          // 550: "#c5594b",
         },
         orange: {
           150: "#FFE7D6",
@@ -52,6 +53,10 @@ export default {
         },
         slate: {
           350: "#BBD0DE",
+        },
+        cyan: {
+          850: "#2E5974",
+          950: "#124261",
         },
       },
     },

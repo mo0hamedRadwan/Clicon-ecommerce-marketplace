@@ -22,6 +22,12 @@ import catImg5 from "assets/images/categoryImg/cat-5.png";
 import catImg6 from "assets/images/categoryImg/cat-6.png";
 import catImg7 from "assets/images/categoryImg/cat-7.png";
 
+import productsImage from "assets/images/productsImage.jpg";
+
+export const homeImages = {
+  productsImage,
+};
+
 export const productImages = {
   productImg1,
   productImg2,
