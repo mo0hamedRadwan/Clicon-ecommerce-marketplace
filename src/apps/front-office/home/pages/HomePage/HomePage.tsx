@@ -6,6 +6,7 @@ import Features from "./sections/Features";
 import FeaturesProducts from "./sections/FeaturesProducts";
 import HeroSection from "./sections/HeroSection";
 import LargeBanner from "./sections/LargeBanner";
+import LatestNews from "./sections/LatestNews";
 import ShopCategories from "./sections/ShopCategories";
 import SubscribeSection from "./sections/SubscribeSection";
 import TopProducts from "./sections/TopProducts";
@@ -23,7 +24,7 @@ export default function HomePage() {
       <ComputerAccessories />
       <LargeBanner product={RealProduct} />
       <TopProducts />
-      {/* <LatestNews /> */}
+      <LatestNews />
       <SubscribeSection />
     </>
   );

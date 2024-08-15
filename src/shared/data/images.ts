@@ -24,6 +24,10 @@ import catImg7 from "assets/images/categoryImg/cat-7.png";
 
 import productsImage from "assets/images/productsImage.jpg";
 
+import newsImage1 from "assets/images/newsImg/news-1.png";
+import newsImage2 from "assets/images/newsImg/news-2.png";
+import newsImage3 from "assets/images/newsImg/news-3.png";
+
 export const homeImages = {
   productsImage,
 };
@@ -53,4 +57,10 @@ export const categoryImages = {
   catImg5,
   catImg6,
   catImg7,
+};
+
+export const newsImages = {
+  newsImage1,
+  newsImage2,
+  newsImage3,
 };

@@ -52,3 +52,15 @@ export type DealsProductType = {
   deadline: Date;
   products: ProductType[];
 };
+
+export type NewsType = {
+  id: number;
+  title: string;
+  content: string;
+  imageUrl: string;
+  createdAt: Date;
+  author: string;
+  slug: string;
+  numOfComments?: number;
+  shortDescription?: string;
+};

@@ -11,7 +11,7 @@ import { twMerge } from "tailwind-merge";
 
 type EmailInputPropsType = FormControlProps & {
   className?: string;
-  showLabel?: boolean;
+  label?: string;
 };
 
 export default function EmailInput(props: EmailInputPropsType) {
@@ -19,9 +19,7 @@ export default function EmailInput(props: EmailInputPropsType) {
 
   return (
     <div className="flex flex-col gap-y-2">
-      {props.showLabel && (
-        <label htmlFor="email-id">{trans("emailAddress")}</label>
-      )}
+      {props.label && <label htmlFor="email-id">{trans(props.label)}</label>}
       <input
         type="text"
         id="email-id"

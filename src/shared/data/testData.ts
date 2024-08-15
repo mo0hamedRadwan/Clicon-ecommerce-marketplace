@@ -1,10 +1,11 @@
 import {
   Category,
   DealsProductType,
+  NewsType,
   SubCategory,
 } from "apps/front-office/design-system/types";
 import { ProductType } from "./../../apps/front-office/design-system/types/index";
-import { categoryImages, productImages } from "./images";
+import { categoryImages, newsImages, productImages } from "./images";
 
 export const product1: ProductType = {
   id: 1,
@@ -344,3 +345,49 @@ export const categories: Category[] = [
     topProducts: products,
   },
 ];
+
+/////////////////////////////////////////////////////////////////
+
+export const new1: NewsType = {
+  id: 1,
+  title: "New iPhone 13 Pro Max released!",
+  content:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",
+  shortDescription:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",
+  imageUrl: newsImages.newsImage1,
+  createdAt: new Date(2022, 1, 1),
+  author: "John Doe",
+  slug: "new-iphone-13-pro-max-released",
+  numOfComments: 150,
+};
+
+export const new2: NewsType = {
+  id: 1,
+  title: "New iPhone 13 Pro Max released!",
+  content:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",
+  shortDescription:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",
+  imageUrl: newsImages.newsImage2,
+  createdAt: new Date(2022, 4, 1),
+  author: "John Doe",
+  slug: "new-iphone-13-pro-max-released",
+  numOfComments: 150,
+};
+
+export const new3: NewsType = {
+  id: 1,
+  title: "New iPhone 13 Pro Max released!",
+  content:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",
+  shortDescription:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",
+  imageUrl: newsImages.newsImage3,
+  createdAt: new Date(2022, 8, 8),
+  author: "John Doe",
+  slug: "new-iphone-13-pro-max-released",
+  numOfComments: 150,
+};
+
+export const news: NewsType[] = [new1, new2, new3];
