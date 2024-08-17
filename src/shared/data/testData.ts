@@ -363,7 +363,7 @@ export const new1: NewsType = {
 };
 
 export const new2: NewsType = {
-  id: 1,
+  id: 2,
   title: "New iPhone 13 Pro Max released!",
   content:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",
@@ -377,7 +377,7 @@ export const new2: NewsType = {
 };
 
 export const new3: NewsType = {
-  id: 1,
+  id: 3,
   title: "New iPhone 13 Pro Max released!",
   content:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis orci vel massa facilisis viverra. Sed non felis vel ipsum eleifend pharetra.",

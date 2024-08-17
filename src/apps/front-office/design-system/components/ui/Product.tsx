@@ -31,9 +31,9 @@ export default function Product({
         largeProduct ? "px-6 pb-6 pt-3" : "p-3",
         className,
       )}>
-      <Link to="/product/:id" className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-2">
         <div
-          className={`relative ${largeProduct ? "h-[290px] mt-6 mb-3" : "lg:h-[188px]"} flex justify-center items-end group`}>
+          className={`relative ${largeProduct ? "h-[250px] my-9" : "lg:h-[188px]"} flex justify-center items-end group`}>
           <img src={product.imageUrl} alt="Product image" className="" />
           <ProductButtons setViewProductQuick={setViewProduct} />
         </div>
@@ -50,7 +50,11 @@ export default function Product({
               }
             />
           )}
-          <p className="line-clamp-2 font-medium text-base">{product.name}</p>
+          <Link
+            to="/product/:id"
+            className="line-clamp-2 font-medium text-base hover:underline">
+            {product.name}
+          </Link>
           <p className="mt-2 center-y gap-x-3 text-base">
             {product.oldPrice && (
               <span className="text-gray-450 line-through">
@@ -67,7 +71,7 @@ export default function Product({
         <div className="absolute flex flex-col items-start gap-y-2">
           {product.badges?.map(badge => <Badge key={badge} title={badge} />)}
         </div>
-      </Link>
+      </div>
 
       {largeProduct && (
         <div className="mt-3 flex flex-col gap-y-5">
@@ -100,7 +104,11 @@ export default function Product({
 
       {viewProduct && (
         <div className="z-50 absolute top-0 left-0 min-w-full min-h-full flex-center bg-[rgba(0,0,0,0.8)]">
-          <QuickView product={product} setCloseViewProduct={setViewProduct} />
+          {/* Change product props */}
+          <QuickView
+            product={RealProduct}
+            setCloseViewProduct={setViewProduct}
+          />
         </div>
       )}
     </div>

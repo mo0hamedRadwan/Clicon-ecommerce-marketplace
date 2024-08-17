@@ -32,7 +32,7 @@ export default function ShopCategories({
 
   return (
     <div className="container py-10">
-      <h2 className="my-10 text-center text-3xl font-semibold">{`${trans("shop")} ${trans("categories")}`}</h2>
+      <h2 className="mb-10 text-center text-3xl font-semibold">{`${trans("shop")} ${trans("categories")}`}</h2>
       <div className="relative h-60 w-[calc(100%-20px)]">
         <Swiper
           onSwiper={swiper => {
