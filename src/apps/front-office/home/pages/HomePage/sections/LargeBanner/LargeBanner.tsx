@@ -14,7 +14,7 @@ export default function LargeBanner({
 }: LargeBannerPropsType) {
   return (
     <div className="flex justify-center">
-      <div className="xl:px-10 xl:w-[1450px] bg-orange-150">
+      <div className="xl:px-10 xl:w-[1550px] bg-orange-150">
         <div className="container p-10 lg:py-0 flex items-center lg:justify-between flex-wrap lg:flex-nowrap">
           <div className="w-[450px] flex flex-col justify-center items-start gap-y-5">
             {product.badges && (

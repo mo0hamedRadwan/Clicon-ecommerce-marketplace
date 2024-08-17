@@ -8,8 +8,9 @@ import { twMerge } from "tailwind-merge";
 type MediumBannerPropsType = {
   product: ProductType;
   varient?: "primary" | "secondary";
-  showDiscount?: boolean;
+  showPrice?: boolean;
   className?: string;
+  center?: boolean;
 };
 
 const styles = {
@@ -26,26 +27,33 @@ const styles = {
 export default function MediumBanner({
   product,
   varient = "primary",
-  showDiscount = false,
+  showPrice = false,
+  center = false,
 }: MediumBannerPropsType) {
   return (
-    <div className={twMerge("p-10 space-between", styles[varient].theme)}>
-      <div className="flex flex-col items-start gap-y-5">
+    <div
+      className={twMerge(
+        "px-10 w-full space-between gap-5",
+        styles[varient].theme,
+      )}>
+      <div className="py-10 flex flex-col items-start justify-center gap-y-5">
         {/* get badge title from product badge */}
         <Badge title="introducting" className={styles[varient].badge} />
-        <h3 className="text-2xl font-semibold line-clamp-2">{product.name}</h3>
+        <h3 className="text-4xl font-semibold line-clamp-2">{product.name}</h3>
         <p className="line-clamp-2">{product.shortDescription}</p>
         <LinkAsButton
           href="/product/:id"
-          endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}>
+          endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
+          className="px-6 py-3 text-sm"
+          iconClassName="text-2xl">
           {`${trans("shop")} ${trans("now")}`.toUpperCase()}
         </LinkAsButton>
       </div>
-      <div className="relative">
-        <img src={product.imageUrl} alt="" />
-        {showDiscount && (
-          <p className="absolute -top-5 right-0 w-20 h-20 bg-sky-550 rounded-full flex-center text-xl">
-            ${product.discount}
+      <div className={`relative ${center ? "py-10" : "pt-10"}`}>
+        <img src={product.imageUrl} alt="" className="h-full" />
+        {showPrice && (
+          <p className="absolute top-5 right-0 w-24 h-24 bg-sky-550 rounded-full flex-center text-xl">
+            ${product.price}
           </p>
         )}
       </div>

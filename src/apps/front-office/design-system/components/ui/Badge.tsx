@@ -8,11 +8,13 @@ type BadgeType = {
 };
 
 export default function Badge({ title, className }: BadgeType) {
-  const key = Object.keys(badgeStyles).filter(key => title.includes(key))[0];
+  const key = Object.keys(badgeStyles).filter(key =>
+    title.toLowerCase().includes(key),
+  )[0];
   return (
     <p
       className={twMerge(
-        "py-1 px-3 rounded font-semibold bg-amber-350 text-zinc-950",
+        "py-1 px-3 rounded-sm font-semibold bg-amber-350 text-zinc-950 text-sm",
         badgeStyles[key],
         className,
       )}>

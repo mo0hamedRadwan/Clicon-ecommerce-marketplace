@@ -2,7 +2,17 @@ import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
-import { bestProducts, categories } from "shared/data/testData";
+import { categories } from "shared/data/testData";
+import {
+  product10,
+  product11,
+  product12,
+  product5,
+  product6,
+  product7,
+  product8,
+  product9,
+} from "shared/data/testData2";
 import { twMerge } from "tailwind-merge";
 import ProductsGrid from "../ProductsGrid";
 
@@ -30,7 +40,7 @@ export default function TabsWithBanner({
           <div className="center-y gap-x-3">
             <ul className="center-y gap-x-2">
               {categories.slice(0, 4).map((category, index) => (
-                <li key={index} className="">
+                <li key={index} className="text-sm">
                   {category.name}
                 </li>
               ))}
@@ -39,12 +49,21 @@ export default function TabsWithBanner({
               variant="text"
               href={URLS.deals}
               endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-              className="p-0">{`${trans("browse")} ${trans("all")} ${trans("products")}`}</LinkAsButton>
+              className="p-0 text-orange-450">{`${trans("browse")} ${trans("all")} ${trans("products")}`}</LinkAsButton>
           </div>
         </div>
 
         <ProductsGrid
-          products={bestProducts.slice(1, 9)}
+          products={[
+            product12,
+            product11,
+            product10,
+            product5,
+            product6,
+            product7,
+            product8,
+            product9,
+          ]}
           className="gap-5 lg:gap-5"
           showRating
         />

@@ -5,19 +5,20 @@ import SubscribeForm from "./SubscribeForm";
 export default function SubscribeSection() {
   return (
     <div className="py-20 bg-sky-750 text-white ">
-      <div className="container w-[400px] md:w-[550px] flex-center flex-col gap-y-5 text-center">
-        <h3 className="text-2xl md:text-3xl">
+      <div className="container w-[450px] md:w-[600px] lg:w-[750px] flex-center flex-col gap-y-5 text-center">
+        <h3 className="text-3xl md:text-3xl">
           {trans("subscribeToOurNewsletter")}
         </h3>
-        <p className="text-slate-350">
+        <p className="mb-2 text-slate-350 line-clamp-2">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad
-          perferendis ab obcaecati repellendus maiores debitis doloribus libero
-          sapiente.
+          perferendis ab obcaecati repellendus maiores debitis doloribus libero.
         </p>
 
-        <SubscribeForm />
+        <div className="w-full">
+          <SubscribeForm />
+        </div>
 
-        <hr className="w-[425px] h-[1px] border-[rgba(255,255,255,0.1)]" />
+        <hr className="mt-5 -mb-5 w-[425px] h-[1px] border-[rgba(255,255,255,0.1)]" />
         <ul className="space-between-center gap-x-10">
           {companyLogos.map(logo => (
             <li key={logo}>

@@ -1,10 +1,21 @@
 import { trans } from "@mongez/localization";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { DealsProductType } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import ProductsGrid from "components/ProductsGrid";
+import LinkAsButton from "components/ui/LinkAsButton";
 import Product from "components/ui/Product";
-import BestDealsGrid from "./BestDealsGrid";
+import {
+  product10,
+  product11,
+  product12,
+  product4,
+  product5,
+  product6,
+  product7,
+  product8,
+  product9,
+} from "shared/data/testData2";
 import CountDownComponent from "./CountDownComponent";
 
 type BestDealsPropsType = {
@@ -29,14 +40,26 @@ export default function BestDeals({ bestDeals }: BestDealsPropsType) {
           className="p-0 text-sky-550 hover:bg-sky-200">{`${trans("browse")} ${trans("all")} ${trans("products")}`}</LinkAsButton>
       </div>
 
-      <ul className="flex">
-        <li className="hidden lg:block">
-          <Product largeProduct showRating product={bestDeals.products[0]} />
-        </li>
-        <li className="flex-grow">
-          <BestDealsGrid products={bestDeals.products.slice(1, 9)} />
-        </li>
-      </ul>
+      <div className="flex">
+        <div className="hidden lg:block min-w-[330px]">
+          <Product largeProduct showRating product={product4} />
+        </div>
+        <div className="flex-grow">
+          <ProductsGrid
+            products={[
+              product5,
+              product6,
+              product7,
+              product8,
+              product9,
+              product10,
+              product11,
+              product12,
+            ]}
+            productClassName="lg:border-l-0"
+          />
+        </div>
+      </div>
     </div>
   );
 }

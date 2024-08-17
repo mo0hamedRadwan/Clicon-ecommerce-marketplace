@@ -8,7 +8,7 @@ import AllCategoriesMenu from "./AllCategoriesMenu";
 export default function BottomHeader() {
   const [openCategoriesMenu, setOpenCategoriesMenu] = useState<boolean>(false);
   return (
-    <div className="hidden md:block h-20 shadow-1">
+    <div className="hidden md:block h-20 shadow-2">
       <div className="container h-full space-between-center">
         <ul className="center-y gap-x-2 text-base lg:text-lg text-gray-500">
           <li
@@ -35,12 +35,11 @@ export default function BottomHeader() {
             </li>
           ))}
         </ul>
-        <p className="hidden lg:center-y gap-x-2">
-          <span
-            className={`text-2xl xl:text-4xl ${isRTL() ? "-rotate-90" : "rotate-0"}`}>
+        <p className="hidden xl:center-y gap-x-2">
+          <span className={`text-2xl ${isRTL() ? "-rotate-90" : "rotate-0"}`}>
             <i className={`bx ${callUs.icon}`}></i>
           </span>
-          <span className="text-base xl:text-2xl">{callUs.number}</span>
+          <span className="text-base xl:text-xl">{callUs.number}</span>
         </p>
       </div>
     </div>

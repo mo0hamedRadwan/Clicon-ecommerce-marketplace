@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
-import { sliderProduct } from "shared/data/testData";
+import { product1 } from "shared/data/testData2";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
 import LinkAsButton from "./ui/LinkAsButton";
@@ -9,16 +9,17 @@ type SlidePropsType = {
   product?: ProductType; // product is optional is temporary
 };
 
-export default function Slide({ product = sliderProduct }: SlidePropsType) {
+export default function Slide({ product = product1 }: SlidePropsType) {
   return (
-    <div className="center-y justify-around md:justify-evenly gap-x-10 h-full">
-      <div className="w-[380px] flex flex-col">
+    <div
+      className={`${isRTL() ? "ml-10" : "mr-10"} center-y justify-between md:justify-between gap-x-10 h-full`}>
+      <div className="w-[370px] flex flex-col">
         <h5 className="hidden md:center-y gap-x-2">
           <span className="block w-[30px] h-[2px] bg-sky-550"></span>
           <span className="text-sky-550">{product.caption}</span>
         </h5>
-        <h2 className="text-xl sm:text-3xl font-semibold line-clamp-2">
-          {product.name}
+        <h2 className="text-xl sm:text-4xl font-medium line-clamp-2">
+          {product.name.toUpperCase()}
         </h2>
         <p className="my-5 text-base sm:text-lg text-neutral-650 line-clamp-3">
           {product.shortDescription}
@@ -28,7 +29,9 @@ export default function Slide({ product = sliderProduct }: SlidePropsType) {
             size="lg"
             href="/product/:id"
             endIcon={`bx-${isRTL() ? "left" : "right"}-arrow-alt`}
-            className="px-8">{`${trans("shop")} ${trans("now")}`}</LinkAsButton>
+            className="px-8 text-base">
+            {`${trans("shop")} ${trans("now")}`.toUpperCase()}
+          </LinkAsButton>
         </div>
       </div>
       <div className="hidden sm:block w-[300px] h-full relative">

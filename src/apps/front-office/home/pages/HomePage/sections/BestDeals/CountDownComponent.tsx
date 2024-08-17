@@ -12,7 +12,7 @@ export default function CountDownComponent({
 
   return (
     <div className="center-y gap-x-2">
-      <p className="">{`${trans("deals")} ${trans("endIn")}`}</p>
+      <p className="font-semibold">{`${trans("deals")} ${trans("endIn")}`}</p>
       <p className="py-1 px-3 bg-amber-250">
         <span>{countDown.days}d : </span>
         <span>{countDown.hours}h : </span>

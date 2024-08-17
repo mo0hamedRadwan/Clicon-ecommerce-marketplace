@@ -24,7 +24,7 @@ export type ProductType = {
   discount?: number;
   sku?: string;
   brand?: string;
-  category: string;
+  category?: string;
   colors?: string[];
   sizes?: string[];
   memories?: string[];

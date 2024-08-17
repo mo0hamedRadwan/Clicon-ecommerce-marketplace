@@ -12,15 +12,16 @@ export default function FeatureItem({
   subtitle,
 }: FeatureItemPropsType) {
   return (
-    <div className="w-60 md:w-72 center-y gap-x-5">
-      <span className="text-5xl font-thin">
-        <i className={`bx ${icon}`}></i>
-      </span>
-      <div className="flex flex-col gap-y-2">
-        <span className="text-base md:text-xl font-semibold">
+    <div className="w-60 md:w-[260px] center-y gap-x-3">
+      <div className="text-4xl">
+        {/* <i className={`bx ${icon}`}></i> */}
+        <img src={icon} alt="" />
+      </div>
+      <div className="flex flex-col gap-y-[2px]">
+        <span className="text-base md:text-lg font-medium">
           {trans(title).toUpperCase()}
         </span>
-        <span className="text-sm">{trans(subtitle)}</span>
+        <span className="text-sm text-gray-550">{trans(subtitle)}</span>
       </div>
     </div>
   );

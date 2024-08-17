@@ -4,20 +4,22 @@ import Banner from "components/Banner";
 import TabsWithBanner from "components/TabsWithBanner";
 import Badge from "components/ui/Badge";
 import LinkAsButton from "components/ui/LinkAsButton";
-import { smallBannerProduct1 } from "shared/data/testData";
+import { product3 } from "shared/data/testData2";
 
 export default function ComputerAccessories() {
   return (
     <TabsWithBanner heading="Computer Accessories" direction="right">
       {/* Banner */}
       <div className="hidden lg:flex flex-col gap-y-5">
-        <Banner product={smallBannerProduct1} showTitle />
-        <div className="p-8 bg-cyan-950 text-white flex flex-col gap-y-5 text-center rounded">
-          <Badge title="summerSales" className="bg-cyan-850 text-white" />
-          <h3 className="text-3xl">{`37% ${trans("discount")}`}</h3>
+        <Banner product={product3} showTitle showDescription />
+        <div className="p-10 bg-cyan-950 text-white flex flex-col items-center gap-y-5 rounded">
+          <Badge title="summerSales" className="py-2 bg-cyan-850 text-white" />
+          <h3 className="-mt-2 text-3xl">{`37% ${trans("discount")}`}</h3>
           <p className="">
             <span>{`${trans("only")} ${trans("for")} `}</span>
-            <span>{trans("smartPhone")} </span>
+            <span className="text-yellow-450 text-base">
+              {trans("smartPhone")}{" "}
+            </span>
             <span>{trans("product")}.</span>
           </p>
           <LinkAsButton

@@ -31,8 +31,8 @@ export default function StarsRating({
       {longRating && (
         <p className="font-bold text-black">{`${rating} ${trans("stars")} ${trans("rating")}`}</p>
       )}
-      <p className="text-xs text-gray-450">
-        {`(${numOfReviews}${longRating ? ` ${trans("users")} ${trans("feedback")}` : ""})`}
+      <p className="text-sm font-medium text-gray-450">
+        {`(${numOfReviews.toLocaleString()}${longRating ? ` ${trans("users")} ${trans("feedback")}` : ""})`}
       </p>
     </div>
   );

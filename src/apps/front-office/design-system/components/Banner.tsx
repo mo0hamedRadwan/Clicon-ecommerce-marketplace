@@ -7,6 +7,7 @@ import LinkAsButton from "./ui/LinkAsButton";
 type BannerPropsType = {
   product: ProductType;
   showTitle?: boolean;
+  showDescription?: boolean;
   showDiscount?: boolean;
   className?: string;
 };
@@ -14,13 +15,14 @@ type BannerPropsType = {
 export default function Banner({
   product,
   showTitle,
+  showDescription,
   showDiscount,
   className = "",
 }: BannerPropsType) {
   return (
     <div
       className={twMerge(
-        "p-5 flex-center flex-col gap-y-3 bg-amber-150 text-center rounded-lg",
+        "px-5 py-10 flex-center flex-col gap-y-3 bg-amber-150 text-center rounded-lg",
         className,
       )}>
       <div className="w-64 h-24 flex-center">
@@ -38,9 +40,11 @@ export default function Banner({
           {product.discount}% {trans("Discount")}
         </h3>
       )}
-      <p className="text-base text-neutral-650 line-clamp-2">
-        {product.shortDescription}
-      </p>
+      {showDescription && (
+        <p className="text-base text-neutral-650 line-clamp-2">
+          {product.shortDescription}
+        </p>
+      )}
       <p className="my-3 center-y gap-x-2">
         <span>{trans("startingPrice")}:</span>
         <span className="py-1 px-2 rounded bg-white">${product.price}</span>

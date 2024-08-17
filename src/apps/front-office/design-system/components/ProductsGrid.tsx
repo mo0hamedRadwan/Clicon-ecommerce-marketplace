@@ -6,12 +6,14 @@ type ProductsGridPropsType = {
   products: ProductType[];
   showRating?: boolean;
   className?: string;
+  productClassName?: string;
 };
 
 export default function ProductsGrid({
   products,
   showRating = false,
   className = "",
+  productClassName = "",
 }: ProductsGridPropsType) {
   return (
     <ul
@@ -23,7 +25,11 @@ export default function ProductsGrid({
         <li
           key={index}
           className={`${index > 5 ? "md:block lg:hidden xl:block" : ""}`}>
-          <Product product={product} showRating={showRating} />
+          <Product
+            product={product}
+            showRating={showRating}
+            className={productClassName}
+          />
         </li>
       ))}
     </ul>

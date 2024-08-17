@@ -9,8 +9,8 @@ type NewsCardPropsType = {
 
 export default function NewsCard({ news }: NewsCardPropsType) {
   return (
-    <div className="p-5 xl:p-8 w-[400px] bg-white rounded flex flex-col items-start gap-y-5">
-      <div>
+    <article className="p-5 xl:p-8 w-[400px] 2xl:w-[470px] bg-white rounded flex flex-col items-start gap-y-5">
+      <div className="w-full flex-center">
         <img src={news.imageUrl} alt="" />
       </div>
       <ul className="flex gap-x-5">
@@ -49,6 +49,6 @@ export default function NewsCard({ news }: NewsCardPropsType) {
         href="blog/:id">
         {trans("readMore").toUpperCase()}
       </LinkAsButton>
-    </div>
+    </article>
   );
 }
