@@ -8,7 +8,7 @@ import { resetPasswordAtom } from "../atoms";
  */
 export function Guardian() {
   if (!user.isLoggedIn() || user.isGuest) {
-    return navigateTo(URLS.auth.login);
+    return navigateTo(URLS.auth.signin.root);
   }
 }
 
@@ -28,6 +28,6 @@ export function ReverseGuardian() {
  */
 export function hasOTP() {
   if (!resetPasswordAtom.get("code")) {
-    return navigateTo(URLS.auth.forgetPassword);
+    return navigateTo(URLS.auth.signin.forgetPassword);
   }
 }
