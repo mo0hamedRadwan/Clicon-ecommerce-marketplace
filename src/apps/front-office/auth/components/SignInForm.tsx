@@ -20,7 +20,7 @@ export default function SignInForm() {
       />
       <Button
         endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-        onClick={e => console.log("sign In")}>
+        onClick={() => console.log("sign In")}>
         {trans("signin").toUpperCase()}
       </Button>
       <div className="relative">

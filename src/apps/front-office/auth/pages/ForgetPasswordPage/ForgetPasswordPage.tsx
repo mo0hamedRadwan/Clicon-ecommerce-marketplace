@@ -14,7 +14,7 @@ export default function ForgetPasswordPage() {
         <EmailInput label={trans("emailAddress")} />
         <Button
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-          onClick={e => console.log("send Code")}>
+          onClick={() => console.log("send Code")}>
           {`${trans("send")} ${trans("code")}`.toUpperCase()}
         </Button>
         <p className="flex gap-x-2">

@@ -79,9 +79,7 @@
     "en": "Already have account",
     "ar": "لدي حساب بالفعل"
   },
-  "dontHaveAccount": {
-
-  },
+  "dontHaveAccount": {},
   "customerServices": {
     "en": "Customers Services",
     "ar": "خدمات العملاء"
