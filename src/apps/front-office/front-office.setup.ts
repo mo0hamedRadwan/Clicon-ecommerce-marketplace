@@ -11,7 +11,7 @@ export const frontOfficeApp: PublicApp = {
         URLS.auth.signin.forgetPassword,
         URLS.auth.signin.resetPassword,
         URLS.auth.signup.root,
-        URLS.auth.signup.verifyEmail,
+        URLS.auth.signup.emailVerification,
       ],
       name: "auth",
     },
