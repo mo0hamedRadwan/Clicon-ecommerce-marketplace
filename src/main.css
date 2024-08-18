@@ -27,6 +27,9 @@
   .shadow-3 {
     @apply shadow-[rgba(0,_0,_0,_0.25)_0px_0px_10px_0px];
   }
+  .shadow-4 {
+    @apply shadow-[rgba(0,_0,_0,_0.12)_0px_8px_40px_0px];
+  }
   .navItem {
     @apply py-2 rounded-lg cursor-pointer text-gray-900 hover:bg-orange-500 hover:text-white duration-300;
   }

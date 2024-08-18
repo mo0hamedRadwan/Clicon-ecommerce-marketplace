@@ -1,0 +1,93 @@
+{
+  "or": {
+    "en": "or",
+    "ar": "أو"
+  },
+  "characters": {
+    "en": "Characters",
+    "ar": "حروف"
+  },
+  "signin": {
+    "en": "Sign In",
+    "ar": "تسجيل الدخول"
+  },
+  "signup": {
+    "en": "Sign Up",
+    "ar": "الاشتراك فى الموقع"
+  },
+  "forgetpassword": {
+    "en": "Forget Password",
+    "ar": "نسيت كلمه المرور"
+  },
+  "resetpassword": {
+    "en": "Reset Password",
+    "ar": "إعادة تعيين كلمة السر"
+  },
+  "withGoogle": {
+    "en": "with Google",
+    "ar": "بإستخدام جوجل"
+  },
+  "withApple": {
+    "en": "Login with Apple",
+    "ar": "بإستخدام أبل"
+  },
+  "areYouAgreeTo": {
+    "en": "Are You Agree To",
+    "ar": "هل توافقت على"
+  },
+  "termsAndConditions": {
+    "en": "Terms and Conditions",
+    "ar": "الشروط والأحكام"
+  },
+  "and": {
+    "en": "And",
+    "ar": "أو"
+  },
+  "the": {
+    "en": "the ",
+    "ar": " "
+  },
+  "privacyPolicy": {
+    "en": "Privacy Policy",
+    "ar": "سياسة الخصوصية"
+  },
+  "code": {
+    "en": "Code",
+    "ar": "الكود"
+  },
+  "enter": {
+    "en": "Enter",
+    "ar": "أدخل"
+  },
+  "mobileNumber": {
+    "en": "Mobile Number",
+    "ar": "رقم الجوال"
+  },
+  "associateWithYourAccount": {
+    "en": "Associate With Your Clicon Account",
+    "ar": "المرتبط بحسابك بالموقع"
+  },
+  "youMayContact": {
+    "en": "You may contact",
+    "ar": "يمكنك الاتصال بنا على "
+  },
+  "forHelp": {
+    "en": "For Help",
+    "ar": "للمساعدة في"
+  },
+  "alreadyHaveAccount": {
+    "en": "Already have account",
+    "ar": "لدي حساب بالفعل"
+  },
+  "dontHaveAccount": {
+
+  },
+  "customerServices": {
+    "en": "Customers Services",
+    "ar": "خدمات العملاء"
+  },
+  "restoringAccessToYourAccount": {
+    "en": "Restoring Access to Your Clicon Account",
+    "ar": "إستعادة الوصول إلى حسابك بالموقع"
+  }
+}

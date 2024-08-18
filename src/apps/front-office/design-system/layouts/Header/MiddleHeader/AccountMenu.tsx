@@ -13,14 +13,7 @@ export default function AccountMenu() {
       <h3 className="text-center text-2xl">{`${trans("signIn")} ${trans("to")} ${trans("yourAccount")}`}</h3>
 
       <EmailInput label="emailAddress" />
-      <PasswordInput label="password">
-        <LinkAsButton
-          variant="text"
-          href={URLS.auth.forgetPassword}
-          className="p-0 text-sky-550 hover:bg-white">
-          {trans("forgetPassword")}
-        </LinkAsButton>
-      </PasswordInput>
+      <PasswordInput label="password" showForgetPassword />
 
       {/* Login User */}
       <Button
@@ -38,7 +31,7 @@ export default function AccountMenu() {
       </div>
       <LinkAsButton
         variant="outlined"
-        href={URLS.auth.register}
+        href={URLS.auth.signup.root}
         className="w-full tracking-wide">
         {`${trans("create")} ${trans("account")}`.toUpperCase()}
       </LinkAsButton>

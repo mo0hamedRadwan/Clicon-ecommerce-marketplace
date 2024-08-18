@@ -38,7 +38,7 @@ export default function Product({
           <ProductButtons setViewProductQuick={setViewProduct} />
         </div>
         <div
-          className={`${largeProduct ? "h-[120px]" : showRating ? "h-[85px]" : "h-[95px]"} flex flex-col justify-between gap-y-1`}>
+          className={`${largeProduct ? "h-[120px]" : showRating ? "min-h-[85px]" : "min-h-[95px]"} flex flex-col justify-between gap-y-1`}>
           {showRating && (
             <StarsRating
               rating={product.rating}

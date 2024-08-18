@@ -1,21 +1,35 @@
-import { Link } from "@mongez/react-router";
+import { trans } from "@mongez/localization";
+import { currentRoute, Link } from "@mongez/react-router";
 
-type BreadcrumbPropsType = {
-  paths: string[];
-};
+export default function Breadcrumb() {
+  const paths = currentRoute().split("/").slice(1);
+  const lastRoute = paths.pop()?.replace("-", "");
 
-export default function Breadcrumb({ paths }: BreadcrumbPropsType) {
+  // Hidden breadcrump from home page
+  if (paths.length === 0 && !lastRoute) return;
+
   return (
-    <div className="bg-gray-500">
-      <ul className="container center-y">
+    <div className="py-5 bg-gray-150 text-gray-550">
+      <ul className="container center-y gap-x-2">
+        <li>
+          <Link to="/" className="center-y gap-x-2">
+            <span className="text-2xl">
+              <i className="bx bx-home"></i>
+            </span>
+            <span>{trans("home")}</span>
+            <span>&gt;</span>
+          </Link>
+        </li>
         {paths.map((path, index) => (
-          <li key={path}>
-            <Link to={`${path}`}>
-              <span>{path}</span>
-              {index !== paths.length - 1 && <span>/</span>}
+          <li key={index} className="">
+            <Link to={`/${path}`} className="center-y gap-x-2">
+              <span>{trans(path.replace("-", ""))}</span>
+              <span>&gt;</span>
             </Link>
           </li>
         ))}
+
+        <li className="text-sky-550">{trans(lastRoute!)}</li>
       </ul>
     </div>
   );

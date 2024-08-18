@@ -20,7 +20,7 @@ export default function ComputerAccessories() {
             <span className="text-yellow-450 text-base">
               {trans("smartPhone")}{" "}
             </span>
-            <span>{trans("product")}.</span>
+            <span>{trans("product")}</span>
           </p>
           <LinkAsButton
             size="lg"

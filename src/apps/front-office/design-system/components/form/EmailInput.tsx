@@ -1,12 +1,5 @@
 import { trans } from "@mongez/localization";
-import {
-  emailRule,
-  FormControlProps,
-  maxLengthRule,
-  minLengthRule,
-  requiredRule,
-  useFormControl,
-} from "@mongez/react-form";
+import { FormControlProps, useFormControl } from "@mongez/react-form";
 import { twMerge } from "tailwind-merge";
 
 type EmailInputPropsType = FormControlProps & {
@@ -19,10 +12,9 @@ export default function EmailInput(props: EmailInputPropsType) {
 
   return (
     <div className="flex flex-col gap-y-2">
-      {props.label && <label htmlFor="email-id">{trans(props.label)}</label>}
+      {props.label && <label>{trans(props.label)}</label>}
       <input
         type="text"
-        id="email-id"
         value={value}
         placeholder={props.placeholder}
         onChange={e => {
@@ -45,6 +37,6 @@ export default function EmailInput(props: EmailInputPropsType) {
   );
 }
 
-EmailInput.defaultProps = {
-  rules: [requiredRule, minLengthRule, maxLengthRule, emailRule],
-};
+// EmailInput.defaultProps = {
+//   rules: [requiredRule, minLengthRule, maxLengthRule, emailRule],
+// };

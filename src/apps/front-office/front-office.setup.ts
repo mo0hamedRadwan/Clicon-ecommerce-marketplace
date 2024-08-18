@@ -1,4 +1,5 @@
 import { PublicApp } from "@mongez/react-router";
+import URLS from "./utils/urls";
 
 export const frontOfficeApp: PublicApp = {
   path: "/",
@@ -6,20 +7,25 @@ export const frontOfficeApp: PublicApp = {
   modules: [
     {
       entry: [
-        "/account",
-        "/login",
-        "/register",
-        "/forget-password",
-        "/rest-password",
+        URLS.auth.signin.root,
+        URLS.auth.signin.forgetPassword,
+        URLS.auth.signin.resetPassword,
+        URLS.auth.signup.root,
+        URLS.auth.signup.verifyEmail,
       ],
-      name: "account",
+      name: "auth",
     },
     {
-      entry: ["/", "/404"],
+      entry: [URLS.home, URLS.notFound],
       name: "home",
     },
     {
-      entry: ["/about-us", "/privacy-policy", "/terms-conditions"],
+      entry: [
+        URLS.faq,
+        URLS.pages.aboutUs,
+        URLS.pages.privacyPolicy,
+        URLS.pages.termsConditions,
+      ],
       name: "informative-pages",
     },
   ],

@@ -1,4 +1,5 @@
 import { groupedTranslations, trans } from "@mongez/localization";
+import dictionaryTranslation from "shared/localization/dictionary.json";
 import errorsTranslation from "shared/localization/errors.json";
 import footerTranslation from "shared/localization/footer.json";
 import headerTranslation from "shared/localization/header.json";
@@ -20,4 +21,5 @@ groupedTranslations({
   ...footerTranslation,
   ...errorsTranslation,
   ...homeTranslation,
+  ...dictionaryTranslation,
 });
