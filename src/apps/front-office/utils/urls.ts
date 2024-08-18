@@ -17,7 +17,7 @@ const URLS = {
     },
     signup: {
       root: "/sign-up",
-      verifyEmail: "/sign-up/email-verify",
+      emailVerification: "/sign-up/email-verification",
     },
   },
   settings: "/settings",

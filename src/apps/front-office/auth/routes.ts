@@ -24,7 +24,7 @@ publicRoutes([
     component: SignUpPage,
   },
   {
-    path: URLS.auth.signup.verifyEmail,
+    path: URLS.auth.signup.emailVerification,
     component: VerifyEmailPage,
   },
 ]);

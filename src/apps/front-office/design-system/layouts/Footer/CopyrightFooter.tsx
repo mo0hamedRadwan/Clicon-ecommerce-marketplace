@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 
 export default function CopyrightFooter() {
   return (
-    <div className="py-6 border-t border-gray-800">
+    <div className="py-6 border-t border-gray-800 text-sm sm:text-base">
       <div className="container flex-center">
         <p className="text-center text-zinc-450">
           <span>{`CLICON - ${trans("onlineStore")}`}</span>

@@ -38,7 +38,7 @@ export default function TabsWithBanner({
         <div className="space-between flex-wrap gap-5">
           <h2 className="text-2xl font-semibold">{heading}</h2>
           <div className="center-y gap-x-3">
-            <ul className="center-y gap-x-2">
+            <ul className="hidden sm:center-y gap-x-2">
               {categories.slice(0, 4).map((category, index) => (
                 <li key={index} className="text-sm">
                   {category.name}

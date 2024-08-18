@@ -87,5 +87,17 @@
   "restoringAccessToYourAccount": {
     "en": "Restoring Access to Your Clicon Account",
     "ar": "إستعادة الوصول إلى حسابك بالموقع"
+  },
+  "verifyEmailAddress": {
+    "en": "Verify Email Address",
+    "ar": "تحقق من عنوان البريد الإلكتروني"
+  },
+  "verificationCode": {
+    "en": "Verification Code",
+    "ar": "كود التحقق"
+  },
+  "resend": {
+    "en": "Resend",
+    "ar": "إعادة إرسال"
   }
 }

@@ -18,22 +18,24 @@ export default function TopHeader() {
   );
 
   return (
-    <div className="h-10 bg-sky-750 text-white border-b border-white border-opacity-15">
+    <div className="min-h-10 bg-sky-750 text-white border-b border-white border-opacity-15">
       <div className="container h-full space-between-center">
         <p className="hidden md:block">{`${trans("welcomeTo")} CLICON ${trans("onlineStore")}`}</p>
         <div className="flex-grow md:flex-grow-0 space-between-center gap-x-3">
-          <ul className="center-y gap-x-2">
-            <li>{trans("followUs")}:</li>
-            {socialMediaIcons.map(social => (
-              <li
-                key={social.name}
-                className="hover:text-orange-450 duration-200">
-                <Link to={social.link}>
-                  <i className={`bx ${social.icon}`}></i>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-wrap gap-2">
+            <p>{trans("followUs")}:</p>
+            <ul className="center-y gap-x-2">
+              {socialMediaIcons.map(social => (
+                <li
+                  key={social.name}
+                  className="hover:text-orange-450 duration-200">
+                  <Link to={social.link}>
+                    <i className={`bx ${social.icon}`}></i>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="w-[1px] h-6 bg-white bg-opacity-15"></div>
           <div className={`${isRTL() ? "mr-10" : "ml-10"}`}>
             <Select

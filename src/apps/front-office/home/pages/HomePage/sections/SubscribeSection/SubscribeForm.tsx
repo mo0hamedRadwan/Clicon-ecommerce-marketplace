@@ -7,10 +7,13 @@ import { isRTL } from "apps/front-office/utils/helpers";
 export default function SubscribeForm() {
   return (
     <Form className="relative">
-      <EmailInput className=" p-5 rounded" placeholder={trans("email")} />
+      <EmailInput
+        className="p-3 sm:p-5 rounded text-sm sm:text-base"
+        placeholder={trans("email")}
+      />
       <Button
         onClick={() => console.log("Subscribe Email")}
-        className={`absolute top-3 ${isRTL() ? "left-3" : "right-3"}`}>
+        className={`absolute top-1 sm:top-3 ${isRTL() ? "left-1 ms:left-3" : "right-1 sm:right-3"}`}>
         {trans("subscribe")}
       </Button>
     </Form>

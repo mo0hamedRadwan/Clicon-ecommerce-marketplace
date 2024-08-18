@@ -9,11 +9,11 @@ type NewsCardPropsType = {
 
 export default function NewsCard({ news }: NewsCardPropsType) {
   return (
-    <article className="p-5 xl:p-8 w-[400px] 2xl:w-[470px] bg-white rounded flex flex-col items-start gap-y-5">
+    <article className="p-3 sm:p-5 xl:p-8 w-full sm:w-[400px] 2xl:w-[470px] bg-white rounded flex flex-col items-start gap-y-3 sm:gap-y-5">
       <div className="w-full flex-center">
         <img src={news.imageUrl} alt="" />
       </div>
-      <ul className="flex gap-x-5">
+      <ul className="flex gap-x-2 sm:gap-x-5 text-xs sm:text-base">
         <li className="center-y gap-x-2">
           <span className="text-orange-450 text-xl">
             <i className="bx bx-user-circle"></i>
@@ -39,8 +39,12 @@ export default function NewsCard({ news }: NewsCardPropsType) {
           <span className="text-gray-450">{news.numOfComments}</span>
         </li>
       </ul>
-      <h2 className="text-xl font-semibold line-clamp-2">{news.title}</h2>
-      <p className="text-gray-450 line-clamp-3">{news.shortDescription}</p>
+      <h2 className="text-base sm:text-xl font-semibold line-clamp-2">
+        {news.title}
+      </h2>
+      <p className="text-gray-450 line-clamp-3 text-xs sm:text-base">
+        {news.shortDescription}
+      </p>
       <LinkAsButton
         variant="outlined"
         size="md"

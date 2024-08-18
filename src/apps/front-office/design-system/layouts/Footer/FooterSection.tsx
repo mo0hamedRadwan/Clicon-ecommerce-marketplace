@@ -33,8 +33,8 @@ export default function FooterSection() {
         </p>
         <p>info@kinbo.com</p>
       </div>
-      <div className="space-between gap-x-5">
-        <div className="w-[200px]">
+      <div className="space-between gap-5 flex-wrap sm:flex-nowrap">
+        <div className="w-full sm:w-[200px]">
           <h3 className="mb-5">
             {`${trans("top")} ${trans("categories")}`.toUpperCase()}
           </h3>
@@ -82,7 +82,7 @@ export default function FooterSection() {
             </Link>
           </div>
         </div>
-        <div className="max-w-[420px] w-[320px] flex-grow">
+        <div className="max-w-[420px] w-[300px] xs:w-[320px] flex-grow">
           <h3 className="mb-5">{trans("popularTags").toUpperCase()}</h3>
           <ul className="flex flex-row flex-wrap gap-2">
             {popularTags.map(popularTag => (

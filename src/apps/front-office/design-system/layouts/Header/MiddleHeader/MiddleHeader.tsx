@@ -10,9 +10,9 @@ import WishlistMenu from "./WishlistMenu";
 
 export default function MiddleHeader() {
   return (
-    <div className="h-[88px] bg-sky-750 text-white">
+    <div className="h-[44px] sm:h-[88px] bg-sky-750 text-white">
       <div className="container h-full space-between-center">
-        <div className="w-[177px] h-12">
+        <div className="w-[85px] h-6 sm:w-[177px] sm:h-12">
           <Link to={URLS.home}>
             <img
               src={headerLogo}
@@ -32,23 +32,23 @@ export default function MiddleHeader() {
             <i className="bx bx-search"></i>
           </span>
         </div>
-        <ul className="center-y gap-x-7 text-4xl">
-          <li className="relative pb-3 group">
-            <Link to={URLS.cart}>
+        <ul className="h-full center-y gap-x-7">
+          <li className="relative md:pb-3 group">
+            <Link to={URLS.cart} className="text-2xl md:text-4xl">
               <i className="bx bx-cart"></i>
             </Link>
             <NumOfItems number={3} />
             <CartMenu />
           </li>
-          <li className="relative pb-3 group">
-            <Link to={URLS.wishlist}>
+          <li className="relative md:pb-3 group">
+            <Link to={URLS.wishlist} className="text-2xl md:text-4xl">
               <i className="bx bx-heart"></i>
             </Link>
             <NumOfItems number={2} />
             <WishlistMenu />
           </li>
-          <li className="relative pb-3 group">
-            <Link to={URLS.account}>
+          <li className="relative md:pb-3 group">
+            <Link to={URLS.account} className="text-2xl md:text-4xl">
               <i className="bx bx-user"></i>
             </Link>
             <AccountMenu />
