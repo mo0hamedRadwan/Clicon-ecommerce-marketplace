@@ -36,6 +36,8 @@ const URLS = {
   compare: "/compare",
   shop: "/shop",
   deals: "/deals",
+  // I will delete it in future
+  account: "/account",
 };
 
 export default URLS;

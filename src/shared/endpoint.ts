@@ -46,7 +46,8 @@ endpointEvents.onError(response => {
 
   if (response.status === 401) {
     user.logout();
-    navigateTo(URLS.auth.login);
+    // navigateTo(URLS.auth.login);
+    navigateTo(URLS.auth.signin.root);
   }
 });
 
