@@ -12,7 +12,7 @@ export default function ProductButtons({
   setViewProductQuick,
 }: ProductButtonsPropsType) {
   return (
-    <div className="hidden z-50 absolute top-0 left-0 w-full h-full group-hover:flex-center hover:bg-[rgba(0,0,0,0.2)] duration-200">
+    <div className="hidden z-40 absolute top-0 left-0 w-full h-full group-hover:flex-center hover:bg-[rgba(0,0,0,0.2)] duration-200">
       <div className="center-y gap-x-2">
         <Button
           onClick={() => console.log("add product to wishlist")}

@@ -99,5 +99,85 @@
   "resend": {
     "en": "Resend",
     "ar": "إعادة إرسال"
+  },
+  "relatedProducts": {
+    "en": "Related Products",
+    "ar": "منتجات ذات صلة"
+  },
+  "productAccessories": {
+    "en": "Product Accessories",
+    "ar": "اكسسوارات المنتج"
+  },
+  "appleProducts": {
+    "en": "Apple Products",
+    "ar": "منتجات أبل"
+  },
+  "featuredProducts": {
+    "en": "Featured Products",
+    "ar": "منتجات مميزة"
+  },
+  "description": {
+    "en": "Description",
+    "ar": "الوصف"
+  },
+  "additionalInformation": {
+    "en": "Additional Information",
+    "ar": "معلومات أضافية"
+  },
+  "specification": {
+    "en": "Specification",
+    "ar": "مواصفات"
+  },
+  "review": {
+    "en": "Review",
+    "ar": "مراجعة"
+  },
+  "features": {
+    "en": "Features",
+    "ar": "مميزات"
+  },
+  "shippingInformation": {
+    "en": "Shipping Information",
+    "ar": "معلومات الشحن"
+  },
+  "freeShipping": {
+    "en": "Free Shipping",
+    "ar": "شحن مجاني"
+  },
+  "localShipping": {
+    "en": "Local Shipping",
+    "ar": "شحن محلي"
+  },
+  "freeYearWarranty": {
+    "en": "Free 1 Year Warranty",
+    "ar": "ضمان سنة مجاني"
+  },
+  "moneyBackGuarantee": {
+    "en": "Money Back Guarantee",
+    "ar": "ضمان استعادة الأموال"
+  },
+  "securePaymentMethod": {
+    "en": "Secure Payment Method",
+    "ar": "طريقة الدفع الأمنة"
+  },
+  "fastedDelivery": {
+    "en": "Fasted Delivery",
+    "ar": "توصيل سريع"
+  },
+  "days": {
+    "en": "Days",
+    "ar": "أيام"
+  },
+  "oneWeek": {
+    "en": "One Week",
+    "ar": "أسبوع واحد"
+  },
+  "UPSGroundShipping": {
+    "en": "UPS Ground Shipping",
+    "ar": "الشحن البرئ"
+  },
+  "unishopGlobalExport": {
+    "en": "Unishop Global Export",
+    "ar": "يونيشوب للتصدير العالمي"
   }
 }

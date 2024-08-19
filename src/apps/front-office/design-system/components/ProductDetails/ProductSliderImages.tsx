@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useWindowDimensions } from "../../hooks/use-window-dimensions";
 
 type ProductSliderImagesPropsType = {
   images: string[];
@@ -15,10 +16,14 @@ export default function ProductSliderImages({
 }: ProductSliderImagesPropsType) {
   const swiperRef = useRef<any>(null);
   const [currentImage, setCurrentImage] = useState(0);
+  const dimensions = useWindowDimensions();
+
+  const numOfSlides =
+    dimensions.width > 1400 ? 6 : dimensions.width > 900 ? 4 : 3;
 
   return (
-    <div className="w-[620px] flex flex-col items-center gap-y-5">
-      <div className="w-full h-[460px] p-10 border border-gray-200">
+    <div className="w-full sm:w-[620px] flex flex-col items-center gap-y-5">
+      <div className="w-full h-[460px] p-5 sm:p-10 border border-gray-200">
         <img src={images[currentImage]} alt="" className="w-full h-full" />
       </div>
 
@@ -27,7 +32,7 @@ export default function ProductSliderImages({
           onSwiper={swiper => {
             swiperRef.current = swiper;
           }}
-          slidesPerView={6}
+          slidesPerView={numOfSlides}
           loop={true}
           // spaceBetween={30}
           // centeredSlides={true}

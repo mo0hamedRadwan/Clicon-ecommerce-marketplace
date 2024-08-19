@@ -37,3 +37,10 @@ export const topProducts = [
   { title: "topRated", products: products },
   { title: "newArrival", products: products },
 ];
+
+export const relatedProducts = [
+  { title: "relatedProducts", products: products },
+  { title: "productAccessories", products: products },
+  { title: "appleProducts", products: products },
+  { title: "featuredProducts", products: products },
+];

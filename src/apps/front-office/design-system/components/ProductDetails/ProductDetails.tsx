@@ -8,7 +8,6 @@ import StarsRating from "../ui/StarsRating";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import ProductDetailsForm from "./ProductDetailsForm";
 import ProductSliderImages from "./ProductSliderImages";
 
 type ProductDetailsPropsType = {
@@ -17,23 +16,25 @@ type ProductDetailsPropsType = {
 
 export default function ProductDetails({ product }: ProductDetailsPropsType) {
   return (
-    <div className="container p-10 bg-white rounded flex justify-center items-start flex-wrap gap-10">
+    <div className="container p-2 sm:p-10 bg-white rounded flex justify-center items-start flex-wrap gap-10">
       {/* Delete ! mark in future */}
       <ProductSliderImages images={product.images!} />
 
-      <div className="w-[680px] flex flex-col gap-y-3 text-gray-550">
+      <div className="w-full sm:w-[680px] flex flex-col gap-y-3 text-gray-550">
         <div className="">
           <StarsRating longRating />
-          <p className="text-black text-2xl line-clamp-2">{product.name}</p>
+          <p className="text-black text-lg sm:text-2xl line-clamp-2">
+            {product.name}
+          </p>
         </div>
 
-        <ul className="grid grid-cols-2 gap-3">
-          <li>
-            <span>{trans("sku")}: </span>
+        <ul className="grid grid-cols-2 gap-3 text-sm sm:text-base">
+          <li className="flex flex-wrap gap-2">
+            <span>{trans("sku")}:</span>
             <span className="text-black font-bold">{product.sku}</span>
           </li>
-          <li>
-            <span>{trans("availability")}: </span>
+          <li className="flex flex-wrap gap-2">
+            <span>{trans("availability")}:</span>
             {product.inStock ? (
               <span className="text-green-500 font-bold">
                 {trans("inStock")}
@@ -44,13 +45,15 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
               </span>
             )}
           </li>
-          <li>
-            <span>{trans("brand")}: </span>
+          <li className="flex flex-wrap gap-2">
+            <span>{trans("brand")}:</span>
             <span className="text-black font-bold">{product.brand}</span>
           </li>
-          <li>
-            <span>{trans("categories")}: </span>
-            <span className="text-black font-bold">{product.category}</span>
+          <li className="flex flex-wrap gap-2">
+            <span>{trans("categories")}:</span>
+            <span className="text-black font-bold text-xs sm:text-base">
+              {product.category}
+            </span>
           </li>
         </ul>
 
@@ -72,9 +75,9 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
 
         <hr className="bg-gray-200" />
 
-        <ProductDetailsForm product={product} />
+        {/* <ProductDetailsForm product={product} /> */}
 
-        <div className="space-between">
+        <div className="space-between flex-wrap text-sm sm:text-base">
           <div className="center-y gap-x-5">
             <div className="center-y gap-x-2 hover:text-black cursor-pointer duration-150">
               <span className="text-2xl">

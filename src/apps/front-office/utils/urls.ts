@@ -1,6 +1,7 @@
 // append urls here, DO NOT remove this line
 
 const URLS = {
+  catalog: "/catalog",
   home: "/",
   notFound: "/404",
   blog: {
@@ -38,6 +39,7 @@ const URLS = {
   deals: "/deals",
   // I will delete it in future
   account: "/account",
+  product: "/product",
 };
 
 export default URLS;

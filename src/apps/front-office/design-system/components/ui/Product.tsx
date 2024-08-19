@@ -31,6 +31,15 @@ export default function Product({
         largeProduct ? "px-6 pb-6 pt-3" : "p-3",
         className,
       )}>
+      {viewProduct && (
+        <div className="">
+          {/* Change product props */}
+          <QuickView
+            product={RealProduct}
+            setCloseViewProduct={setViewProduct}
+          />
+        </div>
+      )}
       <div className="flex flex-col gap-y-2">
         <div
           className={`relative ${largeProduct ? "h-[250px] my-9" : "lg:h-[188px]"} flex justify-center items-end group`}>
@@ -99,16 +108,6 @@ export default function Product({
               <i className="bx bx-show"></i>
             </Button>
           </div>
-        </div>
-      )}
-
-      {viewProduct && (
-        <div className="z-50 absolute top-0 left-0 min-w-full min-h-full flex-center bg-[rgba(0,0,0,0.8)]">
-          {/* Change product props */}
-          <QuickView
-            product={RealProduct}
-            setCloseViewProduct={setViewProduct}
-          />
         </div>
       )}
     </div>
