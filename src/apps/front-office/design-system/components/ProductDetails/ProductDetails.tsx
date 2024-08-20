@@ -21,20 +21,20 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
       {/* Delete ! mark in future */}
       <ProductSliderImages images={product.images!} />
 
-      <div className="w-full sm:w-[680px] flex flex-col gap-y-3 text-gray-550">
+      <div className="w-full sm:w-[680px] flex flex-col gap-y-5 text-gray-550">
         <div className="">
           <StarsRating longRating />
-          <p className="text-black text-lg sm:text-2xl line-clamp-2">
+          <p className="text-zinc-950 text-lg sm:text-2xl line-clamp-2">
             {product.name}
           </p>
         </div>
 
         <ul className="grid grid-cols-2 gap-3 text-sm sm:text-base">
-          <li className="flex flex-wrap gap-2">
+          <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("sku")}:</span>
             <span className="text-black font-bold">{product.sku}</span>
           </li>
-          <li className="flex flex-wrap gap-2">
+          <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("availability")}:</span>
             {product.inStock ? (
               <span className="text-green-500 font-bold">
@@ -46,11 +46,11 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
               </span>
             )}
           </li>
-          <li className="flex flex-wrap gap-2">
+          <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("brand")}:</span>
             <span className="text-black font-bold">{product.brand}</span>
           </li>
-          <li className="flex flex-wrap gap-2">
+          <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("categories")}:</span>
             <span className="text-black font-bold text-xs sm:text-base">
               {product.category}
@@ -113,7 +113,7 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
         </div>
 
         <div className="mt-5 p-5 flex flex-col gap-y-2 border border-gray-200">
-          <p className="text-black">{`100% ${trans("guaranteeSafe")} ${trans("checkout")}`}</p>
+          <p className="text-zinc-950 text-sm sm:text-base">{`100% ${trans("guaranteeSafe")} ${trans("checkout")}`}</p>
           <img
             src={paymentMethodImg}
             alt="payment methods image"

@@ -14,8 +14,8 @@ export default function ProductDescription({
   description,
 }: ProductDescriptionPropsType) {
   return (
-    <div className="flex flex-wrap md:flex-nowrap gap-5 sm:gap-10">
-      <div className="w-full sm:w-[700px] flex flex-col gap-3">
+    <div className="flex flex-wrap xl:flex-nowrap md:justify-center gap-5 sm:gap-10">
+      <div className="w-full md:w-[680px] flex flex-col gap-3">
         <h3 className="font-semibold text-lg">{trans("description")}</h3>
         <p>{description}</p>
         <p>
@@ -25,10 +25,10 @@ export default function ProductDescription({
           codecs.
         </p>
       </div>
-      <div className="block xs:hidden lg:block h-[1px] xs:h-[270px] w-full xs:w-[1px] border border-gray-150"></div>
+      <div className="block xs:hidden xl:block h-[1px] xs:h-[270px] w-full xs:w-[1px] bg-gray-150"></div>
       <div className="flex flex-col gap-3">
         <h3 className="font-semibold text-lg">{trans("features")}</h3>
-        <ul className="w-full sm:w-[260px] flex flex-col gap-y-3">
+        <ul className="w-full sm:w-[280px] flex flex-col gap-y-3">
           <li className="center-y gap-x-2">
             <img src={medalIcon} alt="" />
             <span>{trans("freeYearWarranty")}</span>
@@ -51,28 +51,28 @@ export default function ProductDescription({
           </li>
         </ul>
       </div>
-      <div className="block xs:hidden lg:block h-[1px] xs:h-[270px] w-full xs:w-[1px] border border-gray-150"></div>
+      <div className="block xs:hidden xl:block h-[1px] xs:h-[270px] w-full xs:w-[1px] bg-gray-150"></div>
       <div>
-        <h3 className="font-semibold text-lg">
+        <h3 className="mb-3 font-semibold text-lg">
           {trans("shippingInformation")}
         </h3>
-        <ul className="w-full">
+        <ul className="w-full sm:w-[290px] flex flex-col gap-y-3 text-sm">
           <li className="center-y gap-x-2">
             <span className="font-semibold">{trans("Courier")}:</span>
             <span className="text-gray-550">
-              {`2 - 4 ${trans("days")}${isRTL() ? " و " : ","} ${trans("freeShipping")}`}
+              {`2 - 4 ${trans("days")}${isRTL() ? "و" : ","} ${trans("freeShipping")}`}
             </span>
           </li>
           <li className="center-y gap-x-2">
             <span className="font-semibold">{trans("localShipping")}:</span>
             <span className="text-gray-550">
-              {`${trans("upTo")} ${trans("oneWeek")}${isRTL() ? " و " : ","} $19.00`}
+              {`${trans("upTo")} ${trans("oneWeek")}${isRTL() ? "و" : ","} $19.00`}
             </span>
           </li>
           <li className="center-y gap-x-2">
             <span className="font-semibold">{trans("UPSGroundShipping")}:</span>
             <span className="text-gray-550">
-              {`2 - 4 ${trans("days")}${isRTL() ? " و " : ","} $29.00`}
+              {`2 - 4 ${trans("days")}${isRTL() ? "و" : ","} $29.00`}
             </span>
           </li>
           <li className="center-y gap-x-2">
@@ -80,7 +80,7 @@ export default function ProductDescription({
               {trans("unishopGlobalExport")}:
             </span>
             <span className="text-gray-550">
-              {`2 - 4 ${trans("days")}${isRTL() ? " و " : ","} $29.00`}
+              {`2 - 4 ${trans("days")}${isRTL() ? "و" : ","} $29.00`}
             </span>
           </li>
         </ul>

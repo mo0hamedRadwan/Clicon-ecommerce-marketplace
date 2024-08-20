@@ -88,7 +88,7 @@ export default function ProductDetailsForm({
         </li>
       </ul>
 
-      <div className="mt-5 center-y flex-wrap md:flex-nowrap gap-3">
+      <div className="mt-5 center-y justify-center flex-wrap md:flex-nowrap gap-3">
         <QuantityInput />
         <div className="flex-grow center-y gap-3 flex-wrap xs:flex-nowrap">
           <Button

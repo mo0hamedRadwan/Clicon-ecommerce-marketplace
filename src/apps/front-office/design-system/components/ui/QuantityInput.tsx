@@ -10,7 +10,7 @@ export default function QuantityInput() {
   };
 
   return (
-    <div className="w-[170px] p-3 space-between-center border border-gray-200">
+    <div className="w-[100px] sm:w-[170px] p-1 md:p-3 space-between-center border border-gray-200">
       <button
         type="button"
         onClick={() => quantity > 1 && setQuantity(quantity - 1)}
@@ -21,7 +21,7 @@ export default function QuantityInput() {
         type="text"
         value={quantity <= 9 ? "0" + quantity : quantity}
         onChange={e => handleQuantityChange(e)}
-        className="w-[80px] text-center focus:outline-none"
+        className="w-[50px] sm:w-[80px] text-center focus:outline-none"
       />
       <button
         type="button"
