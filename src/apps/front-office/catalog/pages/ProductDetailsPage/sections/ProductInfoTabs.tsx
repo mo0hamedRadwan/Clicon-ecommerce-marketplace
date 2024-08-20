@@ -9,7 +9,7 @@ type ProductInfoTabsPropsType = {
 export default function ProductInfoTabs({ product }: ProductInfoTabsPropsType) {
   return (
     <div className="border border-gray-150">
-      <div className="flex-center">
+      <div className="flex-center flex-wrap xs:flex-nowrap">
         {[
           "description",
           "additionalInformation",
@@ -17,7 +17,9 @@ export default function ProductInfoTabs({ product }: ProductInfoTabsPropsType) {
           "review",
         ].map(tab => (
           // border-b-2 border-orange-450
-          <button key={tab} className="p-5 text-gray-550 text-sm sm:text-lg">
+          <button
+            key={tab}
+            className="w-full xs:w-auto p-5 text-gray-550 text-sm sm:text-lg">
             {trans(tab).toUpperCase()}
           </button>
         ))}

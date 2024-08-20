@@ -35,7 +35,10 @@ export default function Select({
   return (
     <div className="relative" ref={menuRef}>
       <button
-        className={twMerge("space-between-center p-2", className)}
+        className={twMerge(
+          "space-between-center p-2 text-xs sm:text-base",
+          className,
+        )}
         onClick={() => setOpenMenu(!openMenu)}>
         <span>{selectedValue}</span>
         <span>

@@ -88,24 +88,26 @@ export default function ProductDetailsForm({
         </li>
       </ul>
 
-      <div className="mt-5 center-y gap-3">
+      <div className="mt-5 center-y flex-wrap md:flex-nowrap gap-3">
         <QuantityInput />
-        <Button
-          variant="contained"
-          size="lg"
-          endIcon="bx-cart"
-          onClick={() => console.log("add product to cart")}
-          className="w-[320px] font-semibold"
-          iconClassName="text-2xl">
-          {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
-        </Button>
-        <LinkAsButton
-          variant="outlined"
-          size="lg"
-          href={URLS.checkout}
-          className="font-semibold">
-          {`${trans("buy")} ${trans("now")}`.toUpperCase()}
-        </LinkAsButton>
+        <div className="flex-grow center-y gap-3 flex-wrap xs:flex-nowrap">
+          <Button
+            variant="contained"
+            size="lg"
+            endIcon="bx-cart"
+            onClick={() => console.log("add product to cart")}
+            className="flex-grow font-semibold"
+            iconClassName="md:text-2xl">
+            {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
+          </Button>
+          <LinkAsButton
+            variant="outlined"
+            size="lg"
+            href={URLS.checkout}
+            className="flex-grow xs:flex-grow-0 font-semibold">
+            {`${trans("buy")} ${trans("now")}`.toUpperCase()}
+          </LinkAsButton>
+        </div>
       </div>
     </>
   );

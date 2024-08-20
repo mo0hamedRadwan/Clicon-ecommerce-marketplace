@@ -29,7 +29,7 @@ export default function LinkAsButton({
       className={twMerge(
         variantClass[variant],
         sizeClass[size],
-        "flex-center gap-x-2 rounded duration-200",
+        "flex-center gap-x-2 rounded duration-200 text-xs",
         className,
       )}>
       {startIcon && <i className={`bx ${startIcon} ${iconClassName}`}></i>}

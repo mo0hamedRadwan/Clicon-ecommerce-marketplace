@@ -8,6 +8,7 @@ import StarsRating from "../ui/StarsRating";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import ProductDetailsForm from "./ProductDetailsForm";
 import ProductSliderImages from "./ProductSliderImages";
 
 type ProductDetailsPropsType = {
@@ -75,7 +76,7 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
 
         <hr className="bg-gray-200" />
 
-        {/* <ProductDetailsForm product={product} /> */}
+        <ProductDetailsForm product={product} />
 
         <div className="space-between flex-wrap text-sm sm:text-base">
           <div className="center-y gap-x-5">
@@ -83,13 +84,13 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
               <span className="text-2xl">
                 <i className="bx bx-heart"></i>
               </span>
-              <span>{`${trans("add")} ${trans("to")} ${trans("wishlist").toLowerCase()}`}</span>
+              <span className="text-xs sm:text-base">{`${trans("add")} ${trans("to")} ${trans("wishlist").toLowerCase()}`}</span>
             </div>
             <div className="center-y gap-x-2 hover:text-black cursor-pointer duration-150">
               <span className="text-2xl">
                 <i className="bx bx-git-compare"></i>
               </span>
-              <span>{`${trans("add")} ${trans("to")} ${trans("compare").toLowerCase()}`}</span>
+              <span className="text-xs sm:text-base">{`${trans("add")} ${trans("to")} ${trans("compare").toLowerCase()}`}</span>
             </div>
           </div>
           <div className="center-y gap-2">

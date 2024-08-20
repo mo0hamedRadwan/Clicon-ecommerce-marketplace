@@ -29,7 +29,7 @@ export default function StarsRating({
         ))}
       </ul>
       {longRating && (
-        <p className="font-bold text-black">{`${rating} ${trans("stars")} ${trans("rating")}`}</p>
+        <p className="font-bold text-black text-xs sm:text-base">{`${rating} ${trans("stars")} ${trans("rating")}`}</p>
       )}
       <p className="text-sm font-medium text-gray-450">
         {`(${numOfReviews.toLocaleString()}${longRating ? ` ${trans("users")} ${trans("feedback")}` : ""})`}

@@ -25,7 +25,7 @@ export default function ProductDescription({
           codecs.
         </p>
       </div>
-      <div className="hidden lg:block h-[270px] w-[1px] border border-gray-150"></div>
+      <div className="block xs:hidden lg:block h-[1px] xs:h-[270px] w-full xs:w-[1px] border border-gray-150"></div>
       <div className="flex flex-col gap-3">
         <h3 className="font-semibold text-lg">{trans("features")}</h3>
         <ul className="w-full sm:w-[260px] flex flex-col gap-y-3">
@@ -51,7 +51,7 @@ export default function ProductDescription({
           </li>
         </ul>
       </div>
-      <div className="hidden lg:block h-[270px] w-[1px] border border-gray-150"></div>
+      <div className="block xs:hidden lg:block h-[1px] xs:h-[270px] w-full xs:w-[1px] border border-gray-150"></div>
       <div>
         <h3 className="font-semibold text-lg">
           {trans("shippingInformation")}
