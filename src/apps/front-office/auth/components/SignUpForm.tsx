@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
+import { Form } from "@mongez/react-form";
+import { Link, navigateTo } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import appleIcon from "assets/images/Apple.png";
@@ -8,18 +9,69 @@ import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
 import PasswordInput from "components/form/PasswordInput";
 import TextInput from "components/form/TextInput";
+import { register } from "../services/auth";
 
 export default function SignUpForm() {
+  const handleSignUpForm = ({ values }) => {
+    const newUser = {
+      firstName: values.username,
+      lastName: values.username,
+      email: values.email,
+      password: values.password,
+      confirmPassword: values.confirmPassword,
+    };
+
+    register(newUser)
+      .then(() => {
+        // navigate to verify email address
+        navigateTo(URLS.auth.signup.emailVerification);
+        // set email to local storage
+        localStorage.setItem("email", newUser.email);
+      })
+      .catch(error => {
+        console.error("Error signing up user:", error);
+      });
+  };
+
   return (
-    <div className="p-10 flex flex-col gap-y-5">
-      <TextInput label={trans("name")} />
-      <EmailInput label={trans("emailAddress")} />
+    <Form className="p-10 flex flex-col gap-y-5" onSubmit={handleSignUpForm}>
+      <TextInput
+        name="username"
+        label={trans("name")}
+        required
+        minLength={8}
+        maxLength={50}
+        // pattern={/^(?=[a-zA-Z0-9._]{8,20}$)(?!.*[_.]{2})[^_.].*[^_.]$/}
+      />
+      <EmailInput
+        name="email"
+        label={trans("emailAddress")}
+        required
+        minLength={10}
+        maxLength={100}
+        email
+        // pattern={}
+      />
       <PasswordInput
+        name="password"
         placeholder={`8+ ${trans("characters")}`}
         label={trans("password")}
+        required
+        minLength={8}
+        maxLength={100}
+        // pattern={}
       />
-      <PasswordInput label={trans("confirmPassword")} />
+      <PasswordInput
+        name="confirmPassword"
+        match="password"
+        label={trans("confirmPassword")}
+        required
+        minLength={8}
+        maxLength={100}
+        // pattern={}
+      />
       <Button
+        type="submit"
         endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
         onClick={() => console.log("sign In")}>
         {trans("signin").toUpperCase()}
@@ -76,6 +128,6 @@ export default function SignUpForm() {
           {`${trans("signup")} ${trans("withApple")}`}
         </Button>
       </div>
-    </div>
+    </Form>
   );
 }

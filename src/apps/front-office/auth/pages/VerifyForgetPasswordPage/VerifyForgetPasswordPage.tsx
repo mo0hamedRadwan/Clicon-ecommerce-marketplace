@@ -5,21 +5,19 @@ import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import TextInput from "components/form/TextInput";
-import { verifyCode } from "../../services/auth";
+import { verifyForgetPassword } from "../../services/auth";
 
 export default function VerifyEmailPage() {
-  const handleVerifyEmailForm = ({ values }) => {
+  const handleVerifyForgetPasswordForm = ({ values }) => {
     const verifyEmail = {
       email: localStorage.getItem("email"),
       code: values.code,
     };
 
-    verifyCode(verifyEmail)
+    verifyForgetPassword(verifyEmail)
       .then(() => {
         // navigate to login page after verify email
-        navigateTo(URLS.auth.signin.root);
-        // remove email from local storage
-        localStorage.removeItem("email");
+        navigateTo(URLS.auth.signin.resetPassword);
       })
       .catch(error => {
         console.error(error);
@@ -29,8 +27,10 @@ export default function VerifyEmailPage() {
     <div className="container py-32 flex-center">
       <Form
         className="p-10 w-[500px] shadow-4 flex flex-col gap-y-5"
-        onSubmit={handleVerifyEmailForm}>
-        <h3 className="text-2xl text-center">{trans("verifyEmailAddress")}</h3>
+        onSubmit={handleVerifyForgetPasswordForm}>
+        <h3 className="text-2xl text-center">
+          {trans("verifyForgetPassword")}
+        </h3>
         <p className="text-sm text-center">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
           eius temporibus quia quas ullam sit voluptas id dolore suscipit modi,

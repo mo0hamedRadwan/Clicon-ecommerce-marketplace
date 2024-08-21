@@ -17,8 +17,8 @@ export default function ProductDescription({
     <div className="flex flex-wrap xl:flex-nowrap md:justify-center gap-5 sm:gap-10">
       <div className="w-full md:w-[680px] flex flex-col gap-3">
         <h3 className="font-semibold text-lg">{trans("description")}</h3>
-        <p>{description}</p>
-        <p>
+        <p className="text-gray-550 font-semibold">{description}</p>
+        <p className="text-gray-550 font-semibold">
           Even the most ambitious projects are easily handled with up to 10 CPU
           cores, up to 16 GPU cores, a 16-core Neural Engine, and dedicated
           encode and decode media engines that support H.264, HEVC, and ProRes
@@ -28,7 +28,7 @@ export default function ProductDescription({
       <div className="block xs:hidden xl:block h-[1px] xs:h-[270px] w-full xs:w-[1px] bg-gray-150"></div>
       <div className="flex flex-col gap-3">
         <h3 className="font-semibold text-lg">{trans("features")}</h3>
-        <ul className="w-full sm:w-[280px] flex flex-col gap-y-3">
+        <ul className="w-full sm:w-[280px] flex flex-col gap-y-3 font-semibold">
           <li className="center-y gap-x-2">
             <img src={medalIcon} alt="" />
             <span>{trans("freeYearWarranty")}</span>

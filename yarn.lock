@@ -453,7 +453,7 @@
   dependencies:
     crypto-js "^4.0.0"
 
-"@mongez/events@^2.0.0", "@mongez/events@^2.1.0":
+"@mongez/events@2.1.0", "@mongez/events@^2.0.0", "@mongez/events@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@mongez/events/-/events-2.1.0.tgz#644fa0c0ae226f162ccca4a755a059892d545253"
   integrity sha512-gUTDm8fy0BRJmG/kkSmLi/Ir2PAFQQtk0FE9GGivnIK5YpGJD6MFrIj3Ui8SN3mMFKvCJae6zJjuYv6fLFQgBQ==
@@ -485,7 +485,7 @@
     "@mongez/fs" "^3.0.4"
     husky "^8.0.3"
 
-"@mongez/localization@^2.2.1", "@mongez/localization@^2.2.4":
+"@mongez/localization@2.2.4", "@mongez/localization@^2.2.4":
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/@mongez/localization/-/localization-2.2.4.tgz#6d3c4b924474c9d14d1d97fe3c10fff07769c19a"
   integrity sha512-AVuIhuj2ibrRfsFAN0L2H3y9YDMqmPU07ee7Y/iCQiOIMCwwvxsE2x6t07z27MPFAtcexvt5rykZuQtmBBJ+tg==
@@ -500,13 +500,13 @@
   dependencies:
     "@mongez/atom" "^1.0.0"
 
-"@mongez/react-form@^2.1.3":
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/@mongez/react-form/-/react-form-2.1.3.tgz#4000160dc3cd6b0e3d408f802e3c3872da4bae06"
-  integrity sha512-mMlj5lkJWgLQFNK/1pRlGcCDtwnVZRKpjQDMQN2pycpkf8+1bLans/0VV68FkUIxyjQEKTiQtkTrre25FUShCw==
+"@mongez/react-form@^2.1.4":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@mongez/react-form/-/react-form-2.1.4.tgz#db93edeace618087836d860c4df744aeb57e4875"
+  integrity sha512-B3KrU8EWbSw5REyox9c53sHK8ffwoIzZfBhJLxaGI/npcthVnI8d2BCYcTrOd4oQE+V+WOoah1021JqTQrCg6Q==
   dependencies:
-    "@mongez/events" "^2.0.0"
-    "@mongez/localization" "^2.2.1"
+    "@mongez/events" "2.1.0"
+    "@mongez/localization" "2.2.4"
 
 "@mongez/react-helmet@^1.0.9":
   version "1.0.9"

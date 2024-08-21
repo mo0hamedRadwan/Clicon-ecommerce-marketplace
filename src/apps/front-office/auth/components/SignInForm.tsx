@@ -1,24 +1,57 @@
 import { trans } from "@mongez/localization";
+import { Form } from "@mongez/react-form";
+import { navigateTo } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import appleIcon from "assets/images/Apple.png";
 import googleIcon from "assets/images/Google.png";
 import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
 import PasswordInput from "components/form/PasswordInput";
+import { login } from "../services/auth";
 
 export default function SignInForm() {
+  const handleSignInForm = ({ values }) => {
+    const user = {
+      email: values.email,
+      password: values.password,
+    };
+
+    login(user)
+      .then(response => {
+        // add access token to local storage
+        localStorage.setItem("accessToken", response.data.user.accessToken);
+        // navigate to home page
+        navigateTo(URLS.home);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  };
+
   return (
-    <div className="p-10 flex flex-col gap-y-5">
+    <Form className="p-10 flex flex-col gap-y-5" onSubmit={handleSignInForm}>
       <EmailInput
+        name="email"
         placeholder={trans("emailAddress")}
         label={trans("emailAddress")}
+        minLength={10}
+        maxLength={100}
+        email
+        // pattern={}
       />
       <PasswordInput
+        name="password"
         placeholder={trans("password")}
         label={trans("password")}
         showForgetPassword
+        required
+        minLength={8}
+        maxLength={100}
+        // pattern={}
       />
       <Button
+        type="submit"
         endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
         onClick={() => console.log("sign In")}>
         {trans("signin").toUpperCase()}
@@ -53,6 +86,6 @@ export default function SignInForm() {
           {`${trans("login")} ${trans("withApple")}`}
         </Button>
       </div>
-    </div>
+    </Form>
   );
 }

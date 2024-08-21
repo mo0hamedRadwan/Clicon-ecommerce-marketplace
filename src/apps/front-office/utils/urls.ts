@@ -15,6 +15,8 @@ const URLS = {
       root: "/sign-in",
       forgetPassword: "/sign-in/forget-password",
       resetPassword: "/sign-in/forget-password/reset-password",
+      resetPasswordVerification:
+        "/sign-in/forget-password/verify-reset-password",
     },
     signup: {
       root: "/sign-up",

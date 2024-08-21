@@ -3,6 +3,7 @@ import {
   FormControlProps,
   maxLengthRule,
   minLengthRule,
+  patternRule,
   requiredRule,
   useFormControl,
 } from "@mongez/react-form";
@@ -14,14 +15,16 @@ type TextInputPropsType = FormControlProps & {
 };
 
 export default function TextInput(props: TextInputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { value, changeValue, error } = useFormControl({
+    ...props,
+    rules: [requiredRule, minLengthRule, maxLengthRule, patternRule],
+  });
 
   return (
     <div className="flex flex-col gap-y-2">
-      {props.label && <label htmlFor="email-id">{trans(props.label)}</label>}
+      {props.label && <label>{trans(props.label)}</label>}
       <input
-        type="text"
-        id="email-id"
+        type={props.type}
         value={value}
         placeholder={props.placeholder}
         onChange={e => {
@@ -43,7 +46,3 @@ export default function TextInput(props: TextInputPropsType) {
     </div>
   );
 }
-
-TextInput.defaultProps = {
-  rules: [requiredRule, minLengthRule, maxLengthRule],
-};

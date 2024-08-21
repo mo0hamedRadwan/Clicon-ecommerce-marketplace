@@ -1,18 +1,44 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
+import { Form } from "@mongez/react-form";
+import { Link, navigateTo } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
+import { forgetPassword } from "../../services/auth";
 
 export default function ForgetPasswordPage() {
+  const handleForgetPasswordForm = ({ values }) => {
+    const email = { email: values.email };
+
+    forgetPassword(email)
+      .then(data => {
+        // send verification code to the user
+        console.log(data);
+        // navigate to verify code page
+        navigateTo(URLS.auth.signin.resetPasswordVerification);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  };
+
   return (
     <div className="container py-32 flex-center">
-      <div className="p-10 w-[500px] shadow-4 flex flex-col gap-y-5">
+      <Form
+        className="p-10 w-[500px] shadow-4 flex flex-col gap-y-5"
+        onSubmit={handleForgetPasswordForm}>
         <h3 className="text-2xl text-center">{trans("forgetPassword")}</h3>
         <p className="text-sm text-center">{`${trans("enter")} ${trans("the")} ${trans("emailAddress")} ${trans("or")} ${trans("mobileNumber")} ${trans("associateWithYourAccount")}`}</p>
-        <EmailInput label={trans("emailAddress")} />
+        <EmailInput
+          name="email"
+          label={trans("emailAddress")}
+          required
+          email
+          // pattern={}
+        />
         <Button
+          type="submit"
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
           onClick={() => console.log("send Code")}>
           {`${trans("send")} ${trans("code")}`.toUpperCase()}
@@ -45,7 +71,7 @@ export default function ForgetPasswordPage() {
           </span>
           <span>{` ${trans("forHelp")} ${trans("restoringAccessToYourAccount")}.`}</span>
         </p>
-      </div>
+      </Form>
     </div>
   );
 }

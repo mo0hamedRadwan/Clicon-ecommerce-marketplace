@@ -92,6 +92,10 @@
     "en": "Verify Email Address",
     "ar": "تحقق من عنوان البريد الإلكتروني"
   },
+  "verifyForgetPassword": {
+    "en": "Verify Forget Password",
+    "ar": "تحقق من إعادة تعيين كلمة المرور"
+  },
   "verificationCode": {
     "en": "Verification Code",
     "ar": "كود التحقق"

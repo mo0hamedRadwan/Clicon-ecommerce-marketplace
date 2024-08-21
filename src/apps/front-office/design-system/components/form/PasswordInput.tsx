@@ -1,5 +1,12 @@
 import { trans } from "@mongez/localization";
-import { FormControlProps, useFormControl } from "@mongez/react-form";
+import {
+  FormControlProps,
+  maxLengthRule,
+  minLengthRule,
+  patternRule,
+  requiredRule,
+  useFormControl,
+} from "@mongez/react-form";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
@@ -8,13 +15,16 @@ import LinkAsButton from "../ui/LinkAsButton";
 
 type PasswordInputPropsType = FormControlProps & {
   className?: string;
-  placeholder?: string;
+  // placeholder?: string;
   label?: string;
   showForgetPassword?: boolean;
 };
 
 export default function PasswordInput(props: PasswordInputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { value, changeValue, error } = useFormControl({
+    ...props,
+    rules: [requiredRule, minLengthRule, maxLengthRule, patternRule],
+  });
   const [showPassword, setShowPassword] = useState(false);
 
   return (

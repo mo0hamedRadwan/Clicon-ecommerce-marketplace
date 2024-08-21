@@ -5,7 +5,7 @@ import { navigateTo } from "@mongez/react-router";
 import user from "apps/front-office/account/user";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";
-import { apiBaseUrl } from "./flags";
+import { accessToken, apiBaseUrl, clientId } from "./flags";
 
 const endpoint = new Endpoint({
   putToPost: false,
@@ -27,6 +27,11 @@ const endpointEvents = endpoint.events;
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
   headers["lang"] = getCurrentLocaleCode();
+  headers["client-id"] = clientId;
+  headers["Authorization"] = `Bearer ${accessToken}`;
+  // config.params = {
+  //   locale: getCurrentLocaleCode(),
+  // };
 });
 
 endpointEvents.onSuccess((response: AxiosResponse) => {

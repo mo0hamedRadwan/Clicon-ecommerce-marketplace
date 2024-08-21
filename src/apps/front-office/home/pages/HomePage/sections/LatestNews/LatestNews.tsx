@@ -7,7 +7,7 @@ export default function LatestNews() {
     <div className="py-20 bg-gray-150">
       <div className="container">
         <h2 className="text-4xl font-semibold text-center">{`${trans("latest")} ${trans("news")}`}</h2>
-        <ul className="mt-5 center-y justify-center gap-5 flex-wrap xl:flex-nowrap">
+        <ul className="mt-5 sm:mt-10 center-y justify-center gap-5 flex-wrap xl:flex-nowrap">
           {news.map(newsBlog => (
             <li key={newsBlog.id}>
               <NewsCard news={newsBlog} />
