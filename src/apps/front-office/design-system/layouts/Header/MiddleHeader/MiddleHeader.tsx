@@ -1,10 +1,12 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import user from "apps/front-office/account/user";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import headerLogo from "assets/images/HeaderLogo.png";
 import AccountMenu from "./AccountMenu";
 import CartMenu from "./CartMenu";
+import MyAccountMenu from "./MyAccountMenu";
 import NumOfItems from "./NumOfItems";
 import WishlistMenu from "./WishlistMenu";
 
@@ -51,7 +53,7 @@ export default function MiddleHeader() {
             <Link to={URLS.account} className="text-2xl md:text-4xl">
               <i className="bx bx-user"></i>
             </Link>
-            <AccountMenu />
+            {user.isLoggedIn() ? <MyAccountMenu /> : <AccountMenu />}
           </li>
 
           {/* {middleHeaderIcons.map(icon => (

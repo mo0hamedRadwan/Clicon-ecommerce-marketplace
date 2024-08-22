@@ -5,20 +5,32 @@ import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { forgetPassword } from "../../services/auth";
 
 export default function ForgetPasswordPage() {
+  const [loading, setLoading] = useState<boolean>();
+
   const handleForgetPasswordForm = ({ values }) => {
     const email = { email: values.email };
 
+    setLoading(true);
     forgetPassword(email)
-      .then(data => {
+      .then(() => {
         // send verification code to the user
-        console.log(data);
+        toast.success(trans("verificationCodeSendedSuccessfully"));
+        setLoading(false);
+        // set email to local storage
+        localStorage.setItem("email", values.email);
         // navigate to verify code page
         navigateTo(URLS.auth.signin.resetPasswordVerification);
       })
       .catch(error => {
+        const errorMessage =
+          error.response.data.error || error.response.data.messages[0].error;
+        setLoading(false);
+        toast.error(errorMessage);
         console.error(error);
       });
   };
@@ -40,7 +52,8 @@ export default function ForgetPasswordPage() {
         <Button
           type="submit"
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-          onClick={() => console.log("send Code")}>
+          onClick={() => console.log("send Code")}
+          disabled={loading}>
           {`${trans("send")} ${trans("code")}`.toUpperCase()}
         </Button>
         <p className="flex gap-x-2">

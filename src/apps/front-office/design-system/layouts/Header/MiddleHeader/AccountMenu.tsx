@@ -1,30 +1,42 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { navigateTo } from "@mongez/react-router";
-import { login } from "apps/front-office/account/service/auth";
+import { login } from "apps/front-office/auth/services/auth";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
 import PasswordInput from "components/form/PasswordInput";
 import LinkAsButton from "components/ui/LinkAsButton";
+import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function AccountMenu() {
+  const [loading, setLoading] = useState(false);
+
   const handleLoginForm = ({ values }) => {
     const user = {
       email: values.email,
       password: values.password,
     };
 
+    setLoading(true);
     login(user)
       .then(response => {
+        // notification user is logged in successfully.
+        toast.success(trans("userSignedinSuccessfully"));
+        setLoading(false);
         // add access token to local storage
         localStorage.setItem("accessToken", response.data.user.accessToken);
         // navigate to home page
         navigateTo(URLS.home);
       })
       .catch(error => {
-        console.log(error);
+        const errorMessage =
+          error.response.data.error || error.response.data.messages[0].error;
+        setLoading(false);
+        toast.error(errorMessage);
+        console.error(error);
       });
   };
 
@@ -42,7 +54,8 @@ export default function AccountMenu() {
           type="submit"
           onClick={() => console.log("login")}
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-          className="w-full tracking-widest">
+          className="w-full tracking-widest"
+          disabled={loading}>
           {trans("login").toUpperCase()}
         </Button>
       </Form>

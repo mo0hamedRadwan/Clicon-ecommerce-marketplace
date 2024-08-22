@@ -5,19 +5,28 @@ import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import TextInput from "components/form/TextInput";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { verifyForgetPassword } from "../../services/auth";
 
 export default function VerifyEmailPage() {
+  const [loading, setLoading] = useState<boolean>();
+
   const handleVerifyForgetPasswordForm = ({ values }) => {
     const verifyEmail = {
       email: localStorage.getItem("email"),
       code: values.code,
     };
 
+    setLoading(true);
     verifyForgetPassword(verifyEmail)
       .then(() => {
+        toast.success(trans("userVerifiedEmailSuccessfully"));
+        setLoading(false);
         // navigate to login page after verify email
         navigateTo(URLS.auth.signin.resetPassword);
+        // set code to local storage
+        localStorage.setItem("code", values.code);
       })
       .catch(error => {
         console.error(error);
@@ -49,7 +58,8 @@ export default function VerifyEmailPage() {
         <Button
           type="submit"
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-          onClick={() => console.log("send Code")}>
+          onClick={() => console.log("send Code")}
+          disabled={loading}>
           {`${trans("verify")} ${trans("me")}`.toUpperCase()}
         </Button>
       </Form>

@@ -1,2 +1,2 @@
-resend verify email code again
+resend verify email code again (with countdown 1 min)
 add access token to local storage

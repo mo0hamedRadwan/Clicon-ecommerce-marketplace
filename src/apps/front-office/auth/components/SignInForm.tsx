@@ -8,24 +8,36 @@ import googleIcon from "assets/images/Google.png";
 import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
 import PasswordInput from "components/form/PasswordInput";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { login } from "../services/auth";
 
 export default function SignInForm() {
+  const [loading, setLoading] = useState<boolean>();
+
   const handleSignInForm = ({ values }) => {
     const user = {
       email: values.email,
       password: values.password,
     };
 
+    setLoading(true);
     login(user)
       .then(response => {
+        // notification that user is signed in successfully.
+        toast.success(trans("userSignedinSuccessfully"));
+        setLoading(false);
         // add access token to local storage
         localStorage.setItem("accessToken", response.data.user.accessToken);
         // navigate to home page
         navigateTo(URLS.home);
       })
       .catch(error => {
-        console.log(error);
+        const errorMessage =
+          error.response.data.error || error.response.data.messages[0].error;
+        setLoading(false);
+        toast.error(errorMessage);
+        console.error(error);
       });
   };
 
@@ -53,7 +65,8 @@ export default function SignInForm() {
       <Button
         type="submit"
         endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-        onClick={() => console.log("sign In")}>
+        onClick={() => console.log("sign In")}
+        disabled={loading}>
         {trans("signin").toUpperCase()}
       </Button>
       <div className="relative">

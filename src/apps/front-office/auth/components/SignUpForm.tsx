@@ -9,9 +9,13 @@ import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
 import PasswordInput from "components/form/PasswordInput";
 import TextInput from "components/form/TextInput";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { register } from "../services/auth";
 
 export default function SignUpForm() {
+  const [loading, setLoading] = useState<boolean>();
+
   const handleSignUpForm = ({ values }) => {
     const newUser = {
       firstName: values.username,
@@ -21,15 +25,23 @@ export default function SignUpForm() {
       confirmPassword: values.confirmPassword,
     };
 
+    setLoading(true);
     register(newUser)
       .then(() => {
+        // notification that user is signed up successfully.
+        toast.success(trans("userSignedUpSuccessfully"));
+        setLoading(false);
         // navigate to verify email address
         navigateTo(URLS.auth.signup.emailVerification);
         // set email to local storage
         localStorage.setItem("email", newUser.email);
       })
       .catch(error => {
-        console.error("Error signing up user:", error);
+        const errorMessage =
+          error.response.data.error || error.response.data.messages[0].error;
+        setLoading(false);
+        toast.error(errorMessage);
+        console.error(error);
       });
   };
 
@@ -73,7 +85,8 @@ export default function SignUpForm() {
       <Button
         type="submit"
         endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-        onClick={() => console.log("sign In")}>
+        onClick={() => console.log("sign In")}
+        disabled={loading}>
         {trans("signin").toUpperCase()}
       </Button>
       <div className="relative">

@@ -5,25 +5,39 @@ import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import PasswordInput from "components/form/PasswordInput";
+import { useState } from "react";
+import toast from "react-hot-toast";
 import { resetPassword } from "../../services/auth";
 
 export default function ResetPasswordPage() {
+  const [loading, setLoading] = useState<boolean>();
+
   const handleResetPasswordForm = ({ values }) => {
     const resetUserPassword = {
       email: localStorage.getItem("email"),
+      code: localStorage.getItem("code"),
       password: values.password,
       confirmPassword: values.confirmPassword,
     };
 
+    setLoading(true);
     resetPassword(resetUserPassword)
-      .then(response => {
-        console.log(response);
+      .then(() => {
+        // reset user password successfully
+        toast.success(trans("userResetPasswordSuccessfully"));
+        setLoading(false);
         // navigate to login page after reset password
         navigateTo(URLS.auth.signin.root);
         // remove email from local storage
         localStorage.removeItem("email");
+        // remove code from local storage
+        localStorage.removeItem("code");
       })
       .catch(error => {
+        const errorMessage =
+          error.response.data.error || error.response.data.messages[0].error;
+        setLoading(false);
+        toast.error(errorMessage);
         console.error(error);
       });
   };
@@ -43,17 +57,23 @@ export default function ResetPasswordPage() {
           label={trans("password")}
           placeholder={`8+ ${trans("characters")}`}
           required
+          minLength={8}
+          maxLength={100}
         />
         <PasswordInput
           name="confirmPassword"
           label={trans("confirmPassword")}
+          match="password"
           required
+          minLength={8}
+          maxLength={100}
         />
 
         <Button
           type="submit"
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
-          onClick={() => console.log("send Code")}>
+          onClick={() => console.log("send Code")}
+          disabled={loading}>
           {trans("resetpassword").toUpperCase()}
         </Button>
       </Form>

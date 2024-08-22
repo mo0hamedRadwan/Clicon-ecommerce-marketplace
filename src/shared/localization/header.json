@@ -99,13 +99,21 @@
     "en": "Account",
     "ar": "حساب"
   },
-  "emailAddress": {
-    "en": "Email Address",
-    "ar": "البريد الإلكتروني"
+  "myAccount": {
+    "en": "Account",
+    "ar": "حسابي"
   },
   "yourAccount": {
     "en": "Your Account",
     "ar": "حسابك"
+  },
+  "browsingHistory": {
+    "en": "Browsing History",
+    "ar": "سجل التصفح"
+  },
+  "emailAddress": {
+    "en": "Email Address",
+    "ar": "البريد الإلكتروني"
   },
   "forgetPassword": {
     "en": "Forget Password?",

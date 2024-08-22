@@ -28,6 +28,8 @@ Website Demo: <a href="https://clicon-ecommerce-phi.vercel.app/en">Clicon Ecomme
 
 #### 11. Swiper (for Carousel)
 
+#### 12. react-hot-toast (for notifications)
+
 ## Theme Layout
 
 #### 1. Header

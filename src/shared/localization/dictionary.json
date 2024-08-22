@@ -183,5 +183,25 @@
   "unishopGlobalExport": {
     "en": "Unishop Global Export",
     "ar": "يونيشوب للتصدير العالمي"
+  },
+  "userResetPasswordSuccessfully": {
+    "en": "User has been successfully reset password",
+    "ar": "تم إعادة تعيين كلمة المرور للمستخدم بنجاح"
+  },
+  "userSignedUpSuccessfully": {
+    "en": "User has been successfully signed up",
+    "ar": "تم التسجيل بنجاح للمستخدم"
+  },
+  "userSignedinSuccessfully": {
+    "en": "User has been successfully signed in",
+    "ar": "تم تسجيل الدخول بنجاح للمستخدم"
+  },
+  "verificationCodeSendedSuccessfully": {
+    "en": "Verification code has been sent successfully",
+    "ar": "تم إرسال كود التحقق بنجاح"
+  },
+  "userVerifiedEmailSuccessfully": {
+    "en": "User has been successfully verified email",
+    "ar": "تم التحقق من عنوان البريد الإلكتروني بنجاج"
   }
 }
