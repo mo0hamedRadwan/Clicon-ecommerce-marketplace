@@ -203,5 +203,13 @@
   "userVerifiedEmailSuccessfully": {
     "en": "User has been successfully verified email",
     "ar": "تم التحقق من عنوان البريد الإلكتروني بنجاج"
+  },
+  "stockStatus": {
+    "en": "Stock Status",
+    "ar": "حالة المنتج"
+  },
+  "outOfStock": {
+    "en": "Out of Stock",
+    "ar": "منتج غير متوفر"
   }
 }

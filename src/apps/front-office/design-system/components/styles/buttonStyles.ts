@@ -5,7 +5,7 @@ export const variantClass = {
 };
 
 export const sizeClass = {
-  sm: "py-1 px-2 text-xs md:text-base",
-  md: "py-2 px-5 text-sm md:text-lg",
-  lg: "py-3 px-8 text-base md:text-xl",
+  sm: "py-1 px-2 md:text-base",
+  md: "py-2 px-5 md:text-lg",
+  lg: "py-3 px-8 md:text-xl",
 };

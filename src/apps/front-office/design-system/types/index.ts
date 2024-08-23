@@ -20,7 +20,7 @@ export type ProductType = {
   caption?: string;
   slug?: string;
   quantity?: number;
-  inStock?: boolean;
+  stockStatus?: boolean;
   discount?: number;
   sku?: string;
   brand?: string;

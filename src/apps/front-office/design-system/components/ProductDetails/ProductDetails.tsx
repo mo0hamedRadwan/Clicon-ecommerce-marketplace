@@ -36,13 +36,13 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
           </li>
           <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("availability")}:</span>
-            {product.inStock ? (
+            {product.stockStatus ? (
               <span className="text-green-500 font-bold">
                 {trans("inStock")}
               </span>
             ) : (
               <span className="text-red-500 font-bold">
-                {trans("outStock")}
+                {trans("outOfStock")}
               </span>
             )}
           </li>
