@@ -211,5 +211,29 @@
   "outOfStock": {
     "en": "Out of Stock",
     "ar": "منتج غير متوفر"
+  },
+  "from": {
+    "en": "From",
+    "ar": "من"
+  },
+  "cartTotals": {
+    "en": "Cart Totals",
+    "ar": "مجموع السلة"
+  },
+  "shipping": {
+    "en": "Shipping",
+    "ar": "الشحن"
+  },
+  "discount": {
+    "en": "Discount",
+    "ar": "الخصم"
+  },
+  "processToCheckout": {
+    "en": "Process to Checkout",
+    "ar": "عملية الشراء"
+  },
+  "applyCoupon": {
+    "en": "Apply Coupon",
+    "ar": "تطبيق الكوبون"
   }
 }

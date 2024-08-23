@@ -18,9 +18,9 @@ export default function CartMenu() {
         {cartProducts.map(product => (
           <li key={product.id} className="center-y">
             <Link
-              to={"/productId"}
+              to={"/product/:id"}
               className="flex-grow h-[60px] center-y gap-x-5">
-              <div className="w-[60px] h-full">
+              <div className="min-w-[60px] h-full">
                 <img
                   src={product.imageUrl}
                   alt={product.name}
@@ -28,7 +28,7 @@ export default function CartMenu() {
                 />
               </div>
               <div className="h-full flex-grow flex flex-col justify-between">
-                <p>{product.name}</p>
+                <p className="line-clamp-1">{product.name}</p>
                 <p className="text-sm font-semibold">
                   <span>{product.quantity}</span>
                   <span className="mx-1">x</span>
@@ -45,11 +45,11 @@ export default function CartMenu() {
       </ul>
       <div className="mb-3 w-full h-[1px] bg-gray-300"></div>
       <div className="space-between-center text-lg">
-        <span>{trans("subTotal")}:</span>
+        <span>{trans("subtotal")}:</span>
         <span className="font-semibold">${"1080.00"}</span>
       </div>
       <div className="mt-2 flex flex-col gap-y-2">
-        <LinkAsButton variant="contained" href={URLS.checkout}>
+        <LinkAsButton variant="contained" href={URLS.wishlist}>
           {`${trans("checkout")} ${trans("now")}`.toUpperCase()}
         </LinkAsButton>
         <LinkAsButton variant="outlined" href={URLS.cart}>

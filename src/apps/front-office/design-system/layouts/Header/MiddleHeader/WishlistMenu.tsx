@@ -18,16 +18,16 @@ export default function WishlistMenu() {
         {wishlistProducts.map(product => (
           <li key={product.id} className="center-y">
             <Link
-              to={"/productId"}
+              to={"/product/:id"}
               className="flex-grow h-[60px] center-y gap-x-5">
-              <div className="w-[60px] h-full">
+              <div className="min-w-[60px] h-full">
                 <img
                   src={product.imageUrl}
                   alt={product.name}
                   className="w-full h-full object-cover rounded-md border border-gray-200"
                 />
               </div>
-              <p className="h-full flex-grow">{product.name}</p>
+              <p className="line-clamp-2">{product.name}</p>
             </Link>
             {/* onClick Delete Product from cart */}
             <button className="text-gray">x</button>
@@ -36,7 +36,7 @@ export default function WishlistMenu() {
       </ul>
       <div className="mb-3 w-full h-[1px] bg-gray-300"></div>
       <div className="mt-2 flex flex-col gap-y-2">
-        <LinkAsButton variant="contained" href={URLS.checkout}>
+        <LinkAsButton variant="contained" href={URLS.wishlist}>
           {trans("wishlist").toUpperCase()}
         </LinkAsButton>
       </div>

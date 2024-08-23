@@ -9,30 +9,33 @@ import { categoryImages, newsImages, productImages } from "./images";
 
 export const product1: ProductType = {
   id: 1,
-  name: "Product 1",
+  name: "Bose Sport Earbuds - Wireless Earphones - Bluetooth In Ear Headphones for Workouts and Running, Triple Black",
   price: 100,
   quantity: 1,
   imageUrl: productImages.productImg1,
   category: "category",
+  stockStatus: true,
 };
 
 export const product2: ProductType = {
   id: 2,
-  name: "Product 2",
+  name: "TOZO T6 True Wireless Earbuds Bluetooth Headphones Touch Control with Wireless Charging Case IPX8 Waterproof Stereo Earphones in-Ear",
   price: 50,
   quantity: 2,
   imageUrl: productImages.productImg2,
   category: "category",
+  stockStatus: false,
 };
 
 export const product3: ProductType = {
   id: 3,
-  name: "Product 3",
+  name: "Portable Wshing Machine, 11lbs capacity Model 18NMFIAM",
   price: 200,
   oldPrice: 250,
   quantity: 10,
   imageUrl: productImages.productImg1,
   category: "category",
+  stockStatus: true,
 };
 
 export const product4: ProductType = {

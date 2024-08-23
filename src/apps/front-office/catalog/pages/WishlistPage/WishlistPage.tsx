@@ -7,7 +7,7 @@ export default function WishlistPage() {
       <div className="hidden lg:block">
         <WishlistTable />
       </div>
-      <div className="block lg:hidder">
+      <div className="block lg:hidden">
         <WishlistList />
       </div>
     </div>

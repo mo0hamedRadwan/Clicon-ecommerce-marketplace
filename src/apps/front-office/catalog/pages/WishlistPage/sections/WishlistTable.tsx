@@ -8,13 +8,17 @@ export default function WishlistTable() {
   return (
     <table className="w-full border border-gray-150 rounded">
       <caption
-        className={`text-3xl font-semibold ${isRTL() ? "text-right" : "text-left"} p-5 border border-gray-150`}>
+        className={`text-2xl font-semibold ${isRTL() ? "text-right" : "text-left"} p-5 border border-gray-150`}>
         {trans("wishlist")}
       </caption>
       <thead className={`bg-gray-150 ${isRTL() ? "text-right" : "text-left"}`}>
         <tr className="">
-          <th className="min-w-[400px]">{trans("products").toUpperCase()}</th>
-          <th className="min-w-[200px]">{trans("price").toUpperCase()}</th>
+          <th className="w-[420px] xl:min-w-[520px]">
+            {trans("products").toUpperCase()}
+          </th>
+          <th className="min-w-[100px] 2xl:min-w-[200px]">
+            {trans("price").toUpperCase()}
+          </th>
           <th className="min-w-[150px]">
             {trans("stockStatus").toUpperCase()}
           </th>
@@ -31,7 +35,7 @@ export default function WishlistTable() {
                 alt={product.name}
                 className="w-20 h-20 object-cover rounded-md border border-gray-200"
               />
-              <p className="text-gray-550 text-sm line-clamp-2">
+              <p className="text-gray-550 text-sm line-clamp-3 hover:text-zinc-950 duration-150">
                 {product.name}
               </p>
             </Link>
@@ -48,12 +52,12 @@ export default function WishlistTable() {
           </td>
           <td>
             {product.stockStatus ? (
-              <span className="text-green-500 font-bold">
-                {trans("inStock")}
+              <span className="text-green-500 font-semibold">
+                {trans("inStock").toUpperCase()}
               </span>
             ) : (
-              <span className="text-red-500 font-bold">
-                {trans("outOfStock")}
+              <span className="text-red-500 font-semibold">
+                {trans("outOfStock").toUpperCase()}
               </span>
             )}
           </td>
@@ -67,7 +71,7 @@ export default function WishlistTable() {
                 {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
               </Button>
               <Button
-                className="text-lg p-2 bg-white text-gray-550 border border-gray-450 rounded-full hover:text-white hover:border-orange-450"
+                className="text-lg p-2 bg-white text-gray-550 border border-gray-450 rounded-full hover:text-red-550 hover:border-red-550 hover:bg-white"
                 onClick={() => console.log("remove product from wishlist")}>
                 <i className="bx bx-x"></i>
               </Button>
