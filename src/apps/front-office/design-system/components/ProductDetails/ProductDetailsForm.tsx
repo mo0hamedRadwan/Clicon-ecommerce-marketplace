@@ -15,6 +15,7 @@ export default function ProductDetailsForm({
   product,
 }: ProductDetailsFormPropsType) {
   const [selectedColor, setSelectedColor] = useState(0);
+  const [productQuantity, setProductQuantity] = useState(product.quantity || 1);
   const sizeOptions: SelectOption[] | undefined = product.sizes?.map(size => {
     return { label: size, value: size };
   });
@@ -89,7 +90,7 @@ export default function ProductDetailsForm({
       </ul>
 
       <div className="mt-5 center-y justify-center flex-wrap md:flex-nowrap gap-3">
-        <QuantityInput />
+        <QuantityInput value={productQuantity} setValue={setProductQuantity} />
         <div className="flex-grow center-y gap-3 flex-wrap xs:flex-nowrap">
           <Button
             variant="contained"
@@ -103,7 +104,7 @@ export default function ProductDetailsForm({
           <LinkAsButton
             variant="outlined"
             size="lg"
-            href={URLS.checkout}
+            href={URLS.checkout.root}
             className="flex-grow xs:flex-grow-0 font-semibold">
             {`${trans("buy")} ${trans("now")}`.toUpperCase()}
           </LinkAsButton>
