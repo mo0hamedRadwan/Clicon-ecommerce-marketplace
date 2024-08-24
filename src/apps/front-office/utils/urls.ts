@@ -34,7 +34,10 @@ const URLS = {
     view: (page: any) => `/pages/${page.id}/${page.slug}`,
   },
   cart: "/cart",
-  checkout: "/checkout",
+  checkout: {
+    root: "/checkout",
+    success: "/checkout/success",
+  },
   wishlist: "/wishlist",
   compare: "/compare",
   shop: "/shop",

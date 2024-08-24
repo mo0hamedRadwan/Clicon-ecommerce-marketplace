@@ -20,7 +20,13 @@ export const frontOfficeApp: PublicApp = {
       name: "home",
     },
     {
-      entry: [URLS.product, URLS.wishlist, URLS.cart],
+      entry: [
+        URLS.product,
+        URLS.wishlist,
+        URLS.cart,
+        URLS.checkout.root,
+        URLS.checkout.success,
+      ],
       name: "catalog",
     },
     {

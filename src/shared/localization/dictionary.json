@@ -235,5 +235,13 @@
   "applyCoupon": {
     "en": "Apply Coupon",
     "ar": "تطبيق الكوبون"
+  },
+  "yourOrder": {
+    "en": "Your Order",
+    "ar": "طلبك"
+  },
+  "isSuccessfully": {
+    "en": "is successfully",
+    "ar": "تم بنجاح"
   }
 }

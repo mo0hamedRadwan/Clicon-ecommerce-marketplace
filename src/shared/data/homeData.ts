@@ -1,7 +1,13 @@
+import paypalIcon from "assets/images/paypal.png";
+import amazonIcon from "assets/images/SVGs/Amazon.svg";
 import creditCardIcon from "assets/images/SVGs/CreditCard.svg";
+import creditCardIcon2 from "assets/images/SVGs/CreditCard2.svg";
+import cashIcon from "assets/images/SVGs/CurrencyDollar.svg";
 import headphonesIcon from "assets/images/SVGs/Headphones.svg";
 import packageIcon from "assets/images/SVGs/Package.svg";
 import trophyIcon from "assets/images/SVGs/Trophy.svg";
+import venmoIcon from "assets/images/venmo.png";
+
 import { products } from "./testData";
 
 export const features = [
@@ -43,4 +49,12 @@ export const relatedProducts = [
   { title: "productAccessories", products: products },
   { title: "appleProducts", products: products },
   { title: "featuredProducts", products: products },
+];
+
+export const paymentMethods = [
+  { name: "cash", icon: cashIcon, label: "cashOnDelivery" },
+  { name: "venmo", icon: venmoIcon, label: "venmo" },
+  { name: "paypal", icon: paypalIcon, label: "paypal" },
+  { name: "amazon", icon: amazonIcon, label: "amazonPay" },
+  { name: "creditcard", icon: creditCardIcon2, label: "debitCreditcard" },
 ];

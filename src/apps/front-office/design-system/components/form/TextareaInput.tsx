@@ -1,25 +1,15 @@
 import { trans } from "@mongez/localization";
-import {
-  FormControlProps,
-  maxLengthRule,
-  minLengthRule,
-  patternRule,
-  requiredRule,
-  useFormControl,
-} from "@mongez/react-form";
+import { FormControlProps, useFormControl } from "@mongez/react-form";
 import { twMerge } from "tailwind-merge";
 
-type TextInputPropsType = FormControlProps & {
+type TextareaInputPropsType = FormControlProps & {
   className?: string;
   label?: string;
   optional?: boolean;
 };
 
-export default function TextInput(props: TextInputPropsType) {
-  const { value, changeValue, error } = useFormControl({
-    ...props,
-    rules: [requiredRule, minLengthRule, maxLengthRule, patternRule],
-  });
+export default function TextareaInput(props: TextareaInputPropsType) {
+  const { value, changeValue, error } = useFormControl(props);
 
   return (
     <div className="w-full flex flex-col gap-y-2">
@@ -31,11 +21,11 @@ export default function TextInput(props: TextInputPropsType) {
           )}
         </label>
       )}
-      <input
-        type={props.type}
+      <textarea
         value={value}
         placeholder={props.placeholder}
         onChange={e => changeValue(e.target.value)}
+        rows={6}
         className={twMerge(
           "p-2 text-black border border-gray-150",
           props.className,

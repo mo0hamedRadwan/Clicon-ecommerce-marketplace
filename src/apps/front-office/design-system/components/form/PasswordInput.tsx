@@ -45,9 +45,7 @@ export default function PasswordInput(props: PasswordInputPropsType) {
           type={showPassword ? "text" : "password"}
           value={value}
           placeholder={props.placeholder}
-          onChange={e => {
-            changeValue(e.target.value);
-          }}
+          onChange={e => changeValue(e.target.value)}
           className={twMerge(
             "w-full p-2 border border-gray-150",
             props.className,

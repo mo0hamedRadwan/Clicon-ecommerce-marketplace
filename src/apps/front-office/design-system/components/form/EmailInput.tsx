@@ -28,9 +28,7 @@ export default function EmailInput(props: EmailInputPropsType) {
         type="email"
         value={value}
         placeholder={props.placeholder}
-        onChange={e => {
-          changeValue(e.target.value);
-        }}
+        onChange={e => changeValue(e.target.value)}
         className={twMerge(
           "p-2 text-black border border-gray-150",
           props.className,
