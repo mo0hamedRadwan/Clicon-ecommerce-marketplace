@@ -1,6 +1,8 @@
 import { trans } from "@mongez/localization";
+import { Link } from "@mongez/react-router";
 import Button from "apps/front-office/design-system/components/form/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
+import { products } from "shared/data/testData";
 import BillingForm from "./sections/BillingForm";
 
 export default function CheckoutPage() {
@@ -15,6 +17,35 @@ export default function CheckoutPage() {
         <div className="w-full lg:max-w-full 2xl:w-[400px]">
           <div className="w-full p-5 2xl:w-[400px] flex flex-col gap-y-5 border border-gray-150">
             <h3 className="text-lg font-medium">{trans("orderSummary")}</h3>
+
+            <ul className="flex flex-col gap-y-3">
+              {products.map(product => (
+                <li key={product.id}>
+                  <Link
+                    to={"/product/:id"}
+                    className="h-[60px] center-y gap-x-5">
+                    <div className="min-w-[60px] h-full">
+                      <img
+                        src={product.imageUrl}
+                        alt={product.name}
+                        className="w-full h-full object-cover rounded-md border border-gray-200"
+                      />
+                    </div>
+                    <div className="h-full flex-grow flex flex-col justify-between">
+                      <p className="line-clamp-1">{product.name}</p>
+                      <p className="text-sm font-semibold">
+                        <span className="text-sky-500 font-bold">
+                          ${product.price}
+                        </span>
+                        <span className="mx-1">x</span>
+                        <span>{product.quantity}</span>
+                      </p>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
             <ul className="flex flex-col gap-y-2">
               <li className="space-between">
                 <p>{trans("subtotal")}</p>

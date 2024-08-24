@@ -236,6 +236,10 @@
     "en": "Apply Coupon",
     "ar": "تطبيق الكوبون"
   },
+  "billingInformation": {
+    "en": "Billing Information",
+    "ar": "معلومات الدفع"
+  },
   "yourOrder": {
     "en": "Your Order",
     "ar": "طلبك"
@@ -243,5 +247,93 @@
   "isSuccessfully": {
     "en": "is successfully",
     "ar": "تم بنجاح"
+  },
+  "placeOrder": {
+    "en": "Place Order",
+    "ar": "تقديم الطلب"
+  },
+  "goto": {
+    "en": "Go to",
+    "ar": "الذهاب إلى"
+  },
+  "companyName": {
+    "en": "Company Name",
+    "ar": "أسم الشركة"
+  },
+  "optional": {
+    "en": "Optional",
+    "ar": "اختياري"
+  },
+  "firstName": {
+    "en": "First Name",
+    "ar": "الاسم الأول"
+  },
+  "lastName": {
+    "en": "Last Name",
+    "ar": "الاسم الثاني"
+  },
+  "state": {
+    "en": "State",
+    "ar": "المحافظة"
+  },
+  "zipCode": {
+    "en": "Zip Code",
+    "ar": "الرمز البريدي"
+  },
+  "shipInto": {
+    "en": "Ship Into",
+    "ar": "توصيل إلى"
+  },
+  "differentAddress": {
+    "en": "Different Address",
+    "ar": "عنوان مختلف"
+  },
+  "paymentOption": {
+    "en": "Payment Option",
+    "ar": "طريقة الدفع"
+  },
+  "cashOnDelivery": {
+    "en": "Cash on Delivery",
+    "ar": "الدفع عند التوصيل"
+  },
+  "venmo": {
+    "en": "Venmo",
+    "ar": "فنمو"
+  },
+  "paypal": {
+    "en": "PayPal",
+    "ar": "باي بال"
+  },
+  "amazonPay": {
+    "en": "Amazon Pay",
+    "ar": "أمازون باي"
+  },
+  "debitCreditcard": {
+    "en": "Debit/Credit Card",
+    "ar": "بطاقة الخصم/الائتمانية"
+  },
+  "nameOnCard": {
+    "en": "Name on Card",
+    "ar": "الاسم على البطاقة"
+  },
+  "cardNumber": {
+    "en": "Card Number",
+    "ar": "رقم البطاقة"
+  },
+  "expireDate": {
+    "en": "Expire Date",
+    "ar": "تاريخ الانتهاء"
+  },
+  "cvv": {
+    "en": "CVV",
+    "ar": "رقم التحقق من البطاقة"
+  },
+  "orderNotes": {
+    "en": "Order Notes",
+    "ar": "ملاحظات الطلب"
+  },
+  "orderNotesPlaceholder": {
+    "en": "Notes about your order, e.g. special notes for delivery",
+    "ar": "ملاحظات حول طلبك، على سبيل المثال. ملاحظات خاصة للتسليم"
   }
 }

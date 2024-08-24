@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { FormControlProps, useFormControl } from "@mongez/react-form";
 
 type RatioInputPropsType = FormControlProps & {
@@ -9,7 +10,7 @@ export default function RatioInput(props: RatioInputPropsType) {
   const { value, changeValue, error } = useFormControl(props);
   return (
     <div className={props.className}>
-      <label>{props.label}</label>
+      <label>{trans(props.label)}</label>
 
       <div className="w-4 h-4 flex-center">
         <input

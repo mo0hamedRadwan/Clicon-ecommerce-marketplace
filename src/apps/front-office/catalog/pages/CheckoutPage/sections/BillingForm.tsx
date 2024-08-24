@@ -12,9 +12,9 @@ export default function BillingForm() {
   };
   return (
     <Form className="flex flex-col gap-y-5" onSubmit={handleBillingForm}>
-      <h2 className="text-2xl">{`${trans("billing")} ${trans("information")}`}</h2>
+      <h2 className="text-2xl">{trans("billingInformation")}</h2>
       <div className="center-y flex-wrap lg:flex-nowrap gap-5">
-        <div className="w-full flex items-end flex-wrap sm:flex-nowrap gap-5">
+        <div className="w-full flex items-end flex-wrap md:flex-nowrap gap-5">
           <TextInput
             name="firstName"
             placeholder={trans("firstName")}
@@ -32,7 +32,7 @@ export default function BillingForm() {
         <TextInput name="contry" label={trans("country")} />
         <TextInput
           name="region"
-          label={`${trans("region")}/${trans("state")}`}
+          label={`${trans("region")} / ${trans("state")}`}
         />
         <TextInput name="city" label={trans("city")} />
         <TextInput name="zipCode" label={trans("zipCode")} />
@@ -42,9 +42,10 @@ export default function BillingForm() {
         <TextInput name="phoneNumber" label={trans("phoneNumber")} />
       </div>
       <div className="flex gap-x-2">
+        {/* I Will Create Form for that in future */}
         <CheckboxInput
           name="diffAddress"
-          label={`Ship into different address`}
+          label={`${trans("shipInto")} ${trans("differentAddress")}`}
         />
       </div>
 
@@ -52,7 +53,7 @@ export default function BillingForm() {
         <h3 className="p-5 text-xl border-b border-gray-150">
           {trans("paymentOption")}
         </h3>
-        <ul className="p-5 flex justify-center sm:justify-between flex-wrap sm:flex-nowrap gap-5 border-b border-gray-150">
+        <ul className="p-5 flex justify-center sm:justify-between flex-wrap md:flex-nowrap gap-5 border-b border-gray-150">
           {paymentMethods.map(paymentMethod => (
             <li
               key={paymentMethod.name}
@@ -68,7 +69,7 @@ export default function BillingForm() {
           ))}
         </ul>
         <div className="p-5 flex flex-col gap-y-5">
-          <TextInput label={trans("nameOfCard")} />
+          <TextInput label={trans("nameOnCard")} />
           <TextInput label={trans("cardNumber")} />
           <div className="flex flex-wrap sm:flex-nowrap gap-x-5">
             <TextInput label={trans("expireDate")} />
@@ -81,7 +82,7 @@ export default function BillingForm() {
         <h3 className="text-xl">{trans("additionalInformation")}</h3>
         <TextareaInput
           label={trans("orderNotes")}
-          placeholder={`Notes about your order, e.g. special notes for delivery`}
+          placeholder={trans("orderNotesPlaceholder")}
           optional
         />
       </div>

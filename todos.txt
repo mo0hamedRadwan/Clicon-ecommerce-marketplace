@@ -1,2 +1,3 @@
 resend verify email code again (with countdown 1 min)
 add access token to local storage
+create form for checkout page in ship into different address

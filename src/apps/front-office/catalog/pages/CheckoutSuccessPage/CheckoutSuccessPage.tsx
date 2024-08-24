@@ -21,7 +21,7 @@ export default function CheckoutSuccessPage() {
             href={URLS.account}
             className="md:text-base font-semibold"
             iconClassName="text-lg">
-            {`${trans("goTo")} ${trans("dashboard")}`.toUpperCase()}
+            {`${trans("goto")} ${trans("dashboard")}`.toUpperCase()}
           </LinkAsButton>
           <LinkAsButton
             variant="contained"
