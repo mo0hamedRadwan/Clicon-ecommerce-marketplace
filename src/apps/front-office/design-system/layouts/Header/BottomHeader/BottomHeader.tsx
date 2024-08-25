@@ -22,7 +22,11 @@ export default function BottomHeader() {
                 <i className="bx bx-chevron-down"></i>
               )}
             </span>
-            {openCategoriesMenu && <AllCategoriesMenu />}
+            {openCategoriesMenu && (
+              <AllCategoriesMenu
+                setOpenCategoriesMenu={setOpenCategoriesMenu}
+              />
+            )}
           </li>
           {navigateItems.map(item => (
             <li key={item.name} className="navItem px-3">

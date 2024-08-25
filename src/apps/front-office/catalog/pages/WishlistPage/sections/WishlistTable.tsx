@@ -26,59 +26,62 @@ export default function WishlistTable() {
         </tr>
       </thead>
 
-      {products.map(product => (
-        <tr key={product.id}>
-          <td>
-            <Link to={"/product/:id"} className="center-y gap-x-5">
-              <img
-                src={product.imageUrl}
-                alt={product.name}
-                className="w-20 h-20 object-cover rounded-md border border-gray-200"
-              />
-              <p className="text-gray-550 text-sm line-clamp-3 hover:text-zinc-950 duration-150">
-                {product.name}
-              </p>
-            </Link>
-          </td>
-          <td>
-            <div className="center-y gap-x-2 text-lg font-semibold">
-              {product.oldPrice && (
-                <span className="line-through text-gray-450">
-                  ${product.oldPrice}
+      <tbody>
+        {products.map(product => (
+          <tr key={product.id}>
+            <td>
+              <Link to={"/product/:id"} className="center-y gap-x-5">
+                <img
+                  src={product.imageUrl}
+                  alt={product.name}
+                  className="w-20 h-20 object-cover rounded-md border border-gray-200"
+                />
+                <p className="text-gray-550 text-sm line-clamp-3 hover:text-zinc-950 duration-150">
+                  {product.name}
+                </p>
+              </Link>
+            </td>
+            <td>
+              <div className="center-y gap-x-2 text-lg font-semibold">
+                {product.oldPrice && (
+                  <span className="line-through text-gray-450">
+                    ${product.oldPrice}
+                  </span>
+                )}
+                <span>${product.price}</span>
+              </div>
+            </td>
+            <td>
+              {product.stockStatus ? (
+                <span className="text-green-500 font-semibold">
+                  {trans("inStock").toUpperCase()}
+                </span>
+              ) : (
+                <span className="text-red-500 font-semibold">
+                  {trans("outOfStock").toUpperCase()}
                 </span>
               )}
-              <span>${product.price}</span>
-            </div>
-          </td>
-          <td>
-            {product.stockStatus ? (
-              <span className="text-green-500 font-semibold">
-                {trans("inStock").toUpperCase()}
-              </span>
-            ) : (
-              <span className="text-red-500 font-semibold">
-                {trans("outOfStock").toUpperCase()}
-              </span>
-            )}
-          </td>
-          <td>
-            <div className="center-y gap-x-5">
-              <Button
-                endIcon="bx-cart"
-                iconClassName="text-2xl"
-                className="text-sm hover:bg-gray-450"
-                onClick={() => console.log("add product to cart")}>
-                {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
-              </Button>
-              <Button
-                className="text-lg p-2 bg-white text-gray-550 border border-gray-450 rounded-full hover:text-red-550 hover:border-red-550 hover:bg-white"
-                onClick={() => console.log("remove product from wishlist")}>
-                <i className="bx bx-x"></i>
-              </Button>
-            </div>
-          </td>
-        </tr>
-      ))}
+            </td>
+            <td>
+              <div className="center-y gap-x-5">
+                <Button
+                  endIcon="bx-cart"
+                  iconClassName="text-2xl"
+                  className="text-sm"
+                  disabled={!product.stockStatus}
+                  onClick={() => console.log("add product to cart")}>
+                  {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
+                </Button>
+                <Button
+                  className="text-lg p-2 bg-white text-gray-550 border border-gray-450 rounded-full hover:text-red-550 hover:border-red-550 hover:bg-white"
+                  onClick={() => console.log("remove product from wishlist")}>
+                  <i className="bx bx-x"></i>
+                </Button>
+              </div>
+            </td>
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 }

@@ -32,7 +32,7 @@ export default function Button({
       className={twMerge(
         variantClass[variant],
         sizeClass[size],
-        "flex-center gap-x-2 rounded duration-200 text-xs disabled:bg-orange-200",
+        "flex-center gap-x-2 rounded duration-200 text-xs disabled:bg-gray-450 disabled:cursor-not-allowed",
         className,
       )}
       onClick={e => onClick(e)}

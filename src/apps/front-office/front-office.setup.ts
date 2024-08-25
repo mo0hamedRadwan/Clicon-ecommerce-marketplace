@@ -26,6 +26,8 @@ export const frontOfficeApp: PublicApp = {
         URLS.cart,
         URLS.checkout.root,
         URLS.checkout.success,
+        URLS.pages.trackOrder.root,
+        URLS.pages.trackOrder.viewRoute,
       ],
       name: "catalog",
     },

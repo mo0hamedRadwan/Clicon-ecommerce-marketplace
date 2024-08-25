@@ -33,7 +33,7 @@ export default function Banner({
         />
       </div>
       {showTitle && (
-        <h3 className="text-3xl font-bold line-clamp-2">{product.name}</h3>
+        <h3 className="mt-3 text-2xl font-bold line-clamp-2">{product.name}</h3>
       )}
       {showDiscount && (
         <h3 className="text-2xl font-bold">

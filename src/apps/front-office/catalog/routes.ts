@@ -4,6 +4,8 @@ import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import CheckoutSuccessPage from "./pages/CheckoutSuccessPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
+import TrackOrderDetailsPage from "./pages/TrackOrderDetailsPage";
+import TrackOrderPage from "./pages/TrackOrderPage";
 import WishlistPage from "./pages/WishlistPage";
 
 publicRoutes([
@@ -26,5 +28,13 @@ publicRoutes([
   {
     path: URLS.checkout.success,
     component: CheckoutSuccessPage,
+  },
+  {
+    path: URLS.pages.trackOrder.root,
+    component: TrackOrderPage,
+  },
+  {
+    path: URLS.pages.trackOrder.details,
+    component: TrackOrderDetailsPage,
   },
 ]);

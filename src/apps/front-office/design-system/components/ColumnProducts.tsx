@@ -21,7 +21,7 @@ export default function ColumnProducts({
           <li
             key={product.id}
             className="h-[100px] p-2 flex gap-x-5 border border-gray-150">
-            <div className="w-20 h-20">
+            <div className="min-w-20 min-h-20">
               <img
                 src={product.imageUrl}
                 alt="product image"
@@ -29,7 +29,7 @@ export default function ColumnProducts({
               />
             </div>
             <div className="space-between flex-col">
-              <p className="text-base">{product.name}</p>
+              <p className="text-base line-clamp-2">{product.name}</p>
               <p className="center-y gap-x-2">
                 {product.oldPrice && (
                   <span className="text-gray-450 line-through">
