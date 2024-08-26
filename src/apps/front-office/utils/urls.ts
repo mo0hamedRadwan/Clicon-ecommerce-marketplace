@@ -30,6 +30,12 @@ const URLS = {
     termsConditions: "/terms-conditions",
     privacyPolicy: "/privacy-policy",
     customerServices: "/customer-services",
+    trackOrder: {
+      root: "/track-order",
+      details: "/track-order/order-details",
+      // viewRoute: "/track-order/details/:order-id",
+      // view: (order: number) => `/track-order/details/${order}`,
+    },
     viewRoute: "/pages/:slug",
     view: (page: any) => `/pages/${page.id}/${page.slug}`,
   },

@@ -57,7 +57,7 @@ export default function BillingForm() {
           {paymentMethods.map(paymentMethod => (
             <li
               key={paymentMethod.name}
-              className="w-[120px] flex-center flex-col gap-y-2">
+              className="w-[150px] flex-center flex-col gap-y-2">
               <img src={paymentMethod.icon} className="w-8 h-8" />
               <RatioInput
                 name="paymentMethod"

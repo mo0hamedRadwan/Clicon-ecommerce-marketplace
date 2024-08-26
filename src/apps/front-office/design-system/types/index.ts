@@ -64,3 +64,21 @@ export type NewsType = {
   numOfComments?: number;
   shortDescription?: string;
 };
+
+export type OrderActivityType = {
+  icon: string;
+  iconColor: string;
+  iconBgColor: string;
+  description: string;
+  date: Date;
+};
+
+export type OrderType = {
+  id: number;
+  productsNum: number;
+  totalPrice: number;
+  statusNumber: number;
+  orderDate: Date;
+  expectedDate: Date;
+  orderActivities: OrderActivityType[];
+};

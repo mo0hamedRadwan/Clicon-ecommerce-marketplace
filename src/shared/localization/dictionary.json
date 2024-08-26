@@ -335,5 +335,69 @@
   "orderNotesPlaceholder": {
     "en": "Notes about your order, e.g. special notes for delivery",
     "ar": "ملاحظات حول طلبك، على سبيل المثال. ملاحظات خاصة للتسليم"
+  },
+  "orderID": {
+    "en": "Order ID",
+    "ar": "رقم الطلب"
+  },
+  "that": {
+    "en": "that",
+    "ar": "الذى"
+  },
+  "sendedToYou": {
+    "en": "sended to you",
+    "ar": "تم إرساله إليك"
+  },
+  "in": {
+    "en": "in",
+    "ar": "في"
+  },
+  "yourEmailAddress": {
+    "en": "Your Email Address",
+    "ar": "عنوان بريدك الإلكتروني"
+  },
+  "trackorder": {
+    "en": "Track Order",
+    "ar": "تتبع الطلب"
+  },
+  "orderdetails": {
+    "en": "Order Details",
+    "ar": "تفاصيل الطلب"
+  },
+  "placed": {
+    "en": "placed",
+    "ar": "تم التقديم علية"
+  },
+  "orderStatus": {
+    "en": "Order Status",
+    "ar": "حالة الطلب"
+  },
+  "expected": {
+    "en": "expected",
+    "ar": "متوقع"
+  },
+  "arrival": {
+    "en": "arrival",
+    "ar": "الوصول"
+  },
+  "orderPlaced": {
+    "en": "Order placed",
+    "ar": "تم التقديم على الطلب"
+  },
+  "packaging": {
+    "en": "Packaging",
+    "ar": "تعبئة"
+  },
+  "onTheRoad": {
+    "en": "On the road",
+    "ar": "في الطريق"
+  },
+  "delivered": {
+    "en": "Delivered",
+    "ar": "تم التسليم"
+  },
+  "OrderActivity": {
+    "en": "Order Activity",
+    "ar": "نشاط الطلب"
   }
 }
