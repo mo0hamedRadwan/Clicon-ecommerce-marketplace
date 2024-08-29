@@ -411,5 +411,65 @@
   "ourCoreTeamMembers": {
     "en": "Our Core Team Members",
     "ar": "أعضاء فريقنا الأساسيون"
+  },
+  "how": {
+    "en": "How",
+    "ar": "كيف"
+  },
+  "weCan": {
+    "en": "we can",
+    "ar": "يمكننا"
+  },
+  "helpYou": {
+    "en": "help you",
+    "ar": "مساعدتك"
+  },
+  "assistYou": {
+    "en": "What can we assist you today?",
+    "ar": "كيف يمكننا مساعدتك اليوم؟"
+  },
+  "popularTopics": {
+    "en": "Popular Topics",
+    "ar": "موضوعات مشهورة"
+  },
+  "contactUs": {
+    "en": "Contact Us",
+    "ar": "تواصل معنا"
+  },
+  "donotFind": {
+    "en": "Don't find",
+    "ar": "لم تجد"
+  },
+  "yourAnswer": {
+    "en": "your answer",
+    "ar": "مجيبك"
+  },
+  "contactWithUs": {
+    "en": "Contact With Us",
+    "ar": "تواصل معنا"
+  },
+  "customerservices": {
+    "en": "Customer Services",
+    "ar": "خدمات العملاء"
+  },
+  "search": {
+    "en": "Search",
+    "ar": "بحث"
+  },
+  "call": {
+    "en": "Call",
+    "ar": "اتصل"
+  },
+  "callUs": {
+    "en": "Call Us",
+    "ar": "اتصل بنا"
+  },
+  "chat": {
+    "en": "Chat",
+    "ar": "تحدث"
+  },
+  "withUs": {
+    "en": "With Us",
+    "ar": "معنا"
   }
 }

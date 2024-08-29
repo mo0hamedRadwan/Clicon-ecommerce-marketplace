@@ -12,7 +12,7 @@ type SlidePropsType = {
 export default function Slide({ product = product1 }: SlidePropsType) {
   return (
     <div
-      className={`${isRTL() ? "ml-10" : "mr-10"} center-y justify-between md:justify-between gap-x-10 h-full`}>
+      className={`${isRTL() ? "ml-10" : "mr-10"} center-y justify-between md:justify-between gap-x-10 h-full bg-gray-150`}>
       <div className="w-[370px] flex flex-col">
         <h5 className="hidden md:center-y gap-x-2">
           <span className="block w-[30px] h-[2px] bg-sky-550"></span>

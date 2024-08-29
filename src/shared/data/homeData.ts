@@ -144,3 +144,26 @@ export const ourTeam = [
   { name: "Kevin Gilbert", image: profileImg, position: "Design Engineer" },
   { name: "Kevin Gilbert", image: profileImg, position: "UI Designer" },
 ];
+
+export const topics = [
+  { name: "Track Order", icon: "bxs-truck" },
+  { name: "Reset Password", icon: "bxs-lock-open-alt" },
+  { name: "Payment Option", icon: "bx-credit-card-front" },
+  { name: "User & Account", icon: "bx-user" },
+  { name: "Wishlist & Compare", icon: "bx bxs-layer" },
+  { name: "Shipping & Billing", icon: "bx-notepad" },
+  { name: "Shoping Cart & Wallet", icon: "bx-credit-card-front" },
+  { name: "Sell on Clicon", icon: "bx bx-store-alt" },
+];
+
+export const popularTopics = [
+  "How do I return my item?",
+  "What is Clicons Returns Policy?",
+  "How long is the refund process?",
+  "What are the 'Delivery Timelines'?",
+  "What is 'Discover Your Daraz Campaign 2022'?",
+  "What is the Voucher & Gift Offer in this Campaign?",
+  "How to cancel Clicon Order.",
+  "Ask the Digital and Device Community",
+  "How to change my shop name?",
+];

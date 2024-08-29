@@ -33,6 +33,7 @@ export const frontOfficeApp: PublicApp = {
       entry: [
         URLS.faq,
         URLS.pages.aboutUs,
+        URLS.pages.customerServices,
         URLS.pages.privacyPolicy,
         URLS.pages.termsConditions,
       ],
