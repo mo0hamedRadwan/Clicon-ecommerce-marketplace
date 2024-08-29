@@ -399,5 +399,17 @@
   "OrderActivity": {
     "en": "Order Activity",
     "ar": "نشاط الطلب"
+  },
+  "whoWeAre": {
+    "en": "Who We Are",
+    "ar": "من نحن"
+  },
+  "aboutHeader": {
+    "en": "Clicon - largest electronics retail shop in the world.",
+    "ar": "Clicon - أكبر متجر بيع بالتجزئة للإلكترونيات في العالم."
+  },
+  "ourCoreTeamMembers": {
+    "en": "Our Core Team Members",
+    "ar": "أعضاء فريقنا الأساسيون"
   }
 }

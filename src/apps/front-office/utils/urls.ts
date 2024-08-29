@@ -1,6 +1,7 @@
 // append urls here, DO NOT remove this line
 
 const URLS = {
+  infoPages: "/info-pages",
   catalog: "/catalog",
   home: "/",
   notFound: "/404",

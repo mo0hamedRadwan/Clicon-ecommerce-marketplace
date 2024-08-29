@@ -36,7 +36,7 @@ export const frontOfficeApp: PublicApp = {
         URLS.pages.privacyPolicy,
         URLS.pages.termsConditions,
       ],
-      name: "informative-pages",
+      name: "info-pages",
     },
   ],
 };

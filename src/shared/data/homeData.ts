@@ -1,4 +1,5 @@
 import paypalIcon from "assets/images/paypal.png";
+import profileImg from "assets/images/profileImg/profile.jpg";
 import amazonIcon from "assets/images/SVGs/Amazon.svg";
 import creditCardIcon from "assets/images/SVGs/CreditCard.svg";
 import creditCardIcon2 from "assets/images/SVGs/CreditCard2.svg";
@@ -121,3 +122,25 @@ export const order: OrderType = {
     },
   ],
 };
+
+export const aboutFeatures = [
+  "Great 24/7 customer services.",
+  "600+ Dedicated employe.",
+  "50+ Branches all over the world.",
+  "Over 1 Million Electronics Products",
+];
+
+export const ourTeam = [
+  {
+    name: "Kevin Gilbert",
+    image: profileImg,
+    position: "Chief Executive Officer",
+  },
+  { name: "Kevin Gilbert", image: profileImg, position: "Assistant of CEO" },
+  { name: "Kevin Gilbert", image: profileImg, position: "Head of Designer" },
+  { name: "Kevin Gilbert", image: profileImg, position: "UX Designer" },
+  { name: "Kevin Gilbert", image: profileImg, position: "Product Designer" },
+  { name: "Kevin Gilbert", image: profileImg, position: "Head of Development" },
+  { name: "Kevin Gilbert", image: profileImg, position: "Design Engineer" },
+  { name: "Kevin Gilbert", image: profileImg, position: "UI Designer" },
+];

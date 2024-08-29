@@ -1,3 +1,5 @@
+import SubscribeSection from "components/sections/SubscribeSection";
+import TopProducts from "components/sections/TopProducts";
 import { bestDeals, categories, RealProduct } from "shared/data/testData";
 import Banners from "./sections/Banners";
 import BestDeals from "./sections/BestDeals";
@@ -8,8 +10,6 @@ import HeroSection from "./sections/HeroSection";
 import LargeBanner from "./sections/LargeBanner";
 import LatestNews from "./sections/LatestNews";
 import ShopCategories from "./sections/ShopCategories";
-import SubscribeSection from "./sections/SubscribeSection";
-import TopProducts from "./sections/TopProducts";
 
 export default function HomePage() {
   return (
