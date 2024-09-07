@@ -31,26 +31,65 @@ export type ProductType = {
   storages?: string[];
 };
 
-export type SubCategory = {
-  id: number;
+export type Product = {
+  id?: number;
+  isActive: boolean;
+  affiliateCommission: { value: string; type: string };
   name: string;
-  products: ProductType[];
+  shortDescription?: string;
+  description: string;
+  badge: string;
+  price?: number;
+  salePrice: number;
+  dimensions: { width: string; height: string; length: string; weight: string };
+  discount: {
+    percentage: string;
+    amount: string;
+    startsAt: string;
+    endsAt: string;
+  };
+  howWasMade: string;
+  inStock?: boolean;
+  brand: string;
+  model: string;
+  cost: string;
+  stock: {
+    available: number | string;
+    lowStockThreshold: number | string;
+  };
+  slug?: string;
+  purchase: {
+    minQuantity: number | string;
+    maxQuantity: number | string;
+  };
+  package: { width: string; height: string; length: string; weight: string };
+  unit: string;
+  warranty: { type: string; duration: string };
+  returns: { isAllowed: boolean; type: string; duration: string };
+  sortOrder: string;
+  sku: string;
+  type: string;
+  images: {
+    url: string;
+  }[];
+  relatedProducts: Product[];
+  category: Category;
+  inCart?: boolean;
+  inWishlist?: boolean;
+  inCompare?: boolean;
+};
+
+export type SubCategory = {
+  id: string;
+  name: string;
   slug: string;
-  topProduct: ProductType;
 };
 
 export type Category = {
-  id: number;
+  id: string;
   name: string;
-  image?: string;
-  subCategories: SubCategory[];
   slug: string;
-  topProducts: ProductType[];
-};
-
-export type DealsProductType = {
-  deadline: Date;
-  products: ProductType[];
+  image: string;
 };
 
 export type NewsType = {
@@ -81,4 +120,46 @@ export type OrderType = {
   orderDate: Date;
   expectedDate: Date;
   orderActivities: OrderActivityType[];
+};
+
+export type Row = {
+  columns: {
+    module: {
+      id: number;
+      title: string;
+      products?: Product[];
+      categories?: Category[];
+      posts?: Post[];
+      banner?: Banner;
+      slider?: Slider;
+    };
+  }[];
+};
+
+export type Banner = {
+  id: string;
+  image: {
+    url: string;
+  };
+};
+
+export type Slider = {
+  banners: Banner[];
+};
+
+export type Post = {
+  id: string;
+  title: string;
+  description: string;
+  shortDescription: string;
+  image: {
+    url: string;
+  };
+  slug: string;
+  createdBy: {
+    name: string;
+  };
+  createdAt: {
+    date: string;
+  };
 };

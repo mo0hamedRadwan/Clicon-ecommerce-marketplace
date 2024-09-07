@@ -1,8 +1,12 @@
 import { trans } from "@mongez/localization";
 import NewsCard from "apps/front-office/design-system/components/NewsCard";
-import { news } from "shared/data/testData";
+import { Post } from "apps/front-office/design-system/types";
 
-export default function LatestNews() {
+type LatestNewsPropsType = {
+  news: Post[];
+};
+
+export default function LatestNews({ news }: LatestNewsPropsType) {
   return (
     <div className="py-20 bg-gray-150">
       <div className="container">

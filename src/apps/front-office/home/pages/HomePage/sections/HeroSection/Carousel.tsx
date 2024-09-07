@@ -8,11 +8,16 @@ import "swiper/css/pagination";
 import "./style.css";
 
 // import required modules
-import Slide from "apps/front-office/design-system/components/Slide";
+import { Link } from "@mongez/react-router";
+import { Banner } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 
-export default function Carousel() {
+type CarouselPropsType = {
+  sliders: Banner[];
+};
+
+export default function Carousel({ sliders }: CarouselPropsType) {
   return (
     <Swiper
       dir={isRTL() ? "rtl" : "ltr"}
@@ -34,7 +39,7 @@ export default function Carousel() {
       // navigation={true}
       modules={[EffectFade, Autoplay, Pagination, Navigation]}
       className="mySwiper w-full h-full">
-      <SwiperSlide>
+      {/* <SwiperSlide>
         <Slide />
       </SwiperSlide>
       <SwiperSlide>
@@ -42,7 +47,14 @@ export default function Carousel() {
       </SwiperSlide>
       <SwiperSlide>
         <Slide />
-      </SwiperSlide>
+      </SwiperSlide> */}
+      {sliders.map(banner => (
+        <SwiperSlide key={banner.id}>
+          <Link to="/product/:id" className="w-full h-full">
+            <img src={banner.image.url} className="w-full h-full" />
+          </Link>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

@@ -1,12 +1,13 @@
 import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
-import { ProductType } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import Badge from "components/ui/Badge";
 import { twMerge } from "tailwind-merge";
+import { Product } from "../types";
 
 type MediumBannerPropsType = {
-  product: ProductType;
+  product: Product;
   varient?: "primary" | "secondary";
   showPrice?: boolean;
   className?: string;
@@ -42,7 +43,7 @@ export default function MediumBanner({
         <h3 className="text-4xl font-semibold line-clamp-2">{product.name}</h3>
         <p className="line-clamp-2">{product.shortDescription}</p>
         <LinkAsButton
-          href="/product/:id"
+          href={URLS.product.view(product)}
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
           className="px-6 py-3 text-sm"
           iconClassName="text-2xl">
@@ -50,7 +51,7 @@ export default function MediumBanner({
         </LinkAsButton>
       </div>
       <div className={`relative ${center ? "py-10" : "pt-10"}`}>
-        <img src={product.imageUrl} alt="" className="h-full" />
+        <img src={product.images[0].url} alt="" className="h-full" />
         {showPrice && (
           <p className="absolute top-5 right-0 w-24 h-24 bg-sky-550 rounded-full flex-center text-xl">
             ${product.price}

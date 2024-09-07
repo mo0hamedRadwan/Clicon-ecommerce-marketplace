@@ -4,18 +4,18 @@ import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsBu
 export default function ContactUsSection() {
   return (
     <div className="py-10 bg-gray-150 flex-center flex-col gap-y-5">
-      <div className="w-[350px] flex flex-col items-center gap-y-5">
+      <div className="w-full xs:w-[350px] flex flex-col items-center gap-y-5">
         <h2 className="px-2 py-1 bg-sky-550 text-white">
           {trans("contactUs")}
         </h2>
-        <h3 className="text-3xl text-center">
+        <h3 className="text-2xl xs:text-3xl text-center">
           <span>{`${trans("donotFind")} ${trans("yourAnswer")}.`}</span>
           <br />
           <span>{trans("contactWithUs")}</span>
         </h3>
       </div>
-      <div className="center-y gap-5">
-        <div className="w-[530px] p-10 bg-white flex items-start gap-x-5 rounded">
+      <div className="w-full center-y justify-center flex-wrap lg:flex-nowrap gap-5">
+        <div className="w-full sm:w-[520px] p-10 bg-white flex items-start gap-5 flex-wrap sm:flex-nowrap rounded">
           <span className="p-5 bg-sky-100 text-6xl">
             <i className="bx bx-phone-call text-sky-550"></i>
           </span>
@@ -31,7 +31,7 @@ export default function ContactUsSection() {
             </LinkAsButton>
           </div>
         </div>
-        <div className="w-[530px] p-10 bg-white flex items-start gap-x-5 rounded">
+        <div className="w-full sm:w-[520px] p-10 bg-white flex items-start gap-5 flex-wrap sm:flex-nowrap rounded">
           <span className="p-5 bg-green-100 text-6xl">
             <i className="bx bx-message-rounded-dots text-green-650"></i>
           </span>

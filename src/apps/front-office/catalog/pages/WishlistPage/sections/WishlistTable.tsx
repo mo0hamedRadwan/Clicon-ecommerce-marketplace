@@ -2,6 +2,7 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import Button from "apps/front-office/design-system/components/form/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import { products } from "shared/data/testData";
 
 export default function WishlistTable() {
@@ -30,7 +31,9 @@ export default function WishlistTable() {
         {products.map(product => (
           <tr key={product.id}>
             <td>
-              <Link to={"/product/:id"} className="center-y gap-x-5">
+              <Link
+                to={URLS.product.view(product)}
+                className="center-y gap-x-5">
                 <img
                   src={product.imageUrl}
                   alt={product.name}

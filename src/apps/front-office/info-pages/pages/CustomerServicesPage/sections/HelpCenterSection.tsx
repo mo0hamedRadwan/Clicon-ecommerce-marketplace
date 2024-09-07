@@ -6,7 +6,7 @@ import customerServiceImg from "assets/images/customerService.jpg";
 export default function HelpCenterSection() {
   return (
     <div className="py-10 container space-between-center gap-5 flex-wrap lg:flex-nowrap">
-      <div className="lg:w-[540px] flex flex-col items-start gap-y-5">
+      <div className="w-full sm:w-[540px] flex flex-col items-start gap-y-5">
         <h4 className="px-2 py-1 bg-sky-550 text-white">{trans("whoWeAre")}</h4>
         <h2 className="text-2xl sm:text-4xl font-semibold">
           {`${trans("how")} ${trans("weCan")} ${trans("helpYou")}`}
@@ -18,12 +18,12 @@ export default function HelpCenterSection() {
           </span>
           <Button
             onClick={() => console.log("search")}
-            className="absolute top-2.5 right-2">
+            className="absolute top-2.5 right-2 text-sm">
             {trans("search")}
           </Button>
         </div>
       </div>
-      <div className="w-[500px]">
+      <div className="w-full sm:w-[500px]">
         <img src={customerServiceImg} className="w-full h-full" />
       </div>
     </div>

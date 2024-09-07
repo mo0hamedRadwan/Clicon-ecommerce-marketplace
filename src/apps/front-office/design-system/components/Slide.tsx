@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import { product1 } from "shared/data/testData2";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
@@ -27,7 +28,7 @@ export default function Slide({ product = product1 }: SlidePropsType) {
         <div className="flex ">
           <LinkAsButton
             size="lg"
-            href="/product/:id"
+            href={URLS.product.view(product)}
             endIcon={`bx-${isRTL() ? "left" : "right"}-arrow-alt`}
             className="px-8 text-base">
             {`${trans("shop")} ${trans("now")}`.toUpperCase()}

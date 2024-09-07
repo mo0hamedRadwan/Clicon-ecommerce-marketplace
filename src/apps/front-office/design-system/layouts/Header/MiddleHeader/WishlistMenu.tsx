@@ -18,7 +18,7 @@ export default function WishlistMenu() {
         {wishlistProducts.map(product => (
           <li key={product.id} className="center-y">
             <Link
-              to={"/product/:id"}
+              to={URLS.product.view(product)}
               className="flex-grow h-[60px] center-y gap-x-5">
               <div className="min-w-[60px] h-full">
                 <img

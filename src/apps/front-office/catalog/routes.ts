@@ -8,7 +8,7 @@ import WishlistPage from "./pages/WishlistPage";
 
 publicRoutes([
   {
-    path: URLS.product,
+    path: URLS.product.viewRoute,
     component: ProductDetailsPage,
   },
   {

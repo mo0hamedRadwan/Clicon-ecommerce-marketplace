@@ -1,34 +1,37 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { RealProduct } from "shared/data/testData";
 import { twMerge } from "tailwind-merge";
-import { ProductType } from "../../types";
+import { Product } from "../../types";
 import Button from "../form/Button";
 import QuickView from "../QuickView";
-import Badge from "../ui/Badge";
-import ProductButtons from "../ui/ProductButtons";
-import StarsRating from "../ui/StarsRating";
+import Badge from "./Badge";
+import ProductButtons from "./ProductButtons";
+import StarsRating from "./StarsRating";
 
-type ProductPropsType = {
-  product?: ProductType;
+type ProductCardPropsType = {
+  product: Product;
   largeProduct?: boolean;
   showRating?: boolean;
   className?: string;
 };
 
-export default function Product({
-  product = RealProduct,
+export default function ProductCard({
+  product,
   largeProduct = false,
   showRating = false,
   className,
-}: ProductPropsType) {
+}: ProductCardPropsType) {
   const [viewProduct, setViewProduct] = useState(false);
   return (
     <div
       className={twMerge(
         "min-h-[310px] rounded border border-gray-200 hover:shadow-3",
-        largeProduct ? "px-6 pb-6 pt-3" : "p-3",
+        largeProduct
+          ? "min-h-[634px] max-w-full lg:max-w-[350px] px-6 pb-6 pt-3"
+          : "min-w-[225px] p-3",
         className,
       )}>
       {viewProduct && (
@@ -42,16 +45,20 @@ export default function Product({
       )}
       <div className="flex flex-col gap-y-2">
         <div
-          className={`relative ${largeProduct ? "h-[250px] my-9" : "lg:h-[188px]"} flex justify-center items-end group`}>
-          <img src={product.imageUrl} alt="Product image" className="" />
+          className={`relative ${largeProduct ? "min-h-[250px] my-9" : "h-[250px] lg:h-[188px]"} flex justify-center items-end group`}>
+          <img
+            src={product.images[0].url}
+            alt="Product image"
+            className="h-full"
+          />
           <ProductButtons setViewProductQuick={setViewProduct} />
         </div>
         <div
           className={`${largeProduct ? "h-[120px]" : showRating ? "min-h-[85px]" : "min-h-[95px]"} flex flex-col justify-between gap-y-1`}>
           {showRating && (
             <StarsRating
-              rating={product.rating}
-              numOfReviews={product.numOfReviews}
+              rating={5}
+              numOfReviews={Math.floor(Math.random() * 1000)}
               starClassName={
                 largeProduct
                   ? "text-xl text-yellow-450 mr-1"
@@ -60,26 +67,31 @@ export default function Product({
             />
           )}
           <Link
-            to="/product/:id"
-            className="line-clamp-2 font-medium text-base hover:underline">
+            to={URLS.product.view(product)}
+            className="h-[50px] line-clamp-2 font-medium text-base hover:underline">
             {product.name}
           </Link>
           <p className="mt-2 center-y gap-x-3 text-base">
-            {product.oldPrice && (
+            {product.price && (
               <span className="text-gray-450 line-through">
-                ${product.oldPrice}
+                ${product.price}
               </span>
             )}
             <span
               className={`font-semibold text-sky-550 ${largeProduct ? "text-xl" : ""}`}>
-              ${product.price}
+              ${product.salePrice}
             </span>
           </p>
         </div>
 
-        <div className="absolute flex flex-col items-start gap-y-2">
+        {/* <div className="absolute flex flex-col items-start gap-y-2">
           {product.badges?.map(badge => <Badge key={badge} title={badge} />)}
-        </div>
+        </div> */}
+        {product.badge && (
+          <div className="absolute flex flex-col items-start gap-y-2">
+            <Badge title={product.badge} />
+          </div>
+        )}
       </div>
 
       {largeProduct && (

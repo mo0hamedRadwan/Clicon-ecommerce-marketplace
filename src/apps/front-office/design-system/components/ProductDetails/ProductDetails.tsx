@@ -1,29 +1,25 @@
 import { trans } from "@mongez/localization";
 import paymentMethodImg from "assets/images/paymentMethod.png";
-import { ProductType } from "../../types";
-import Badge from "../ui/Badge";
+import { Product } from "../../types";
 import StarsRating from "../ui/StarsRating";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import ProductDetailsForm from "./ProductDetailsForm";
 import ProductSliderImages from "./ProductSliderImages";
 
 type ProductDetailsPropsType = {
-  product: ProductType;
+  product: Product;
 };
 
 export default function ProductDetails({ product }: ProductDetailsPropsType) {
   return (
     <div className="container p-2 sm:p-10 bg-white rounded flex justify-center items-start flex-wrap gap-10">
-      {/* Delete ! mark in future */}
-      <ProductSliderImages images={product.images!} />
+      <ProductSliderImages images={product.images.map(image => image.url)} />
 
       <div className="w-full sm:w-[680px] flex flex-col gap-y-5 text-gray-550">
         <div className="">
-          <StarsRating longRating />
+          <StarsRating
+            longRating
+            rating={5}
+            numOfReviews={Math.floor(Math.random() * 1000)}
+          />
           <p className="text-zinc-950 text-lg sm:text-2xl line-clamp-2">
             {product.name}
           </p>
@@ -36,7 +32,7 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
           </li>
           <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("availability")}:</span>
-            {product.stockStatus ? (
+            {product.inStock ? (
               <span className="text-green-500 font-bold">
                 {trans("inStock")}
               </span>
@@ -53,30 +49,31 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
           <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("categories")}:</span>
             <span className="text-black font-bold text-xs sm:text-base">
-              {product.category}
+              {product.category.name}
             </span>
           </li>
         </ul>
 
         <div className="mt-5 flex items-end gap-x-3">
           <span className="text-3xl font-semibold text-sky-550">
-            ${product.price}
+            ${product.salePrice}
           </span>
           <span className="text-lg text-gray-450 line-through">
-            ${product.oldPrice}
+            ${product.price}
           </span>
-          <ul className="center-y gap-x-2">
-            {product.badges?.map(badge => (
+          {/* <span>{product.badges}</span> */}
+          {/* <ul className="center-y gap-x-2">
+            {product.badge?.map(badge => (
               <li key={badge}>
                 <Badge title={badge} />
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
 
         <hr className="bg-gray-200" />
 
-        <ProductDetailsForm product={product} />
+        {/* <ProductDetailsForm product={product} /> */}
 
         <div className="space-between flex-wrap text-sm sm:text-base">
           <div className="center-y gap-x-5">

@@ -1,9 +1,9 @@
-import { ProductType } from "apps/front-office/design-system/types";
-import Product from "components/ui/Product";
 import { twMerge } from "tailwind-merge";
+import { Product } from "../types";
+import ProductCard from "./ui/ProductCard";
 
 type ProductsGridPropsType = {
-  products: ProductType[];
+  products: Product[];
   showRating?: boolean;
   className?: string;
   productClassName?: string;
@@ -25,7 +25,7 @@ export default function ProductsGrid({
         <li
           key={index}
           className={`${index > 5 ? "md:block lg:hidden xl:block" : ""}`}>
-          <Product
+          <ProductCard
             product={product}
             showRating={showRating}
             className={productClassName}

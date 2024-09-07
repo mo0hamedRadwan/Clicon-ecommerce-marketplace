@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import { twMerge } from "tailwind-merge";
 import { ProductType } from "../types";
 import LinkAsButton from "./ui/LinkAsButton";
@@ -22,10 +23,10 @@ export default function Banner({
   return (
     <div
       className={twMerge(
-        "px-5 py-10 flex-center flex-col gap-y-3 bg-amber-150 text-center rounded-lg",
+        "w-[310px] px-5 py-10 flex-center flex-col gap-y-3 bg-amber-150 text-center rounded-lg",
         className,
       )}>
-      <div className="w-64 h-24 flex-center">
+      <div className="w-64 h-32 flex-center">
         <img
           src={product.bannerImageUrl || product.imageUrl}
           alt="product Image"
@@ -50,7 +51,7 @@ export default function Banner({
         <span className="py-1 px-2 rounded bg-white">${product.price}</span>
       </p>
       <LinkAsButton
-        href="/product/:id"
+        href={URLS.product.view(product)}
         endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
         className="w-full">{`${trans("shop")} ${trans("now")}`}</LinkAsButton>
     </div>

@@ -1,8 +1,6 @@
 // append urls here, DO NOT remove this line
 
 const URLS = {
-  infoPages: "/info-pages",
-  catalog: "/catalog",
   home: "/",
   notFound: "/404",
   blog: {
@@ -51,7 +49,11 @@ const URLS = {
   deals: "/deals",
   // I will delete it in future
   account: "/account",
-  product: "/product",
+  product: {
+    root: "/product",
+    viewRoute: "/product/:id/:slug",
+    view: (product: any) => `/product/${product.id}/${product.slug}`,
+  },
 };
 
 export default URLS;

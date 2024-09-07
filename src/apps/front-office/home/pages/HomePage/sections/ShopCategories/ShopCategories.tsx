@@ -32,7 +32,7 @@ export default function ShopCategories({
   return (
     <div className="container py-5 sm:py-10">
       <h2 className="mb-10 text-center text-3xl font-semibold">{`${trans("shop")} ${trans("categories")}`}</h2>
-      <div className="relative h-36 md:h-60 w-[calc(100%-20px)]">
+      <div className="relative h-36 md:h-60 w-full">
         <Swiper
           onSwiper={swiper => {
             swiperRef.current = swiper;
@@ -79,12 +79,12 @@ export default function ShopCategories({
         </Swiper>
         <div className="">
           <button
-            className="z-20 absolute top-12 -left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-20 -left-3 2xl:-left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slidePrev()}>
             <i className="bx bx-left-arrow-alt"></i>
           </button>
           <button
-            className="z-20 absolute top-12 -right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-20 -right-3 2xl:-right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slideNext()}>
             <i className="bx bx-right-arrow-alt"></i>
           </button>

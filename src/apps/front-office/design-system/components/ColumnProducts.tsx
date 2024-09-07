@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
 import { twMerge } from "tailwind-merge";
-import { ProductType } from "../types";
+import { Product } from "../types";
 
 type ColumnProductsPropsType = {
   title: string;
-  products: ProductType[];
+  products: Product[];
   className?: string;
 };
 
@@ -23,7 +23,7 @@ export default function ColumnProducts({
             className="h-[100px] p-2 flex gap-x-5 border border-gray-150">
             <div className="min-w-20 min-h-20">
               <img
-                src={product.imageUrl}
+                src={product.images[0].url}
                 alt="product image"
                 className="w-full h-full"
               />
@@ -31,13 +31,13 @@ export default function ColumnProducts({
             <div className="space-between flex-col">
               <p className="text-base line-clamp-2">{product.name}</p>
               <p className="center-y gap-x-2">
-                {product.oldPrice && (
+                {product.price && (
                   <span className="text-gray-450 line-through">
-                    ${product.oldPrice}
+                    ${product.price}
                   </span>
                 )}
                 <span className="text-sky-550 font-semibold">
-                  ${product.price}
+                  ${product.salePrice}
                 </span>
               </p>
             </div>

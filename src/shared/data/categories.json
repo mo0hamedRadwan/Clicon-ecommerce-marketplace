@@ -1,0 +1,851 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": [
+        { "localeCode": "en", "value": "Computers" },
+        { "localeCode": "ar", "value": "أجهزة الكمبيوتر" }
+      ],
+      "subcategories": [
+        {
+          "id": 11,
+          "name": [
+            { "localeCode": "en", "value": "Laptops" },
+            { "localeCode": "ar", "value": "أجهزة الكمبيوتر المحمولة" }
+          ]
+        },
+        {
+          "id": 12,
+          "name": [
+            { "localeCode": "en", "value": "Desktops" },
+            { "localeCode": "ar", "value": "أجهزة سطح المكتب" }
+          ]
+        },
+        {
+          "id": 13,
+          "name": [
+            { "localeCode": "en", "value": "Tablets" },
+            { "localeCode": "ar", "value": "الأجهزة اللوحية" }
+          ]
+        },
+        {
+          "id": 14,
+          "name": [
+            { "localeCode": "en", "value": "Monitors" },
+            { "localeCode": "ar", "value": "الشاشات" }
+          ]
+        },
+        {
+          "id": 15,
+          "name": [
+            { "localeCode": "en", "value": "Accessories" },
+            { "localeCode": "ar", "value": "الإكسسوارات" }
+          ]
+        },
+        {
+          "id": 16,
+          "name": [
+            { "localeCode": "en", "value": "Printers" },
+            { "localeCode": "ar", "value": "الطابعات" }
+          ]
+        },
+        {
+          "id": 17,
+          "name": [
+            { "localeCode": "en", "value": "Networking" },
+            { "localeCode": "ar", "value": "الشبكات" }
+          ]
+        },
+        {
+          "id": 18,
+          "name": [
+            { "localeCode": "en", "value": "Components" },
+            { "localeCode": "ar", "value": "المكونات" }
+          ]
+        },
+        {
+          "id": 19,
+          "name": [
+            { "localeCode": "en", "value": "Storage" },
+            { "localeCode": "ar", "value": "التخزين" }
+          ]
+        },
+        {
+          "id": 20,
+          "name": [
+            { "localeCode": "en", "value": "Gaming" },
+            { "localeCode": "ar", "value": "الألعاب" }
+          ]
+        },
+        {
+          "id": 111,
+          "name": [
+            { "localeCode": "en", "value": "Workstations" },
+            { "localeCode": "ar", "value": "محطات العمل" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": [
+        { "localeCode": "en", "value": "Mobile Phones" },
+        { "localeCode": "ar", "value": "هواتف محمولة" }
+      ],
+      "subcategories": [
+        {
+          "id": 21,
+          "name": [
+            { "localeCode": "en", "value": "Smartphones" },
+            { "localeCode": "ar", "value": "هواتف ذكية" }
+          ]
+        },
+        {
+          "id": 22,
+          "name": [
+            { "localeCode": "en", "value": "Feature Phones" },
+            { "localeCode": "ar", "value": "هواتف تقليدية" }
+          ]
+        },
+        {
+          "id": 23,
+          "name": [
+            { "localeCode": "en", "value": "Accessories" },
+            { "localeCode": "ar", "value": "الإكسسوارات" }
+          ]
+        },
+        {
+          "id": 24,
+          "name": [
+            { "localeCode": "en", "value": "Cases & Covers" },
+            { "localeCode": "ar", "value": "أغطية وحافظات" }
+          ]
+        },
+        {
+          "id": 25,
+          "name": [
+            { "localeCode": "en", "value": "Chargers & Cables" },
+            { "localeCode": "ar", "value": "شواحن وكابلات" }
+          ]
+        },
+        {
+          "id": 26,
+          "name": [
+            { "localeCode": "en", "value": "Screen Protectors" },
+            { "localeCode": "ar", "value": "حمايات الشاشة" }
+          ]
+        },
+        {
+          "id": 27,
+          "name": [
+            { "localeCode": "en", "value": "Power Banks" },
+            { "localeCode": "ar", "value": "بطاريات خارجية" }
+          ]
+        },
+        {
+          "id": 28,
+          "name": [
+            { "localeCode": "en", "value": "Bluetooth Headsets" },
+            { "localeCode": "ar", "value": "سماعات بلوتوث" }
+          ]
+        },
+        {
+          "id": 29,
+          "name": [
+            { "localeCode": "en", "value": "Wireless Chargers" },
+            { "localeCode": "ar", "value": "شواحن لاسلكية" }
+          ]
+        },
+        {
+          "id": 30,
+          "name": [
+            { "localeCode": "en", "value": "Smartwatches" },
+            { "localeCode": "ar", "value": "ساعات ذكية" }
+          ]
+        },
+        {
+          "id": 211,
+          "name": [
+            { "localeCode": "en", "value": "Selfie Sticks" },
+            { "localeCode": "ar", "value": "عصي السيلفي" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": [
+        { "localeCode": "en", "value": "Televisions" },
+        { "localeCode": "ar", "value": "أجهزة التلفاز" }
+      ],
+      "subcategories": [
+        {
+          "id": 31,
+          "name": [
+            { "localeCode": "en", "value": "LED TVs" },
+            { "localeCode": "ar", "value": "تلفزيونات LED" }
+          ]
+        },
+        {
+          "id": 32,
+          "name": [
+            { "localeCode": "en", "value": "Smart TVs" },
+            { "localeCode": "ar", "value": "تلفزيونات ذكية" }
+          ]
+        },
+        {
+          "id": 33,
+          "name": [
+            { "localeCode": "en", "value": "4K Ultra HD TVs" },
+            { "localeCode": "ar", "value": "تلفزيونات 4K Ultra HD" }
+          ]
+        },
+        {
+          "id": 34,
+          "name": [
+            { "localeCode": "en", "value": "OLED TVs" },
+            { "localeCode": "ar", "value": "تلفزيونات OLED" }
+          ]
+        },
+        {
+          "id": 35,
+          "name": [
+            { "localeCode": "en", "value": "QLED TVs" },
+            { "localeCode": "ar", "value": "تلفزيونات QLED" }
+          ]
+        },
+        {
+          "id": 36,
+          "name": [
+            { "localeCode": "en", "value": "TV Stands" },
+            { "localeCode": "ar", "value": "حاملات التلفاز" }
+          ]
+        },
+        {
+          "id": 37,
+          "name": [
+            { "localeCode": "en", "value": "Soundbars" },
+            { "localeCode": "ar", "value": "مكبرات الصوت" }
+          ]
+        },
+        {
+          "id": 38,
+          "name": [
+            { "localeCode": "en", "value": "Home Theater Systems" },
+            { "localeCode": "ar", "value": "أنظمة المسرح المنزلي" }
+          ]
+        },
+        {
+          "id": 39,
+          "name": [
+            { "localeCode": "en", "value": "TV Accessories" },
+            { "localeCode": "ar", "value": "ملحقات التلفاز" }
+          ]
+        },
+        {
+          "id": 40,
+          "name": [
+            { "localeCode": "en", "value": "HDMI Cable" },
+            { "localeCode": "ar", "value": "كابل HDMI" }
+          ]
+        },
+        {
+          "id": 311,
+          "name": [
+            { "localeCode": "en", "value": "TV Remote Controls" },
+            { "localeCode": "ar", "value": "أجهزة التحكم عن بُعد" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": [
+        { "localeCode": "en", "value": "Audio" },
+        { "localeCode": "ar", "value": "الصوتيات" }
+      ],
+      "subcategories": [
+        {
+          "id": 41,
+          "name": [
+            { "localeCode": "en", "value": "Headphones" },
+            { "localeCode": "ar", "value": "سماعات الرأس" }
+          ]
+        },
+        {
+          "id": 42,
+          "name": [
+            { "localeCode": "en", "value": "Earphones" },
+            { "localeCode": "ar", "value": "سماعات الأذن" }
+          ]
+        },
+        {
+          "id": 43,
+          "name": [
+            { "localeCode": "en", "value": "Wireless Earbuds" },
+            { "localeCode": "ar", "value": "سماعات لاسلكية" }
+          ]
+        },
+        {
+          "id": 44,
+          "name": [
+            { "localeCode": "en", "value": "Over-Ear Headphones" },
+            { "localeCode": "ar", "value": "سماعات فوق الأذن" }
+          ]
+        },
+        {
+          "id": 45,
+          "name": [
+            { "localeCode": "en", "value": "On-Ear Headphones" },
+            { "localeCode": "ar", "value": "سماعات على الأذن" }
+          ]
+        },
+        {
+          "id": 46,
+          "name": [
+            { "localeCode": "en", "value": "In-Ear Headphones" },
+            { "localeCode": "ar", "value": "سماعات داخل الأذن" }
+          ]
+        },
+        {
+          "id": 47,
+          "name": [
+            { "localeCode": "en", "value": "True Wireless Earbuds" },
+            { "localeCode": "ar", "value": "سماعات لاسلكية حقيقية" }
+          ]
+        },
+        {
+          "id": 48,
+          "name": [
+            { "localeCode": "en", "value": "Gaming Headsets" },
+            { "localeCode": "ar", "value": "سماعات الألعاب" }
+          ]
+        },
+        {
+          "id": 49,
+          "name": [
+            { "localeCode": "en", "value": "Bluetooth Speakers" },
+            { "localeCode": "ar", "value": "مكبرات صوت بلوتوث" }
+          ]
+        },
+        {
+          "id": 50,
+          "name": [
+            { "localeCode": "en", "value": "Home Speakers" },
+            { "localeCode": "ar", "value": "مكبرات الصوت المنزلية" }
+          ]
+        },
+        {
+          "id": 411,
+          "name": [
+            { "localeCode": "en", "value": "Audio Accessories" },
+            { "localeCode": "ar", "value": "ملحقات الصوت" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": [
+        { "localeCode": "en", "value": "Cameras" },
+        { "localeCode": "ar", "value": "الكاميرات" }
+      ],
+      "subcategories": [
+        {
+          "id": 51,
+          "name": [
+            { "localeCode": "en", "value": "DSLR Cameras" },
+            { "localeCode": "ar", "value": "كاميرات DSLR" }
+          ]
+        },
+        {
+          "id": 52,
+          "name": [
+            { "localeCode": "en", "value": "Mirrorless Cameras" },
+            { "localeCode": "ar", "value": "كاميرات بدون مرآة" }
+          ]
+        },
+        {
+          "id": 53,
+          "name": [
+            { "localeCode": "en", "value": "Point-and-Shoot Cameras" },
+            { "localeCode": "ar", "value": "كاميرات مدمجة" }
+          ]
+        },
+        {
+          "id": 54,
+          "name": [
+            { "localeCode": "en", "value": "Action Cameras" },
+            { "localeCode": "ar", "value": "كاميرات الحركة" }
+          ]
+        },
+        {
+          "id": 55,
+          "name": [
+            { "localeCode": "en", "value": "Instant Cameras" },
+            { "localeCode": "ar", "value": "كاميرات فورية" }
+          ]
+        },
+        {
+          "id": 56,
+          "name": [
+            { "localeCode": "en", "value": "Film Cameras" },
+            { "localeCode": "ar", "value": "كاميرات الفيلم" }
+          ]
+        },
+        {
+          "id": 57,
+          "name": [
+            { "localeCode": "en", "value": "Camera Lenses" },
+            { "localeCode": "ar", "value": "عدسات الكاميرا" }
+          ]
+        },
+        {
+          "id": 58,
+          "name": [
+            { "localeCode": "en", "value": "Tripods & Monopods" },
+            { "localeCode": "ar", "value": "حوامل ثلاثية وساق أحادي" }
+          ]
+        },
+        {
+          "id": 59,
+          "name": [
+            { "localeCode": "en", "value": "Camera Bags & Cases" },
+            { "localeCode": "ar", "value": "حقائب الكاميرا" }
+          ]
+        },
+        {
+          "id": 60,
+          "name": [
+            { "localeCode": "en", "value": "Memory Cards" },
+            { "localeCode": "ar", "value": "بطاقات الذاكرة" }
+          ]
+        },
+        {
+          "id": 511,
+          "name": [
+            { "localeCode": "en", "value": "Camera Batteries" },
+            { "localeCode": "ar", "value": "بطاريات الكاميرا" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": [
+        { "localeCode": "en", "value": "Home Appliances" },
+        { "localeCode": "ar", "value": "الأجهزة المنزلية" }
+      ],
+      "subcategories": [
+        {
+          "id": 61,
+          "name": [
+            { "localeCode": "en", "value": "Refrigerators" },
+            { "localeCode": "ar", "value": "ثلاجات" }
+          ]
+        },
+        {
+          "id": 62,
+          "name": [
+            { "localeCode": "en", "value": "Washing Machines" },
+            { "localeCode": "ar", "value": "غسالات" }
+          ]
+        },
+        {
+          "id": 63,
+          "name": [
+            { "localeCode": "en", "value": "Dishwashers" },
+            { "localeCode": "ar", "value": "غسالات الصحون" }
+          ]
+        },
+        {
+          "id": 64,
+          "name": [
+            { "localeCode": "en", "value": "Air Conditioners" },
+            { "localeCode": "ar", "value": "مكيفات الهواء" }
+          ]
+        },
+        {
+          "id": 65,
+          "name": [
+            { "localeCode": "en", "value": "Microwaves" },
+            { "localeCode": "ar", "value": "ميكروويف" }
+          ]
+        },
+        {
+          "id": 66,
+          "name": [
+            { "localeCode": "en", "value": "Ovens & Ranges" },
+            { "localeCode": "ar", "value": "أفران وطباخات" }
+          ]
+        },
+        {
+          "id": 67,
+          "name": [
+            { "localeCode": "en", "value": "Vacuum Cleaners" },
+            { "localeCode": "ar", "value": "مكانس كهربائية" }
+          ]
+        },
+        {
+          "id": 68,
+          "name": [
+            { "localeCode": "en", "value": "Air Purifiers" },
+            { "localeCode": "ar", "value": "منقيات الهواء" }
+          ]
+        },
+        {
+          "id": 69,
+          "name": [
+            { "localeCode": "en", "value": "Irons & Steamers" },
+            { "localeCode": "ar", "value": "مكاوي ومبخرات" }
+          ]
+        },
+        {
+          "id": 70,
+          "name": [
+            { "localeCode": "en", "value": "Blenders & Juicers" },
+            { "localeCode": "ar", "value": "خلاطات وعصارات" }
+          ]
+        },
+        {
+          "id": 611,
+          "name": [
+            { "localeCode": "en", "value": "Coffee Makers" },
+            { "localeCode": "ar", "value": "ماكينات القهوة" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": [
+        { "localeCode": "en", "value": "Gaming Consoles & Accessories" },
+        { "localeCode": "ar", "value": "أجهزة الألعاب والإكسسوارات" }
+      ],
+      "subcategories": [
+        {
+          "id": 71,
+          "name": [
+            { "localeCode": "en", "value": "PlayStation" },
+            { "localeCode": "ar", "value": "بلاي ستيشن" }
+          ]
+        },
+        {
+          "id": 72,
+          "name": [
+            { "localeCode": "en", "value": "Xbox" },
+            { "localeCode": "ar", "value": "إكس بوكس" }
+          ]
+        },
+        {
+          "id": 73,
+          "name": [
+            { "localeCode": "en", "value": "Nintendo Switch" },
+            { "localeCode": "ar", "value": "نينتندو سويتش" }
+          ]
+        },
+        {
+          "id": 74,
+          "name": [
+            { "localeCode": "en", "value": "VR Headsets" },
+            { "localeCode": "ar", "value": "نظارات الواقع الافتراضي" }
+          ]
+        },
+        {
+          "id": 75,
+          "name": [
+            { "localeCode": "en", "value": "Controllers" },
+            { "localeCode": "ar", "value": "أذرع التحكم" }
+          ]
+        },
+        {
+          "id": 76,
+          "name": [
+            { "localeCode": "en", "value": "Headsets" },
+            { "localeCode": "ar", "value": "سماعات الرأس" }
+          ]
+        },
+        {
+          "id": 77,
+          "name": [
+            { "localeCode": "en", "value": "Chargers & Docks" },
+            { "localeCode": "ar", "value": "شواحن وقواعد" }
+          ]
+        },
+        {
+          "id": 78,
+          "name": [
+            { "localeCode": "en", "value": "Gaming Keyboards" },
+            { "localeCode": "ar", "value": "لوحات مفاتيح للألعاب" }
+          ]
+        },
+        {
+          "id": 79,
+          "name": [
+            { "localeCode": "en", "value": "Gaming Mice" },
+            { "localeCode": "ar", "value": "فأرات الألعاب" }
+          ]
+        },
+        {
+          "id": 80,
+          "name": [
+            { "localeCode": "en", "value": "Gaming Monitors" },
+            { "localeCode": "ar", "value": "شاشات الألعاب" }
+          ]
+        },
+
+        {
+          "id": 711,
+          "name": [
+            { "localeCode": "en", "value": "Gaming Chairs" },
+            { "localeCode": "ar", "value": "كراسي الألعاب" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": [
+        { "localeCode": "en", "value": "Smart Home Devices" },
+        { "localeCode": "ar", "value": "أجهزة المنزل الذكي" }
+      ],
+      "subcategories": [
+        {
+          "id": 81,
+          "name": [
+            { "localeCode": "en", "value": "Smart Speakers" },
+            { "localeCode": "ar", "value": "مكبرات الصوت الذكية" }
+          ]
+        },
+        {
+          "id": 82,
+          "name": [
+            { "localeCode": "en", "value": "Smart Displays" },
+            { "localeCode": "ar", "value": "شاشات ذكية" }
+          ]
+        },
+        {
+          "id": 83,
+          "name": [
+            { "localeCode": "en", "value": "Smart Thermostats" },
+            { "localeCode": "ar", "value": "ترموستات ذكية" }
+          ]
+        },
+        {
+          "id": 84,
+          "name": [
+            { "localeCode": "en", "value": "Smart Lighting" },
+            { "localeCode": "ar", "value": "إضاءة ذكية" }
+          ]
+        },
+        {
+          "id": 85,
+          "name": [
+            { "localeCode": "en", "value": "Smart Plugs" },
+            { "localeCode": "ar", "value": "مقابس ذكية" }
+          ]
+        },
+        {
+          "id": 86,
+          "name": [
+            { "localeCode": "en", "value": "Smart Cameras" },
+            { "localeCode": "ar", "value": "كاميرات ذكية" }
+          ]
+        },
+        {
+          "id": 87,
+          "name": [
+            { "localeCode": "en", "value": "Smart Locks" },
+            { "localeCode": "ar", "value": "أقفال ذكية" }
+          ]
+        },
+        {
+          "id": 88,
+          "name": [
+            { "localeCode": "en", "value": "Smart Sensors" },
+            { "localeCode": "ar", "value": "حساسات ذكية" }
+          ]
+        },
+        {
+          "id": 89,
+          "name": [
+            { "localeCode": "en", "value": "Smart Doorbells" },
+            { "localeCode": "ar", "value": "جرس الباب الذكي" }
+          ]
+        },
+        {
+          "id": 90,
+          "name": [
+            { "localeCode": "en", "value": "Smart Smoke Detectors" },
+            { "localeCode": "ar", "value": "كاشفات الدخان الذكية" }
+          ]
+        },
+        {
+          "id": 811,
+          "name": [
+            { "localeCode": "en", "value": "Smart Water Leak Detectors" },
+            { "localeCode": "ar", "value": "كاشفات تسرب المياه الذكية" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": [
+        { "localeCode": "en", "value": "Wearable Technology" },
+        { "localeCode": "ar", "value": "تقنية قابلة للارتداء" }
+      ],
+      "subcategories": [
+        {
+          "id": 91,
+          "name": [
+            { "localeCode": "en", "value": "Smartwatches" },
+            { "localeCode": "ar", "value": "ساعات ذكية" }
+          ]
+        },
+        {
+          "id": 92,
+          "name": [
+            { "localeCode": "en", "value": "Fitness Trackers" },
+            { "localeCode": "ar", "value": "أجهزة تتبع اللياقة البدنية" }
+          ]
+        },
+        {
+          "id": 93,
+          "name": [
+            { "localeCode": "en", "value": "GPS Running Watches" },
+            { "localeCode": "ar", "value": "ساعات جري GPS" }
+          ]
+        },
+        {
+          "id": 94,
+          "name": [
+            { "localeCode": "en", "value": "Smart Rings" },
+            { "localeCode": "ar", "value": "خواتم ذكية" }
+          ]
+        },
+        {
+          "id": 95,
+          "name": [
+            { "localeCode": "en", "value": "Smart Glasses" },
+            { "localeCode": "ar", "value": "نظارات ذكية" }
+          ]
+        },
+        {
+          "id": 96,
+          "name": [
+            { "localeCode": "en", "value": "VR Headsets" },
+            { "localeCode": "ar", "value": "نظارات الواقع الافتراضي" }
+          ]
+        },
+        {
+          "id": 97,
+          "name": [
+            { "localeCode": "en", "value": "Sleep Trackers" },
+            { "localeCode": "ar", "value": "أجهزة تتبع النوم" }
+          ]
+        },
+        {
+          "id": 98,
+          "name": [
+            { "localeCode": "en", "value": "Wearable Cameras" },
+            { "localeCode": "ar", "value": "كاميرات قابلة للارتداء" }
+          ]
+        },
+        {
+          "id": 99,
+          "name": [
+            { "localeCode": "en", "value": "Activity Trackers" },
+            { "localeCode": "ar", "value": "أجهزة تتبع الأنشطة" }
+          ]
+        },
+        {
+          "id": 100,
+          "name": [
+            { "localeCode": "en", "value": "Smart Clothing" },
+            { "localeCode": "ar", "value": "ملابس ذكية" }
+          ]
+        },
+        {
+          "id": 911,
+          "name": [
+            { "localeCode": "en", "value": "Sports & Fitness Accessories" },
+            { "localeCode": "ar", "value": "ملحقات الرياضة واللياقة" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": [
+        { "localeCode": "en", "value": "Outdoor & Sports Electronics" },
+        { "localeCode": "ar", "value": "إلكترونيات الرياضة في الهواء الطلق" }
+      ],
+      "subcategories": [
+        {
+          "id": 103,
+          "name": [
+            { "localeCode": "en", "value": "Fitness & Activity Trackers" },
+            { "localeCode": "ar", "value": "أجهزة تتبع اللياقة والأنشطة" }
+          ]
+        },
+        {
+          "id": 104,
+          "name": [
+            { "localeCode": "en", "value": "Heart Rate Monitors" },
+            { "localeCode": "ar", "value": "أجهزة قياس نبض القلب" }
+          ]
+        },
+        {
+          "id": 105,
+          "name": [
+            { "localeCode": "en", "value": "Cycling Computers" },
+            { "localeCode": "ar", "value": "أجهزة الكمبيوتر للدراجات" }
+          ]
+        },
+        {
+          "id": 106,
+          "name": [
+            { "localeCode": "en", "value": "Dive Computers" },
+            { "localeCode": "ar", "value": "أجهزة الكمبيوتر للغوص" }
+          ]
+        },
+        {
+          "id": 107,
+          "name": [
+            { "localeCode": "en", "value": "Golf GPS & Rangefinders" },
+            { "localeCode": "ar", "value": "أجهزة GPS للغولف وكاشفات المسافة" }
+          ]
+        },
+        {
+          "id": 108,
+          "name": [
+            { "localeCode": "en", "value": "Sports Watches" },
+            { "localeCode": "ar", "value": "ساعات رياضية" }
+          ]
+        },
+        {
+          "id": 109,
+          "name": [
+            { "localeCode": "en", "value": "Running GPS Units" },
+            { "localeCode": "ar", "value": "وحدات GPS للجري" }
+          ]
+        },
+        {
+          "id": 110,
+          "name": [
+            { "localeCode": "en", "value": "Outdoor Handheld GPS Units" },
+            { "localeCode": "ar", "value": "وحدات GPS محمولة في الهواء الطلق" }
+          ]
+        },
+        {
+          "id": 111,
+          "name": [
+            { "localeCode": "en", "value": "Walkie Talkies" },
+            { "localeCode": "ar", "value": "أجهزة الاتصال اللاسلكي" }
+          ]
+        }
+      ]
+    }
+  ]
+}

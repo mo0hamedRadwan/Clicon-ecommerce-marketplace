@@ -1,14 +1,14 @@
 import { trans } from "@mongez/localization";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
-import { ProductType, SelectOption } from "../../types";
+import { Product, SelectOption } from "../../types";
 import Button from "../form/Button";
 import Select from "../form/Select";
 import LinkAsButton from "../ui/LinkAsButton";
 import QuantityInput from "../ui/QuantityInput";
 
 type ProductDetailsFormPropsType = {
-  product: ProductType;
+  product: Product;
 };
 
 export default function ProductDetailsForm({

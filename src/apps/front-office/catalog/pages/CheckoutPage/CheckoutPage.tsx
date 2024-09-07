@@ -2,6 +2,7 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import Button from "apps/front-office/design-system/components/form/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import { products } from "shared/data/testData";
 import BillingForm from "./sections/BillingForm";
 
@@ -22,7 +23,7 @@ export default function CheckoutPage() {
               {products.map(product => (
                 <li key={product.id}>
                   <Link
-                    to={"/product/:id"}
+                    to={URLS.product.view(product)}
                     className="h-[60px] center-y gap-x-5">
                     <div className="min-w-[60px] h-full">
                       <img

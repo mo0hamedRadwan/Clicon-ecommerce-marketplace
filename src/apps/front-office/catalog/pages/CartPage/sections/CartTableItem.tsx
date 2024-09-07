@@ -1,5 +1,6 @@
 import { Link } from "@mongez/react-router";
 import { ProductType } from "apps/front-office/design-system/types";
+import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import QuantityInput from "components/ui/QuantityInput";
 import { useState } from "react";
@@ -19,7 +20,7 @@ export default function CartTableItem({ product }: CartTableItemPropsType) {
           onClick={() => console.log("remove product from cart")}>
           <i className="bx bx-x"></i>
         </Button>
-        <Link to={"/product/:id"} className="center-y gap-x-5">
+        <Link to={URLS.product.view(product)} className="center-y gap-x-5">
           <img
             src={product.imageUrl}
             alt={product.name}

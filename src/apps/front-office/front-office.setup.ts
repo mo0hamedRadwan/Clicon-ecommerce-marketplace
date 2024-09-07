@@ -21,7 +21,7 @@ export const frontOfficeApp: PublicApp = {
     },
     {
       entry: [
-        URLS.product,
+        URLS.product.root,
         URLS.wishlist,
         URLS.cart,
         URLS.checkout.root,

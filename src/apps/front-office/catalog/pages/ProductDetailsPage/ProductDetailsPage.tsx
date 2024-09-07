@@ -1,15 +1,51 @@
+import { Product } from "apps/front-office/design-system/types";
+import { getProducts } from "apps/front-office/home/services/home-service";
 import ProductDetails from "components/ProductDetails/ProductDetails";
-import { RealProduct } from "shared/data/testData";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import ProductInfoTabs from "./sections/ProductInfoTabs";
 import RelatedProducts from "./sections/RelatedProducts";
 
-export default function ProductDetailsPage() {
-  // get product from url
+type ProductDetailsPagePropsType = {
+  params: {
+    id: string;
+    slug: string;
+  };
+};
+
+export default function ProductDetailsPage({
+  params,
+}: ProductDetailsPagePropsType) {
+  const [loading, setLoading] = useState<boolean>(true);
+  const [product, setProduct] = useState<Product>();
+
+  useEffect(() => {
+    setLoading(true);
+    getProducts({
+      id: params.id,
+    })
+      .then(response => {
+        setProduct(response.data.products[0]);
+        setLoading(false);
+      })
+      .catch(error => {
+        console.error("Error fetching product:", error);
+        toast.error("Error fetching product");
+        setLoading(false);
+      });
+  }, [params.id]);
+
   return (
-    <div className="container py-10 sm:py-20 flex flex-col gap-y-5 sm:gap-y-10">
-      <ProductDetails product={RealProduct} />
-      <ProductInfoTabs product={RealProduct} />
-      <RelatedProducts />
-    </div>
+    <>
+      {loading ? (
+        <div>loading...</div>
+      ) : (
+        <div className="container py-10 sm:py-20 flex flex-col gap-y-5 sm:gap-y-10">
+          <ProductDetails product={product!} />
+          <ProductInfoTabs product={product!} />
+          <RelatedProducts />
+        </div>
+      )}
+    </>
   );
 }

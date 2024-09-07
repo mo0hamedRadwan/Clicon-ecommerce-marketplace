@@ -29,9 +29,10 @@ endpointEvents.beforeSending(config => {
   headers["lang"] = getCurrentLocaleCode();
   headers["client-id"] = clientId;
   headers["Authorization"] = `Bearer ${accessToken}`;
-  // config.params = {
-  //   locale: getCurrentLocaleCode(),
-  // };
+  config.params = {
+    ...config.params,
+    locale: getCurrentLocaleCode(),
+  };
 });
 
 endpointEvents.onSuccess((response: AxiosResponse) => {

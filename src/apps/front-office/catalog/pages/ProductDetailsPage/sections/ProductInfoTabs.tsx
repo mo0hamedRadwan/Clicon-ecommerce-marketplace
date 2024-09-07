@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
-import { ProductType } from "apps/front-office/design-system/types";
+import { Product } from "apps/front-office/design-system/types";
 import { useState } from "react";
 import ProductDescription from "./ProductDescription";
 
 type ProductInfoTabsPropsType = {
-  product: ProductType;
+  product: Product;
 };
 
 export default function ProductInfoTabs({ product }: ProductInfoTabsPropsType) {
