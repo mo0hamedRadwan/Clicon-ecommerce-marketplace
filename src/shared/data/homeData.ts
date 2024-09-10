@@ -10,7 +10,6 @@ import trophyIcon from "assets/images/SVGs/Trophy.svg";
 import venmoIcon from "assets/images/venmo.png";
 
 import { OrderType } from "apps/front-office/design-system/types";
-import { products } from "./testData";
 
 export const features = [
   {
@@ -39,19 +38,19 @@ export const features = [
   },
 ];
 
-export const topProducts = [
-  { title: "flashSalesToday", products: products },
-  { title: "bestSellers", products: products },
-  { title: "topRated", products: products },
-  { title: "newArrival", products: products },
-];
+// export const topProducts = [
+//   { title: "flashSalesToday", products: products },
+//   { title: "bestSellers", products: products },
+//   { title: "topRated", products: products },
+//   { title: "newArrival", products: products },
+// ];
 
-export const relatedProducts = [
-  { title: "relatedProducts", products: products },
-  { title: "productAccessories", products: products },
-  { title: "appleProducts", products: products },
-  { title: "featuredProducts", products: products },
-];
+// export const relatedProducts = [
+//   { title: "relatedProducts", products: products },
+//   { title: "productAccessories", products: products },
+//   { title: "appleProducts", products: products },
+//   { title: "featuredProducts", products: products },
+// ];
 
 export const paymentMethods = [
   { name: "cash", icon: cashIcon, label: "cashOnDelivery" },
@@ -70,7 +69,7 @@ export const orderStatus = [
 
 export const order: OrderType = {
   id: 96459761,
-  productsNum: products.length,
+  productsNum: 3,
   totalPrice: 1199.99,
   statusNumber: 1,
   orderDate: new Date("2024-8-15"),

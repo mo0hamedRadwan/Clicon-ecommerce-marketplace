@@ -3,7 +3,6 @@ import TopProducts from "apps/front-office/design-system/components/sections/Top
 import { Row } from "apps/front-office/design-system/types";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { categories } from "shared/data/testData";
 import { getHome } from "../../services/home-service";
 import Banners from "./sections/Banners";
 import BestDeals from "./sections/BestDeals";
@@ -13,7 +12,6 @@ import FeaturesProducts from "./sections/FeaturesProducts";
 import HeroSection from "./sections/HeroSection";
 import LargeBanner from "./sections/LargeBanner";
 import LatestNews from "./sections/LatestNews";
-import ShopCategories from "./sections/ShopCategories";
 
 export default function HomePage() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -50,7 +48,7 @@ export default function HomePage() {
           />
           <Features />
           <BestDeals products={rows[1].columns[0].module.products!} />
-          <ShopCategories categories={categories} />
+          {/* <ShopCategories categories={categories} /> */}
           {/* <div className="h-[2000px]">Home Page</div> */}
           <FeaturesProducts
             title={rows[2].columns[0].module.title}

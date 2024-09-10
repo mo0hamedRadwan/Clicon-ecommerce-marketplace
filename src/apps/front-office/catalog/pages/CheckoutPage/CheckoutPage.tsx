@@ -1,9 +1,6 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
 import Button from "apps/front-office/design-system/components/form/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
-import URLS from "apps/front-office/utils/urls";
-import { products } from "shared/data/testData";
 import BillingForm from "./sections/BillingForm";
 
 export default function CheckoutPage() {
@@ -19,7 +16,7 @@ export default function CheckoutPage() {
           <div className="w-full p-5 2xl:w-[400px] flex flex-col gap-y-5 border border-gray-150">
             <h3 className="text-lg font-medium">{trans("orderSummary")}</h3>
 
-            <ul className="flex flex-col gap-y-3">
+            {/* <ul className="flex flex-col gap-y-3">
               {products.map(product => (
                 <li key={product.id}>
                   <Link
@@ -45,7 +42,7 @@ export default function CheckoutPage() {
                   </Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
 
             <ul className="flex flex-col gap-y-2">
               <li className="space-between">
