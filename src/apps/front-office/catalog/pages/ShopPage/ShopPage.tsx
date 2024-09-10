@@ -2,14 +2,12 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import Banner from "apps/front-office/design-system/components/Banner";
 import CheckboxInput from "apps/front-office/design-system/components/form/CheckboxInput";
-import RatioInput from "apps/front-office/design-system/components/form/RatioInput";
 import Select from "apps/front-office/design-system/components/form/Select";
 import TextInput from "apps/front-office/design-system/components/form/TextInput";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 import { popularTags } from "shared/data/footerData";
 import { sortByOptions } from "shared/data/shopData";
-import { categories } from "shared/data/testData";
 import { product2 } from "shared/data/testData2";
 
 export default function ShopPage() {
@@ -23,7 +21,7 @@ export default function ShopPage() {
       <div className="flex flex-wrap xl:flex-nowrap gap-5">
         <div className="min-w-[300px] max-w-[300px] flex flex-col gap-y-5">
           <h2 className="text-xl">{trans("category").toUpperCase()}</h2>
-          <ul className="flex flex-col gap-y-2">
+          {/* <ul className="flex flex-col gap-y-2">
             {categories.map(category => (
               <li key={category.id} className="flex items-start">
                 <RatioInput
@@ -34,7 +32,7 @@ export default function ShopPage() {
                 />
               </li>
             ))}
-          </ul>
+          </ul> */}
           <hr className="bg-gray-150" />
           <h2 className="text-xl">{trans("priceRange").toUpperCase()}</h2>
           <div className="">multiRangePrice</div>
