@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { forgetPassword } from "../../services/auth";
 
 export default function ForgetPasswordPage() {
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleForgetPasswordForm = ({ values }) => {
     const email = { email: values.email };
@@ -78,8 +78,8 @@ export default function ForgetPasswordPage() {
         <p>
           <span>{`${trans("youMayContact")} `}</span>
           <span className="text-orange-450">
-            <Link to={URLS.pages.customerServices}>
-              {trans("customerServices")}
+            <Link to={URLS.pages.customerSupport}>
+              {trans("customerSupport")}
             </Link>
           </span>
           <span>{` ${trans("forHelp")} ${trans("restoringAccessToYourAccount")}.`}</span>

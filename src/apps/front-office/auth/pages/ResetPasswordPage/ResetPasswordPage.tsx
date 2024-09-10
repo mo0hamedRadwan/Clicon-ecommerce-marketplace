@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { resetPassword } from "../../services/auth";
 
 export default function ResetPasswordPage() {
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleResetPasswordForm = ({ values }) => {
     const resetUserPassword = {

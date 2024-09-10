@@ -2,8 +2,9 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
-import { RealProduct } from "shared/data/testData";
 import { twMerge } from "tailwind-merge";
+import { cartAtom } from "../../atoms/cartAtom";
+import { wishlistAtom } from "../../atoms/wishlistAtom";
 import { Product } from "../../types";
 import Button from "../form/Button";
 import QuickView from "../QuickView";
@@ -25,6 +26,8 @@ export default function ProductCard({
   className,
 }: ProductCardPropsType) {
   const [viewProduct, setViewProduct] = useState(false);
+  const loadingItem = cartAtom.use("loadingItem");
+
   return (
     <div
       className={twMerge(
@@ -36,11 +39,7 @@ export default function ProductCard({
       )}>
       {viewProduct && (
         <div className="">
-          {/* Change product props */}
-          <QuickView
-            product={RealProduct}
-            setCloseViewProduct={setViewProduct}
-          />
+          <QuickView product={product} setCloseViewProduct={setViewProduct} />
         </div>
       )}
       <div className="flex flex-col gap-y-2">
@@ -51,7 +50,10 @@ export default function ProductCard({
             alt="Product image"
             className="h-full"
           />
-          <ProductButtons setViewProductQuick={setViewProduct} />
+          <ProductButtons
+            setViewProductQuick={setViewProduct}
+            productId={product.id}
+          />
         </div>
         <div
           className={`${largeProduct ? "h-[120px]" : showRating ? "min-h-[85px]" : "min-h-[95px]"} flex flex-col justify-between gap-y-1`}>
@@ -101,18 +103,22 @@ export default function ProductCard({
           </p>
           <div className="flex gap-x-2">
             <Button
-              onClick={() => console.log("add product to wishlist")}
+              onClick={() => wishlistAtom.addToWishlist(product)}
               className="bg-orange-150 text-black hover:text-white text-2xl p-3">
               <i className="bx bx-heart"></i>
             </Button>
             <Button
-              onClick={() => console.log("add product to cart")}
+              onClick={() => cartAtom.addToCart(product.id)}
               startIcon="bx-cart"
               className="flex-grow text-sm p-3"
               iconClassName="text-xl">
-              <span>
-                {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
-              </span>
+              {loadingItem ? (
+                <span>Loading...</span>
+              ) : (
+                <span>
+                  {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
+                </span>
+              )}
             </Button>
             <Button
               onClick={() => setViewProduct(true)}

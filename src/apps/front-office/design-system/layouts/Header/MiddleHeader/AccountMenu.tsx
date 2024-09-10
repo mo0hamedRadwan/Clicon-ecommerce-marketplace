@@ -12,7 +12,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 
 export default function AccountMenu() {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleLoginForm = ({ values }) => {
     const user = {

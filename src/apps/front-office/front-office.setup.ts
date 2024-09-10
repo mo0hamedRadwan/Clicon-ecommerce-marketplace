@@ -22,10 +22,12 @@ export const frontOfficeApp: PublicApp = {
     {
       entry: [
         URLS.product.root,
+        URLS.shop.root,
+        URLS.checkout.root,
+        URLS.pages.trackOrder.root,
         URLS.wishlist,
         URLS.cart,
-        URLS.checkout.root,
-        URLS.checkout.success,
+        URLS.compare,
       ],
       name: "catalog",
     },
@@ -33,7 +35,7 @@ export const frontOfficeApp: PublicApp = {
       entry: [
         URLS.faq,
         URLS.pages.aboutUs,
-        URLS.pages.customerServices,
+        URLS.pages.customerSupport,
         URLS.pages.privacyPolicy,
         URLS.pages.termsConditions,
       ],

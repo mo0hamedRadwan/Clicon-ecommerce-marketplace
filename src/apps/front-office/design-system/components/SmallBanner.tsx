@@ -33,7 +33,7 @@ export default function SmallBanner({
     <>
       {productImage ? (
         <Link
-          to={URLS.product.view(product)}
+          to={URLS.shop.root}
           className="w-[450px] h-[230px] rounded-md shadow-2">
           <img src={productImage} className="w-full h-full" />
         </Link>

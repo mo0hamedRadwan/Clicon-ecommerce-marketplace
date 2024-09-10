@@ -13,7 +13,7 @@ import toast from "react-hot-toast";
 import { login } from "../services/auth";
 
 export default function SignInForm() {
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSignInForm = ({ values }) => {
     const user = {

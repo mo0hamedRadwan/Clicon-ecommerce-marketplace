@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { verifyCode } from "../../services/auth";
 
 export default function VerifyEmailPage() {
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleVerifyEmailForm = ({ values }) => {
     const verifyEmail = {

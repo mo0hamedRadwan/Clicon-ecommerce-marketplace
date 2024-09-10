@@ -18,7 +18,7 @@ export default function CategoryTabs({
   categories,
 }: CategoryTabsPropsType) {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {

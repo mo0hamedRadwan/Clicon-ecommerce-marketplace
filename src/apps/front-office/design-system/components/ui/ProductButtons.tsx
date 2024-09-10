@@ -1,6 +1,9 @@
+import { cartAtom } from "../../atoms/cartAtom";
+import { wishlistAtom } from "../../atoms/wishlistAtom";
 import Button from "../form/Button";
 
 type ProductButtonsPropsType = {
+  productId: string;
   setViewProductQuick: (value: boolean) => void;
 };
 
@@ -9,18 +12,19 @@ const ButtonActionStyle =
 
 // eslint-disable-next-line unused-imports/no-unused-vars
 export default function ProductButtons({
+  productId,
   setViewProductQuick,
 }: ProductButtonsPropsType) {
   return (
     <div className="hidden z-40 absolute top-0 left-0 w-full h-full group-hover:flex-center hover:bg-[rgba(0,0,0,0.2)] duration-200">
       <div className="center-y gap-x-2">
         <Button
-          onClick={() => console.log("add product to wishlist")}
+          onClick={() => wishlistAtom.addToWishlist(productId)}
           className={ButtonActionStyle}>
           <i className="bx bx-heart"></i>
         </Button>
         <Button
-          onClick={() => console.log("add product to cart")}
+          onClick={() => cartAtom.addToCart(productId)}
           className={ButtonActionStyle}>
           <i className="bx bx-cart"></i>
         </Button>

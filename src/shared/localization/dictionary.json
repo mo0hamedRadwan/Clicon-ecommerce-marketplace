@@ -80,7 +80,7 @@
     "ar": "لدي حساب بالفعل"
   },
   "dontHaveAccount": {},
-  "customerServices": {
+  "customerSupport": {
     "en": "Customers Services",
     "ar": "خدمات العملاء"
   },
@@ -448,7 +448,7 @@
     "en": "Contact With Us",
     "ar": "تواصل معنا"
   },
-  "customerservices": {
+  "customersupport": {
     "en": "Customer Services",
     "ar": "خدمات العملاء"
   },

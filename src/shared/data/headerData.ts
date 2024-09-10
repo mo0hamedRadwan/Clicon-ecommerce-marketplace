@@ -1,3 +1,5 @@
+import URLS from "apps/front-office/utils/urls";
+
 export const socialMediaIcons = [
   { name: "Twitter", icon: "bxl-twitter", link: "https://www.twitter.com" },
   {
@@ -34,14 +36,18 @@ export const socialMediaIcons = [
 // ];
 
 export const navigateItems = [
-  { name: "trackOrder", icon: "bx-map", link: "/track-order" },
-  { name: "compare", icon: "bx-git-compare", link: "/compare" },
+  { name: "trackOrder", icon: "bx-map", link: URLS.pages.trackOrder.root },
+  { name: "compare", icon: "bx-git-compare", link: URLS.compare },
   {
     name: "customerSupport",
     icon: "bx bx-headphone",
     link: "/customer-support",
   },
-  { name: "needHelp", icon: "bx-info-circle", link: "/need-help" },
+  {
+    name: "needHelp",
+    icon: "bx-info-circle",
+    link: URLS.pages.customerSupport,
+  },
 ];
 
 export const callUs = {

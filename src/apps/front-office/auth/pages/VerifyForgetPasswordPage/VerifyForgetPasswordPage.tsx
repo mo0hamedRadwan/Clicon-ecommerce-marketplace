@@ -10,7 +10,7 @@ import toast from "react-hot-toast";
 import { verifyForgetPassword } from "../../services/auth";
 
 export default function VerifyEmailPage() {
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleVerifyForgetPasswordForm = ({ values }) => {
     const verifyEmail = {

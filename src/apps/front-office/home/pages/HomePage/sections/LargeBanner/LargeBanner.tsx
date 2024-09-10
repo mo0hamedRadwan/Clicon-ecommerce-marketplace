@@ -19,9 +19,11 @@ export default function LargeBanner({
   return (
     <>
       {banner ? (
-        <Link to="/product/:id" className="w-full xl:w-[1550px]">
-          <img src={banner.image.url} alt="" className="w-full h-full" />
-        </Link>
+        <div className="w-full flex justify-center">
+          <Link to="/product/:id" className="w-full xl:w-[1550px]">
+            <img src={banner.image.url} alt="" className="w-full h-full" />
+          </Link>
+        </div>
       ) : (
         <div className="hidden sm:flex justify-center">
           <div className="xl:px-10 xl:w-[1550px] bg-orange-150">

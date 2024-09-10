@@ -1,8 +1,14 @@
 import { trans } from "@mongez/localization";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
+import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
+import { Product } from "apps/front-office/design-system/types";
 import Button from "components/form/Button";
-import { products } from "shared/data/testData";
 
-export default function WishlistList() {
+type WishlistListPropsType = {
+  products: Product[];
+};
+
+export default function WishlistList({ products }: WishlistListPropsType) {
   return (
     <div>
       <h2 className="text-3xl text-center mb-5">{trans("wishlist")}</h2>
@@ -14,7 +20,7 @@ export default function WishlistList() {
             <div className="flex items-center gap-3">
               <img
                 className="w-20 h-20 rounded-full"
-                src={product.imageUrl}
+                src={product.images[0].url}
                 alt={product.name}
               />
               <div className="flex flex-col gap-y-3">
@@ -22,12 +28,12 @@ export default function WishlistList() {
                   {product.name}
                 </h3>
                 <p className="text-sm center-y gap-x-2">
-                  {product.oldPrice && (
+                  {product.price && (
                     <span className="text-gray-450 line-through">
-                      ${product.oldPrice}
+                      ${product.price}
                     </span>
                   )}
-                  <span>${product.price}</span>
+                  <span>${product.salePrice}</span>
                 </p>
               </div>
             </div>
@@ -37,7 +43,7 @@ export default function WishlistList() {
                 endIcon="bx-cart"
                 iconClassName="text-lg sm:text-2xl"
                 className="md:text-sm hover:bg-gray-450"
-                onClick={() => console.log("add product to cart")}>
+                onClick={() => cartAtom.addToCart(product.id)}>
                 {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
               </Button>
               <Button
@@ -45,7 +51,7 @@ export default function WishlistList() {
                 endIcon="bx-trash"
                 iconClassName="text-lg sm:text-2xl"
                 className="md:text-sm bg-red-550 hover:bg-gray-450"
-                onClick={() => console.log("remove product from wishlist")}>
+                onClick={() => wishlistAtom.removeFromWishlist(product.id)}>
                 {`${trans("remove")} ${trans("from")} ${trans("wishlist")}`.toUpperCase()}
               </Button>
             </div>

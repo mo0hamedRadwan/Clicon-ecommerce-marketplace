@@ -16,7 +16,7 @@ import LatestNews from "./sections/LatestNews";
 import ShopCategories from "./sections/ShopCategories";
 
 export default function HomePage() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
   const [rows, setRows] = useState<Row[]>([]);
 
   useEffect(() => {

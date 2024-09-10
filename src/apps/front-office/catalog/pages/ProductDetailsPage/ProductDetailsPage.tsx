@@ -16,7 +16,7 @@ type ProductDetailsPagePropsType = {
 export default function ProductDetailsPage({
   params,
 }: ProductDetailsPagePropsType) {
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const [product, setProduct] = useState<Product>();
 
   useEffect(() => {
@@ -26,6 +26,7 @@ export default function ProductDetailsPage({
     })
       .then(response => {
         setProduct(response.data.products[0]);
+        console.log(response.data);
         setLoading(false);
       })
       .catch(error => {

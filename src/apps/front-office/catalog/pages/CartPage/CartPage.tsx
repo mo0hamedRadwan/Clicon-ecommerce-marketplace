@@ -1,19 +1,28 @@
 import { trans } from "@mongez/localization";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import Button from "components/form/Button";
 import TextInput from "components/form/TextInput";
+import { useEffect } from "react";
 import ShoppingCartList from "./sections/ShoppingCartList";
 import ShoppingCartTable from "./sections/ShoppingCartTable";
 
 export default function CartPage() {
+  // const { loading, loadingItem, cart } = cartAtom.useValue();
+  const { cart } = cartAtom.useValue();
+
+  useEffect(() => {
+    cartAtom.loadCartItems();
+  }, []);
+
   return (
     <div className="py-20 container">
       <div className="flex flex-wrap 2xl:flex-nowrap justify-center gap-5">
         <div className="flex-grow 2xl:flex-grow-0">
           <div className="hidden lg:block">
-            <ShoppingCartTable />
+            <ShoppingCartTable items={cart.items} />
           </div>
           <div className="block lg:hidden">
-            <ShoppingCartList />
+            <ShoppingCartList items={cart.items} />
           </div>
         </div>
         <div className="w-full max-w-[400px] lg:max-w-full 2xl:w-[400px] flex flex-col lg:flex-row 2xl:flex-col gap-5">
@@ -22,7 +31,7 @@ export default function CartPage() {
             <ul className="flex flex-col gap-y-2">
               <li className="space-between">
                 <p>{trans("subtotal")}</p>
-                <p className="font-semibold">$200</p>
+                <p className="font-semibold">${cart.subtotal}</p>
               </li>
               <li className="space-between">
                 <p>{trans("shipping")}</p>

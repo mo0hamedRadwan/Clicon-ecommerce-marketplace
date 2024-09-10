@@ -14,7 +14,7 @@ import toast from "react-hot-toast";
 import { register } from "../services/auth";
 
 export default function SignUpForm() {
-  const [loading, setLoading] = useState<boolean>();
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleSignUpForm = ({ values }) => {
     const newUser = {

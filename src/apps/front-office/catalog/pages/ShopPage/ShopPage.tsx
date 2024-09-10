@@ -5,26 +5,17 @@ import CheckboxInput from "apps/front-office/design-system/components/form/Check
 import RatioInput from "apps/front-office/design-system/components/form/RatioInput";
 import Select from "apps/front-office/design-system/components/form/Select";
 import TextInput from "apps/front-office/design-system/components/form/TextInput";
-import ProductsGrid from "apps/front-office/design-system/components/ProductsGrid";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 import { popularTags } from "shared/data/footerData";
 import { sortByOptions } from "shared/data/shopData";
 import { categories } from "shared/data/testData";
-import {
-  product10,
-  product2,
-  product3,
-  product5,
-  product6,
-  product7,
-  product8,
-  product9,
-} from "shared/data/testData2";
+import { product2 } from "shared/data/testData2";
 
 export default function ShopPage() {
   // eslint-disable-next-line unused-imports/no-unused-vars
   const [sortBy, setSortBy] = useState("mostPopular");
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [activePage, setActivePage] = useState(1);
 
   return (
@@ -130,7 +121,7 @@ export default function ShopPage() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-y-10">
+          {/* <div className="flex flex-col gap-y-10">
             <ProductsGrid
               showRating
               products={[
@@ -195,7 +186,7 @@ export default function ShopPage() {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

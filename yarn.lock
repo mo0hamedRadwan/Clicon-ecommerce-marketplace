@@ -493,10 +493,10 @@
     "@mongez/events" "^2.1.0"
     "@mongez/reinforcements" "^2.3.8"
 
-"@mongez/react-atom@^5.0.0":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@mongez/react-atom/-/react-atom-5.0.0.tgz#13977bdab7ce2a865d3390c76cf3a87a4446b8e3"
-  integrity sha512-X64mk3x5uw9J6ev7Jls2Q+aS9o0v4tPUc6Oc7LcPeucgj4Da1zCVnT+l4DEK+x6c0s6QVWjYFAe+RWj528UXeg==
+"@mongez/react-atom@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@mongez/react-atom/-/react-atom-5.0.2.tgz#a6850ba2fafaa6b6255f897fe6700af52248a1e5"
+  integrity sha512-BlaaOMccx8+g2J9byDyGVx5A2UIOqF9y4Bkoe3tEQWrSRfIQ5AscuCJscaH8gGu+l3ZAWLW1lt+xDQLWsgFWvw==
   dependencies:
     "@mongez/atom" "^1.0.0"
 

@@ -1,10 +1,10 @@
 import { isRTL } from "apps/front-office/utils/helpers";
 import { twMerge } from "tailwind-merge";
-import { ProductType } from "../types";
+import { Product } from "../types";
 import ProductDetails from "./ProductDetails/ProductDetails";
 
 type QuickViewPropsType = {
-  product: ProductType;
+  product: Product;
   setCloseViewProduct: (value: boolean) => void;
 };
 

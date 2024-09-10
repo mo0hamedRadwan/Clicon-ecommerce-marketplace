@@ -1,13 +1,15 @@
 import { trans } from "@mongez/localization";
+import { CartItem } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
-import { products } from "shared/data/testData";
 import CartTableItem from "./CartTableItem";
 
-// type ShoppingCartTablePropsType = {
-//   setSubtotals: (subtotals: object) => void;
-// };
+type ShoppingCartTablePropsType = {
+  items: CartItem[];
+};
 
-export default function ShoppingCartTable() {
+export default function ShoppingCartTable({
+  items,
+}: ShoppingCartTablePropsType) {
   return (
     <table className="w-full border broder-gray-150">
       <caption
@@ -29,9 +31,9 @@ export default function ShoppingCartTable() {
         </tr>
       </thead>
       <tbody>
-        {products.map(product => (
-          <tr key={product.id}>
-            <CartTableItem product={product} />
+        {items.map(item => (
+          <tr key={item.id}>
+            <CartTableItem item={item} />
           </tr>
         ))}
       </tbody>

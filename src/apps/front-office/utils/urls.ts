@@ -1,5 +1,7 @@
 // append urls here, DO NOT remove this line
 
+import { Order } from "../design-system/types";
+
 const URLS = {
   home: "/",
   notFound: "/404",
@@ -28,12 +30,12 @@ const URLS = {
     aboutUs: "/about-us",
     termsConditions: "/terms-conditions",
     privacyPolicy: "/privacy-policy",
-    customerServices: "/customer-services",
+    customerSupport: "/customer-support",
     trackOrder: {
       root: "/track-order",
       details: "/track-order/order-details",
-      // viewRoute: "/track-order/details/:order-id",
-      // view: (order: number) => `/track-order/details/${order}`,
+      viewRoute: "/track-order/details/:order-id",
+      view: (order: Order) => `/track-order/details/${order.id}`,
     },
     viewRoute: "/pages/:slug",
     view: (page: any) => `/pages/${page.id}/${page.slug}`,
@@ -45,14 +47,18 @@ const URLS = {
   },
   wishlist: "/wishlist",
   compare: "/compare",
-  shop: "/shop",
+  shop: {
+    root: "/shop",
+    // categoryRoute: "/shop/:category",
+    // categoryView: (category: any) => `/shop/${category.id}`,
+  },
   deals: "/deals",
   // I will delete it in future
   account: "/account",
   product: {
-    root: "/product",
-    viewRoute: "/product/:id/:slug",
-    view: (product: any) => `/product/${product.id}/${product.slug}`,
+    root: "/products",
+    viewRoute: "/products/:id/:slug",
+    view: (product: any) => `/products/${product.id}/${product.slug}`,
   },
 };
 

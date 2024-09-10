@@ -32,7 +32,7 @@ export type ProductType = {
 };
 
 export type Product = {
-  id?: number;
+  id: string;
   isActive: boolean;
   affiliateCommission: { value: string; type: string };
   name: string;
@@ -162,4 +162,39 @@ export type Post = {
   createdAt: {
     date: string;
   };
+};
+
+export type Order = {
+  id: number;
+  products: Product[];
+};
+
+export type CartItem = {
+  id: string;
+  product: Product;
+  quantity: number;
+  salePrice: number;
+  total: {
+    finalPrice: number;
+  };
+};
+
+export type User = {
+  accessToken: string;
+  cartProducts: string[];
+  id: string;
+  totalCart: number;
+  totalCompare: number;
+  totalWishlist: number;
+};
+
+export type Cart = {
+  items: CartItem[];
+  subtotal: number;
+  discount?: number;
+  shippingFees?: number;
+};
+
+export type Wishlist = {
+  products: Product[];
 };

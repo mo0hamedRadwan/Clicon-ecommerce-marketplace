@@ -11,6 +11,7 @@ import "./style.css";
 import { Link } from "@mongez/react-router";
 import { Banner } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
 import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 
 type CarouselPropsType = {
@@ -50,7 +51,7 @@ export default function Carousel({ sliders }: CarouselPropsType) {
       </SwiperSlide> */}
       {sliders.map(banner => (
         <SwiperSlide key={banner.id}>
-          <Link to="/product/:id" className="w-full h-full">
+          <Link to={URLS.shop.root} className="w-full h-full">
             <img src={banner.image.url} className="w-full h-full" />
           </Link>
         </SwiperSlide>

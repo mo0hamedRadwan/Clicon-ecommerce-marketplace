@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
-import { Product, SelectOption } from "../../types";
+import { cartAtom } from "../../atoms/cartAtom";
+import { Product } from "../../types";
 import Button from "../form/Button";
-import Select from "../form/Select";
 import LinkAsButton from "../ui/LinkAsButton";
 import QuantityInput from "../ui/QuantityInput";
 
@@ -14,25 +14,26 @@ type ProductDetailsFormPropsType = {
 export default function ProductDetailsForm({
   product,
 }: ProductDetailsFormPropsType) {
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [selectedColor, setSelectedColor] = useState(0);
-  const [productQuantity, setProductQuantity] = useState(product.quantity || 1);
-  const sizeOptions: SelectOption[] | undefined = product.sizes?.map(size => {
-    return { label: size, value: size };
-  });
-  const memoryOptions: SelectOption[] | undefined = product.memories?.map(
-    memory => {
-      return { label: memory, value: memory };
-    },
-  );
-  const storageOtions: SelectOption[] | undefined = product.storages?.map(
-    storage => {
-      return { label: storage, value: storage };
-    },
-  );
+  const [productQuantity, setProductQuantity] = useState(1);
+  // const sizeOptions: SelectOption[] | undefined = product.sizes?.map(size => {
+  //   return { label: size, value: size };
+  // });
+  // const memoryOptions: SelectOption[] | undefined = product.memories?.map(
+  //   memory => {
+  //     return { label: memory, value: memory };
+  //   },
+  // );
+  // const storageOtions: SelectOption[] | undefined = product.storages?.map(
+  //   storage => {
+  //     return { label: storage, value: storage };
+  //   },
+  // );
 
   return (
     <>
-      <ul className="grid grid-cols-2 gap-3">
+      {/* <ul className="grid grid-cols-2 gap-3">
         <li className="flex flex-col gap-y-2">
           <h5 className="text-black">{trans("color")}</h5>
           <ul className="flex gap-x-2">
@@ -87,7 +88,7 @@ export default function ProductDetailsForm({
             </>
           )}
         </li>
-      </ul>
+      </ul> */}
 
       <div className="mt-5 center-y justify-center flex-wrap md:flex-nowrap gap-3">
         <QuantityInput value={productQuantity} setValue={setProductQuantity} />
@@ -96,7 +97,7 @@ export default function ProductDetailsForm({
             variant="contained"
             size="lg"
             endIcon="bx-cart"
-            onClick={() => console.log("add product to cart")}
+            onClick={() => cartAtom.addToCart(product.id)}
             className="flex-grow font-semibold"
             iconClassName="md:text-2xl">
             {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}

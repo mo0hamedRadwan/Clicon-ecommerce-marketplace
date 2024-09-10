@@ -74,11 +74,15 @@ export default function FooterSection() {
         <div className="hidden md:block w-[200px]">
           <h3 className="mb-5">{trans("downloadApp").toUpperCase()}</h3>
           <div className="flex flex-col gap-y-3">
-            <Link to="" className="w-[176px] h-[70px] cursor-pointer">
-              <img src={googlePlayImg} alt="" />
+            <Link
+              to="https://play.google.com"
+              className="w-[176px] h-[70px] cursor-pointer">
+              <img src={googlePlayImg} alt="Google App" />
             </Link>
-            <Link to="" className="w-[176px] h-[70px] cursor-pointer">
-              <img src={appStoreImg} alt="" />
+            <Link
+              to="https://www.apple.com"
+              className="w-[176px] h-[70px] cursor-pointer">
+              <img src={appStoreImg} alt="Apple App" />
             </Link>
           </div>
         </div>

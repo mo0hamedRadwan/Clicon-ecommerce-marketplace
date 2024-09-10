@@ -33,7 +33,7 @@ export default function OfferNotification({
               <span className="text-xl">{trans("off").toUpperCase()}</span>
             </div>
             <LinkAsButton
-              href={URLS.shop}
+              href={URLS.shop.root}
               endIcon={`bx-${isRTL() ? "left" : "right"}-arrow-alt`}
               iconClassName="text-2xl"
               className="text-zinc-950 font-semibold p-3 bg-yellow-450 hover:bg-yellow-500">
