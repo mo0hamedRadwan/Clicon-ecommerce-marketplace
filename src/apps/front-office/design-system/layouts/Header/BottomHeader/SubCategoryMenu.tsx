@@ -1,11 +1,8 @@
-import { trans } from "@mongez/localization";
 import {
   ProductType,
   SubCategory,
 } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
-import Banner from "components/Banner";
-import ColumnProducts from "components/ColumnProducts";
 import { useState } from "react";
 
 type SubCategoryMenuPropsType = {
@@ -15,12 +12,12 @@ type SubCategoryMenuPropsType = {
 
 export default function SubCategoryMenu({
   subcategories,
-  categoryTopProducts,
 }: SubCategoryMenuPropsType) {
   /**
    * select SubCategory for display products if user don't hover
    * then by default all sub categories is selected
    */
+  // eslint-disable-next-line unused-imports/no-unused-vars
   const [selectedSubCategoryId, setSelectedSubCategoryId] = useState<number>(
     subcategories.length,
   );
@@ -48,7 +45,7 @@ export default function SubCategoryMenu({
               }>
               <p className="hover:font-bold">{subcategory.name}</p>
 
-              <div
+              {/* <div
                 className={`absolute top-5 ${isRTL() ? "left-5" : "right-5"} space-between gap-x-5`}>
                 <ColumnProducts
                   title={`${selectedSubCategoryId < subcategories.length ? subcategories[selectedSubCategoryId].name : trans("all")} ${trans("products")}`}
@@ -68,7 +65,7 @@ export default function SubCategoryMenu({
                       : categoryTopProducts[0]
                   }
                 />
-              </div>
+              </div> */}
             </li>
           ))}
         </ul>

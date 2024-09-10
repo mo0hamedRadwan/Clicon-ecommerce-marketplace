@@ -1,7 +1,6 @@
 import { useClickOutside } from "apps/front-office/design-system/hooks/use-click-outside";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { categories } from "shared/data/testData";
-import SubCategoryMenu from "./SubCategoryMenu";
 
 type AllCategoriesMenuPropsType = {
   setOpenCategoriesMenu: (open: boolean) => void;
@@ -23,10 +22,10 @@ export default function AllCategoriesMenu({
             <span className="group-hover:font-bold">{category.name}</span>
             <span className="hidden group-hover:block">&gt;</span>
 
-            <SubCategoryMenu
+            {/* <SubCategoryMenu
               subcategories={category.subCategories}
               categoryTopProducts={category.topProducts}
-            />
+            /> */}
           </li>
         ))}
       </ul>

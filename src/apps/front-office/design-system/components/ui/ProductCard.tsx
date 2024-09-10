@@ -52,7 +52,7 @@ export default function ProductCard({
           />
           <ProductButtons
             setViewProductQuick={setViewProduct}
-            productId={product.id}
+            product={product}
           />
         </div>
         <div
