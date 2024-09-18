@@ -18,7 +18,7 @@ export default function CheckoutSuccessPage() {
           <LinkAsButton
             variant="outlined"
             startIcon="bxs-layer"
-            href={URLS.account}
+            href={URLS.userAccount.dashboard}
             className="md:text-base font-semibold"
             iconClassName="text-lg">
             {`${trans("goto")} ${trans("dashboard")}`.toUpperCase()}

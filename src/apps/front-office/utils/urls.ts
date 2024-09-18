@@ -54,7 +54,27 @@ const URLS = {
   },
   deals: "/deals",
   // I will delete it in future
-  account: "/account",
+  userAccount: {
+    root: "/user-account",
+    dashboard: "/user-account/dashboard",
+    orderHistory: {
+      root: "/user-account/order-history",
+      viewRoute: "/user-account/order-history/order-details/:order-id",
+      view: (orderId: number) =>
+        `/user-account/order-history/order-details/${orderId}`,
+    },
+    trackOrder: {
+      root: "/user-account/track-order",
+      viewRoute: "/user-account/track-order/details/:order-id",
+      view: (orderId: number) => `/user-account/track-order/details/${orderId}`,
+    },
+    cart: "/user-account/cart",
+    wishlist: "/user-account/wishlist",
+    compare: "/user-account/compare",
+    cardsAndAddresses: "/user-account/cards-and-addresses",
+    browsingHistory: "/user-account/browsing-history",
+    settings: "/user-account/settings",
+  },
   product: {
     root: "/products",
     viewRoute: "/products/:id/:slug",

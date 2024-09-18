@@ -1,0 +1,90 @@
+{
+  "dashboard": {
+    "en": "Dashboard",
+    "ar": "لوحة التحكم"
+  },
+  "orderHistory": {
+    "en": "Order History",
+    "ar": "تاريخ الطلبات"
+  },
+  "trackOrder": {
+    "en": "Track Order",
+    "ar": "تتبع الطلب"
+  },
+  "shoppingCart": {
+    "en": "Shopping Cart",
+    "ar": "عربة التسوق"
+  },
+  "wishlist": {
+    "en": "Wishlist",
+    "ar": "قائمة الأمنيات"
+  },
+  "compare": {
+    "en": "Compare",
+    "ar": "مقارنة"
+  },
+  "cardsAndAddresses": {
+    "en": "Cards & Addresses",
+    "ar": "بطاقات وعناوين"
+  },
+  "browsingHistory": {
+    "en": "Browsing History",
+    "ar": "سجل التصفح"
+  },
+  "settings": {
+    "en": "Settings",
+    "ar": "الاعدادات"
+  },
+  "logout": {
+    "en": "Logout",
+    "ar": "تسجيل الخروج"
+  },
+  "yourAccountDashboard": {
+    "en": "Your Account Dashboard",
+    "ar": "لوحة تحكم حسابك"
+  },
+  "youCan": {
+    "en": "You can",
+    "ar": "يمكنك"
+  },
+  "easily": {
+    "en": "easily",
+    "ar": "بسهولة"
+  },
+  "check": {
+    "en": "check",
+    "ar": "التحقق من"
+  },
+  "manage": {
+    "en": "manage",
+    "ar": "ادارة"
+  },
+  "edit": {
+    "en": "edit",
+    "ar": "تعديل"
+  },
+  "yourRecentOrders": {
+    "en": "Your Recent Orders",
+    "ar": "طلباتك الأخيرة"
+  },
+  "yourShipping": {
+    "en": "Your Shipping",
+    "ar": "الشحنات"
+  },
+  "billingAddresses": {
+    "en": "Billing Addresses",
+    "ar": "عناوين الفواتير"
+  },
+  "yourPassword": {
+    "en": "Your Password",
+    "ar": "كلمة المرور الخاصة بك"
+  },
+  "accountDetails": {
+    "en": "Account Details",
+    "ar": "تفاصيل الحساب"
+  },
+  "accountInfo": {
+    "en": "Account Info",
+    "ar": "معلومات الحساب"
+  }
+}

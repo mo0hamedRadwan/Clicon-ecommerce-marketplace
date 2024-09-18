@@ -8,12 +8,16 @@ export const frontOfficeApp: PublicApp = {
     {
       entry: [
         URLS.auth.signin.root,
-        URLS.auth.signin.forgetPassword,
-        URLS.auth.signin.resetPassword,
+        // URLS.auth.signin.forgetPassword,
+        // URLS.auth.signin.resetPassword,
         URLS.auth.signup.root,
-        URLS.auth.signup.emailVerification,
+        // URLS.auth.signup.emailVerification,
       ],
       name: "auth",
+    },
+    {
+      entry: [URLS.userAccount.root],
+      name: "account",
     },
     {
       entry: [URLS.home, URLS.notFound],

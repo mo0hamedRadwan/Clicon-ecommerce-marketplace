@@ -41,7 +41,9 @@ export default function MiddleHeader() {
             <WishlistMenu />
           </li>
           <li className="relative md:pb-3 group">
-            <Link to={URLS.account} className="text-2xl md:text-4xl">
+            <Link
+              to={URLS.userAccount.dashboard}
+              className="text-2xl md:text-4xl">
               <i className="bx bx-user"></i>
             </Link>
             {user.isLoggedIn() ? <MyAccountMenu /> : <AccountMenu />}
