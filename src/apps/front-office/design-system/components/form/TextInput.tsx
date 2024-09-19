@@ -34,7 +34,7 @@ export default function TextInput(props: TextInputPropsType) {
       <input
         type={props.type}
         value={value}
-        placeholder={props.placeholder}
+        placeholder={trans(props.placeholder || "")}
         onChange={e => changeValue(e.target.value)}
         className={twMerge(
           "p-2 text-black border border-gray-150",

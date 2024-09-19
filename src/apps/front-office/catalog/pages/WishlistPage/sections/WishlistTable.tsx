@@ -9,9 +9,13 @@ import URLS from "apps/front-office/utils/urls";
 
 type WishlistTablePropsType = {
   products: Product[];
+  size?: string;
 };
 
-export default function WishlistTable({ products }: WishlistTablePropsType) {
+export default function WishlistTable({
+  products,
+  size = "page",
+}: WishlistTablePropsType) {
   return (
     <table className="w-full border border-gray-150 rounded">
       <caption
@@ -20,7 +24,7 @@ export default function WishlistTable({ products }: WishlistTablePropsType) {
       </caption>
       <thead className={`bg-gray-150 ${isRTL() ? "text-right" : "text-left"}`}>
         <tr className="">
-          <th className="w-[420px] xl:min-w-[520px]">
+          <th className={`w-[420px] ${size === "page" ? "" : ""}`}>
             {trans("products").toUpperCase()}
           </th>
           <th className="min-w-[100px] 2xl:min-w-[200px]">

@@ -5,20 +5,23 @@ import CartTableItem from "./CartTableItem";
 
 type ShoppingCartTablePropsType = {
   items: CartItem[];
+  size: string;
 };
 
 export default function ShoppingCartTable({
   items,
+  size,
 }: ShoppingCartTablePropsType) {
   return (
-    <table className="w-full border broder-gray-150">
+    <table className="w-full">
       <caption
         className={`text-2xl font-semibold ${isRTL() ? "text-right" : "text-left"} p-5 border border-gray-150`}>
         {trans("shoppingCart")}
       </caption>
       <thead className={`bg-gray-150 ${isRTL() ? "text-right" : "text-left"}`}>
         <tr className="">
-          <th className="w-[600px] xl:min-w-[650px] 2xl:min-w-[420px]">
+          <th
+            className={`w-[600px] ${size === "page" ? "xl:min-w-[650px]" : ""} 2xl:min-w-[420px]`}>
             {trans("products").toUpperCase()}
           </th>
           <th className="min-w-[100px] xl:min-w-[200px]">

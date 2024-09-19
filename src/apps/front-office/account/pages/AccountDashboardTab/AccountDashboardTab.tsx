@@ -1,12 +1,13 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
+import BillingAddressCard from "../../components/sections/BillingAddressCard";
 import BrowseHistorySection from "../../components/sections/BrowseHistorySection";
 import OrderListSection from "../../components/sections/OrderListSection";
+import OrdersTableSection from "../../components/sections/OrdersTableSection";
+import PaymentOptionsSection from "../../components/sections/PaymentOptionsSection";
 import AccountInfoCard from "./sections/AccountInfoCard";
 import AccountStatsCards from "./sections/AccountStatsCards";
-import BillingAddressCard from "./sections/BillingAddressCard";
-import PaymentOptionsSection from "./sections/PaymentOptionsSection";
 
 export default function AccountDashboardTab() {
   return (
@@ -36,15 +37,19 @@ export default function AccountDashboardTab() {
             className="text-sky-550 mx-1">{`${trans("yourPassword")} ${trans("and")} ${trans("accountDetails")}`}</Link>
         </p>
       </div>
-      <div className="flex flex-wrap gap-5">
+      <div className="flex flex-wrap xl:flex-nowrap gap-5">
         <AccountInfoCard />
         <BillingAddressCard />
         <AccountStatsCards />
       </div>
       <PaymentOptionsSection />
-      <div>
-        {/* <OrdersTableSection /> */}
-        <OrderListSection />
+      <div className="">
+        <div className="hidden xl:block">
+          <OrdersTableSection />
+        </div>
+        <div className="block xl:hidden">
+          <OrderListSection />
+        </div>
       </div>
       <div>
         <BrowseHistorySection />

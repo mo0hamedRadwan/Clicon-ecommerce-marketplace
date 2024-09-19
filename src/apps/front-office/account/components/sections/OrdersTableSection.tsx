@@ -24,7 +24,7 @@ export default function OrdersTableSection({
   const [activePage, setActivePage] = useState(1);
 
   return (
-    <div className="border border-gray-150 shadow-4">
+    <div className="border border-gray-150 shadow-2">
       <div className="space-between-center gap-5 border-b border-gray-150">
         <h2 className="p-5 font-semibold">{trans(heading)}</h2>
         <LinkAsButton

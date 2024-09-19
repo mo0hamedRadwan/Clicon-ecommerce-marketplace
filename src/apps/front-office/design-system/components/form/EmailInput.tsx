@@ -22,7 +22,7 @@ export default function EmailInput(props: EmailInputPropsType) {
   });
 
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="w-full flex flex-col gap-y-2">
       {props.label && <label>{trans(props.label)}</label>}
       <input
         type="email"

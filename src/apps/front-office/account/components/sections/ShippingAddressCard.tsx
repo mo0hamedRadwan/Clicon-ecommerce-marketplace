@@ -2,11 +2,11 @@ import { trans } from "@mongez/localization";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import URLS from "apps/front-office/utils/urls";
 
-export default function BillingAddressCard() {
+export default function ShippingAddressCard() {
   return (
-    <div className="w-full xs:w-[330px] h-[330px] border border-gray-150 shadow-4">
+    <div className="w-full border border-gray-150 shadow-2">
       <h3 className="p-5 font-semibold border-b border-gray-150">
-        {trans("billingAddress").toUpperCase()}
+        {trans("shippingAddress").toUpperCase()}
       </h3>
       <div className="p-5 flex flex-col items-start gap-y-5">
         <div className="flex flex-col gap-y-2">

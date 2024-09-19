@@ -15,7 +15,7 @@ export default function AccountStatsCard({
 }: AccountStatsCardPropsType) {
   return (
     <div
-      className={`p-5 w-full xs:w-[330px] lg:w-[360px] h-24 flex center-y gap-5 shadow-4 ${className}`}>
+      className={`p-5 w-full h-24 flex center-y gap-5 shadow-2 ${className}`}>
       <div className={`p-2 bg-white text-4xl ${iconClassName}`}>
         <i className={`bx ${icon}`}></i>
       </div>

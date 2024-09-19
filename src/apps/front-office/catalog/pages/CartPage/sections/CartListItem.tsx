@@ -13,7 +13,7 @@ export default function CartListItem({ item }: CartListItemPropsType) {
   const [productQuantity, setProductQuantity] = useState(item.quantity || 1);
 
   return (
-    <div className="p-5 w-full sm:w-[450px] flex flex-col items-center gap-y-3 border border-gray-300">
+    <div className="p-5 w-full sm:min-w-[450px] sm:max-w-[450px] flex flex-col items-center gap-y-3 border border-gray-300">
       <div className="w-full center-y gap-3">
         <img
           className="w-20 h-20 rounded-full"

@@ -28,7 +28,7 @@ export default function PasswordInput(props: PasswordInputPropsType) {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
-    <div className="flex flex-col gap-y-2">
+    <div className="w-full flex flex-col gap-y-2">
       <div className="space-between-center">
         {props.label && <label>{trans(props.label)}</label>}
         {props.showForgetPassword && (

@@ -24,7 +24,7 @@ export default function OrderListSection({
   const [activePage, setActivePage] = useState(1);
 
   return (
-    <div className="border border-gray-150 shadow-4">
+    <div className="border border-gray-150 shadow-2">
       <div className="space-between-center gap-5 border-b border-gray-150">
         <h2 className="p-5 font-semibold">{trans(heading)}</h2>
         <LinkAsButton
@@ -36,7 +36,7 @@ export default function OrderListSection({
       </div>
 
       <div className="py-5 flex justify-center">
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
           {ordersData.map(order => (
             <li
               key={order.id}

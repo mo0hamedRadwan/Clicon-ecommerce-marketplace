@@ -5,7 +5,7 @@ import profileImg from "shared/assets/images/profileImg/profile.jpg";
 
 export default function AccountInfoCard() {
   return (
-    <div className="w-full xs:w-[330px] h-[330px] border border-gray-150 shadow-4">
+    <div className="w-full border border-gray-150 shadow-2">
       <h3 className="p-5 font-semibold border-b border-gray-150">
         {trans("accountInfo").toUpperCase()}
       </h3>

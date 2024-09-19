@@ -12,7 +12,7 @@ export default function AccountDashboardLayout({
     <BaseLayout>
       <div className="py-10 container flex items-start flex-wrap gap-10 xl:gap-20">
         <AccountDashboardNavigationTabs />
-        <main>{children}</main>
+        <main className="w-full md:w-[calc(100%-340px)]">{children}</main>
       </div>
     </BaseLayout>
   );

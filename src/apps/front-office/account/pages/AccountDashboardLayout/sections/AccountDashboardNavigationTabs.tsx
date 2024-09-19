@@ -13,7 +13,7 @@ export default function AccountDashboardNavigationTabs() {
 
   return (
     //flex flex-col gap-y-2
-    <ul className="w-[260px] py-3 border border-gray-150 shadow-4">
+    <ul className="w-[260px] py-3 border border-gray-150 shadow-2">
       {accountNavItems.map((item, idx) => (
         <li
           key={item.name}
