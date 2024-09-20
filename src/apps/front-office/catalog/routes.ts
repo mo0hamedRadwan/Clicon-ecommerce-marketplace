@@ -3,6 +3,7 @@ import URLS from "../utils/urls";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import CheckoutSuccessPage from "./pages/CheckoutSuccessPage";
+import ComparePage from "./pages/ComparePage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import ShopPage from "./pages/ShopPage";
 import TrackOrderDetailsPage from "./pages/TrackOrderDetailsPage";
@@ -41,5 +42,9 @@ publicRoutes([
   {
     path: URLS.shop.root,
     component: ShopPage,
+  },
+  {
+    path: URLS.compare,
+    component: ComparePage,
   },
 ]);
