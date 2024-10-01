@@ -2,11 +2,11 @@ import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { twMerge } from "tailwind-merge";
-import { ProductType } from "../types";
+import { Product } from "../types";
 import LinkAsButton from "./ui/LinkAsButton";
 
 type BannerPropsType = {
-  product: ProductType;
+  product: Product;
   showTitle?: boolean;
   showDescription?: boolean;
   showDiscount?: boolean;
@@ -28,7 +28,7 @@ export default function Banner({
       )}>
       <div className="w-64 h-32 flex-center">
         <img
-          src={product.bannerImageUrl || product.imageUrl}
+          src={product.images[0].url}
           alt="product Image"
           className="h-full"
         />

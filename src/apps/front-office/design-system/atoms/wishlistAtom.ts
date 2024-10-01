@@ -3,11 +3,12 @@ import {
   addToWishlist,
   getWishlistItems,
   removeFromWishlist,
-} from "apps/front-office/home/services/home-service";
+} from "apps/front-office/catalog/services/catalog-service";
 import { Product, Wishlist } from "../types";
 
 type wishlistDataType = {
   wishlist: Wishlist;
+  totalProducts: number;
   loading: boolean;
   loadingItem: boolean;
   error: string;
@@ -26,6 +27,7 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
     wishlist: {
       products: [],
     },
+    totalProducts: 0,
     loading: false,
     loadingItem: false,
     error: "",
@@ -41,6 +43,7 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
             wishlist: {
               products,
             },
+            totalProducts: products.length,
             loading: false,
           });
         })
@@ -64,6 +67,7 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
             wishlist: {
               products: [...products, product],
             },
+            totalProducts: products.length + 1,
             loadingItem: false,
           });
         })
@@ -88,7 +92,8 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
             wishlist: {
               products,
             },
-            loading: false,
+            totalProducts: products.length,
+            loadingItem: false,
           });
         })
         .catch(error => {
@@ -98,6 +103,9 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
             error: "Failed to add to wishlist",
           });
         });
+    },
+    toggleWishlistProduct: (product: Product) => {
+      console.log("toggle product", product);
     },
   },
 });

@@ -1,15 +1,29 @@
 import { trans } from "@mongez/localization";
 import CategoryTabs from "apps/front-office/design-system/components/CategoryTabs/CategoryTabs";
-import { SubCategory } from "apps/front-office/design-system/types";
+import { Category, Product } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import Banner from "components/Banner";
 import Badge from "components/ui/Badge";
 import LinkAsButton from "components/ui/LinkAsButton";
-import { product3 } from "shared/data/testData2";
+import { productsImage } from "shared/data/images2";
+
+const product3: Product = {
+  id: "3",
+  isActive: true,
+  name: "Xiaomi FlipBuds Pro",
+  shortDescription:
+    "Escape the noise, It’s time to hear the magic with Xiaomi Earbuds.",
+  salePrice: 299,
+  images: [
+    {
+      url: productsImage.product3,
+    },
+  ],
+};
 
 type ComputerAccessoriesPropsType = {
   title: string;
-  categories: SubCategory[];
+  categories: Category[];
 };
 
 export default function ComputerAccessories({

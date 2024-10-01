@@ -1,8 +1,18 @@
+Important
+==============
+(in process) shop page and filteration options
+(in process) price range slider input 
+(in process) compare page and compare atom
+(in process) account dashboard
+(in process) edit banner in shop page
+(in process) edit pagination component
+
+
+add implemention edit cart item
+add implemention toggle wishlist item
 resend verify email code again (with countdown 1 min)
-add access token to local storage
 create form for checkout page in ship into different address
 Edit breadcrumbs path with product/:id/:slug
-add compare component
 add browse history component
 
 styles 

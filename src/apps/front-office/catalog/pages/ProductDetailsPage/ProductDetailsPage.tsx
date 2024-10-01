@@ -17,7 +17,7 @@ export default function ProductDetailsPage({
   params,
 }: ProductDetailsPagePropsType) {
   const [loading, setLoading] = useState<boolean>(false);
-  const [product, setProduct] = useState<Product>();
+  const [product, setProduct] = useState<Product | undefined>();
 
   useEffect(() => {
     setLoading(true);
@@ -41,11 +41,13 @@ export default function ProductDetailsPage({
       {loading ? (
         <div>loading...</div>
       ) : (
-        <div className="container py-10 sm:py-20 flex flex-col gap-y-5 sm:gap-y-10">
-          <ProductDetails product={product!} />
-          <ProductInfoTabs product={product!} />
-          <RelatedProducts />
-        </div>
+        product && (
+          <div className="container py-10 sm:py-20 flex flex-col gap-y-5 sm:gap-y-10">
+            <ProductDetails product={product} />
+            <ProductInfoTabs product={product} />
+            <RelatedProducts />
+          </div>
+        )
       )}
     </>
   );

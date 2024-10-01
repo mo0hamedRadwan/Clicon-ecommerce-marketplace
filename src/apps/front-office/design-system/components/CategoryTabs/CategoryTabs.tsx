@@ -5,12 +5,12 @@ import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { Category, Product, SubCategory } from "../../types";
+import { Category, Product } from "../../types";
 import ProductsGrid from "../ProductsGrid";
 
 type CategoryTabsPropsType = {
   heading: string;
-  categories: Category[] | SubCategory[];
+  categories: Category[];
 };
 
 export default function CategoryTabs({

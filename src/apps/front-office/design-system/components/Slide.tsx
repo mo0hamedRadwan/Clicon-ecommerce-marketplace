@@ -1,13 +1,28 @@
 import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
-import { product1 } from "shared/data/testData2";
+import { productsImage } from "shared/data/images2";
 import { twMerge } from "tailwind-merge";
-import { ProductType } from "../types";
+import { Product } from "../types";
 import LinkAsButton from "./ui/LinkAsButton";
 
+export const product1: Product = {
+  id: "1",
+  name: "Xbox Consoles",
+  isActive: true,
+  shortDescription: "THE BEST PLACE TO PLAY",
+  description:
+    "Save up to 50% on select Xbox games. Get 3 months of PC Game Pass for $2 USD.",
+  salePrice: 299,
+  images: [
+    {
+      url: productsImage.product3,
+    },
+  ],
+};
+
 type SlidePropsType = {
-  product?: ProductType; // product is optional is temporary
+  product?: Product; // product is optional is temporary
 };
 
 export default function Slide({ product = product1 }: SlidePropsType) {
@@ -17,7 +32,7 @@ export default function Slide({ product = product1 }: SlidePropsType) {
       <div className="w-[370px] flex flex-col">
         <h5 className="hidden md:center-y gap-x-2">
           <span className="block w-[30px] h-[2px] bg-sky-550"></span>
-          <span className="text-sky-550">{product.caption}</span>
+          <span className="text-sky-550">{product.shortDescription}</span>
         </h5>
         <h2 className="text-xl sm:text-4xl font-medium line-clamp-2">
           {product.name.toUpperCase()}
@@ -37,7 +52,7 @@ export default function Slide({ product = product1 }: SlidePropsType) {
       </div>
       <div className="hidden sm:block w-[300px] h-full relative">
         <img
-          src={product.bannerImageUrl}
+          src={product.images[0].url}
           alt="product image"
           className="w-full h-full"
         />

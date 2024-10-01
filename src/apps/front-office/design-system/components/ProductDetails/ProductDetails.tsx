@@ -28,7 +28,9 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
         <ul className="grid grid-cols-2 gap-3 text-sm sm:text-base">
           <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("sku")}:</span>
-            <span className="text-black font-bold">{product.sku}</span>
+            <span className="text-black font-bold">
+              {product.sku || trans("notFound")}
+            </span>
           </li>
           <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("availability")}:</span>
@@ -44,12 +46,14 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
           </li>
           <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("brand")}:</span>
-            <span className="text-black font-bold">{product.brand}</span>
+            <span className="text-black font-bold">
+              {product.brand || trans("notFound")}
+            </span>
           </li>
           <li className="flex flex-col xs:flex-row gap-2">
             <span>{trans("categories")}:</span>
             <span className="text-black font-bold text-xs sm:text-base">
-              {product.category.name}
+              {product?.category?.name}
             </span>
           </li>
         </ul>
@@ -61,7 +65,7 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
           <span className="text-lg text-gray-450 line-through">
             ${product.price}
           </span>
-          {/* <span>{product.badges}</span> */}
+          <span>{product.badge}</span>
           {/* <ul className="center-y gap-x-2">
             {product.badge?.map(badge => (
               <li key={badge}>

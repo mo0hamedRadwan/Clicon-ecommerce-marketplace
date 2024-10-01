@@ -1,17 +1,15 @@
-import {
-  ProductType,
-  SubCategory,
-} from "apps/front-office/design-system/types";
+import { Category, Product } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 
 type SubCategoryMenuPropsType = {
-  subcategories: SubCategory[];
-  categoryTopProducts: ProductType[];
+  subcategories: Category[];
+  categoryTopProducts?: Product[];
 };
 
 export default function SubCategoryMenu({
-  subcategories,
+  subcategories = [],
+  categoryTopProducts = [],
 }: SubCategoryMenuPropsType) {
   /**
    * select SubCategory for display products if user don't hover
@@ -22,6 +20,7 @@ export default function SubCategoryMenu({
     subcategories.length,
   );
 
+  console.log(categoryTopProducts);
   // console.log(selectedSubCategoryId);
 
   return (

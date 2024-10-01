@@ -5,16 +5,19 @@ type CheckboxInputPropsType = FormControlProps & {
 };
 
 export default function CheckboxInput(props: CheckboxInputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { value, changeValue, error, id } = useFormControl(props);
   return (
     <>
       <div className="flex gap-x-1">
         <input
           type="checkbox"
+          id={id}
           value={value}
           onChange={e => changeValue(e.target.value)}
         />
-        <label>{props.label}</label>
+        <label htmlFor={id} className="cursor-pointer select-none">
+          {props.label}
+        </label>
       </div>
       {error && (
         <span

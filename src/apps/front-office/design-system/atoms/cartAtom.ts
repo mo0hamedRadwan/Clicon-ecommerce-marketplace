@@ -1,13 +1,15 @@
+/* eslint-disable unused-imports/no-unused-vars */
 import { atom } from "@mongez/react-atom";
 import {
   addToCart,
   getCartItems,
   removeFromCart,
-} from "apps/front-office/home/services/home-service";
+} from "apps/front-office/catalog/services/catalog-service";
 import { Cart, CartItem } from "../types";
 
 type CartDataType = {
   cart: Cart;
+  totalProducts: number;
   loading: boolean;
   loadingItem: boolean;
   error: string;
@@ -17,6 +19,7 @@ type CartActionsType = {
   loadCartItems: () => void;
   getTotalPrice(): number;
   addToCart: (productId: string, quantity?: number) => void;
+  editCartItem: (productId: string, quantity?: number) => void;
   removeFromCart: (productId: string) => void;
 };
 
@@ -25,10 +28,14 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
   default: {
     cart: {
       items: [],
-      subtotal: 0,
-      discount: 0,
-      shippingFees: 0,
+      totals: {
+        subtotal: 0,
+        discount: 0,
+        shippingFees: 0,
+        tax: 0,
+      },
     },
+    totalProducts: 0,
     loading: false,
     loadingItem: false,
     error: "",
@@ -39,18 +46,18 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
       getCartItems()
         .then(response => {
           const items: CartItem[] = response.data.cart.items || [];
-          const subtotal = response.data.cart.subtotal;
-          const discount = response.data.cart.discount;
-          const shippingFees = response.data.cart.shippingFees;
+          const totals = response.data.cart.totals;
 
           console.log(response.data);
           cartAtom.merge({
             cart: {
               items,
-              subtotal,
-              discount,
-              shippingFees,
+              totals,
             },
+            totalProducts: items.reduce(
+              (total, item) => item.quantity + total,
+              0,
+            ),
             loading: false,
           });
         })
@@ -77,13 +84,20 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
         .then(response => {
           console.log("cart add to cart successfully");
           const items: CartItem[] = response.data.cart.items;
-          const product = items.find(item => item.id === productId);
+          const product = items.find(item => item.product.id === productId);
+
           cartAtom.merge({
             cart: {
+              ...cartAtom.get("cart"),
               items,
-              subtotal:
-                cartAtom.get("cart").subtotal + product!.product.salePrice,
+              totals: {
+                ...cartAtom.get("cart").totals,
+                subtotal: !product
+                  ? cartAtom.get("cart").totals.subtotal
+                  : cartAtom.get("cart").totals.subtotal + product.salePrice,
+              },
             },
+            totalProducts: cartAtom.get("totalProducts") + quantity,
             loadingItem: false,
           });
         })
@@ -95,9 +109,9 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
           });
         });
     },
+    editCartItem: (productId: string, quantity?: number) => {},
     removeFromCart: (itemId: string) => {
       cartAtom.change("loadingItem", true);
-      if (!cartAtom.get("cart").items.length) cartAtom.loadCartItems();
       const items = cartAtom.get("cart").items;
       const existsItem = items.find(item => item.id === itemId);
 
@@ -112,10 +126,16 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
           console.log(response.data);
           cartAtom.merge({
             cart: {
+              ...cartAtom.get("cart"),
               items,
-              subtotal:
-                cartAtom.get("cart").subtotal - existsItem.product.salePrice,
+              totals: {
+                ...cartAtom.get("cart").totals,
+                subtotal:
+                  cartAtom.get("cart").totals.subtotal -
+                  existsItem.product.salePrice,
+              },
             },
+            totalProducts: cartAtom.get("totalProducts") - 1,
             loadingItem: false,
           });
         })

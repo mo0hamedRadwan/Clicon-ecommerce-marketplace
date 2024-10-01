@@ -1,7 +1,35 @@
 import SmallBanner from "apps/front-office/design-system/components/SmallBanner";
-import { Banner, Slider } from "apps/front-office/design-system/types";
-import { product2, product3 } from "shared/data/testData2";
+import { Banner, Product, Slider } from "apps/front-office/design-system/types";
+import { productsImage } from "shared/data/images2";
 import Carousel from "./Carousel";
+
+const product2: Product = {
+  id: "2",
+  isActive: true,
+  name: "New Google Pixel 6 Pro",
+  shortDescription: "Summer Sales",
+  salePrice: 399,
+  images: [
+    {
+      url: productsImage.product2,
+    },
+  ],
+  badge: "29% off",
+};
+
+const product3: Product = {
+  id: "3",
+  isActive: true,
+  name: "Xiaomi FlipBuds Pro",
+  shortDescription:
+    "Escape the noise, It’s time to hear the magic with Xiaomi Earbuds.",
+  salePrice: 299,
+  images: [
+    {
+      url: productsImage.product3,
+    },
+  ],
+};
 
 type HeroSectionPropsType = {
   slider: Slider;

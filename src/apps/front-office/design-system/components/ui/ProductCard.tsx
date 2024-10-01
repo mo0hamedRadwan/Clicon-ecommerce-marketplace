@@ -7,6 +7,7 @@ import { cartAtom } from "../../atoms/cartAtom";
 import { wishlistAtom } from "../../atoms/wishlistAtom";
 import { Product } from "../../types";
 import Button from "../form/Button";
+import Loader2 from "../loaders/Loader2";
 import QuickView from "../QuickView";
 import Badge from "./Badge";
 import ProductButtons from "./ProductButtons";
@@ -59,7 +60,7 @@ export default function ProductCard({
           className={`${largeProduct ? "h-[120px]" : showRating ? "min-h-[85px]" : "min-h-[95px]"} flex flex-col justify-between gap-y-1`}>
           {showRating && (
             <StarsRating
-              rating={5}
+              rating={4}
               numOfReviews={Math.floor(Math.random() * 1000)}
               starClassName={
                 largeProduct
@@ -109,11 +110,11 @@ export default function ProductCard({
             </Button>
             <Button
               onClick={() => cartAtom.addToCart(product.id)}
-              startIcon="bx-cart"
+              startIcon={!loadingItem ? "bx-cart" : ""}
               className="flex-grow text-sm p-3"
               iconClassName="text-xl">
               {loadingItem ? (
-                <span>Loading...</span>
+                <Loader2 />
               ) : (
                 <span>
                   {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}

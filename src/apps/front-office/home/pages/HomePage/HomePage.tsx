@@ -1,3 +1,4 @@
+import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import SubscribeSection from "apps/front-office/design-system/components/sections/SubscribeSection";
 import TopProducts from "apps/front-office/design-system/components/sections/TopProducts";
 import { Row } from "apps/front-office/design-system/types";
@@ -12,6 +13,7 @@ import FeaturesProducts from "./sections/FeaturesProducts";
 import HeroSection from "./sections/HeroSection";
 import LargeBanner from "./sections/LargeBanner";
 import LatestNews from "./sections/LatestNews";
+import ShopCategories from "./sections/ShopCategories";
 
 export default function HomePage() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -36,7 +38,9 @@ export default function HomePage() {
   return (
     <>
       {loading ? (
-        <div>loading</div>
+        <div className="w-full h-screen flex-center">
+          <Loader1 />
+        </div>
       ) : (
         <>
           <HeroSection
@@ -48,25 +52,24 @@ export default function HomePage() {
           />
           <Features />
           <BestDeals products={rows[1].columns[0].module.products!} />
-          {/* <ShopCategories categories={categories} /> */}
-          {/* <div className="h-[2000px]">Home Page</div> */}
+          <ShopCategories categories={rows[2].columns[0].module.categories!} />
           <FeaturesProducts
-            title={rows[2].columns[0].module.title}
-            categories={rows[2].columns[0].module.categories!}
+            title={rows[3].columns[0].module.title}
+            categories={rows[3].columns[0].module.categories!}
           />
           <Banners
             banners={[
-              rows[3].columns[0].module.banner!,
-              rows[3].columns[1].module.banner!,
+              rows[4].columns[0].module.banner!,
+              rows[4].columns[1].module.banner!,
             ]}
           />
           <ComputerAccessories
             title={rows[2].columns[0].module.title}
             categories={rows[2].columns[0].module.categories!}
           />
-          <LargeBanner banner={rows[5].columns[0].module.banner} />
-          <TopProducts row={rows[6]} />
-          <LatestNews news={rows[7].columns[0].module.posts!} />
+          <LargeBanner banner={rows[6].columns[0].module.banner} />
+          <TopProducts row={rows[7]} />
+          <LatestNews news={rows[8].columns[0].module.posts!} />
           <SubscribeSection />
         </>
       )}

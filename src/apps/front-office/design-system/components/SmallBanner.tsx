@@ -3,13 +3,13 @@ import { Link } from "@mongez/react-router";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { twMerge } from "tailwind-merge";
-import { ProductType } from "../types";
+import { Product } from "../types";
 import { variantStyle } from "./styles/bannerStyles";
 import Badge from "./ui/Badge";
 import LinkAsButton from "./ui/LinkAsButton";
 
 type SmallBannerPropsType = {
-  product: ProductType;
+  product: Product;
   productImage: string;
   variant?: "light" | "dark";
   center?: boolean;
@@ -54,7 +54,7 @@ export default function SmallBanner({
                   "text-sm line-clamp-1",
                   `${variantStyle[variant].captionColor}`,
                 )}>
-                {product.caption?.toUpperCase()}
+                {product.shortDescription?.toUpperCase()}
               </p>
             )}
             <p
@@ -80,7 +80,7 @@ export default function SmallBanner({
           <div className="relative">
             <div className="h-full overflow-hidden">
               <img
-                src={product.imageUrl}
+                src={product.images[0].url}
                 alt="product image"
                 className="h-full group-hover:scale-110 duration-200"
               />
@@ -92,8 +92,8 @@ export default function SmallBanner({
                   direction === "left" ? "right-5" : "right-0",
                 )}>
                 {/* Small Banner with one badge */}
-                {product.badges ? (
-                  <Badge title={product.badges[0]} />
+                {product.badge ? (
+                  <Badge title={product.badge} />
                 ) : (
                   <Badge title={`${product.discount}% ${trans("off")}`} />
                 )}

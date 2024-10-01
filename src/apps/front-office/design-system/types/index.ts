@@ -4,92 +4,66 @@ export type SelectOption = {
   value: string;
 };
 
-export type ProductType = {
-  id: number;
-  name: string;
-  price: number;
-  oldPrice?: number;
-  rating?: number;
-  numOfReviews?: number;
-  imageUrl?: string;
-  bannerImageUrl?: string;
-  images?: string[];
-  badges?: string[];
-  shortDescription?: string;
-  description?: string;
-  caption?: string;
-  slug?: string;
-  quantity?: number;
-  stockStatus?: boolean;
-  discount?: number;
-  sku?: string;
-  brand?: string;
-  category?: string;
-  colors?: string[];
-  sizes?: string[];
-  memories?: string[];
-  storages?: string[];
-};
-
 export type Product = {
   id: string;
   isActive: boolean;
-  affiliateCommission: { value: string; type: string };
+  affiliateCommission?: { value: string; type: string };
   name: string;
   shortDescription?: string;
-  description: string;
-  badge: string;
+  description?: string;
+  badge?: string;
   price?: number;
   salePrice: number;
-  dimensions: { width: string; height: string; length: string; weight: string };
-  discount: {
+  dimensions?: {
+    width: string;
+    height: string;
+    length: string;
+    weight: string;
+  };
+  discount?: {
     percentage: string;
     amount: string;
     startsAt: string;
     endsAt: string;
   };
-  howWasMade: string;
+  howWasMade?: string;
   inStock?: boolean;
-  brand: string;
-  model: string;
-  cost: string;
-  stock: {
+  brand?: string;
+  model?: string;
+  cost?: string;
+  stock?: {
     available: number | string;
     lowStockThreshold: number | string;
   };
   slug?: string;
-  purchase: {
+  purchase?: {
     minQuantity: number | string;
     maxQuantity: number | string;
   };
-  package: { width: string; height: string; length: string; weight: string };
-  unit: string;
-  warranty: { type: string; duration: string };
-  returns: { isAllowed: boolean; type: string; duration: string };
-  sortOrder: string;
-  sku: string;
-  type: string;
+  package?: { width: string; height: string; length: string; weight: string };
+  unit?: string;
+  warranty?: { type: string; duration: string };
+  returns?: { isAllowed: boolean; type: string; duration: string };
+  sortOrder?: string;
+  sku?: string;
+  type?: string;
   images: {
     url: string;
   }[];
-  relatedProducts: Product[];
-  category: Category;
+  relatedProducts?: Product[];
+  category?: Category;
   inCart?: boolean;
   inWishlist?: boolean;
   inCompare?: boolean;
-};
-
-export type SubCategory = {
-  id: string;
-  name: string;
-  slug: string;
 };
 
 export type Category = {
   id: string;
   name: string;
   slug: string;
-  image: string;
+  image: {
+    url: string;
+  };
 };
 
 export type NewsType = {
@@ -190,11 +164,22 @@ export type User = {
 
 export type Cart = {
   items: CartItem[];
-  subtotal: number;
-  discount?: number;
-  shippingFees?: number;
+  totals: {
+    subtotal: number;
+    discount: number;
+    shippingFees: number;
+    tax: number;
+  };
 };
 
 export type Wishlist = {
   products: Product[];
+};
+
+export type PaginationInfo = {
+  limit: number;
+  page: number;
+  pages: number;
+  result: number;
+  total: number;
 };

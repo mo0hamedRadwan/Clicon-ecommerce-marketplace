@@ -7,14 +7,17 @@ type RatioInputPropsType = FormControlProps & {
 };
 
 export default function RatioInput(props: RatioInputPropsType) {
-  const { value, changeValue, error } = useFormControl(props);
+  const { value, changeValue, error, id } = useFormControl(props);
   return (
     <div className={props.className}>
-      <label className="text-center">{trans(props.label)}</label>
+      <label htmlFor={id} className="text-center">
+        {trans(props.label)}
+      </label>
 
       <div className="w-4 h-4 flex-center">
         <input
           type="radio"
+          id={id}
           name={props.name}
           value={value}
           onChange={e => changeValue(e.target.value)}

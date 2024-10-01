@@ -36,6 +36,11 @@ export const socialMediaIcons = [
 // ];
 
 export const navigateItems = [
+  {
+    name: "shop",
+    icon: "bx-store-alt",
+    link: URLS.shop.root,
+  },
   { name: "trackOrder", icon: "bx-map", link: URLS.pages.trackOrder.root },
   { name: "compare", icon: "bx-git-compare", link: URLS.compare },
   {
@@ -43,11 +48,11 @@ export const navigateItems = [
     icon: "bx bx-headphone",
     link: "/customer-support",
   },
-  {
-    name: "needHelp",
-    icon: "bx-info-circle",
-    link: URLS.pages.customerSupport,
-  },
+  // {
+  //   name: "needHelp",
+  //   icon: "bx-info-circle",
+  //   link: URLS.pages.customerSupport,
+  // },
 ];
 
 export const callUs = {

@@ -65,7 +65,7 @@ export default function ShopCategories({
                   to={"category/:id"}
                   className="p-5 w-full h-full flex-center flex-col gap-y-5 border border-gray-150 hover:border-orange-450 duration-150">
                   <img
-                    src={category.image}
+                    src={category.image.url}
                     alt="Category Image"
                     className="w-20 h-20 md:w-36 md:h-36"
                   />

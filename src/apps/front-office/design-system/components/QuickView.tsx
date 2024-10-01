@@ -13,7 +13,7 @@ export default function QuickView({
   setCloseViewProduct,
 }: QuickViewPropsType) {
   return (
-    <div className="z-50 absolute left-0 min-w-full min-h-full flex-center bg-[rgba(0,0,0,0.8)]">
+    <div className="z-50 absolute top-1/2 left-0 min-w-full min-h-full flex-center bg-[rgba(0,0,0,0.8)]">
       <div className="relative">
         <button
           onClick={() => setCloseViewProduct(false)}

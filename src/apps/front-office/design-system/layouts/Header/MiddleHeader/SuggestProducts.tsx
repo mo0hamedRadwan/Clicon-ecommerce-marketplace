@@ -1,4 +1,6 @@
 import { Link } from "@mongez/react-router";
+import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
+import { useClickOutside } from "apps/front-office/design-system/hooks/use-click-outside";
 import { Product } from "apps/front-office/design-system/types";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
@@ -13,11 +15,13 @@ export default function SuggestProducts({
   products,
 }: SuggestProductsPropsType) {
   const [openMenu, setOpenMenu] = useState(true);
+  const menuRef = useClickOutside(() => setOpenMenu(false));
+
   return (
-    <div className="z-20 absolute w-full bg-white rounded">
+    <div className="z-20 absolute w-full bg-sky-750 text-white" ref={menuRef}>
       {loading ? (
         <div className="w-full h-[300px] flex-center">
-          <p>Loading...</p>
+          <Loader2 />
         </div>
       ) : (
         openMenu && (

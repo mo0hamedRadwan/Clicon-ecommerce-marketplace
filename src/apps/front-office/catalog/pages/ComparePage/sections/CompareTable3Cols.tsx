@@ -2,7 +2,7 @@ import { trans } from "@mongez/localization";
 import Button from "apps/front-office/design-system/components/form/Button";
 import productImg from "assets/images/productImg/mainImage.png";
 
-export default function CompareTable() {
+export default function CompareTable3Cols() {
   return (
     <table className="w-full border border-gray-150">
       <tr className="w-full border-b border-gray-150">

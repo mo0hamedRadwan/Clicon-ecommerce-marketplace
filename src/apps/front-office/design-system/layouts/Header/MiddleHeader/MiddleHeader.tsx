@@ -1,5 +1,7 @@
 import { Link } from "@mongez/react-router";
 import user from "apps/front-office/account/user";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
+import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
 import URLS from "apps/front-office/utils/urls";
 import headerLogo from "assets/images/HeaderLogo.png";
 import AccountMenu from "./AccountMenu";
@@ -10,6 +12,9 @@ import SearchForm from "./SearchForm";
 import WishlistMenu from "./WishlistMenu";
 
 export default function MiddleHeader() {
+  const cartTotalProducts = cartAtom.use("totalProducts");
+  const wishlistTotalProducts = wishlistAtom.use("totalProducts");
+
   return (
     <div className="h-[44px] sm:h-[88px] bg-sky-750 text-white">
       <div className="container h-full space-between-center">
@@ -26,18 +31,26 @@ export default function MiddleHeader() {
         <SearchForm />
 
         <ul className="h-full center-y gap-x-7">
+          {/* Compare Icon (hidden md:block) */}
+          <li className="block md:hidden relative md:pb-3 group">
+            <Link to={URLS.compare} className="text-2xl md:text-4xl">
+              <i className="bx bx-git-compare"></i>
+            </Link>
+            <NumOfItems number={1} />
+            <CartMenu />
+          </li>
           <li className="relative md:pb-3 group">
             <Link to={URLS.cart} className="text-2xl md:text-4xl">
               <i className="bx bx-cart"></i>
             </Link>
-            <NumOfItems number={user.get("cartProducts", []).length} />
+            <NumOfItems number={cartTotalProducts} />
             <CartMenu />
           </li>
           <li className="relative md:pb-3 group">
             <Link to={URLS.wishlist} className="text-2xl md:text-4xl">
               <i className="bx bx-heart"></i>
             </Link>
-            <NumOfItems number={user.get("totalWishlist", 0)} />
+            <NumOfItems number={wishlistTotalProducts} />
             <WishlistMenu />
           </li>
           <li className="relative md:pb-3 group">
