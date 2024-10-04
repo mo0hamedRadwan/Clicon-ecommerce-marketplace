@@ -1,9 +1,10 @@
 import { trans } from "@mongez/localization";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
-import { cartAtom } from "../../atoms/cartAtom";
+import { useAddToCart } from "../../hooks/api/use-add-to-cart";
 import { Product } from "../../types";
 import Button from "../form/Button";
+import Loader2 from "../loaders/Loader2";
 import LinkAsButton from "../ui/LinkAsButton";
 import QuantityInput from "../ui/QuantityInput";
 
@@ -17,6 +18,8 @@ export default function ProductDetailsForm({
   // eslint-disable-next-line unused-imports/no-unused-vars
   const [selectedColor, setSelectedColor] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
+  const { loading, addToCart } = useAddToCart(product);
+
   // const sizeOptions: SelectOption[] | undefined = product.sizes?.map(size => {
   //   return { label: size, value: size };
   // });
@@ -97,10 +100,16 @@ export default function ProductDetailsForm({
             variant="contained"
             size="lg"
             endIcon="bx-cart"
-            onClick={() => cartAtom.addToCart(product.id)}
+            onClick={() => addToCart(true)}
             className="flex-grow font-semibold"
             iconClassName="md:text-2xl">
-            {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
+            {loading ? (
+              <Loader2 />
+            ) : (
+              <span>
+                {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
+              </span>
+            )}
           </Button>
           <LinkAsButton
             variant="outlined"

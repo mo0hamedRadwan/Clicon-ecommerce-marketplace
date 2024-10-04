@@ -1,11 +1,11 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import LinkAsButton from "components/ui/LinkAsButton";
 import { useEffect } from "react";
+import CartMenuItem from "./CartMenuItem";
 
 export default function CartMenu() {
   const { loading, cart } = cartAtom.useValue();
@@ -32,35 +32,7 @@ export default function CartMenu() {
           <div className="mt-3 w-full h-[1px] bg-gray-300"></div>
           <ul className="py-3 flex flex-col gap-y-3">
             {cart.items.map(item => (
-              <li key={item.product.id} className="center-y">
-                <Link
-                  to={URLS.product.view(item.product)}
-                  className="flex-grow h-[60px] center-y gap-x-5">
-                  <div className="min-w-[60px] h-full">
-                    <img
-                      src={item.product.images[0].url}
-                      alt={item.product.name}
-                      className="w-full h-full object-cover rounded-md border border-gray-200"
-                    />
-                  </div>
-                  <div className="h-full flex-grow flex flex-col justify-between">
-                    <p className="text-sm line-clamp-2">{item.product.name}</p>
-                    <p className="text-sm font-semibold">
-                      <span>{item.quantity}</span>
-                      <span className="mx-1">x</span>
-                      <span className="text-sky-500 font-bold">
-                        ${item.product.salePrice}
-                      </span>
-                    </p>
-                  </div>
-                </Link>
-                {/* onClick Delete Product from cart */}
-                <button
-                  className="text-gray"
-                  onClick={() => cartAtom.removeFromCart(item.id)}>
-                  x
-                </button>
-              </li>
+              <CartMenuItem item={item} key={item.id} />
             ))}
           </ul>
           <div className="mb-3 w-full h-[1px] bg-gray-300"></div>

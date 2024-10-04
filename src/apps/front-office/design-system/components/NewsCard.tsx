@@ -14,6 +14,7 @@ export default function NewsCard({ news }: NewsCardPropsType) {
         <img
           src={news.image.url}
           alt="news image"
+          loading="lazy"
           className="w-full h-full object-cover"
         />
       </div>

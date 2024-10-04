@@ -47,7 +47,7 @@ export default function WishlistMenu() {
                 {/* onClick Delete Product from wishlist */}
                 <button
                   className="text-gray"
-                  onClick={() => wishlistAtom.removeFromWishlist(product.id)}>
+                  onClick={() => wishlistAtom.removeFromWishlist(product)}>
                   x
                 </button>
               </li>

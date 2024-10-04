@@ -1,16 +1,12 @@
-import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
-import { cartAtom } from "../../atoms/cartAtom";
-import { wishlistAtom } from "../../atoms/wishlistAtom";
 import { Product } from "../../types";
-import Button from "../form/Button";
-import Loader2 from "../loaders/Loader2";
 import QuickView from "../QuickView";
 import Badge from "./Badge";
 import ProductButtons from "./ProductButtons";
+import ProductLargeButton from "./ProductLargeButton";
 import StarsRating from "./StarsRating";
 
 type ProductCardPropsType = {
@@ -27,7 +23,6 @@ export default function ProductCard({
   className,
 }: ProductCardPropsType) {
   const [viewProduct, setViewProduct] = useState(false);
-  const loadingItem = cartAtom.use("loadingItem");
 
   return (
     <div
@@ -38,6 +33,7 @@ export default function ProductCard({
           : "min-w-[225px] p-3",
         className,
       )}>
+      {/* I will add this to pop up model */}
       {viewProduct && (
         <div className="">
           <QuickView product={product} setCloseViewProduct={setViewProduct} />
@@ -102,31 +98,11 @@ export default function ProductCard({
           <p className="line-clamp-3 text-gray-550 text-sm">
             {product.shortDescription}
           </p>
-          <div className="flex gap-x-2">
-            <Button
-              onClick={() => wishlistAtom.addToWishlist(product)}
-              className="bg-orange-150 text-black hover:text-white text-2xl p-3">
-              <i className="bx bx-heart"></i>
-            </Button>
-            <Button
-              onClick={() => cartAtom.addToCart(product.id)}
-              startIcon={!loadingItem ? "bx-cart" : ""}
-              className="flex-grow text-sm p-3"
-              iconClassName="text-xl">
-              {loadingItem ? (
-                <Loader2 />
-              ) : (
-                <span>
-                  {`${trans("add")} ${trans("to")} ${trans("cart")}`.toUpperCase()}
-                </span>
-              )}
-            </Button>
-            <Button
-              onClick={() => setViewProduct(true)}
-              className="bg-orange-150 text-black hover:text-white text-2xl p-3">
-              <i className="bx bx-show"></i>
-            </Button>
-          </div>
+
+          <ProductLargeButton
+            product={product}
+            setViewProduct={setViewProduct}
+          />
         </div>
       )}
     </div>

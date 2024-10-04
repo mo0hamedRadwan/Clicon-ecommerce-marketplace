@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
+import user from "apps/front-office/account/user";
 import RatioInput from "apps/front-office/design-system/components/form/RatioInput";
 import CheckboxInput from "components/form/CheckboxInput";
 import TextareaInput from "components/form/TextareaInput";
@@ -10,6 +11,7 @@ export default function BillingForm() {
   const handleBillingForm = ({ values }) => {
     console.log(values);
   };
+  console.log(user);
   return (
     <Form className="flex flex-col gap-y-5" onSubmit={handleBillingForm}>
       <h2 className="text-2xl">{trans("billingInformation")}</h2>
@@ -18,6 +20,7 @@ export default function BillingForm() {
           <TextInput
             name="firstName"
             placeholder={trans("firstName")}
+            value={""}
             label={trans("username")}
           />
           <TextInput name="lastName" placeholder={trans("lastName")} />
@@ -29,7 +32,7 @@ export default function BillingForm() {
       </div>
       <div className="flex flex-wrap lg:flex-nowrap gap-x-5">
         {/* Convert TextInput to select */}
-        <TextInput name="contry" label={trans("country")} />
+        <TextInput name="country" label={trans("country")} value="Egypt" />
         <TextInput
           name="region"
           label={`${trans("region")} / ${trans("state")}`}

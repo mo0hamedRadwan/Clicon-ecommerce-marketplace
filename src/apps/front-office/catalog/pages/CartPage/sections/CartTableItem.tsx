@@ -1,5 +1,5 @@
 import { Link } from "@mongez/react-router";
-import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
+import { useRemoveFromCart } from "apps/front-office/design-system/hooks/api/use-remove-from-cart";
 import { CartItem } from "apps/front-office/design-system/types";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
@@ -12,13 +12,14 @@ type CartTableItemPropsType = {
 
 export default function CartTableItem({ item }: CartTableItemPropsType) {
   const [productQuantity, setProductQuantity] = useState(item.quantity || 1);
+  const { removeFromCart } = useRemoveFromCart(item);
 
   return (
     <>
       <td className="center-y gap-x-5">
         <Button
           className="p-2 rounded-full bg-white text-gray-550 border border-gray-150 hover:text-red-550 hover:border-red-550 hover:bg-white"
-          onClick={() => cartAtom.removeFromCart(item.id)}>
+          onClick={() => removeFromCart(true)}>
           <i className="bx bx-x"></i>
         </Button>
         <Link to={URLS.product.view(item.product)} className="center-y gap-x-5">

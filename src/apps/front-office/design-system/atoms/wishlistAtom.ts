@@ -10,7 +10,6 @@ type wishlistDataType = {
   wishlist: Wishlist;
   totalProducts: number;
   loading: boolean;
-  loadingItem: boolean;
   error: string;
 };
 
@@ -18,7 +17,8 @@ type wishlistActionsType = {
   loadWishlistItems: () => void;
   getWishlist(): wishlistDataType;
   addToWishlist: (product: Product) => void;
-  removeFromWishlist: (productId: string) => void;
+  removeFromWishlist: (product: Product) => void;
+  toggleWishlistProduct: (product: Product) => void;
 };
 
 export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
@@ -29,7 +29,6 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
     },
     totalProducts: 0,
     loading: false,
-    loadingItem: false,
     error: "",
   },
   actions: {
@@ -56,8 +55,6 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
         });
     },
     addToWishlist: (product: Product) => {
-      wishlistAtom.change("loadingItem", true);
-
       addToWishlist(product.id)
         .then(response => {
           console.log("wishlist add to wishlist successfully");
@@ -68,44 +65,46 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
               products: [...products, product],
             },
             totalProducts: products.length + 1,
-            loadingItem: false,
           });
         })
         .catch(error => {
           console.error("Error adding to wishlist:", error);
           wishlistAtom.merge({
-            loadingItem: false,
             error: "Failed to add to wishlist",
           });
         });
     },
-    removeFromWishlist: (productId: string) => {
-      wishlistAtom.change("loadingItem", true);
-
-      removeFromWishlist(productId)
+    removeFromWishlist: (product: Product) => {
+      removeFromWishlist(product.id)
         .then(response => {
           const products = wishlistAtom
             .get("wishlist")
-            .products.filter(product => product.id != productId);
+            .products.filter(product => product.id != product.id);
           console.log(response.data);
           wishlistAtom.merge({
             wishlist: {
               products,
             },
             totalProducts: products.length,
-            loadingItem: false,
           });
         })
         .catch(error => {
           console.error("Error adding to wishlist:", error);
           wishlistAtom.merge({
-            loadingItem: false,
             error: "Failed to add to wishlist",
           });
         });
     },
     toggleWishlistProduct: (product: Product) => {
-      console.log("toggle product", product);
+      const productExists = wishlistAtom
+        .get("wishlist")
+        .products.find(p => p.id === product.id);
+
+      if (productExists) {
+        wishlistAtom.removeFromWishlist(product);
+      } else {
+        wishlistAtom.addToWishlist(product);
+      }
     },
   },
 });

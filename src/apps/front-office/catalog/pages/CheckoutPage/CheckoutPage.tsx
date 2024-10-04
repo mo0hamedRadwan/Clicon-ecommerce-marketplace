@@ -1,9 +1,12 @@
 import { trans } from "@mongez/localization";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import Button from "apps/front-office/design-system/components/form/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
 import BillingForm from "./sections/BillingForm";
 
 export default function CheckoutPage() {
+  const cart = cartAtom.use("cart");
+
   return (
     <div className="py-20 container">
       <div className="flex flex-col-reverse 2xl:flex-row flex-wrap 2xl:flex-nowrap justify-center gap-5">
@@ -47,19 +50,19 @@ export default function CheckoutPage() {
             <ul className="flex flex-col gap-y-2">
               <li className="space-between">
                 <p>{trans("subtotal")}</p>
-                <p className="font-semibold">$200</p>
+                <p className="font-semibold">${cart.totals.subtotal}</p>
               </li>
               <li className="space-between">
                 <p>{trans("shipping")}</p>
-                <p className="font-semibold">$200</p>
+                <p className="font-semibold">${cart.totals.shippingFees}</p>
               </li>
               <li className="space-between">
                 <p>{trans("discount")}</p>
-                <p className="font-semibold">$200</p>
+                <p className="font-semibold">${cart.totals.discount}</p>
               </li>
               <li className="space-between">
                 <p>{trans("tax")}</p>
-                <p className="font-semibold">$200</p>
+                <p className="font-semibold">${cart.totals.tax}</p>
               </li>
             </ul>
             <div className="w-full h-[1px] bg-gray-150"></div>
