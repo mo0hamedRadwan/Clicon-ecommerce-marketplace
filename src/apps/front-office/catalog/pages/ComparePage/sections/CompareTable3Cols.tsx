@@ -14,7 +14,7 @@ export default function CompareTable3Cols({
   // [0, ..., numOfTables]
 
   return (
-    <div className="">
+    <div className="flex flex-col gap-y-5">
       {Array.from(Array(numOfTables).keys()).map(tableNumber => (
         <table className="w-full border border-gray-150" key={tableNumber}>
           <tbody>
@@ -22,7 +22,13 @@ export default function CompareTable3Cols({
               <td className="w-1/4 border-r border-gray-150"></td>
               {[0, 1, 2].map(idx => {
                 const index = tableNumber * 3 + idx;
-                if (index >= products.length) return null;
+                if (index >= products.length) {
+                  return (
+                    <td
+                      className="w-1/4 border-r border-gray-150"
+                      key={index}></td>
+                  );
+                }
                 const product = products[index];
 
                 return (
@@ -49,7 +55,13 @@ export default function CompareTable3Cols({
                 </td>
                 {[0, 1, 2].map(idx => {
                   const index = tableNumber * 3 + idx;
-                  if (index >= products.length) return null;
+                  if (index >= products.length) {
+                    return (
+                      <td
+                        className="w-1/4 border-r border-gray-150"
+                        key={index}></td>
+                    );
+                  }
 
                   // const productValue = products[index][row.productKey];
 

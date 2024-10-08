@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
-import { useAddToCart } from "../../hooks/api/use-add-to-cart";
+import { cartAtom } from "../../atoms/cartAtom";
 import { Product } from "../../types";
 import Button from "../form/Button";
 import Loader2 from "../loaders/Loader2";
@@ -18,7 +18,8 @@ export default function ProductDetailsForm({
   // eslint-disable-next-line unused-imports/no-unused-vars
   const [selectedColor, setSelectedColor] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
-  const { loading, addToCart } = useAddToCart(product);
+  const [loadingCart, setLoadingCart] = useState(false);
+  // const [loadingWishlist, setLoadingWishlist] = useState(false);
 
   // const sizeOptions: SelectOption[] | undefined = product.sizes?.map(size => {
   //   return { label: size, value: size };
@@ -100,10 +101,11 @@ export default function ProductDetailsForm({
             variant="contained"
             size="lg"
             endIcon="bx-cart"
-            onClick={() => addToCart(true)}
+            disabled={loadingCart}
+            onClick={() => cartAtom.addToCart(setLoadingCart, product.id)}
             className="flex-grow font-semibold"
             iconClassName="md:text-2xl">
-            {loading ? (
+            {loadingCart ? (
               <Loader2 />
             ) : (
               <span>

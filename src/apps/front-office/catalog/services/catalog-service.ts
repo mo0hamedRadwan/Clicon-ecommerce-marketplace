@@ -8,8 +8,12 @@ export function addToCart(data: any) {
   return endpoint.post("/cart", data);
 }
 
-export function removeFromCart(productId: string) {
-  return endpoint.delete(`/cart/${productId}`);
+export function removeFromCart(itemId: string) {
+  return endpoint.delete(`/cart/${itemId}`);
+}
+
+export function updateCartItem(itemId: string, data: any) {
+  return endpoint.put(`/cart/${itemId}`, data);
 }
 
 export function getWishlistItems() {

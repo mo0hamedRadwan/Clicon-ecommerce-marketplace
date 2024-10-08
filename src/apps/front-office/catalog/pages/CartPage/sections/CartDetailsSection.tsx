@@ -5,6 +5,8 @@ import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import Button from "apps/front-office/design-system/components/form/Button";
 import TextInput from "apps/front-office/design-system/components/form/TextInput";
 import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
+import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
+import URLS from "apps/front-office/utils/urls";
 
 type CartDetailsSectionPropsType = {
   size?: "page" | "tab";
@@ -14,10 +16,6 @@ export default function CartDetailsSection({
   size = "page",
 }: CartDetailsSectionPropsType) {
   const { cart, loading } = cartAtom.useValue();
-
-  // useEffect(() => {
-  //   cartAtom.loadCartItems();
-  // }, []);
 
   return (
     <>
@@ -75,15 +73,14 @@ export default function CartDetailsSection({
                 <span className="font-semibold">
                   $
                   {cart.totals.subtotal +
-                    cart.totals.shippingFees -
-                    cart.totals.discount +
+                    cart.totals.shippingFees +
                     cart.totals.tax}
                   USD
                 </span>
               </p>
-              <Button onClick={() => console.log("procss to checkout")}>
+              <LinkAsButton href={URLS.checkout.root}>
                 {trans("processToCheckout")}
-              </Button>
+              </LinkAsButton>
             </div>
             <div className="w-full lg:max-h-[220px] lg:w-[400px] border border-gray-150">
               <h3 className="p-5 text-lg font-medium border-b border-gray-150">

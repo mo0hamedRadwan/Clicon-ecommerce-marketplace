@@ -1,6 +1,7 @@
+import { useState } from "react";
+import { cartAtom } from "../../atoms/cartAtom";
 import { compareAtom } from "../../atoms/compareAtom";
 import { wishlistAtom } from "../../atoms/wishlistAtom";
-import { useAddToCart } from "../../hooks/api/use-add-to-cart";
 import { Product } from "../../types";
 import Button from "../form/Button";
 import CompareIcon from "../icons/CompareIcon";
@@ -18,18 +19,29 @@ export default function ProductButtons({
   product,
   setViewProductQuick,
 }: ProductButtonsPropsType) {
-  const { loading, addToCart } = useAddToCart(product);
+  const [loadingCart, setLoadingCart] = useState(false);
+  const [loadingWishlist, setLoadingWishlist] = useState(false);
 
   return (
     <div className="hidden z-40 absolute top-0 left-0 w-full h-full group-hover:flex-center hover:bg-[rgba(0,0,0,0.2)] duration-200">
       <div className="center-y gap-x-2">
         <Button
-          onClick={() => wishlistAtom.toggleWishlistProduct(product)}
+          disabled={loadingWishlist}
+          onClick={() =>
+            wishlistAtom.toggleWishlistProduct(setLoadingWishlist, product)
+          }
           className={ButtonActionStyle}>
-          <i className="bx bx-heart"></i>
+          {wishlistAtom.productExistsInWishlist(product) ? (
+            <i className="bx bxs-heart text-red-500"></i>
+          ) : (
+            <i className="bx bx-heart"></i>
+          )}
         </Button>
-        <Button onClick={() => addToCart(true)} className={ButtonActionStyle}>
-          {loading ? <Loader2 /> : <i className="bx bx-cart"></i>}
+        <Button
+          disabled={loadingCart}
+          onClick={() => cartAtom.addToCart(setLoadingCart, product.id)}
+          className={ButtonActionStyle}>
+          {loadingCart ? <Loader2 /> : <i className="bx bx-cart"></i>}
         </Button>
         <Button
           onClick={() => compareAtom.toggleCompareProduct(product)}

@@ -1,11 +1,12 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
 import Button from "apps/front-office/design-system/components/form/Button";
 import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
-import { useAddToCart } from "apps/front-office/design-system/hooks/api/use-add-to-cart";
 import { Product } from "apps/front-office/design-system/types";
 import URLS from "apps/front-office/utils/urls";
+import { useState } from "react";
 
 type WishlistTableRowPropsType = {
   product: Product;
@@ -14,7 +15,8 @@ type WishlistTableRowPropsType = {
 export default function WishlistTableRow({
   product,
 }: WishlistTableRowPropsType) {
-  const { loading, addToCart } = useAddToCart(product);
+  const [loadingCart, setLoadingCart] = useState(false);
+  const [loadingWishlist, setLoadingWishlist] = useState(false);
 
   return (
     <tr>
@@ -52,12 +54,12 @@ export default function WishlistTableRow({
       <td>
         <div className="center-y gap-x-5">
           <Button
-            endIcon={!loading ? "bx-cart" : ""}
+            endIcon={!loadingCart ? "bx-cart" : ""}
             iconClassName="text-2xl"
             className="text-sm"
             disabled={!product.inStock}
-            onClick={() => addToCart(true)}>
-            {loading ? (
+            onClick={() => cartAtom.addToCart(setLoadingCart, product.id)}>
+            {loadingCart ? (
               <Loader2 />
             ) : (
               <span>
@@ -67,7 +69,10 @@ export default function WishlistTableRow({
           </Button>
           <Button
             className="text-lg p-2 bg-white text-gray-550 border border-gray-450 rounded-full hover:text-red-550 hover:border-red-550 hover:bg-white"
-            onClick={() => wishlistAtom.removeFromWishlist(product)}>
+            disabled={loadingWishlist}
+            onClick={() =>
+              wishlistAtom.removeFromWishlist(setLoadingWishlist, product)
+            }>
             <i className="bx bx-x"></i>
           </Button>
         </div>

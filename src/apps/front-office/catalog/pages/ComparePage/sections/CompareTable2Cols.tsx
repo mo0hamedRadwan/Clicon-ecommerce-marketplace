@@ -9,20 +9,27 @@ type CompareTable2ColsPropsType = {
 export default function CompareTable2Cols({
   products,
 }: CompareTable2ColsPropsType) {
-  const numOfTables = Math.ceil(products.length / 3);
+  const numOfTables = Math.ceil(products.length / 2);
+  console.log("2 col => ", numOfTables);
   // Array.from(Array(numOfTables).keys()) OR [... Array(numOfTables).keys()]
   // [0, ..., numOfTables]
 
   return (
-    <div>
+    <div className="flex flex-col gap-y-5">
       {Array.from(Array(numOfTables).keys()).map(tableNumber => (
         <table className="w-full border border-gray-150" key={tableNumber}>
           <tbody>
             <tr className="w-full border-b border-gray-150">
               <td className="w-1/4 border-r border-gray-150"></td>
               {[0, 1].map(idx => {
-                const index = tableNumber * 3 + idx;
-                if (index >= products.length) return null;
+                const index = tableNumber * 2 + idx;
+                if (index >= products.length) {
+                  return (
+                    <td
+                      className="w-1/4 border-r border-gray-150"
+                      key={index}></td>
+                  );
+                }
                 const product = products[index];
 
                 return (
@@ -48,8 +55,14 @@ export default function CompareTable2Cols({
                   {row.title}
                 </td>
                 {[0, 1].map(idx => {
-                  const index = tableNumber * 3 + idx;
-                  if (index >= products.length) return null;
+                  const index = tableNumber * 2 + idx;
+                  if (index >= products.length) {
+                    return (
+                      <td
+                        className="w-1/4 border-r border-gray-150"
+                        key={index}></td>
+                    );
+                  }
                   // const productValue = products[index][row.productKey];
 
                   return (

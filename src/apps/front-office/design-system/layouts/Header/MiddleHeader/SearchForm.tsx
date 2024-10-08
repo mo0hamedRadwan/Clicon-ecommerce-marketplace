@@ -14,6 +14,7 @@ export default function SearchForm() {
   const debounceSearchInput = useDebounce(searchInput, 500);
 
   useEffect(() => {
+    if (!debounceSearchInput.length) return;
     setLoading(true);
     getProducts({
       name: debounceSearchInput,

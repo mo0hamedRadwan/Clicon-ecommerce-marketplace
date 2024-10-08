@@ -32,7 +32,7 @@ export default function ComputerAccessories({
 }: ComputerAccessoriesPropsType) {
   return (
     <div className="py-10 container">
-      <div className="center-y gap-x-5">
+      <div className="flex gap-x-5">
         <CategoryTabs heading={title} categories={categories} />
         <div className="hidden lg:flex flex-col gap-y-5">
           <Banner product={product3} showTitle showDescription />
@@ -45,7 +45,7 @@ export default function ComputerAccessories({
             <p className="">
               <span>{`${trans("only")} ${trans("for")} `}</span>
               <span className="text-yellow-450 text-base">
-                {trans("smartPhone")}{" "}
+                {trans("smartPhone")}
               </span>
               <span>{trans("product")}</span>
             </p>

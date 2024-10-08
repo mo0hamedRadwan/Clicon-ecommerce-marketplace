@@ -4,12 +4,13 @@ import WishlistList from "./WishlistList";
 import WishlistTable from "./WishlistTable";
 
 export default function WishlistDetailsSection() {
-  // const { loading, loadingItem, wishlist } = wishlistAtom.useValue();
+  // const { loading, wishlist } = wishlistAtom.useValue();
   const { wishlist } = wishlistAtom.useValue();
 
   useEffect(() => {
     wishlistAtom.loadWishlistItems();
   }, []);
+
   return (
     <>
       <div className="hidden lg:block">

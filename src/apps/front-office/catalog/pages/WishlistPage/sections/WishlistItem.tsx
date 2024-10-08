@@ -1,16 +1,18 @@
 import { trans } from "@mongez/localization";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
 import Button from "apps/front-office/design-system/components/form/Button";
 import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
-import { useAddToCart } from "apps/front-office/design-system/hooks/api/use-add-to-cart";
 import { Product } from "apps/front-office/design-system/types";
+import { useState } from "react";
 
 type WishlistItemPropsType = {
   product: Product;
 };
 
 export default function WishlistItem({ product }: WishlistItemPropsType) {
-  const { loading, addToCart } = useAddToCart(product);
+  const [loadingCart, setLoadingCart] = useState(false);
+  const [loadingWishlist, setLoadingWishlist] = useState(false);
 
   return (
     <li
@@ -39,11 +41,12 @@ export default function WishlistItem({ product }: WishlistItemPropsType) {
       <div className="space-between-center gap-x-5">
         <Button
           size="sm"
-          endIcon={!loading ? "bx-cart" : ""}
+          endIcon={!loadingCart ? "bx-cart" : ""}
           iconClassName="text-lg sm:text-2xl"
           className="md:text-sm hover:bg-gray-450"
-          onClick={() => addToCart(true)}>
-          {loading ? (
+          disabled={loadingCart}
+          onClick={() => cartAtom.addToCart(setLoadingCart, product.id)}>
+          {loadingCart ? (
             <Loader2 />
           ) : (
             <span>
@@ -56,8 +59,18 @@ export default function WishlistItem({ product }: WishlistItemPropsType) {
           endIcon="bx-trash"
           iconClassName="text-lg sm:text-2xl"
           className="md:text-sm bg-red-550 hover:bg-gray-450"
-          onClick={() => wishlistAtom.removeFromWishlist(product)}>
-          {`${trans("remove")} ${trans("from")} ${trans("wishlist")}`.toUpperCase()}
+          disabled={loadingWishlist}
+          onClick={() =>
+            wishlistAtom.removeFromWishlist(setLoadingWishlist, product)
+          }>
+          {loadingWishlist ? (
+            <Loader2 />
+          ) : (
+            <span>
+              {`${trans("remove")} ${trans("from")} ${trans("wishlist")}
+              `.toUpperCase()}
+            </span>
+          )}
         </Button>
       </div>
     </li>

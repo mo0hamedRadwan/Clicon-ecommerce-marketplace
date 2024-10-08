@@ -1,14 +1,15 @@
 import { Link } from "@mongez/react-router";
-import { useRemoveFromCart } from "apps/front-office/design-system/hooks/api/use-remove-from-cart";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { CartItem } from "apps/front-office/design-system/types";
 import URLS from "apps/front-office/utils/urls";
+import { useState } from "react";
 
 type CartMenuItemPropsType = {
   item: CartItem;
 };
 
 export default function CartMenuItem({ item }: CartMenuItemPropsType) {
-  const { removeFromCart } = useRemoveFromCart(item);
+  const [loading, setLoading] = useState(false);
 
   return (
     <li key={item.product.id} className="center-y">
@@ -34,7 +35,10 @@ export default function CartMenuItem({ item }: CartMenuItemPropsType) {
         </div>
       </Link>
       {/* onClick Delete Product from cart */}
-      <button className="text-gray" onClick={() => removeFromCart(true)}>
+      <button
+        className="text-gray"
+        disabled={loading}
+        onClick={() => cartAtom.removeFromCart(setLoading, item.id)}>
         x
       </button>
     </li>

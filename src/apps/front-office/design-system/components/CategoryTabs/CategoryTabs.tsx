@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Category, Product } from "../../types";
 import ProductsGrid from "../ProductsGrid";
+import Loader1 from "../loaders/Loader1";
 
 type CategoryTabsPropsType = {
   heading: string;
@@ -44,7 +45,7 @@ export default function CategoryTabs({
         <div className="center-y gap-x-3">
           <ul className="hidden sm:center-y gap-x-2">
             {[{ id: "all", name: "All" }, ...categories]
-              .slice(0, 5)
+              .slice(0, 5) // 5 categories just for theme design
               .map(category => (
                 <li
                   key={category.id}
@@ -67,7 +68,9 @@ export default function CategoryTabs({
       </div>
 
       {loading ? (
-        <div>Loading...</div>
+        <div className="w-full h-[692px] flex center">
+          <Loader1 />
+        </div>
       ) : (
         <ProductsGrid
           products={products.slice(0, 8)}

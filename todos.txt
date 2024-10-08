@@ -1,8 +1,5 @@
 Important
 ==============
-(in process) shop page and filteration options
-(in process) price range slider input 
-(in process) compare page and compare atom (data & ProductKey)
 (in process) account dashboard
 (in process) edit banner in shop page
 (in process) edit pagination component

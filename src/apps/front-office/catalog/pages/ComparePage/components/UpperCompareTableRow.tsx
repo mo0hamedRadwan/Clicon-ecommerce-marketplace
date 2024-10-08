@@ -1,10 +1,11 @@
 import { trans } from "@mongez/localization";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { compareAtom } from "apps/front-office/design-system/atoms/compareAtom";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
 import Button from "apps/front-office/design-system/components/form/Button";
 import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
-import { useAddToCart } from "apps/front-office/design-system/hooks/api/use-add-to-cart";
 import { Product } from "apps/front-office/design-system/types";
+import { useState } from "react";
 
 type UpperCompareTableRowPropsType = {
   product: Product;
@@ -13,7 +14,8 @@ type UpperCompareTableRowPropsType = {
 export default function UpperCompareTableRow({
   product,
 }: UpperCompareTableRowPropsType) {
-  const { loading, addToCart } = useAddToCart(product);
+  const [loadingCart, setLoadingCart] = useState(false);
+  const [loadingWishlist, setLoadingWishlist] = useState(false);
 
   return (
     <div className="flex flex-col gap-y-5">
@@ -29,16 +31,18 @@ export default function UpperCompareTableRow({
           className="w-40 2xl:w-[270px] h-40 2xl:h-[270px]"
         />
       </div>
-      <p className="text-sm xl:text-base font-medium line-clamp-3">
+      <p className="h-[60px] text-sm xl:text-base font-medium line-clamp-3">
         {product.name}
       </p>
       <div className="center-y gap-x-2">
         <Button
           variant="contained"
-          onClick={() => addToCart(true)}
+          disabled={loadingCart || !product.inStock}
+          onClick={() => cartAtom.addToCart(setLoadingCart, product.id)}
           endIcon="bx-cart"
-          className="w-full">
-          {loading ? (
+          iconClassName="text-2xl"
+          className="w-full md:text-xs xl:text-base">
+          {loadingCart ? (
             <Loader2 />
           ) : (
             <span>
@@ -48,9 +52,11 @@ export default function UpperCompareTableRow({
         </Button>
         <Button
           variant="outlined"
-          onClick={() => wishlistAtom.toggleWishlistProduct(product)}
-          className="md:text-2xl">
-          <i className="bx bx-heart"></i>
+          onClick={() =>
+            wishlistAtom.toggleWishlistProduct(setLoadingWishlist, product)
+          }
+          className="md:text-base xl:text-2xl">
+          {loadingWishlist ? <Loader2 /> : <i className="bx bx-heart"></i>}
         </Button>
       </div>
     </div>

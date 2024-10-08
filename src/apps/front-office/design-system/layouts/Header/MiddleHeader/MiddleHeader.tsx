@@ -1,6 +1,7 @@
 import { Link } from "@mongez/react-router";
 import user from "apps/front-office/account/user";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
+import { compareAtom } from "apps/front-office/design-system/atoms/compareAtom";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
 import URLS from "apps/front-office/utils/urls";
 import headerLogo from "assets/images/HeaderLogo.png";
@@ -14,6 +15,7 @@ import WishlistMenu from "./WishlistMenu";
 export default function MiddleHeader() {
   const cartTotalProducts = cartAtom.use("totalProducts");
   const wishlistTotalProducts = wishlistAtom.use("totalProducts");
+  const compareTotalProducts = compareAtom.use("products").length;
 
   return (
     <div className="h-[44px] sm:h-[88px] bg-sky-750 text-white">
@@ -36,8 +38,7 @@ export default function MiddleHeader() {
             <Link to={URLS.compare} className="text-2xl md:text-4xl">
               <i className="bx bx-git-compare"></i>
             </Link>
-            <NumOfItems number={1} />
-            <CartMenu />
+            <NumOfItems number={compareTotalProducts} />
           </li>
           <li className="relative md:pb-3 group">
             <Link to={URLS.cart} className="text-2xl md:text-4xl">

@@ -14,6 +14,8 @@ export default function CartMenu() {
     cartAtom.loadCartItems();
   }, []);
 
+  console.log(cart);
+
   return (
     <div
       className={`hidden xs:group-hover:block z-20 absolute top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] p-4 bg-white text-black text-base rounded shadow-2`}>
@@ -26,7 +28,7 @@ export default function CartMenu() {
           <h3 className="text-xl font-semibold center-y gap-x-1">
             <span>{trans("shoppingCart")}</span>
             <span>
-              ({`${cart.items.length < 9 ? "0" : ""}${cart.items.length}`})
+              {/* ({`${cart.items.length < 9 ? "0" : ""}${cart.items.length}`}) */}
             </span>
           </h3>
           <div className="mt-3 w-full h-[1px] bg-gray-300"></div>

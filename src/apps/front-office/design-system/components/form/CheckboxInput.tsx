@@ -14,6 +14,7 @@ export default function CheckboxInput(props: CheckboxInputPropsType) {
           id={id}
           value={value}
           onChange={e => changeValue(e.target.value)}
+          className="accent-orange-600 checked:text-white"
         />
         <label htmlFor={id} className="cursor-pointer select-none">
           {props.label}

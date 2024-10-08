@@ -4,10 +4,11 @@ import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import LinkAsButton from "components/ui/LinkAsButton";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function WishlistMenu() {
   const { loading, wishlist } = wishlistAtom.useValue();
+  const [loadingItem, setLoadingItem] = useState(false);
 
   useEffect(() => {
     wishlistAtom.loadWishlistItems();
@@ -15,7 +16,7 @@ export default function WishlistMenu() {
 
   return (
     <div
-      className={`hidden xs:group-hover:block z-20 absolute top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] p-4 bg-white text-black text-base rounded shadow-2`}>
+      className={`hidden xs:group-hover:block z-20 absolute top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] max-h-[500px] p-4 bg-white text-black text-base rounded shadow-2`}>
       {loading ? (
         <div>loading...</div>
       ) : (
@@ -47,7 +48,10 @@ export default function WishlistMenu() {
                 {/* onClick Delete Product from wishlist */}
                 <button
                   className="text-gray"
-                  onClick={() => wishlistAtom.removeFromWishlist(product)}>
+                  disabled={loadingItem}
+                  onClick={() =>
+                    wishlistAtom.removeFromWishlist(setLoadingItem, product)
+                  }>
                   x
                 </button>
               </li>

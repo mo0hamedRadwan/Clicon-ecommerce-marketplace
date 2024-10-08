@@ -16,9 +16,19 @@ type wishlistDataType = {
 type wishlistActionsType = {
   loadWishlistItems: () => void;
   getWishlist(): wishlistDataType;
-  addToWishlist: (product: Product) => void;
-  removeFromWishlist: (product: Product) => void;
-  toggleWishlistProduct: (product: Product) => void;
+  addToWishlist: (
+    setLoading: (value: boolean) => void,
+    product: Product,
+  ) => void;
+  removeFromWishlist: (
+    setLoading: (value: boolean) => void,
+    product: Product,
+  ) => void;
+  productExistsInWishlist(product: Product): boolean;
+  toggleWishlistProduct: (
+    setLoading: (value: boolean) => void,
+    product: Product,
+  ) => void;
 };
 
 export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
@@ -54,7 +64,8 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
           });
         });
     },
-    addToWishlist: (product: Product) => {
+    addToWishlist: (setLoading: (value: boolean) => void, product: Product) => {
+      setLoading(true);
       addToWishlist(product.id)
         .then(response => {
           console.log("wishlist add to wishlist successfully");
@@ -66,15 +77,21 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
             },
             totalProducts: products.length + 1,
           });
+          setLoading(false);
         })
         .catch(error => {
           console.error("Error adding to wishlist:", error);
           wishlistAtom.merge({
             error: "Failed to add to wishlist",
           });
+          setLoading(false);
         });
     },
-    removeFromWishlist: (product: Product) => {
+    removeFromWishlist: (
+      setLoading: (value: boolean) => void,
+      product: Product,
+    ) => {
+      setLoading(true);
       removeFromWishlist(product.id)
         .then(response => {
           const products = wishlistAtom
@@ -87,23 +104,30 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
             },
             totalProducts: products.length,
           });
+          setLoading(false);
         })
         .catch(error => {
-          console.error("Error adding to wishlist:", error);
+          console.error("Error removing from wishlist:", error);
           wishlistAtom.merge({
-            error: "Failed to add to wishlist",
+            error: "Failed to remove from wishlist",
           });
+          setLoading(false);
         });
     },
-    toggleWishlistProduct: (product: Product) => {
+    productExistsInWishlist(product: Product): boolean {
       const productExists = wishlistAtom
         .get("wishlist")
         .products.find(p => p.id === product.id);
-
-      if (productExists) {
-        wishlistAtom.removeFromWishlist(product);
+      return !!productExists;
+    },
+    toggleWishlistProduct: (
+      setLoading: (value: boolean) => void,
+      product: Product,
+    ) => {
+      if (wishlistAtom.productExistsInWishlist(product)) {
+        wishlistAtom.removeFromWishlist(setLoading, product);
       } else {
-        wishlistAtom.addToWishlist(product);
+        wishlistAtom.addToWishlist(setLoading, product);
       }
     },
   },
