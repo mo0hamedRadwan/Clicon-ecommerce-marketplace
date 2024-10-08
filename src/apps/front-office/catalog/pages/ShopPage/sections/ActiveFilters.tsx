@@ -7,10 +7,8 @@ export default function ActiveFilters() {
   const totalProducts = shopAtom.use("paginationInfo").total;
 
   const handleRemoveFilter = (key: string) => {
-    const query = queryString.toQueryString({
-      ...queryString.all(),
-      [key]: undefined,
-    });
+    const query = queryString.all();
+    query[key] = undefined;
     queryString.update(query);
     shopAtom.loadProducts();
   };

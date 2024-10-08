@@ -485,10 +485,18 @@
     "@mongez/fs" "^3.0.4"
     husky "^8.0.3"
 
-"@mongez/localization@2.2.4", "@mongez/localization@^2.2.4":
+"@mongez/localization@^2.2.4":
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/@mongez/localization/-/localization-2.2.4.tgz#6d3c4b924474c9d14d1d97fe3c10fff07769c19a"
   integrity sha512-AVuIhuj2ibrRfsFAN0L2H3y9YDMqmPU07ee7Y/iCQiOIMCwwvxsE2x6t07z27MPFAtcexvt5rykZuQtmBBJ+tg==
+  dependencies:
+    "@mongez/events" "^2.1.0"
+    "@mongez/reinforcements" "^2.3.8"
+
+"@mongez/localization@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@mongez/localization/-/localization-3.0.0.tgz#20bce6e7aac7d04435139f1415946b890cb0cf4a"
+  integrity sha512-+308DSwq/T4p4IOjFVvI7RJsKRlhH3DRYqUJHuHzOD1fPJcG4dCalXPNdbDClvQRSvi4lwiyQaxwegskXaNmXg==
   dependencies:
     "@mongez/events" "^2.1.0"
     "@mongez/reinforcements" "^2.3.8"
@@ -500,13 +508,13 @@
   dependencies:
     "@mongez/atom" "^1.0.0"
 
-"@mongez/react-form@^2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@mongez/react-form/-/react-form-2.1.4.tgz#db93edeace618087836d860c4df744aeb57e4875"
-  integrity sha512-B3KrU8EWbSw5REyox9c53sHK8ffwoIzZfBhJLxaGI/npcthVnI8d2BCYcTrOd4oQE+V+WOoah1021JqTQrCg6Q==
+"@mongez/react-form@^3.0.13":
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/@mongez/react-form/-/react-form-3.0.13.tgz#0bb2a15eebef9b535ab7709d31e71c4ca74c1b94"
+  integrity sha512-LPc2SQNsPBz9Ax/NXGvR9U8kQLi5eoh66Ov3cNiFe/UA0JP4kt5T0ezIBn2aSAo2UdOOcDbhfoM3qhEwnEtBtA==
   dependencies:
     "@mongez/events" "2.1.0"
-    "@mongez/localization" "2.2.4"
+    "@mongez/localization" "^3.0.0"
 
 "@mongez/react-helmet@^1.0.9":
   version "1.0.9"

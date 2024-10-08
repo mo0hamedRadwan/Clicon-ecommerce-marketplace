@@ -48,6 +48,7 @@ export const shopAtom = atom<shopDataType, shopActionsType>({
       getProducts({
         ...queryString.all(),
         ...params,
+        // change limit to 2 products to see pagination
         limit: 16,
       })
         .then(response => {

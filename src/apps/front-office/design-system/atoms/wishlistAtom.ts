@@ -47,7 +47,7 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
       getWishlistItems()
         .then(response => {
           const products: Product[] = response.data.products || [];
-
+          console.log(response.data);
           wishlistAtom.merge({
             wishlist: {
               products,
@@ -96,7 +96,7 @@ export const wishlistAtom = atom<wishlistDataType, wishlistActionsType>({
         .then(response => {
           const products = wishlistAtom
             .get("wishlist")
-            .products.filter(product => product.id != product.id);
+            .products.filter(p => p.id !== product.id);
           console.log(response.data);
           wishlistAtom.merge({
             wishlist: {

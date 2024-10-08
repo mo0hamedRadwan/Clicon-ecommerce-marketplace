@@ -12,6 +12,8 @@ create form for checkout page in ship into different address
 Edit breadcrumbs path with product/:id/:slug
 add browse history component
 convert compareTable2Cols and compareTable3Cols to compareTable
+ActiveTab in account dashboard does not work when user change url
+debounce multi range price change 
 
 
 styles 

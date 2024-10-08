@@ -100,7 +100,7 @@ export const ordersData = [
     date: new Date(2021, 5, 15),
     total: 1000,
   },
-  { id: 95204360, status: "canceled", date: new Date(2021, 1, 1), total: 1000 },
-  { id: 95204360, status: "canceled", date: new Date(2021, 1, 1), total: 1000 },
-  { id: 95204360, status: "canceled", date: new Date(2021, 1, 1), total: 1000 },
+  { id: 95204369, status: "canceled", date: new Date(2021, 1, 1), total: 1000 },
+  { id: 95204368, status: "canceled", date: new Date(2021, 1, 1), total: 1000 },
+  { id: 95204367, status: "canceled", date: new Date(2021, 1, 1), total: 1000 },
 ];

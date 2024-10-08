@@ -2,6 +2,7 @@ export type SelectOption = {
   img?: string;
   label: string;
   value: string;
+  queryString?: string;
 };
 
 export type Product = {
@@ -182,4 +183,8 @@ export type PaginationInfo = {
   pages: number;
   result: number;
   total: number;
+};
+
+export type HistoryType = {
+  [key: string]: Product[];
 };

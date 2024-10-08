@@ -1,11 +1,18 @@
 import { trans } from "@mongez/localization";
-import { Link } from "@mongez/react-router";
+import router, { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { accountNavItems } from "shared/data/accountData";
 
 export default function AccountDashboardNavigationTabs() {
+  const path = router.getCurrentRoute();
   const [activeTab, setActiveTab] = useState(0);
+
+  useEffect(() => {
+    const tabIndex = accountNavItems.findIndex(item => item.link === path);
+
+    setActiveTab(tabIndex === -1 ? 0 : tabIndex);
+  }, [path]);
 
   const handleLogout = () => {
     console.log("User logout");

@@ -2,6 +2,7 @@ import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
+import { browseHistoryAtom } from "../../atoms/browseHistoryAtom";
 import { Product } from "../../types";
 import QuickView from "../QuickView";
 import Badge from "./Badge";
@@ -68,7 +69,10 @@ export default function ProductCard({
           <Link
             to={URLS.product.view(product)}
             className="h-[50px] line-clamp-2 font-medium text-base hover:underline">
-            {product.name}
+            <span
+              onClick={() => browseHistoryAtom.addProductToHistory(product)}>
+              {product.name}
+            </span>
           </Link>
           <p className="mt-2 center-y gap-x-3 text-base">
             {product.price && (

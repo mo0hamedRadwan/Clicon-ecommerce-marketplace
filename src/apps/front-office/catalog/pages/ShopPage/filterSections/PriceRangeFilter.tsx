@@ -26,13 +26,12 @@ export default function PriceRangeFilter() {
   const handleRangeSliderChange = e => {
     console.log("Slider range change");
     const { name, value } = e.target;
+    const query = queryString.all();
+
     if (name === "min_price") {
       if (+value + priceGap <= maxValue) {
         setMinValue(Number(value));
-        const query = queryString.toQueryString({
-          ...queryString.all(),
-          minPrice: value,
-        });
+        query.minPrice = value;
         queryString.update(query);
         shopAtom.loadProducts({
           minPrice: value,
@@ -41,10 +40,7 @@ export default function PriceRangeFilter() {
     } else {
       if (+value - priceGap >= minValue) {
         setMaxValue(Number(value));
-        const query = queryString.toQueryString({
-          ...queryString.all(),
-          maxPrice: value,
-        });
+        query.maxPrice = value;
         queryString.update(query);
         shopAtom.loadProducts({
           maxPrice: value,

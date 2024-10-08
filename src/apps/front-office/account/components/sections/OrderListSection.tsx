@@ -31,7 +31,7 @@ export default function OrderListSection({
           variant="text"
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
           href={
-            URLS.userAccount.cardsAndAddresses
+            URLS.userAccount.orderHistory.root
           }>{`${trans("view")} ${trans("all")}`}</LinkAsButton>
       </div>
 
@@ -86,7 +86,11 @@ export default function OrderListSection({
       </div>
 
       {showPagination && (
-        <Pagination activePage={activePage} setActivePage={setActivePage} />
+        <Pagination
+          activePage={activePage}
+          totalPages={5}
+          handleChangePage={setActivePage}
+        />
       )}
     </div>
   );

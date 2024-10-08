@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
+import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import LinkAsButton from "components/ui/LinkAsButton";
@@ -18,7 +19,9 @@ export default function WishlistMenu() {
     <div
       className={`hidden xs:group-hover:block z-20 absolute top-[50px] ${isRTL() ? "left-0" : "right-0"} w-[300px] max-h-[500px] p-4 bg-white text-black text-base rounded shadow-2`}>
       {loading ? (
-        <div>loading...</div>
+        <div className="w-full h-[200px]">
+          <Loader2 />
+        </div>
       ) : (
         <>
           <h3 className="text-xl font-semibold center-y gap-x-1">

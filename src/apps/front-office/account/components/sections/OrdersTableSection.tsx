@@ -31,65 +31,75 @@ export default function OrdersTableSection({
           variant="text"
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
           href={
-            URLS.userAccount.cardsAndAddresses
+            URLS.userAccount.orderHistory.root
           }>{`${trans("view")} ${trans("all")}`}</LinkAsButton>
       </div>
 
       <table className="w-full text-left">
-        <tr className="bg-gray-150 text-zinc-500 text-sm">
-          <th className="w-[200px] px-5 py-2">
-            {trans("orderID").toUpperCase()}
-          </th>
-          <th className="w-[150px] px-5 py-2">
-            {trans("status").toUpperCase()}
-          </th>
-          <th className="w-[260px] px-5 py-2">{trans("date").toUpperCase()}</th>
-          <th className="w-[260px] px-5 py-2">
-            {trans("total").toUpperCase()}
-          </th>
-          <th className="px-5 py-2">{trans("action").toUpperCase()}</th>
-        </tr>
-
-        {ordersData.map(order => (
-          <tr key={order.id} className="text-left">
-            <td className="font-bold">#{order.id}</td>
-            <td className={`font-semibold ${statusStyle[order.status]}`}>
-              {trans(order.status)}
-            </td>
-            <td className="text-gray-550">
-              <span className="mr-2">
-                {order.date.toLocaleDateString("US", {
-                  day: "2-digit",
-                  month: "short",
-                  year: "numeric",
-                })}
-              </span>
-              <span>
-                {order.date.toLocaleTimeString("US", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  hour12: false,
-                  timeZone: "UTC",
-                })}
-              </span>
-            </td>
-            <td>
-              <span className="mr-2">${order.total}</span>
-              <span>(5 product)</span>
-            </td>
-            <td className="max-w-28">
-              <LinkAsButton
-                variant="text"
-                href={URLS.userAccount.trackOrder.view(order.id)}>
-                {trans("viewDetails")}
-              </LinkAsButton>
-            </td>
+        <thead>
+          <tr className="bg-gray-150 text-zinc-500 text-sm">
+            <th className="w-[200px] px-5 py-2">
+              {trans("orderID").toUpperCase()}
+            </th>
+            <th className="w-[150px] px-5 py-2">
+              {trans("status").toUpperCase()}
+            </th>
+            <th className="w-[260px] px-5 py-2">
+              {trans("date").toUpperCase()}
+            </th>
+            <th className="w-[260px] px-5 py-2">
+              {trans("total").toUpperCase()}
+            </th>
+            <th className="px-5 py-2">{trans("action").toUpperCase()}</th>
           </tr>
-        ))}
+        </thead>
+
+        <tbody>
+          {ordersData.map(order => (
+            <tr key={order.id} className="text-left">
+              <td className="font-bold">#{order.id}</td>
+              <td className={`font-semibold ${statusStyle[order.status]}`}>
+                {trans(order.status)}
+              </td>
+              <td className="text-gray-550">
+                <span className="mr-2">
+                  {order.date.toLocaleDateString("US", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric",
+                  })}
+                </span>
+                <span>
+                  {order.date.toLocaleTimeString("US", {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false,
+                    timeZone: "UTC",
+                  })}
+                </span>
+              </td>
+              <td>
+                <span className="mr-2">${order.total}</span>
+                <span>(5 product)</span>
+              </td>
+              <td className="max-w-28">
+                <LinkAsButton
+                  variant="text"
+                  href={URLS.userAccount.trackOrder.view(order.id)}>
+                  {trans("viewDetails")}
+                </LinkAsButton>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
 
       {showPagination && (
-        <Pagination activePage={activePage} setActivePage={setActivePage} />
+        <Pagination
+          activePage={activePage}
+          totalPages={5}
+          handleChangePage={setActivePage}
+        />
       )}
     </div>
   );

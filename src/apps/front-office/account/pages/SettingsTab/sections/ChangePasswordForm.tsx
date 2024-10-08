@@ -16,9 +16,9 @@ export default function ChangePasswordForm() {
       <Form
         className="p-5 flex-grow flex flex-col items-start gap-y-5"
         onSubmit={handleChangePassword}>
-        <PasswordInput label="currentPassword" />
-        <PasswordInput label="newPassword" />
-        <PasswordInput label="confirmPassword" />
+        <PasswordInput name="currentPassword" label="currentPassword" />
+        <PasswordInput name="newPassword" label="newPassword" />
+        <PasswordInput name="confirmPassword" label="confirmPassword" />
         <Button type="submit" onClick={() => console.log("change password")}>
           {trans("changePassword")}
         </Button>

@@ -10,7 +10,7 @@ export default function CategoryFilter() {
   const handleCategoryFilter = (id: string) => {
     const query = queryString.toQueryString({
       ...queryString.all(),
-      category: id ? categories.find(c => c.id == id)!.name : "",
+      category: id ? categories.find(c => c.id == id)!.name : undefined,
     });
     queryString.update(query);
     console.log(queryString.all());

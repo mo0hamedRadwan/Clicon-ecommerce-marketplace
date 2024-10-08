@@ -28,8 +28,12 @@ export default function TrackOrderSection({
             ? "lg:w-[820px] md:flex-nowrap"
             : "xs:flex-nowrap lg:flex-nowrap"
         }`}>
-        <TextInput label="orderID" placeholder="id" />
-        <TextInput label="billingEmail" placeholder="emailAddress" />
+        <TextInput name="orderID" label="orderID" placeholder="id" />
+        <TextInput
+          name="billingEmail"
+          label="billingEmail"
+          placeholder="emailAddress"
+        />
       </div>
       <p className="center-y gap-x-2 text-gray-550">
         <span className="text-2xl">

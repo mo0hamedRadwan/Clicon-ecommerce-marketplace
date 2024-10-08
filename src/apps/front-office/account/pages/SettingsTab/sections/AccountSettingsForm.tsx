@@ -28,16 +28,32 @@ export default function AccountSettingsForm() {
           className="flex-grow flex flex-col items-start gap-y-5"
           onSubmit={handleEditAccount}>
           <div className="w-full center-y gap-5">
-            <TextInput label="displayName" value="displayName" />
-            <TextInput label="userName" value="userName" />
+            <TextInput
+              name="displayName"
+              label="displayName"
+              value="displayName"
+            />
+            <TextInput name="userName" label="userName" value="userName" />
           </div>
           <div className="w-full center-y gap-5">
-            <TextInput label="fullName" value="fullName" />
-            <EmailInput label="emailAddress" value="emailAddress" />
+            <TextInput name="fullName" label="fullName" value="fullName" />
+            <EmailInput
+              name="emailAddress"
+              label="emailAddress"
+              value="emailAddress"
+            />
           </div>
           <div className="w-full center-y gap-5">
-            <EmailInput label="secondaryEmail" value="secondaryEmail" />
-            <TextInput label="phoneNumber" value="phoneNumber" />
+            <EmailInput
+              name="secondaryEmail"
+              label="secondaryEmail"
+              value="secondaryEmail"
+            />
+            <TextInput
+              name="phoneNumber"
+              label="phoneNumber"
+              value="phoneNumber"
+            />
           </div>
           <Button type="submit" onClick={() => console.log("")}>
             {trans("saveChanges")}

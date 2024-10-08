@@ -12,7 +12,10 @@ export default function HelpCenterSection() {
           {`${trans("how")} ${trans("weCan")} ${trans("helpYou")}`}
         </h2>
         <div className="w-full relative px-10 py-2 border border-gray-150 ">
-          <TextInput className="text-2xl border-none outline-none focus-visible:ring-0" />
+          <TextInput
+            name="search"
+            className="text-2xl border-none outline-none focus-visible:ring-0"
+          />
           <span className="absolute top-4 left-2 text-4xl text-orange-450">
             <i className="bx bx-search"></i>
           </span>

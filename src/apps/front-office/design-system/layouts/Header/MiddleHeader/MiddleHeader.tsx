@@ -45,14 +45,14 @@ export default function MiddleHeader() {
               <i className="bx bx-cart"></i>
             </Link>
             <NumOfItems number={cartTotalProducts} />
-            <CartMenu />
+            {cartTotalProducts > 0 && <CartMenu />}
           </li>
           <li className="relative md:pb-3 group">
             <Link to={URLS.wishlist} className="text-2xl md:text-4xl">
               <i className="bx bx-heart"></i>
             </Link>
             <NumOfItems number={wishlistTotalProducts} />
-            <WishlistMenu />
+            {wishlistTotalProducts > 0 && <WishlistMenu />}
           </li>
           <li className="relative md:pb-3 group">
             <Link

@@ -12,7 +12,6 @@ export default function ProductNameFilter() {
       name: productName,
     });
     queryString.update(query);
-    console.log(queryString.all());
     shopAtom.loadProducts({
       name: productName,
     });

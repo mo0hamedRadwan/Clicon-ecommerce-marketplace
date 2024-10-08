@@ -25,7 +25,7 @@
         "@mongez/localization": "^2.2.4",
         "@mongez/react": "^3.0.6",
         "@mongez/react-atom": "^5.0.2",
-        "@mongez/react-form": "^2.1.4",
+        "@mongez/react-form": "^3.0.13",
         "@mongez/react-helmet": "^1.0.9",
         "@mongez/react-hooks": "^1.3.3",
         "@mongez/react-localization": "^1.0.5",

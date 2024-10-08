@@ -87,7 +87,11 @@ export default function CartDetailsSection({
                 {trans("couponCode")}
               </h3>
               <div className="p-5 w-full flex flex-col items-start gap-y-5">
-                <TextInput placeholder={trans("coupon")} className="block" />
+                <TextInput
+                  name="coupon"
+                  placeholder={trans("coupon")}
+                  className="block"
+                />
                 <Button
                   className="bg-sky-550 hover:bg-sky-600"
                   onClick={() => console.log("apply coupon")}>

@@ -72,11 +72,11 @@ export default function BillingForm() {
           ))}
         </ul>
         <div className="p-5 flex flex-col gap-y-5">
-          <TextInput label={trans("nameOnCard")} />
-          <TextInput label={trans("cardNumber")} />
+          <TextInput name="nameOnCard" label={trans("nameOnCard")} />
+          <TextInput name="cardNumber" label={trans("cardNumber")} />
           <div className="flex flex-wrap sm:flex-nowrap gap-x-5">
-            <TextInput label={trans("expireDate")} />
-            <TextInput label={trans("cvv")} />
+            <TextInput name="expireDate" label={trans("expireDate")} />
+            <TextInput name="cvv" label={trans("cvv")} />
           </div>
         </div>
       </div>
@@ -84,6 +84,7 @@ export default function BillingForm() {
       <div className="mt-5 flex flex-col gap-y-5">
         <h3 className="text-xl">{trans("additionalInformation")}</h3>
         <TextareaInput
+          name="orderNotes"
           label={trans("orderNotes")}
           placeholder={trans("orderNotesPlaceholder")}
           optional
