@@ -11,7 +11,7 @@ export default function SearchForm() {
   const [loading, setLoading] = useState<boolean>(false);
   const [products, setProducts] = useState<Product[]>([]);
   const [searchInput, setSearchInput] = useState<string>("");
-  const debounceSearchInput = useDebounce(searchInput, 500);
+  const debounceSearchInput = useDebounce(searchInput.trim(), 500);
 
   useEffect(() => {
     if (!debounceSearchInput.length) return;

@@ -19,6 +19,7 @@ export default function BrowseHistorySection() {
 
   const pages = Math.ceil(products.length / productsPerPage);
   const [activePage, setActivePage] = useState(1);
+  const idx = (activePage - 1) * productsPerPage;
 
   return (
     <div className="border border-gray-150 shadow-2">
@@ -35,7 +36,7 @@ export default function BrowseHistorySection() {
       {products.length > 0 ? (
         <>
           <ul className="p-5 flex flex-wrap justify-center gap-5">
-            {products.map(product => (
+            {products.slice(idx, idx + productsPerPage).map(product => (
               <li
                 key={product.id}
                 className="w-[calc(25%-15px)] min-w-[240px] h-[330px]">

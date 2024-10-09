@@ -127,18 +127,11 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
       removeFromCart(existsItem.id)
         .then(response => {
           console.log(response.data);
+          const cart = response.data.cart;
           cartAtom.merge({
             cart: {
               ...cartAtom.get("cart"),
-              items: cartAtom
-                .get("cart")
-                .items.filter(item => item.id !== itemId),
-              totals: {
-                ...cartAtom.get("cart").totals,
-                subtotal:
-                  cartAtom.get("cart").totals.subtotal -
-                  existsItem.product.salePrice,
-              },
+              ...cart,
             },
             totalProducts: cartAtom.get("totalProducts") - 1,
           });

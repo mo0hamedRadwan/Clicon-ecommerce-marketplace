@@ -4,17 +4,10 @@ import Loader2 from "apps/front-office/design-system/components/loaders/Loader2"
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import LinkAsButton from "components/ui/LinkAsButton";
-import { useEffect } from "react";
 import CartMenuItem from "./CartMenuItem";
 
 export default function CartMenu() {
   const { loading, cart } = cartAtom.useValue();
-
-  useEffect(() => {
-    cartAtom.loadCartItems();
-  }, []);
-
-  console.log(cart);
 
   return (
     <div

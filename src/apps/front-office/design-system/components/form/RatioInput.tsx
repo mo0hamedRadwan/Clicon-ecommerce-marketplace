@@ -8,9 +8,10 @@ type RatioInputPropsType = FormControlProps & {
 
 export default function RatioInput(props: RatioInputPropsType) {
   const { value, changeValue, error, id } = useFormControl(props);
+
   return (
     <div className={props.className}>
-      <label htmlFor={id} className="text-center">
+      <label htmlFor={id} className="text-center cursor-pointer select-none">
         {trans(props.label)}
       </label>
 

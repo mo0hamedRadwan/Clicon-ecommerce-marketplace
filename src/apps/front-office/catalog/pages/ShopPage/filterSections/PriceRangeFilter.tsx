@@ -1,9 +1,11 @@
 import { trans } from "@mongez/localization";
+import { useOnce } from "@mongez/react-hooks";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
 import NumberInput from "apps/front-office/design-system/components/form/NumberInput";
 import RatioInput from "apps/front-office/design-system/components/form/RatioInput";
-import { useState } from "react";
+import { useDebounce } from "apps/front-office/design-system/hooks/use-debounce";
+import { useEffect, useState } from "react";
 import MultiRangeSliderPrice from "./MultiRangeSliderPrice";
 
 const pricesOptions = [
@@ -20,31 +22,45 @@ const maxPrice = 10000;
 const priceGap = 500;
 
 export default function PriceRangeFilter() {
+  const query = queryString.all();
   const [minValue, setMinValue] = useState(minPrice);
   const [maxValue, setMaxValue] = useState(maxPrice);
+
+  // To delay requests
+  const debouncedMinPrice = useDebounce(minValue.toString(), 1000);
+  const debouncedMaxPrice = useDebounce(maxValue.toString(), 1000);
+
+  // Load initial values from query string if exists
+  useOnce(() => {
+    if (query.minPrice) setMinValue(Number(query.minPrice));
+    if (query.maxPrice) setMaxValue(Number(query.maxPrice));
+  });
+
+  useEffect(() => {
+    if (!query.minPrice && !query.maxPrice) return;
+    shopAtom.loadProducts({
+      minPrice: debouncedMinPrice,
+      maxPrice: debouncedMaxPrice,
+    });
+    // Query not dependencyList
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedMinPrice, debouncedMaxPrice]);
 
   const handleRangeSliderChange = e => {
     console.log("Slider range change");
     const { name, value } = e.target;
-    const query = queryString.all();
 
     if (name === "min_price") {
       if (+value + priceGap <= maxValue) {
         setMinValue(Number(value));
         query.minPrice = value;
         queryString.update(query);
-        shopAtom.loadProducts({
-          minPrice: value,
-        });
       }
     } else {
       if (+value - priceGap >= minValue) {
         setMaxValue(Number(value));
         query.maxPrice = value;
         queryString.update(query);
-        shopAtom.loadProducts({
-          maxPrice: value,
-        });
       }
     }
   };
@@ -53,16 +69,15 @@ export default function PriceRangeFilter() {
     const [min, max] = value.split("-");
     setMinValue(Number(min));
     setMaxValue(Number(max));
-    const query = queryString.toQueryString({
-      ...queryString.all(),
-      minPrice: min,
-      maxPrice: max,
-    });
+    // const query = queryString.toQueryString({
+    //   ...queryString.all(),
+    //   minPrice: min,
+    //   maxPrice: max,
+    // });
+    query.minPrice = min;
+    query.maxPrice = max;
+
     queryString.update(query);
-    shopAtom.loadProducts({
-      minPrice: min,
-      maxPrice: max,
-    });
   };
 
   return (
@@ -105,6 +120,7 @@ export default function PriceRangeFilter() {
             <li key={option.min} className="flex items-start">
               <RatioInput
                 name="price-option"
+                id={`${option.max}`}
                 value={`${option.min}-${option.max}`}
                 label={
                   option.min === 0

@@ -5,15 +5,11 @@ import Loader2 from "apps/front-office/design-system/components/loaders/Loader2"
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import LinkAsButton from "components/ui/LinkAsButton";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 export default function WishlistMenu() {
   const { loading, wishlist } = wishlistAtom.useValue();
   const [loadingItem, setLoadingItem] = useState(false);
-
-  useEffect(() => {
-    wishlistAtom.loadWishlistItems();
-  }, []);
 
   return (
     <div

@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
+import { removeUndefinedKeys } from "apps/front-office/utils/methods";
 
 export default function ActiveFilters() {
   const filter = shopAtom.use("filter");
@@ -9,7 +10,8 @@ export default function ActiveFilters() {
   const handleRemoveFilter = (key: string) => {
     const query = queryString.all();
     query[key] = undefined;
-    queryString.update(query);
+    const newQuery = removeUndefinedKeys(query);
+    queryString.update(newQuery);
     shopAtom.loadProducts();
   };
 

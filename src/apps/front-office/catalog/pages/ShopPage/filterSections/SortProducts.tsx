@@ -10,7 +10,7 @@ export const sortByOptions: SelectOption[] = [
   { label: "highPrice2lowPrice", value: "highPrice2lowPrice", queryString: "" },
 ];
 
-export default function SortByFilter() {
+export default function SortProducts() {
   return (
     <div className="center-y gap-x-5">
       <p>{trans("sortBy")}</p>

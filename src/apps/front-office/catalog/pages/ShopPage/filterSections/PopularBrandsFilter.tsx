@@ -37,6 +37,7 @@ export default function PopularBrandsFilter() {
               name="brand-name"
               label={brand}
               value={brand}
+              id={brand}
               onChange={handleBrandFilter}
             />
           </li>

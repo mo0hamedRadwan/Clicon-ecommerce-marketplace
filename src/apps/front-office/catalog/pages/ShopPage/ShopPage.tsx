@@ -5,7 +5,7 @@ import PopularBrandsFilter from "./filterSections/PopularBrandsFilter";
 import PopularTagsFilter from "./filterSections/PopularTagsFilter";
 import PriceRangeFilter from "./filterSections/PriceRangeFilter";
 import ProductNameFilter from "./filterSections/ProductNameFilter";
-import SortByFilter from "./filterSections/SortByFilter";
+import SortProducts from "./filterSections/SortProducts";
 import ActiveFilters from "./sections/ActiveFilters";
 import ShopProductsGrid from "./sections/ShopProductsGrid";
 
@@ -35,7 +35,7 @@ export default function ShopPage() {
         <div className="w-full flex flex-col gap-y-5">
           <div className="w-full space-between flex-wrap gap-5">
             <ProductNameFilter />
-            <SortByFilter />
+            <SortProducts />
           </div>
           <ActiveFilters />
           <ShopProductsGrid />

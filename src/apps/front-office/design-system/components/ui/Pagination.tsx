@@ -11,12 +11,13 @@ export default function Pagination({
   totalPages = 5,
   handleChangePage,
 }: PaginationPropsType) {
+  console.log(activePage, totalPages);
   return (
     <div className="py-5 w-full flex-center">
       <ul className="w-[300px] sm:w-[500px] space-between gap-x-1 sm:gap-x-3">
         <li>
           <button
-            disabled={activePage === 1}
+            disabled={activePage <= 1}
             onClick={() => handleChangePage(activePage - 1)}
             className="w-8 h-8 sm:w-12 sm:h-12 flex-center text-3xl text-orange-450 border border-orange-450 rounded-full hover:bg-orange-450 hover:text-white duration-150 cursor-pointer disabled:text-gray-450 disabled:border-gray-450 disabled:cursor-not-allowed hover:disabled:bg-transparent">
             {isRTL() ? (
@@ -43,7 +44,7 @@ export default function Pagination({
         })}
         <li>
           <button
-            disabled={activePage === totalPages}
+            disabled={activePage >= totalPages}
             onClick={() => handleChangePage(activePage + 1)}
             className="w-8 h-8 sm:w-12 sm:h-12 flex-center text-3xl text-orange-450 border border-orange-450 rounded-full hover:bg-orange-450 hover:text-white duration-150 cursor-pointer disabled:text-gray-450 disabled:border-gray-450 disabled:cursor-not-allowed hover:disabled:bg-transparent">
             {isRTL() ? (
