@@ -1,9 +1,13 @@
 import { trans } from "@mongez/localization";
 import { currentRoute, Link } from "@mongez/react-router";
 
-export default function Breadcrumb() {
+export default function CustomBreadcrumb() {
   const paths = currentRoute().split("/").slice(1);
-  const lastRoute = paths.pop()?.replace("-", "");
+  const lastRoute = paths.pop();
+
+  if (paths.find(path => path === "products")) {
+    lastRoute?.replace("-", "");
+  }
 
   // Hidden breadcrump from home page
   if (paths.length === 0 && !lastRoute) return;

@@ -40,7 +40,10 @@ export default function CartMenu() {
         </>
       )}
       <div className="mt-2 flex flex-col gap-y-2">
-        <LinkAsButton variant="contained" href={URLS.checkout.root}>
+        <LinkAsButton
+          variant="contained"
+          href={URLS.checkout.root}
+          disabled={cart.items.length === 0}>
           {`${trans("checkout")} ${trans("now")}`.toUpperCase()}
         </LinkAsButton>
         <LinkAsButton variant="outlined" href={URLS.cart}>

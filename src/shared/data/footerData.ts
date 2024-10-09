@@ -1,3 +1,4 @@
+import URLS from "apps/front-office/utils/urls";
 import logo2 from "assets/images/logos/amazon.png";
 import logo1 from "assets/images/logos/google.png";
 import logo3 from "assets/images/logos/philips.png";
@@ -16,13 +17,13 @@ export const topCategories = [
 ];
 
 export const quickLinks = [
-  { name: "shopProducts", link: "#" },
-  { name: "shoppingCart", link: "#" },
-  { name: "wishlist", link: "#" },
-  { name: "compare", link: "#" },
-  { name: "trackOrder", link: "#" },
-  { name: "customerHelp", link: "#" },
-  { name: "aboutUs", link: "#" },
+  { name: "shopProducts", link: URLS.shop.root },
+  { name: "shoppingCart", link: URLS.cart },
+  { name: "wishlist", link: URLS.wishlist },
+  { name: "compare", link: URLS.compare },
+  { name: "trackOrder", link: URLS.pages.trackOrder.root },
+  { name: "customerHelp", link: URLS.pages.customerSupport },
+  { name: "aboutUs", link: URLS.pages.aboutUs },
 ];
 
 export const popularTags = [

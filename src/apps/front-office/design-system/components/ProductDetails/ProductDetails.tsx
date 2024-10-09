@@ -1,6 +1,10 @@
 import { trans } from "@mongez/localization";
 import paymentMethodImg from "assets/images/paymentMethod.png";
+import { useState } from "react";
+import { compareAtom } from "../../atoms/compareAtom";
+import { wishlistAtom } from "../../atoms/wishlistAtom";
 import { Product } from "../../types";
+import Button from "../form/Button";
 import StarsRating from "../ui/StarsRating";
 import ProductSliderImages from "./ProductSliderImages";
 
@@ -9,6 +13,8 @@ type ProductDetailsPropsType = {
 };
 
 export default function ProductDetails({ product }: ProductDetailsPropsType) {
+  const [wishlistLoading, setWishlistLoading] = useState(false);
+
   return (
     <div className="container p-2 sm:p-10 bg-white rounded flex justify-center items-start flex-wrap gap-10">
       <ProductSliderImages images={product.images.map(image => image.url)} />
@@ -85,13 +91,22 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
               <span className="text-2xl">
                 <i className="bx bx-heart"></i>
               </span>
-              <span className="text-xs sm:text-base">{`${trans("add")} ${trans("to")} ${trans("wishlist").toLowerCase()}`}</span>
+              <Button
+                className="text-xs sm:text-base"
+                disabled={wishlistLoading}
+                onClick={() =>
+                  wishlistAtom.addToWishlist(setWishlistLoading, product)
+                }>{`${trans("add")} ${trans("to")} ${trans("wishlist").toLowerCase()}`}</Button>
             </div>
             <div className="center-y gap-x-2 hover:text-black cursor-pointer duration-150">
               <span className="text-2xl">
                 <i className="bx bx-git-compare"></i>
               </span>
-              <span className="text-xs sm:text-base">{`${trans("add")} ${trans("to")} ${trans("compare").toLowerCase()}`}</span>
+              <Button
+                className="text-xs sm:text-base"
+                onClick={() =>
+                  compareAtom.toggleCompareProduct(product)
+                }>{`${trans("add")} ${trans("to")} ${trans("compare").toLowerCase()}`}</Button>
             </div>
           </div>
           <div className="center-y gap-2">

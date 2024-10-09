@@ -1,4 +1,4 @@
-import Breadcrumb from "components/ui/Breadcrumb";
+import CustomBreadcrumb from "apps/front-office/design-system/components/ui/CustomBreadcrumb";
 import Footer from "../Footer";
 import Header from "../Header";
 
@@ -13,7 +13,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
   return (
     <>
       <Header />
-      <Breadcrumb />
+      <CustomBreadcrumb />
       <main>{children}</main>
       <Footer />
     </>

@@ -78,7 +78,9 @@ export default function CartDetailsSection({
                   USD
                 </span>
               </p>
-              <LinkAsButton href={URLS.checkout.root}>
+              <LinkAsButton
+                href={URLS.checkout.root}
+                disabled={cart.items.length === 0}>
                 {trans("processToCheckout")}
               </LinkAsButton>
             </div>

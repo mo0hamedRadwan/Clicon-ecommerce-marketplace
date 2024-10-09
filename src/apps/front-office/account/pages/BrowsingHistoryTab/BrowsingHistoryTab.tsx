@@ -4,14 +4,24 @@ import ProductCard from "apps/front-office/design-system/components/ui/ProductCa
 
 export default function BrowsingHistoryTab() {
   const browserHistory = browseHistoryAtom.use("productsHistory");
+  const keys = Object.keys(browserHistory);
   // const products = Object.keys(browserHistory).reduce(
   //   (prev: Product[], curr: string) => [...prev, ...browserHistory[curr]],
   //   [],
   // );
 
-  return (
+  return keys.length === 0 ? (
+    <div className="border border-gray-150 shadow-2">
+      <div className="p-5 border-b border-gray-150">
+        <p className="text-2xl">{trans("browseHistory")}</p>
+      </div>
+      <div className="h-[300px] flex-center">
+        <p className="text-2xl">{trans("noHistoryFound")}</p>
+      </div>
+    </div>
+  ) : (
     <ul className="flex flex-col gap-y-5">
-      {Object.keys(browserHistory).map(key => (
+      {keys.map(key => (
         <li className="border border-gray-150 shadow-2" key={key}>
           <div className="flex gap-5 border-b border-gray-150">
             <h2 className="p-5 font-semibold">{key}</h2>

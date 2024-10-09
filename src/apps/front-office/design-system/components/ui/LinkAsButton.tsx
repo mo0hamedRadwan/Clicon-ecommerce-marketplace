@@ -1,4 +1,4 @@
-import { Link } from "@mongez/react-router";
+import router, { Link } from "@mongez/react-router";
 import { twMerge } from "tailwind-merge";
 import { sizeClass, variantClass } from "../styles/buttonStyles";
 
@@ -10,6 +10,7 @@ export type ButtonPropsType = {
   className?: string;
   iconClassName?: string;
   href: string;
+  disabled?: boolean;
   children: any;
 };
 
@@ -21,16 +22,18 @@ export default function LinkAsButton({
   className = "",
   iconClassName,
   href,
+  disabled = false,
   children,
 }: ButtonPropsType) {
   return (
     <Link
-      to={href}
+      to={disabled ? router.getCurrentRoute() : href}
       className={twMerge(
         variantClass[variant],
         sizeClass[size],
         "flex-center gap-x-2 rounded duration-200 text-xs",
         className,
+        disabled && "bg-gray-450 hover:bg-gray-450 cursor-not-allowed",
       )}>
       {startIcon && <i className={`bx ${startIcon} ${iconClassName}`}></i>}
       {children}
