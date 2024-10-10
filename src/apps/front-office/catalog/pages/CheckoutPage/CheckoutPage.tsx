@@ -68,7 +68,14 @@ export default function CheckoutPage() {
             <div className="w-full h-[1px] bg-gray-150"></div>
             <p className="space-between text-lg">
               <span>{trans("total")}</span>
-              <span className="font-semibold">$1000 USD</span>
+              <span className="font-semibold">
+                $
+                {cart.totals.subtotal +
+                  cart.totals.shippingFees +
+                  cart.totals.tax -
+                  cart.totals.discount}
+                USD
+              </span>
             </p>
             <Button
               endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}

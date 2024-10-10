@@ -188,3 +188,20 @@ export type PaginationInfo = {
 export type HistoryType = {
   [key: string]: Product[];
 };
+
+export type UserType = {
+  id?: string;
+  accessToken?: string;
+  name: string;
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+  email: string;
+  gender: string;
+};
+
+export type changePasswordDataType = {
+  currentPassword: string;
+  password: string;
+  confirmPassword: string;
+};

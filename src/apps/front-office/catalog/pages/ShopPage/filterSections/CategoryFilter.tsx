@@ -8,11 +8,8 @@ import { removeUndefinedKeys } from "apps/front-office/utils/methods";
 export default function CategoryFilter() {
   const categories = categoriesAtom.use("parentCategories");
 
-  const handleCategoryFilter = (id: string) => {
-    // const query = queryString.toQueryString({
-    //   ...queryString.all(),
-    //   category: id ? categories.find(c => c.id == id)!.name : undefined,
-    // });
+  const handleCategoryFilter = (id?: string) => {
+    console.log(id);
     const query = queryString.all();
     query.category = id ? categories.find(c => c.id == id)!.name : undefined;
     const newQuery = removeUndefinedKeys(query);
@@ -31,6 +28,8 @@ export default function CategoryFilter() {
         <li className="flex items-start">
           <RatioInput
             name="category"
+            id="all"
+            checked={!queryString.get("category")}
             value={undefined}
             label="all"
             className="center-y flex-row-reverse gap-x-3"

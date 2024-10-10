@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
+import { accountAtom } from "../../atoms/accountAtom";
 import BillingAddressCard from "../../components/sections/BillingAddressCard";
 import BrowseHistorySection from "../../components/sections/BrowseHistorySection";
 import OrderListSection from "../../components/sections/OrderListSection";
@@ -10,10 +11,12 @@ import AccountInfoCard from "./sections/AccountInfoCard";
 import AccountStatsCards from "./sections/AccountStatsCards";
 
 export default function AccountDashboardTab() {
+  const user = accountAtom.use("user");
+
   return (
     <div className="flex flex-col gap-y-10">
       <div>
-        <h2 className="mb-5 text-xl font-semibold">{`${trans("hello")}, User`}</h2>
+        <h2 className="mb-5 text-xl font-semibold">{`${trans("hello")}, ${user.name}`}</h2>
         <p className="w-full sm:w-[430px] text-sm">
           <span>{`${trans("from")} ${trans("yourAccountDashboard")}, ${trans("youCan")} ${trans("easily")} ${trans("check")} & ${trans("view")}`}</span>
           <Link

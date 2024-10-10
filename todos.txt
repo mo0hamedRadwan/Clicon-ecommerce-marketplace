@@ -3,8 +3,10 @@ Important
 (in process) account dashboard
 (in process) edit banner in shop page
 (in process) edit pagination component
+(in process) edit account settings
 
 
+change access token from endpoint.ts
 add implemention edit cart item
 add implemention toggle wishlist item
 resend verify email code again (with countdown 1 min)

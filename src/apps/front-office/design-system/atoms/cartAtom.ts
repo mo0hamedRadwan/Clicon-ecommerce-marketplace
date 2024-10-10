@@ -1,9 +1,9 @@
-/* eslint-disable unused-imports/no-unused-vars */
 import { atom } from "@mongez/react-atom";
 import {
   addToCart,
   getCartItems,
   removeFromCart,
+  updateCartItem,
 } from "apps/front-office/catalog/services/catalog-service";
 import { Cart, CartItem } from "../types";
 
@@ -24,6 +24,11 @@ type CartActionsType = {
   removeFromCart: (
     setLoading: (value: boolean) => void,
     itemId: string,
+  ) => void;
+  updateQuantityItem: (
+    setLoading: (value: boolean) => void,
+    item: CartItem,
+    quantity: number,
   ) => void;
 };
 
@@ -90,19 +95,12 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
       })
         .then(response => {
           console.log("cart add to cart successfully");
-          const items: CartItem[] = response.data.cart.items;
-          const product = items.find(item => item.product.id === productId);
+          const cart: CartItem[] = response.data.cart;
 
           cartAtom.merge({
             cart: {
               ...cartAtom.get("cart"),
-              items,
-              totals: {
-                ...cartAtom.get("cart").totals,
-                subtotal: !product
-                  ? cartAtom.get("cart").totals.subtotal
-                  : cartAtom.get("cart").totals.subtotal + product.salePrice,
-              },
+              ...cart,
             },
             totalProducts: cartAtom.get("totalProducts") + quantity,
           });
@@ -133,7 +131,7 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
               ...cartAtom.get("cart"),
               ...cart,
             },
-            totalProducts: cartAtom.get("totalProducts") - 1,
+            totalProducts: cartAtom.get("totalProducts") - existsItem.quantity,
           });
           setLoading(false);
         })
@@ -142,6 +140,32 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
           cartAtom.merge({
             error: "Failed to removing from cart",
           });
+          setLoading(false);
+        });
+    },
+    updateQuantityItem: (
+      setLoading: (value: boolean) => void,
+      item: CartItem,
+      quantity: number,
+    ) => {
+      setLoading(true);
+      updateCartItem(item.id, {
+        quantity,
+      })
+        .then(response => {
+          const cart = response.data.cart;
+          cartAtom.merge({
+            cart: {
+              ...cartAtom.get("cart"),
+              ...cart,
+            },
+            totalProducts:
+              cartAtom.get("totalProducts") + (quantity - item.quantity),
+          });
+          setLoading(false);
+        })
+        .catch(error => {
+          console.log(error);
           setLoading(false);
         });
     },

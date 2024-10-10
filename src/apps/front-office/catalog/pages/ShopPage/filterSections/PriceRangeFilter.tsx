@@ -9,17 +9,17 @@ import { useEffect, useState } from "react";
 import MultiRangeSliderPrice from "./MultiRangeSliderPrice";
 
 const pricesOptions = [
-  { min: 0, max: 20 },
-  { min: 25, max: 100 },
-  { min: 100, max: 300 },
-  { min: 300, max: 500 },
+  { min: 0, max: 100 },
+  { min: 100, max: 500 },
   { min: 500, max: 1000 },
-  { min: 1000, max: 10000 },
+  { min: 1000, max: 2500 },
+  { min: 2500, max: 5000 },
+  { min: 5000, max: 10000 },
 ];
 
 const minPrice = 0;
 const maxPrice = 10000;
-const priceGap = 500;
+const priceGap = 100;
 
 export default function PriceRangeFilter() {
   const query = queryString.all();

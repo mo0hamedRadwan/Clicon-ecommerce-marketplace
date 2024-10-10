@@ -27,3 +27,7 @@ export function addToWishlist(productId: string) {
 export function removeFromWishlist(productId: string) {
   return endpoint.delete(`/wishlist/${productId}`);
 }
+
+export function applyCoupon(code: string) {
+  return endpoint.post(`/checkout/apply-coupon`, { code });
+}

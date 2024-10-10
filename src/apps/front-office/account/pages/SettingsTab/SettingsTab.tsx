@@ -6,7 +6,7 @@ export default function SettingsTab() {
   return (
     <div className="flex flex-col gap-y-5">
       <AccountSettingsForm />
-      <div className="flex gap-5">
+      <div className="flex flex-wrap 2xl:flex-nowrap gap-5">
         <AddressForm heading="billingAddress" />
         <AddressForm heading="shippingAddress" />
       </div>

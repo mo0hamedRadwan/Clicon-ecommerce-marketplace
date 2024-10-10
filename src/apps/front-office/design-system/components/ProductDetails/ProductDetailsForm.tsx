@@ -15,10 +15,9 @@ type ProductDetailsFormPropsType = {
 export default function ProductDetailsForm({
   product,
 }: ProductDetailsFormPropsType) {
-  // eslint-disable-next-line unused-imports/no-unused-vars
-  const [selectedColor, setSelectedColor] = useState(0);
   const [productQuantity, setProductQuantity] = useState(1);
   const [loadingCart, setLoadingCart] = useState(false);
+  // const [selectedColor, setSelectedColor] = useState(0);
   // const [loadingWishlist, setLoadingWishlist] = useState(false);
 
   // const sizeOptions: SelectOption[] | undefined = product.sizes?.map(size => {
@@ -100,9 +99,11 @@ export default function ProductDetailsForm({
           <Button
             variant="contained"
             size="lg"
-            endIcon="bx-cart"
+            endIcon={!loadingCart ? "bx-cart" : ""}
             disabled={loadingCart}
-            onClick={() => cartAtom.addToCart(setLoadingCart, product.id)}
+            onClick={() =>
+              cartAtom.addToCart(setLoadingCart, product.id, productQuantity)
+            }
             className="flex-grow font-semibold"
             iconClassName="md:text-2xl">
             {loadingCart ? (

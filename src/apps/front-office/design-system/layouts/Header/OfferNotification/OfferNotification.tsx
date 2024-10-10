@@ -12,8 +12,8 @@ type OfferNotificationPropsType = {
 export default function OfferNotification({
   discount = 59,
 }: OfferNotificationPropsType) {
-  // eslint-disable-next-line unused-imports/no-unused-vars
   const [closeNotification, setCloseNotification] = useState(false);
+
   return (
     <>
       {!closeNotification && (
@@ -39,14 +39,6 @@ export default function OfferNotification({
               className="text-zinc-950 font-semibold p-3 bg-yellow-450 hover:bg-yellow-500">
               {`${trans("shop")} ${trans("now")}`.toUpperCase()}
             </LinkAsButton>
-            {/* <Link
-              to="/shop"
-              className="py-3 px-6 bg-yellow-500 text-black font-semibold">
-              <span className="">{trans("shopNow").toUpperCase()}</span>
-              <span>
-                <i className="bx bx-right-arrow-alt"></i>
-              </span>
-            </Link> */}
           </div>
           <button
             className={`absolute ${isRTL() ? "left-5" : "right-5"} py-3 px-3 bg-neutral-750 rounded text-xl`}

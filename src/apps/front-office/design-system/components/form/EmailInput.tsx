@@ -26,6 +26,7 @@ export default function EmailInput(props: EmailInputPropsType) {
       {props.label && <label>{trans(props.label)}</label>}
       <input
         type="email"
+        disabled={props.disabled}
         value={value}
         placeholder={props.placeholder}
         onChange={e => changeValue(e.target.value)}

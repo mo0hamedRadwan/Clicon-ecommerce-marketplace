@@ -1,5 +1,6 @@
 import { trans } from "@mongez/localization";
-import router, { Link } from "@mongez/react-router";
+import router, { Link, navigateTo } from "@mongez/react-router";
+import user from "apps/front-office/account/user";
 import URLS from "apps/front-office/utils/urls";
 import { useEffect, useState } from "react";
 import { accountNavItems } from "shared/data/accountData";
@@ -16,6 +17,8 @@ export default function AccountDashboardNavigationTabs() {
 
   const handleLogout = () => {
     console.log("User logout");
+    user.logout();
+    navigateTo(URLS.home);
   };
 
   return (

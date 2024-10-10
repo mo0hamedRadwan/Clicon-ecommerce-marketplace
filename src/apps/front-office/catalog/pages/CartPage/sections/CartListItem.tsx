@@ -12,7 +12,13 @@ type CartListItemPropsType = {
 
 export default function CartListItem({ item }: CartListItemPropsType) {
   const [productQuantity, setProductQuantity] = useState(item.quantity || 1);
-  const [loading, setLoading] = useState(false);
+  const [loadingCart, setLoadingCart] = useState(false);
+  const [loadingUpdateQuantity, setLoadingUpdateQuantity] = useState(false);
+
+  const handleQuantityChange = (value: number) => {
+    setProductQuantity(value);
+    cartAtom.updateQuantityItem(setLoadingUpdateQuantity, item, value);
+  };
 
   return (
     <div className="p-5 w-full sm:min-w-[450px] sm:max-w-[450px] flex flex-col items-center gap-y-3 border border-gray-300">
@@ -37,7 +43,11 @@ export default function CartListItem({ item }: CartListItemPropsType) {
         </div>
       </div>
       <div className="w-full space-between-center">
-        <QuantityInput value={productQuantity} setValue={setProductQuantity} />
+        <QuantityInput
+          value={productQuantity}
+          setValue={handleQuantityChange}
+        />
+        <div>{loadingUpdateQuantity && <Loader2 />}</div>
         <p className="center-y gap-x-2">
           <span>{trans("subtotal")}:</span>
           <span className="font-semibold">
@@ -51,9 +61,9 @@ export default function CartListItem({ item }: CartListItemPropsType) {
           endIcon="bx-trash"
           iconClassName="text-lg sm:text-2xl"
           className=" bg-red-550 hover:bg-gray-450"
-          disabled={loading}
-          onClick={() => cartAtom.removeFromCart(setLoading, item.id)}>
-          {loading ? (
+          disabled={loadingCart}
+          onClick={() => cartAtom.removeFromCart(setLoadingCart, item.id)}>
+          {loadingCart ? (
             <Loader2 />
           ) : (
             <span>

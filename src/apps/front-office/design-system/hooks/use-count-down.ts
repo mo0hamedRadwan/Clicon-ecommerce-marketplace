@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useOnce } from "@mongez/react-hooks";
+import { useState } from "react";
 import { formatTime } from "../utils/formatTime";
 
 export function useCountDown(date: Date) {
   const [remainderTime, setRemainderTime] = useState(date.getTime());
-  useEffect(() => {
+  useOnce(() => {
     const timer = setInterval(() => {
       const currentTime = new Date();
       const timeDifference = remainderTime - currentTime.getTime();
@@ -18,8 +19,7 @@ export function useCountDown(date: Date) {
     return () => {
       clearInterval(timer);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  });
 
   return formatTime(Math.round(remainderTime / 1000));
 }

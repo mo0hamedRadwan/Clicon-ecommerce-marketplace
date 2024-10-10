@@ -22,27 +22,6 @@ export function register(data: any) {
 }
 
 /**
- * Get current user data
- */
-export function getMe() {
-  return endpoint.get("/me");
-}
-
-/**
- * Edit user profile
- */
-export function editProfile(data: any) {
-  return endpoint.post("/me", data);
-}
-
-/**
- * Change password
- */
-export function changePassword(data: any) {
-  return endpoint.post("/change-password", data);
-}
-
-/**
  * Forget password request
  */
 export function forgetPassword(data: any) {

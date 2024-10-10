@@ -17,6 +17,18 @@ export default function CartDetailsSection({
 }: CartDetailsSectionPropsType) {
   const { cart, loading } = cartAtom.useValue();
 
+  if (cart.items.length === 0) {
+    return (
+      <div className="h-60 flex flex-col gap-16">
+        <h2 className="text-2xl font-medium">{trans("cart")}</h2>
+        <p className="text-center">{trans("yourCartIsEmpty")}</p>
+        <LinkAsButton href={URLS.shop.root} className="w-full">
+          {trans("continueShopping")}
+        </LinkAsButton>
+      </div>
+    );
+  }
+
   return (
     <>
       {loading ? (
@@ -74,7 +86,8 @@ export default function CartDetailsSection({
                   $
                   {cart.totals.subtotal +
                     cart.totals.shippingFees +
-                    cart.totals.tax}
+                    cart.totals.tax -
+                    cart.totals.discount}
                   USD
                 </span>
               </p>

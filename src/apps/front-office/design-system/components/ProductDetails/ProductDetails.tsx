@@ -6,6 +6,7 @@ import { wishlistAtom } from "../../atoms/wishlistAtom";
 import { Product } from "../../types";
 import Button from "../form/Button";
 import StarsRating from "../ui/StarsRating";
+import ProductDetailsForm from "./ProductDetailsForm";
 import ProductSliderImages from "./ProductSliderImages";
 
 type ProductDetailsPropsType = {
@@ -83,31 +84,27 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
 
         <hr className="bg-gray-200" />
 
-        {/* <ProductDetailsForm product={product} /> */}
+        <ProductDetailsForm product={product} />
 
         <div className="space-between flex-wrap text-sm sm:text-base">
           <div className="center-y gap-x-5">
-            <div className="center-y gap-x-2 hover:text-black cursor-pointer duration-150">
-              <span className="text-2xl">
-                <i className="bx bx-heart"></i>
-              </span>
-              <Button
-                className="text-xs sm:text-base"
-                disabled={wishlistLoading}
-                onClick={() =>
-                  wishlistAtom.addToWishlist(setWishlistLoading, product)
-                }>{`${trans("add")} ${trans("to")} ${trans("wishlist").toLowerCase()}`}</Button>
-            </div>
-            <div className="center-y gap-x-2 hover:text-black cursor-pointer duration-150">
-              <span className="text-2xl">
-                <i className="bx bx-git-compare"></i>
-              </span>
-              <Button
-                className="text-xs sm:text-base"
-                onClick={() =>
-                  compareAtom.toggleCompareProduct(product)
-                }>{`${trans("add")} ${trans("to")} ${trans("compare").toLowerCase()}`}</Button>
-            </div>
+            <Button
+              variant="text"
+              className="p-0 text-xs sm:text-base text-zinc-700 hover:bg-transparent hover:text-orange-450"
+              iconClassName="text-2xl"
+              startIcon="bx-heart"
+              disabled={wishlistLoading}
+              onClick={() =>
+                wishlistAtom.addToWishlist(setWishlistLoading, product)
+              }>{`${trans("add")} ${trans("to")} ${trans("wishlist").toLowerCase()}`}</Button>
+            <Button
+              variant="text"
+              className="p-0 text-xs sm:text-base text-zinc-700 hover:bg-transparent hover:text-orange-450"
+              iconClassName="text-2xl"
+              startIcon="bx-git-compare"
+              onClick={() =>
+                compareAtom.toggleCompareProduct(product)
+              }>{`${trans("add")} ${trans("to")} ${trans("compare").toLowerCase()}`}</Button>
           </div>
           <div className="center-y gap-2">
             <p>{`${trans("share")} ${trans("product").toLowerCase()}:`}</p>

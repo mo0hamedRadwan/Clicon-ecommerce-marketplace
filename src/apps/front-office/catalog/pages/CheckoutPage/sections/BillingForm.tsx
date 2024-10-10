@@ -57,13 +57,14 @@ export default function BillingForm() {
           {trans("paymentOption")}
         </h3>
         <ul className="p-5 flex justify-center sm:justify-between flex-wrap md:flex-nowrap gap-5 border-b border-gray-150">
-          {paymentMethods.map(paymentMethod => (
+          {paymentMethods.map((paymentMethod, idx) => (
             <li
               key={paymentMethod.name}
               className="w-[150px] flex-center flex-col gap-y-2">
               <img src={paymentMethod.icon} className="w-8 h-8" />
               <RatioInput
                 name="paymentMethod"
+                checked={idx === 0}
                 value={paymentMethod.name}
                 label={paymentMethod.label}
                 className="flex-center flex-col gap-y-3"

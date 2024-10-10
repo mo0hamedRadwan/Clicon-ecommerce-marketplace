@@ -27,8 +27,9 @@ export default function QuantityInput({
       )}>
       <button
         type="button"
+        disabled={value <= 1}
         onClick={() => value > 1 && setValue(value - 1)}
-        className="text-black text-xl">
+        className="text-black text-xl disabled:text-gray-450 disabled:cursor-not-allowed">
         <i className="bx bx-minus"></i>
       </button>
       <input
@@ -39,8 +40,9 @@ export default function QuantityInput({
       />
       <button
         type="button"
+        disabled={value >= 99}
         onClick={() => setValue(value + 1)}
-        className="text-black text-xl">
+        className="text-black text-xl disabled:text-gray-450 disabled:cursor-not-allowed">
         <i className="bx bx-plus"></i>
       </button>
     </div>

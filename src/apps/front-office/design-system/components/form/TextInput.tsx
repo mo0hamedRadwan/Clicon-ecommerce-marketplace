@@ -16,7 +16,7 @@ type TextInputPropsType = FormControlProps & {
 };
 
 export default function TextInput(props: TextInputPropsType) {
-  const { value, changeValue, error } = useFormControl({
+  const { value, changeValue, error, id } = useFormControl({
     ...props,
     rules: [requiredRule, minLengthRule, maxLengthRule, patternRule],
   });
@@ -24,7 +24,7 @@ export default function TextInput(props: TextInputPropsType) {
   return (
     <div className="w-full flex flex-col gap-y-2">
       {props.label && (
-        <label className="center-y gap-x-1">
+        <label htmlFor={id} className="center-y gap-x-1 select-none">
           <span>{trans(props.label)}</span>
           {props.optional && (
             <span className="text-gray-450">({trans("optional")})</span>
@@ -33,11 +33,13 @@ export default function TextInput(props: TextInputPropsType) {
       )}
       <input
         type={props.type}
+        disabled={props.disabled}
+        id={id}
         value={value}
         placeholder={trans(props.placeholder || "")}
         onChange={e => changeValue(e.target.value)}
         className={twMerge(
-          "p-2 text-black border border-gray-150",
+          "p-2 text-zinc-700 border border-gray-150",
           props.className,
         )}
       />

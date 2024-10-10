@@ -13,16 +13,22 @@ type CartTableItemPropsType = {
 
 export default function CartTableItem({ item }: CartTableItemPropsType) {
   const [productQuantity, setProductQuantity] = useState(item.quantity || 1);
-  const [loading, setLoading] = useState(false);
+  const [loadingCart, setLoadingCart] = useState(false);
+  const [loadingUpdateQuantity, setLoadingUpdateQuantity] = useState(false);
+
+  const handleQuantityChange = (value: number) => {
+    setProductQuantity(value);
+    cartAtom.updateQuantityItem(setLoadingUpdateQuantity, item, value);
+  };
 
   return (
     <>
       <td className="center-y gap-x-5">
         <Button
           className="p-2 rounded-full bg-white text-gray-550 border border-gray-150 hover:text-red-550 hover:border-red-550 hover:bg-white"
-          disabled={loading}
-          onClick={() => cartAtom.removeFromCart(setLoading, item.id)}>
-          {loading ? (
+          disabled={loadingCart}
+          onClick={() => cartAtom.removeFromCart(setLoadingCart, item.id)}>
+          {loadingCart ? (
             <Loader2 />
           ) : (
             <span>
@@ -52,7 +58,11 @@ export default function CartTableItem({ item }: CartTableItemPropsType) {
         </div>
       </td>
       <td>
-        <QuantityInput value={productQuantity} setValue={setProductQuantity} />
+        <QuantityInput
+          value={productQuantity}
+          setValue={handleQuantityChange}
+        />
+        {loadingUpdateQuantity && <Loader2 />}
       </td>
       <td>
         <span className="text-lg font-semibold">

@@ -5,15 +5,18 @@ type CheckboxInputPropsType = FormControlProps & {
 };
 
 export default function CheckboxInput(props: CheckboxInputPropsType) {
-  const { value, changeValue, error, id } = useFormControl(props);
+  const { checked, setChecked, error, id } = useFormControl({
+    ...props,
+    type: "checkbox",
+  });
   return (
     <>
       <div className="flex gap-x-1">
         <input
           type="checkbox"
           id={id}
-          value={value}
-          onChange={e => changeValue(e.target.value)}
+          checked={checked}
+          onChange={e => setChecked(e.target.checked)}
           className="accent-orange-600 checked:text-white"
         />
         <label htmlFor={id} className="cursor-pointer select-none">

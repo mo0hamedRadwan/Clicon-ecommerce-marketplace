@@ -11,7 +11,6 @@ export default function Pagination({
   totalPages = 5,
   handleChangePage,
 }: PaginationPropsType) {
-  console.log(activePage, totalPages);
   return (
     <div className="py-5 w-full flex-center">
       <ul className="w-[300px] sm:w-[500px] space-between gap-x-1 sm:gap-x-3">
