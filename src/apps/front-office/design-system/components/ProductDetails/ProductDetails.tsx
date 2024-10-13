@@ -95,7 +95,7 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
               startIcon="bx-heart"
               disabled={wishlistLoading}
               onClick={() =>
-                wishlistAtom.addToWishlist(setWishlistLoading, product)
+                wishlistAtom.toggleWishlistProduct(setWishlistLoading, product)
               }>{`${trans("add")} ${trans("to")} ${trans("wishlist").toLowerCase()}`}</Button>
             <Button
               variant="text"

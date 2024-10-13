@@ -1,3 +1,4 @@
+import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import { Product } from "apps/front-office/design-system/types";
 import { getProducts } from "apps/front-office/home/services/home-service";
 import ProductDetails from "components/ProductDetails/ProductDetails";
@@ -39,7 +40,9 @@ export default function ProductDetailsPage({
   return (
     <>
       {loading ? (
-        <div>loading...</div>
+        <div className="w-full h-screen flex-center">
+          <Loader1 />
+        </div>
       ) : (
         product && (
           <div className="container py-10 sm:py-20 flex flex-col gap-y-5 sm:gap-y-10">

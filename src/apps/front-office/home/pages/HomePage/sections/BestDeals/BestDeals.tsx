@@ -14,7 +14,7 @@ type BestDealsPropsType = {
 
 export default function BestDeals({
   products,
-  deadline = new Date(2024, 8, 20),
+  deadline = new Date(2024, 10, 20),
 }: BestDealsPropsType) {
   return (
     <div className="py-5 sm:py-10 container">

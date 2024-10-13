@@ -1,3 +1,5 @@
+import { trans } from "@mongez/localization";
+
 type AccountStatsCardPropsType = {
   icon: string;
   number: number;
@@ -21,7 +23,7 @@ export default function AccountStatsCard({
       </div>
       <div className="w-full h-full flex flex-col justify-between">
         <h3 className="text-2xl font-semibold">{`${number < 9 ? "0" : ""}${number}`}</h3>
-        <p className="text-gray-550">{subtitle}</p>
+        <p className="text-gray-550">{trans(subtitle)}</p>
       </div>
     </div>
   );

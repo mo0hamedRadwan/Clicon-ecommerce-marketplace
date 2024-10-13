@@ -1,4 +1,8 @@
 {
+  "hello": {
+    "en": "Hello",
+    "ar": "مرحبا"
+  },
   "dashboard": {
     "en": "Dashboard",
     "ar": "لوحة التحكم"
@@ -86,5 +90,45 @@
   "accountInfo": {
     "en": "Account Info",
     "ar": "معلومات الحساب"
+  },
+  "billingAddress": {
+    "en": "billingAddress",
+    "ar": "عنوان الفواتير"
+  },
+  "email": {
+    "en": "Email",
+    "ar": "البريد الإلكتروني"
+  },
+  "phone": {
+    "en": "Phone",
+    "ar": "الهاتف"
+  },
+  "editAccount": {
+    "en": "Edit Account",
+    "ar": "تعديل الحساب"
+  },
+  "editAddress": {
+    "en": "Edit Address",
+    "ar": "تعديل العنوان"
+  },
+  "totalOrders": {
+    "en": "Total Orders",
+    "ar": "الطلبات الكلية"
+  },
+  "pendingOrders": {
+    "en": "Pending Orders",
+    "ar": "الطلبات المعلقة"
+  },
+  "completedOrders": {
+    "en": "Completed Orders",
+    "ar": "الطلبات المكتملة"
+  },
+  "recentOrders": {
+    "en": "Recent Orders",
+    "ar": "الطلبات الأخيرة"
+  },
+  "viewDetails": {
+    "en": "View Details",
+    "ar": "عرض التفاصيل"
   }
 }

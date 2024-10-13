@@ -14,7 +14,7 @@ export default function BottomHeader() {
           <li
             className="hidden md:center-y gap-x-2 navItem bg-gray-150 px-5 py-3 font-semibold relative"
             onClick={() => setOpenCategoriesMenu(!openCategoriesMenu)}>
-            <span>{`${trans("all")} ${trans("categories")}`}</span>
+            <span>{trans("allCategories")}</span>
             <span>
               {openCategoriesMenu ? (
                 <i className="bx bx-chevron-up"></i>

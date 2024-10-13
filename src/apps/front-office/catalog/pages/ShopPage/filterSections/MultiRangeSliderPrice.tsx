@@ -1,3 +1,4 @@
+import { isLTR } from "apps/front-office/utils/helpers";
 import { useCallback, useEffect, useRef } from "react";
 
 type PriceRangePropsType = {
@@ -35,7 +36,11 @@ export default function MultiRangeSliderPrice({
       const maxPercent = getPercent(+maxValueRef.current.value); // Preceding with '+' converts the value from type string to type number
 
       if (range.current) {
-        range.current.style.left = `${minPercent}%`;
+        if (isLTR()) {
+          range.current.style.left = `${minPercent}%`;
+        } else {
+          range.current.style.right = `${minPercent}%`;
+        }
         range.current.style.width = `${maxPercent - minPercent}%`;
       }
     }
@@ -79,7 +84,7 @@ export default function MultiRangeSliderPrice({
       <div className="relative h-2">
         <div className="absolute w-full h-full bg-gray-150 rounded"></div>
         <div
-          className="absolute h-full left-1/4 right-1/4 bg-orange-450 rounded"
+          className="absolute h-full bg-orange-450 rounded"
           ref={range}></div>
         {/* <div className="absolute -top-1.5 w-5 h-5 bg-white border border-orange-450 rounded-full left-1/4 -translate-x-2.5 opacity-20"></div> */}
         {/* <div className="absolute -top-1.5 w-5 h-5 bg-white border border-orange-450 rounded-full right-1/4 translate-x-2.5 opacity-20"></div> */}

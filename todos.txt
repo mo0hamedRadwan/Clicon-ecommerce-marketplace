@@ -5,7 +5,7 @@ Important
 (in process) edit pagination component
 (in process) edit account settings
 
-
+fixed routes (public, private)
 change access token from endpoint.ts
 add implemention edit cart item
 add implemention toggle wishlist item
@@ -16,6 +16,7 @@ add browse history component
 convert compareTable2Cols and compareTable3Cols to compareTable
 ActiveTab in account dashboard does not work when user change url
 debounce multi range price change 
+if user change price range from query string and does not care with gap between them
 
 
 styles 

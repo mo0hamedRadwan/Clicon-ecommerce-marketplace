@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
 import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
@@ -21,6 +22,12 @@ export default function ShopProductsGrid() {
   return loading ? (
     <div className="w-full h-[600px] flex-center">
       <Loader1 />
+    </div>
+  ) : products.length === 0 ? (
+    <div className="w-full h-[600px] flex-center">
+      <p className="text-center text-2xl font-medium">
+        {trans("noProductsFound")}.
+      </p>
     </div>
   ) : (
     <div className="flex flex-col gap-y-10">

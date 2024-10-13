@@ -5,6 +5,7 @@ import BrowsingHistoryTab from "./pages/BrowsingHistoryTab";
 import CardsAndAddressesTab from "./pages/CardsAndAddressesTab";
 import CartTab from "./pages/CartTab";
 import CompareTab from "./pages/CompareTab";
+import LogoutTab from "./pages/LogoutTab";
 import OrderHistoryTab from "./pages/OrderHistoryTab";
 import SettingsTab from "./pages/SettingsTab";
 import TrackOrderDetailsTab from "./pages/TrackOrderDetailsTab";
@@ -56,4 +57,12 @@ accountRoutes([
     path: URLS.userAccount.settings,
     component: SettingsTab,
   },
+  {
+    path: URLS.userAccount.logout,
+    component: LogoutTab,
+  },
+  // {
+  //   path: URLS.userAccount.root,
+  //   redirect: URLS.userAccount.dashboard,
+  // },
 ]);

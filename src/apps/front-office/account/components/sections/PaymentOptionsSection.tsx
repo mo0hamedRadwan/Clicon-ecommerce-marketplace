@@ -10,7 +10,7 @@ export default function PaymentOptionsSection() {
     <div className="border border-gray-150 shadow-2">
       <div className="space-between-center gap-5 border-b border-gray-150">
         <h2 className="p-5 font-semibold">
-          {`${trans("payment")} ${trans("option")}`.toUpperCase()}
+          {trans("paymentOption").toUpperCase()}
         </h2>
         <LinkAsButton
           variant="text"

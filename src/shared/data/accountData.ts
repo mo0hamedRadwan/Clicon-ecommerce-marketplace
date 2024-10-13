@@ -34,6 +34,11 @@ export const accountNavItems = [
     icon: "bx-cog",
     link: URLS.userAccount.settings,
   },
+  {
+    name: "logout",
+    icon: "bx-log-out rotate-180",
+    link: URLS.userAccount.logout,
+  },
 ];
 
 export const accountStatsItems = [

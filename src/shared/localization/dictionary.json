@@ -368,6 +368,18 @@
     "en": "placed",
     "ar": "تم التقديم علية"
   },
+  "id": {
+    "en": "ID",
+    "ar": "الرقم التعريفى"
+  },
+  "billingEmail": {
+    "en": "Billing Email",
+    "ar": "عنوان البريد الإلكتروني للدفع"
+  },
+  "sendedToYour": {
+    "en": "sended to you",
+    "ar": "تم أرساله إليك"
+  },
   "orderStatus": {
     "en": "Order Status",
     "ar": "حالة الطلب"
@@ -471,5 +483,97 @@
   "withUs": {
     "en": "With Us",
     "ar": "معنا"
+  },
+  "quantity": {
+    "en": "Quantity",
+    "ar": "الكمية"
+  },
+  "customersFeedback": {
+    "en": "Customers Feedback",
+    "ar": "رأي المستخدمين"
+  },
+  "price": {
+    "en": "price",
+    "ar": "السعر"
+  },
+  "soldBy": {
+    "en": "Sold By",
+    "ar": "يباع بواسطة"
+  },
+  "brand": {
+    "en": "Brand",
+    "ar": "براند"
+  },
+  "size": {
+    "en": "Size",
+    "ar": "المساحة"
+  },
+  "weight": {
+    "en": "Weight",
+    "ar": "الوزن"
+  },
+  "couponCode": {
+    "en": "Coupon Code",
+    "ar": "كود القسيمة"
+  },
+  "coupon": {
+    "en": "Coupon",
+    "ar": "القسيمة"
+  },
+  "tax": {
+    "en": "Tax",
+    "ar": "الضرائب"
+  },
+  "total": {
+    "en": "Total",
+    "ar": "المجموع"
+  },
+  "useraccount": {
+    "en": "User Account",
+    "ar": "حساب المستخدم"
+  },
+  "smartPhone": {
+    "en": "Smartphone",
+    "ar": "الهواتف الذكية"
+  },
+  "products": {
+    "er": "Products",
+    "ar": "منتجات"
+  },
+  "view": {
+    "en": "View",
+    "ar": "عرض"
+  },
+  "add": {
+    "en": "Add",
+    "ar": "أضافة"
+  },
+  "card": {
+    "en": "Card",
+    "ar": "كارت"
+  },
+  "inStock": {
+    "en": "In Stock",
+    "ar": "في المخزن"
+  },
+  "outStock": {
+    "en": "Out of Stock",
+    "ar": "غير متوفر"
+  },
+  "yourCartIsEmpty": {
+    "en": "Your cart is empty",
+    "ar": "السلة الخاصة بك فارغة"
+  },
+  "yourWishlistIsEmpty": {
+    "en": "Your wishlist is empty",
+    "ar": "قائمة الأمنيات فارغة"
+  },
+  "continueShopping": {
+    "en": "Continue Shopping",
+    "ar": "المتابعة في التسوق"
+  },
+  "actions": {
+    "en": "Actions",
+    "ar": "الأجراءات"
   }
 }

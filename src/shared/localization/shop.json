@@ -1,0 +1,78 @@
+{
+  "category": {
+    "en": "Category",
+    "ar": "تصنيف"
+  },
+  "sortBy": {
+    "en": "Sort By",
+    "ar": "ترتيب حسب"
+  },
+  "mostPopular": {
+    "en": "Most Popular",
+    "ar": "الأكثر شعبية"
+  },
+  "newest": {
+    "en": "Newest",
+    "ar": "الأحدث"
+  },
+  "lowestPrice": {
+    "en": "Lowest Price",
+    "ar": "الأقل سعر"
+  },
+  "highestPrice": {
+    "en": "Highest Price",
+    "ar": "الأكثر سعر"
+  },
+  "activeFilters": {
+    "en": "Active Filters",
+    "ar": "الفلاتر الفعالة"
+  },
+  "resultsFound": {
+    "en": "Results found",
+    "ar": "نتائج"
+  },
+  "priceRange": {
+    "en": "Price Range",
+    "ar": "نطاق السعر"
+  },
+  "under$100": {
+    "en": "Under $100",
+    "ar": "اقل من 100$"
+  },
+  "$100to$500": {
+    "en": "$100 to $500",
+    "ar": "من 100$ إلى 500$"
+  },
+  "$500to$1000": {
+    "en": "$500 to $1000",
+    "ar": "من 500$ إلى 1000$"
+  },
+  "$1000to$2500": {
+    "en": "$1000 to $2500",
+    "ar": "من 1000$ إلى 2500$"
+  },
+  "$2500to$5000": {
+    "en": "$2500 to $5000",
+    "ar": "من 2500$ إلى 5000$"
+  },
+  "$5000to$10000": {
+    "en": "$5000 to $10000",
+    "ar": "من 5000$ إلى 10000$"
+  },
+  "minPrice": {
+    "en": "Min Price",
+    "ar": "السعر الأدنى"
+  },
+  "maxPrice": {
+    "en": "Max Price",
+    "ar": "السعر الأعلى"
+  },
+  "popularBrands": {
+    "en": "Popular Brands",
+    "ar": "العلامات التجارية"
+  },
+  "noProductsFound": {
+    "en": "No products found",
+    "ar": "لا يوجد منتجات"
+  }
+}

@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
+import { isRTL } from "apps/front-office/utils/helpers";
 import { removeUndefinedKeys } from "apps/front-office/utils/methods";
 
 export default function ActiveFilters() {
@@ -25,9 +26,9 @@ export default function ActiveFilters() {
               <li
                 key={key}
                 className="py-1 px-2 center-y bg-gray-300 rounded-lg">
-                <span>{`${key}: ${filter[key]}`}</span>
+                <span>{`${trans(key)}: ${filter[key]}`}</span>
                 <button
-                  className="ml-3 text-xs text-red-500 font-bold"
+                  className={`text-xs text-red-500 font-bold" ${isRTL() ? "mr-3" : "ml-3"}`}
                   onClick={() => handleRemoveFilter(key)}>
                   x
                 </button>

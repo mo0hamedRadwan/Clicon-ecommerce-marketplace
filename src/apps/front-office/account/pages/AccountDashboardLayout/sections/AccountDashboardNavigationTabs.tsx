@@ -1,7 +1,5 @@
 import { trans } from "@mongez/localization";
-import router, { Link, navigateTo } from "@mongez/react-router";
-import user from "apps/front-office/account/user";
-import URLS from "apps/front-office/utils/urls";
+import router, { Link } from "@mongez/react-router";
 import { useEffect, useState } from "react";
 import { accountNavItems } from "shared/data/accountData";
 
@@ -14,12 +12,6 @@ export default function AccountDashboardNavigationTabs() {
 
     setActiveTab(tabIndex === -1 ? 0 : tabIndex);
   }, [path]);
-
-  const handleLogout = () => {
-    console.log("User logout");
-    user.logout();
-    navigateTo(URLS.home);
-  };
 
   return (
     //flex flex-col gap-y-2
@@ -41,18 +33,6 @@ export default function AccountDashboardNavigationTabs() {
           </Link>
         </li>
       ))}
-
-      <li className="px-10 py-2 hover:bg-orange-450 hover:text-white duration-200">
-        <Link
-          to={URLS.home}
-          className="center-y gap-x-5"
-          onClick={() => handleLogout()}>
-          <span className="text-xl">
-            <i className="bx bx-log-out rotate-180"></i>
-          </span>
-          <span className="text-sm">{trans("logout")}</span>
-        </Link>
-      </li>
     </ul>
   );
 }

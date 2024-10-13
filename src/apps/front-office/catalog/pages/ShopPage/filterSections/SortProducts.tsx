@@ -12,11 +12,11 @@ export const sortByOptions: SelectOption[] = [
   { label: "topRated", value: "topRated" },
   { label: "newest", value: "newest" },
   {
-    label: "lowestPrice2highestPrice",
+    label: "lowestPrice",
     value: "lowestPrice",
   },
   {
-    label: "highestPrice2lowestPrice",
+    label: "highestPrice",
     value: "highestPrice",
   },
 ];
@@ -24,12 +24,12 @@ export const sortByOptions: SelectOption[] = [
 export default function SortProducts() {
   const handleSortProducts = (value: string) => {
     const query = queryString.all();
-    query.sortBy = value;
+    query.orderBy = value;
 
     queryString.update(query);
 
     shopAtom.loadProducts({
-      sortBy: value,
+      orderBy: value,
       page: 1, // Reset page to 1 when sorting by new sorting option
     });
   };

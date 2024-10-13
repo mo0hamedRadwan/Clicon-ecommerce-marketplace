@@ -38,20 +38,6 @@ export const features = [
   },
 ];
 
-// export const topProducts = [
-//   { title: "flashSalesToday", products: products },
-//   { title: "bestSellers", products: products },
-//   { title: "topRated", products: products },
-//   { title: "newArrival", products: products },
-// ];
-
-// export const relatedProducts = [
-//   { title: "relatedProducts", products: products },
-//   { title: "productAccessories", products: products },
-//   { title: "appleProducts", products: products },
-//   { title: "featuredProducts", products: products },
-// ];
-
 export const paymentMethods = [
   { name: "cash", icon: cashIcon, label: "cashOnDelivery" },
   { name: "venmo", icon: venmoIcon, label: "venmo" },

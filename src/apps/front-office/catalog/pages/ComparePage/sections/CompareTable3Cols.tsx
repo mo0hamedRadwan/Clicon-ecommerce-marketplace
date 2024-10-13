@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { Product } from "apps/front-office/design-system/types";
 import BottomCompareTableRow from "../components/BottomCompareTableRow";
 import UpperCompareTableRow from "../components/UpperCompareTableRow";
@@ -39,7 +40,7 @@ export default function CompareTable3Cols({
               })}
             </tr>
             {[
-              { title: "customerFeedback", productKey: "price" },
+              { title: "customersFeedback", productKey: "price" },
               { title: "price", productKey: "salePrice" },
               { title: "soldBy", productKey: "price" },
               { title: "brand", productKey: "price" },
@@ -51,7 +52,7 @@ export default function CompareTable3Cols({
                 key={row.title}
                 className={`${idx % 2 === 0 ? "bg-gray-200" : ""}`}>
                 <td className="w-1/4 p-2 border-r border-gray-150">
-                  {row.title}
+                  {trans(row.title)}
                 </td>
                 {[0, 1, 2].map(idx => {
                   const index = tableNumber * 3 + idx;

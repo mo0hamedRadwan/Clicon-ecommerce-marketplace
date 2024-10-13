@@ -158,5 +158,13 @@
   "guaranteeSafe": {
     "en": "Guarantee Safe",
     "ar": "تضمن أمان"
+  },
+  "all": {
+    "en": "All",
+    "ar": "الكل"
+  },
+  "allCategories": {
+    "en": "All Categories",
+    "ar": "كل التصنيفات"
   }
 }

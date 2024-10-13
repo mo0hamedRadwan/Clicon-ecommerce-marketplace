@@ -3,10 +3,10 @@ import { currentRoute, Link } from "@mongez/react-router";
 
 export default function CustomBreadcrumb() {
   const paths = currentRoute().split("/").slice(1);
-  const lastRoute = paths.pop();
+  let lastRoute = paths.pop();
 
-  if (paths.find(path => path === "products")) {
-    lastRoute?.replace("-", "");
+  if (!paths.find(path => path === "products")) {
+    lastRoute = lastRoute?.replace("-", "");
   }
 
   // Hidden breadcrump from home page

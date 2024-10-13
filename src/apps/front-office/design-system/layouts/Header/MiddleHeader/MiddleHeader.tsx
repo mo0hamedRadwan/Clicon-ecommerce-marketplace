@@ -5,7 +5,6 @@ import { compareAtom } from "apps/front-office/design-system/atoms/compareAtom";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
 import URLS from "apps/front-office/utils/urls";
 import headerLogo from "assets/images/HeaderLogo.png";
-import { useEffect } from "react";
 import AccountMenu from "./AccountMenu";
 import CartMenu from "./CartMenu";
 import MyAccountMenu from "./MyAccountMenu";
@@ -17,11 +16,6 @@ export default function MiddleHeader() {
   const cartTotalProducts = cartAtom.use("totalProducts");
   const wishlistTotalProducts = wishlistAtom.use("totalProducts");
   const compareTotalProducts = compareAtom.use("products").length;
-
-  useEffect(() => {
-    cartAtom.loadCartItems();
-    wishlistAtom.loadWishlistItems();
-  }, []);
 
   return (
     <div className="h-[44px] sm:h-[88px] bg-sky-750 text-white">

@@ -74,6 +74,7 @@ const URLS = {
     cardsAndAddresses: "/user-account/cards-and-addresses",
     browsingHistory: "/user-account/browsing-history",
     settings: "/user-account/settings",
+    logout: "/user-account/logout",
   },
   product: {
     root: "/products",

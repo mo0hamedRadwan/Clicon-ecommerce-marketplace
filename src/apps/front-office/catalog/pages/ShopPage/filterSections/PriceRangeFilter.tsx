@@ -3,7 +3,7 @@ import { useOnce } from "@mongez/react-hooks";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
 import NumberInput from "apps/front-office/design-system/components/form/NumberInput";
-import RatioInput from "apps/front-office/design-system/components/form/RatioInput";
+import RadioInput from "apps/front-office/design-system/components/form/RadioInput";
 import { useDebounce } from "apps/front-office/design-system/hooks/use-debounce";
 import { useEffect, useState } from "react";
 import MultiRangeSliderPrice from "./MultiRangeSliderPrice";
@@ -32,8 +32,24 @@ export default function PriceRangeFilter() {
 
   // Load initial values from query string if exists
   useOnce(() => {
-    if (query.minPrice) setMinValue(Number(query.minPrice));
-    if (query.maxPrice) setMaxValue(Number(query.maxPrice));
+    if (query.minPrice) {
+      const e = {
+        target: {
+          name: "min_price",
+          value: query.minPrice,
+        },
+      };
+      handleRangeSliderChange(e);
+    }
+    if (query.maxPrice) {
+      const e = {
+        target: {
+          name: "min_price",
+          value: query.minPrice,
+        },
+      };
+      handleRangeSliderChange(e);
+    }
   });
 
   useEffect(() => {
@@ -118,7 +134,7 @@ export default function PriceRangeFilter() {
         <ul className="flex flex-col gap-y-2">
           {pricesOptions.map(option => (
             <li key={option.min} className="flex items-start">
-              <RatioInput
+              <RadioInput
                 name="price-option"
                 id={`${option.max}`}
                 value={`${option.min}-${option.max}`}

@@ -62,18 +62,18 @@ export const callUs = {
 };
 
 export const myAccountLinks = [
-  { name: "myAccount", icon: "bx bx-user", link: "/user-account/dashboard" },
+  { name: "myAccount", icon: "bx bx-user", link: URLS.userAccount.dashboard },
   {
     name: "trackOrder",
     icon: "bx bx-shopping-bag",
-    link: "/user-account/track-order",
+    link: URLS.userAccount.trackOrder.root,
   },
   {
     name: "browsingHistory",
     icon: "bx-history",
-    link: "/user-account/browser-history",
+    link: URLS.userAccount.browsingHistory,
   },
-  { name: "wishlist", icon: "bx-heart", link: "/user-account/wishlist" },
-  { name: "settings", icon: "bx-cog", link: "/user-account/settings" },
-  { name: "logout", icon: "bx-log-out", link: "/user-account/logout" },
+  { name: "wishlist", icon: "bx-heart", link: URLS.userAccount.wishlist },
+  { name: "settings", icon: "bx-cog", link: URLS.userAccount.settings },
+  { name: "logout", icon: "bx-log-out", link: URLS.userAccount.logout },
 ];

@@ -41,7 +41,7 @@ export default function UpperCompareTableRow({
           onClick={() => cartAtom.addToCart(setLoadingCart, product.id)}
           endIcon="bx-cart"
           iconClassName="text-2xl"
-          className="w-full md:text-xs xl:text-base">
+          className="w-full md:text-xs xl:text-sm">
           {loadingCart ? (
             <Loader2 />
           ) : (
@@ -55,7 +55,7 @@ export default function UpperCompareTableRow({
           onClick={() =>
             wishlistAtom.toggleWishlistProduct(setLoadingWishlist, product)
           }
-          className="md:text-base xl:text-2xl">
+          className="text-3xl md:text-2xl lg:text-3xl">
           {loadingWishlist ? <Loader2 /> : <i className="bx bx-heart"></i>}
         </Button>
       </div>

@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
@@ -40,7 +41,7 @@ export default function Select({
           className,
         )}
         onClick={() => setOpenMenu(!openMenu)}>
-        <span>{selectedValue}</span>
+        <span>{trans(selectedValue)}</span>
         <span>
           {openMenu ? (
             <i className="bx bx-chevron-up"></i>
@@ -66,7 +67,7 @@ export default function Select({
                 )}
                 onClick={() => handleValueChange(option.value, option.label)}>
                 {option.img && <img src={option.img} className="w-6 h-6" />}
-                <span className="">{option.label}</span>
+                <span className="">{trans(option.label)}</span>
               </li>
             ))}
           </ul>

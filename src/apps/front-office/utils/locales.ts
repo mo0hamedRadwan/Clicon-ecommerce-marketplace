@@ -5,6 +5,7 @@ import errorsTranslation from "shared/localization/errors.json";
 import footerTranslation from "shared/localization/footer.json";
 import headerTranslation from "shared/localization/header.json";
 import homeTranslation from "shared/localization/home.json";
+import shopTranslation from "shared/localization/shop.json";
 
 // DO NOT IMPORT IT IF THE PROJECT IS NOT LARGE
 // groupedTranslations(mainTranslation);
@@ -23,4 +24,5 @@ groupedTranslations({
   ...homeTranslation,
   ...dictionaryTranslation,
   ...accountTranslation,
+  ...shopTranslation,
 });

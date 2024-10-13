@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { Product } from "apps/front-office/design-system/types";
 import BottomCompareTableRow from "../components/BottomCompareTableRow";
 import UpperCompareTableRow from "../components/UpperCompareTableRow";
@@ -16,7 +17,7 @@ export default function CompareListItem({ product }: CompareListItemPropsType) {
           </td>
         </tr>
         {[
-          { title: "customerFeedback", productKey: "price" },
+          { title: "customersFeedback", productKey: "price" },
           { title: "price", productKey: "salePrice" },
           { title: "soldBy", productKey: "price" },
           { title: "brand", productKey: "price" },
@@ -27,7 +28,9 @@ export default function CompareListItem({ product }: CompareListItemPropsType) {
           <tr
             key={row.title}
             className={`${idx % 2 === 0 ? "bg-gray-200" : ""} text-xs sm:text-base`}>
-            <td className="w-1/4 p-2 border-r border-gray-150">{row.title}</td>
+            <td className="w-1/4 p-2 border-r border-gray-150">
+              {trans(row.title)}
+            </td>
             <td className="w-1/4 p-2 border-r border-gray-150">
               <BottomCompareTableRow row={row} />
             </td>
