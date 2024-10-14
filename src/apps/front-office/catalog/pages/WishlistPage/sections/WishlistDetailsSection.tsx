@@ -14,7 +14,7 @@ export default function WishlistDetailsSection() {
   //   wishlistAtom.loadWishlistItems();
   // }, []);
 
-  if (wishlist.products.length === 0) {
+  if (wishlist.products.length === 0 && !loading) {
     return (
       <div className="h-60 flex flex-col gap-16">
         <h2 className="text-2xl font-medium">{trans("wishlist")}</h2>

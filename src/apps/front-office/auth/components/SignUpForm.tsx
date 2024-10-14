@@ -11,7 +11,7 @@ import PasswordInput from "components/form/PasswordInput";
 import TextInput from "components/form/TextInput";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { register } from "../services/auth";
+import { register } from "../services/auth-services";
 
 export default function SignUpForm() {
   const [loading, setLoading] = useState<boolean>(false);

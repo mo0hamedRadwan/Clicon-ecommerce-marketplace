@@ -3,7 +3,11 @@ import {
   changePasswordDataType,
   UserType,
 } from "apps/front-office/design-system/types";
-import { changePassword, editProfile, getProfile } from "../service/account";
+import {
+  changePassword,
+  editProfile,
+  getProfile,
+} from "../services/account-services";
 
 type AccountDataType = {
   loading: boolean;

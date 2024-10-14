@@ -3,6 +3,7 @@ import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
 import CustomBreadcrumb from "apps/front-office/design-system/components/ui/CustomBreadcrumb";
 import { cartAtom } from "../../atoms/cartAtom";
 import { categoriesAtom } from "../../atoms/categoriesAtom";
+import { compareAtom } from "../../atoms/compareAtom";
 import { wishlistAtom } from "../../atoms/wishlistAtom";
 import Footer from "../Footer";
 import Header from "../Header";
@@ -20,6 +21,7 @@ export default function BaseLayout({ children }: BaseLayoutProps) {
     cartAtom.loadCartItems();
     wishlistAtom.loadWishlistItems();
     categoriesAtom.loadCategories();
+    compareAtom.loadCompareProducts();
   });
 
   return (

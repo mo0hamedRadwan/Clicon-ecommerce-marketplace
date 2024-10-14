@@ -7,7 +7,7 @@ import Button from "components/form/Button";
 import PasswordInput from "components/form/PasswordInput";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { resetPassword } from "../../services/auth";
+import { resetPassword } from "../../services/auth-services";
 
 export default function ResetPasswordPage() {
   const [loading, setLoading] = useState<boolean>(false);

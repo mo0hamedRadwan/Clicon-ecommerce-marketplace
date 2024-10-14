@@ -1,6 +1,6 @@
 import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import { Product } from "apps/front-office/design-system/types";
-import { getProducts } from "apps/front-office/home/services/home-service";
+import { getProduct } from "apps/front-office/home/services/home-service";
 import ProductDetails from "components/ProductDetails/ProductDetails";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -22,11 +22,9 @@ export default function ProductDetailsPage({
 
   useEffect(() => {
     setLoading(true);
-    getProducts({
-      id: params.id,
-    })
+    getProduct(params.id)
       .then(response => {
-        setProduct(response.data.products[0]);
+        setProduct(response.data.product);
         console.log(response.data);
         setLoading(false);
       })

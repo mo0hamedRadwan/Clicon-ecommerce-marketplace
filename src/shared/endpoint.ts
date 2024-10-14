@@ -5,7 +5,7 @@ import { navigateTo } from "@mongez/react-router";
 import user from "apps/front-office/account/user";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";
-import { accessToken, apiBaseUrl, clientId } from "./flags";
+import { apiBaseUrl, clientId } from "./flags";
 
 const endpoint = new Endpoint({
   putToPost: false,
@@ -16,11 +16,9 @@ const endpoint = new Endpoint({
     expiresAfter: 60 * 60 * 24 * 7, // 1 week, but because it is a runtime driver, it will be cleared when the page is refreshed
   },
   setAuthorizationHeader: () => {
-    // if (user.isLoggedIn()) {
-    //   return `Bearer ${user.getAccessToken()}`;
-    // }
-    user.setAccessToken(accessToken);
-    return `Bearer ${accessToken}`;
+    if (user.isLoggedIn()) {
+      return `Bearer ${user.getAccessToken()}`;
+    }
   },
 });
 
@@ -30,7 +28,6 @@ endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
   headers["lang"] = getCurrentLocaleCode();
   headers["client-id"] = clientId;
-  headers["Authorization"] = `Bearer ${accessToken}`;
   config.params = {
     ...config.params,
     locale: getCurrentLocaleCode(),

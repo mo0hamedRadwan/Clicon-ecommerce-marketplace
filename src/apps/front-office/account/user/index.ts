@@ -20,7 +20,7 @@ class User extends BaseUser implements UserInterface {
   }
 
   public get isGuest(): boolean {
-    return this.id === null;
+    return this.get("userType") === "guest";
   }
 }
 

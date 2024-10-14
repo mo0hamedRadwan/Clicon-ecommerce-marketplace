@@ -6,7 +6,7 @@ import { SelectOption } from "apps/front-office/design-system/types";
 
 export const sortByOptions: SelectOption[] = [
   {
-    label: "mostPopular",
+    label: "mostViewed",
     value: "mostViewed",
   },
   { label: "topRated", value: "topRated" },

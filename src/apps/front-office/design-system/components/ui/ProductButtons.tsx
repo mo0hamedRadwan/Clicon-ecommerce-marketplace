@@ -21,6 +21,7 @@ export default function ProductButtons({
 }: ProductButtonsPropsType) {
   const [loadingCart, setLoadingCart] = useState(false);
   const [loadingWishlist, setLoadingWishlist] = useState(false);
+  const [loadingCompare, setLoadingCompare] = useState(false);
 
   return (
     <div className="hidden z-40 absolute top-0 left-0 w-full h-full group-hover:flex-center hover:bg-[rgba(0,0,0,0.2)] duration-200">
@@ -44,7 +45,10 @@ export default function ProductButtons({
           {loadingCart ? <Loader2 /> : <i className="bx bx-cart"></i>}
         </Button>
         <Button
-          onClick={() => compareAtom.toggleCompareProduct(product)}
+          disabled={loadingCompare}
+          onClick={() =>
+            compareAtom.toggleCompareProduct(setLoadingCompare, product)
+          }
           className={ButtonActionStyle}>
           <CompareIcon />
         </Button>

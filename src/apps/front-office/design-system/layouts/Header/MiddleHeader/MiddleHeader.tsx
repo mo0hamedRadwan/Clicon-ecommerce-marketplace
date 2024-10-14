@@ -60,7 +60,7 @@ export default function MiddleHeader() {
               className="text-2xl md:text-4xl">
               <i className="bx bx-user"></i>
             </Link>
-            {user.isLoggedIn() ? <MyAccountMenu /> : <AccountMenu />}
+            {user.isGuest ? <AccountMenu /> : <MyAccountMenu />}
           </li>
 
           {/* {middleHeaderIcons.map(icon => (

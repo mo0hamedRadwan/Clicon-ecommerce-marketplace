@@ -7,7 +7,7 @@ import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { forgetPassword } from "../../services/auth";
+import { forgetPassword } from "../../services/auth-services";
 
 export default function ForgetPasswordPage() {
   const [loading, setLoading] = useState<boolean>(false);

@@ -7,7 +7,7 @@ import Button from "components/form/Button";
 import TextInput from "components/form/TextInput";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { verifyCode } from "../../services/auth";
+import { verifyCode } from "../../services/auth-services";
 
 export default function VerifyEmailPage() {
   const [loading, setLoading] = useState<boolean>(false);

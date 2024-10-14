@@ -10,7 +10,7 @@ import EmailInput from "components/form/EmailInput";
 import PasswordInput from "components/form/PasswordInput";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { login } from "../services/auth";
+import { login } from "../services/auth-services";
 
 export default function SignInForm() {
   const [loading, setLoading] = useState<boolean>(false);

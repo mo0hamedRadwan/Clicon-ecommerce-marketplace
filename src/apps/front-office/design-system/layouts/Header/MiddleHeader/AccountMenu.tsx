@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { navigateTo } from "@mongez/react-router";
-import { login } from "apps/front-office/auth/services/auth";
+import { login } from "apps/front-office/auth/services/auth-services";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";

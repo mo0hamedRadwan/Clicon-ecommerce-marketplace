@@ -16,12 +16,16 @@ export default function UpperCompareTableRow({
 }: UpperCompareTableRowPropsType) {
   const [loadingCart, setLoadingCart] = useState(false);
   const [loadingWishlist, setLoadingWishlist] = useState(false);
+  const [loadingCompare, setLoadingCompare] = useState(false);
 
   return (
     <div className="flex flex-col gap-y-5">
       <div className="flex flex-col items-center gap-y-5">
         <button
-          onClick={() => compareAtom.removeProductFromCompare(product)}
+          disabled={loadingCompare}
+          onClick={() =>
+            compareAtom.removeProductFromCompare(setLoadingCompare, product)
+          }
           className="w-6 h-6 rounded-full border border-gray-150 hover:border-red-500 text-gray-450 hover:text-red-500 duration-200 flex-center">
           x
         </button>

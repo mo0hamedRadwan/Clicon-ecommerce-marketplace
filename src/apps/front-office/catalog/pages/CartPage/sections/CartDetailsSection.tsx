@@ -17,7 +17,7 @@ export default function CartDetailsSection({
 }: CartDetailsSectionPropsType) {
   const { cart, loading } = cartAtom.useValue();
 
-  if (cart.items.length === 0) {
+  if (cart.items.length === 0 && !loading) {
     return (
       <div className="h-60 flex flex-col gap-16">
         <h2 className="text-2xl font-medium">{trans("cart")}</h2>

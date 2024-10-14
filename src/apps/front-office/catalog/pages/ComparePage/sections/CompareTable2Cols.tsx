@@ -40,12 +40,12 @@ export default function CompareTable2Cols({
               })}
             </tr>
             {[
-              { title: "customersFeedback", productKey: "price" },
+              // { title: "customersFeedback", productKey: "customersFeedback" },
               { title: "price", productKey: "salePrice" },
-              { title: "soldBy", productKey: "price" },
-              { title: "brand", productKey: "price" },
+              // { title: "soldBy", productKey: "price" },
+              { title: "category", productKey: "category.name" },
               { title: "stockStatus", productKey: "inStock" },
-              { title: "size", productKey: "price" },
+              // { title: "size", productKey: "price" },
               { title: "weight", productKey: "price" },
             ].map((row, idx) => (
               <tr

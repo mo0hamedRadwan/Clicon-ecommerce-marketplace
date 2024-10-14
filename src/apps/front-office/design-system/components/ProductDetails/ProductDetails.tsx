@@ -15,6 +15,7 @@ type ProductDetailsPropsType = {
 
 export default function ProductDetails({ product }: ProductDetailsPropsType) {
   const [wishlistLoading, setWishlistLoading] = useState(false);
+  const [compareLoading, setCompareLoading] = useState(false);
 
   return (
     <div className="container p-2 sm:p-10 bg-white rounded flex justify-center items-start flex-wrap gap-10">
@@ -102,8 +103,9 @@ export default function ProductDetails({ product }: ProductDetailsPropsType) {
               className="p-0 text-xs sm:text-base text-zinc-700 hover:bg-transparent hover:text-orange-450"
               iconClassName="text-2xl"
               startIcon="bx-git-compare"
+              disabled={compareLoading}
               onClick={() =>
-                compareAtom.toggleCompareProduct(product)
+                compareAtom.toggleCompareProduct(setCompareLoading, product)
               }>{`${trans("add")} ${trans("to")} ${trans("compare").toLowerCase()}`}</Button>
           </div>
           <div className="center-y gap-2">

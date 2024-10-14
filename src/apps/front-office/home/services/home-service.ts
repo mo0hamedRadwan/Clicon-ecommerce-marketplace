@@ -12,9 +12,16 @@ export function getCategories(params?: any) {
 }
 
 export function getProducts(params?: any) {
+  // return endpoint.get("/products?wf=1", {
+  //   params,
+  // });
   return endpoint.get("/products", {
     params,
   });
+}
+
+export function getProduct(productId: string) {
+  return endpoint.get(`/products/${productId}`);
 }
 
 export function subscribeNewLetters(data: any) {
