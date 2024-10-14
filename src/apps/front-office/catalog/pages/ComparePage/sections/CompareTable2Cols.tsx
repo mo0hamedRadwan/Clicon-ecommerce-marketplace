@@ -45,8 +45,8 @@ export default function CompareTable2Cols({
               // { title: "soldBy", productKey: "price" },
               { title: "category", productKey: "category.name" },
               { title: "stockStatus", productKey: "inStock" },
-              // { title: "size", productKey: "price" },
-              { title: "weight", productKey: "price" },
+              // { title: "size", productKey: "size" },
+              { title: "weight", productKey: "weight" },
             ].map((row, idx) => (
               <tr
                 key={row.title}
@@ -63,13 +63,16 @@ export default function CompareTable2Cols({
                         key={index}></td>
                     );
                   }
-                  // const productValue = products[index][row.productKey];
 
                   return (
                     <td
                       className="w-1/4 p-2 border-r border-gray-150"
                       key={index}>
-                      <BottomCompareTableRow key={index} row={row} />
+                      <BottomCompareTableRow
+                        key={index}
+                        row={row}
+                        product={products[idx]}
+                      />
                     </td>
                   );
                 })}

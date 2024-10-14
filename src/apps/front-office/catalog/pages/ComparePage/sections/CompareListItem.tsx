@@ -17,13 +17,13 @@ export default function CompareListItem({ product }: CompareListItemPropsType) {
           </td>
         </tr>
         {[
-          { title: "customersFeedback", productKey: "price" },
+          // { title: "customersFeedback", productKey: "customersFeedback" },
           { title: "price", productKey: "salePrice" },
-          { title: "soldBy", productKey: "price" },
-          { title: "brand", productKey: "price" },
+          // { title: "soldBy", productKey: "price" },
+          { title: "category", productKey: "category.name" },
           { title: "stockStatus", productKey: "inStock" },
-          { title: "size", productKey: "price" },
-          { title: "weight", productKey: "price" },
+          // { title: "size", productKey: "size" },
+          { title: "weight", productKey: "weight" },
         ].map((row, idx) => (
           <tr
             key={row.title}
@@ -32,7 +32,7 @@ export default function CompareListItem({ product }: CompareListItemPropsType) {
               {trans(row.title)}
             </td>
             <td className="w-1/4 p-2 border-r border-gray-150">
-              <BottomCompareTableRow row={row} />
+              <BottomCompareTableRow row={row} product={product} />
             </td>
           </tr>
         ))}
