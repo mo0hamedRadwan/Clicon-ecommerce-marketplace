@@ -1,19 +1,34 @@
 import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
-import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
+import {
+  maxPrice,
+  minPrice,
+  shopAtom,
+} from "apps/front-office/catalog/atoms/shopAtom";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { removeUndefinedKeys } from "apps/front-office/utils/methods";
 
 export default function ActiveFilters() {
+  const query = queryString.all();
   const filter = shopAtom.use("filter");
   const totalProducts = shopAtom.use("paginationInfo").total;
 
   const handleRemoveFilter = (key: string) => {
-    const query = queryString.all();
     query[key] = undefined;
     const newQuery = removeUndefinedKeys(query);
     queryString.update(newQuery);
-    shopAtom.loadProducts();
+
+    if (key === "minPrice") {
+      filter.minPrice = minPrice;
+      shopAtom.updateFilter(key, 0);
+    } else if (key === "maxPrice") {
+      filter.maxPrice = maxPrice;
+      shopAtom.updateFilter(key, maxPrice);
+    } else {
+      filter[key] = undefined;
+      shopAtom.updateFilter(key, maxPrice);
+      shopAtom.loadProducts();
+    }
   };
 
   return (
@@ -21,14 +36,14 @@ export default function ActiveFilters() {
       <div className="center-y gap-2">
         <span className="text-gray-550">{trans("activeFilters")}:</span>
         <ul className="center-y gap-2 font-semibold">
-          {Object.keys(filter).map(key =>
-            filter[key] ? (
+          {Object.keys(query).map(key =>
+            query[key] ? (
               <li
                 key={key}
                 className="py-1 px-2 center-y bg-gray-300 rounded-lg">
-                <span>{`${trans(key)}: ${filter[key]}`}</span>
+                <span>{`${trans(key)}: ${query[key]}`}</span>
                 <button
-                  className={`text-xs text-red-500 font-bold" ${isRTL() ? "mr-3" : "ml-3"}`}
+                  className={`text-xs text-red-500 font-bold py-[1px] px-[5px] border border-red-500 rounded-full ${isRTL() ? "mr-3" : "ml-3"}`}
                   onClick={() => handleRemoveFilter(key)}>
                   x
                 </button>

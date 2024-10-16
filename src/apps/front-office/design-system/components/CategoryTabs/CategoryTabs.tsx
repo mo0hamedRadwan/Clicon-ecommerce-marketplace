@@ -44,7 +44,7 @@ export default function CategoryTabs({
         <h2 className="text-2xl font-semibold">{heading}</h2>
         <div className="center-y gap-x-3">
           <ul className="hidden sm:center-y gap-x-2">
-            {[{ id: "all", name: trans("All") }, ...categories]
+            {[{ id: "all", name: trans("all") }, ...categories]
               .slice(0, 5) // 5 categories just for theme design
               .map(category => (
                 <li

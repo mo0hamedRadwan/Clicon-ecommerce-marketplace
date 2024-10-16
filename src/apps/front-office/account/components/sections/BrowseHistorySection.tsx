@@ -37,9 +37,7 @@ export default function BrowseHistorySection() {
         <>
           <ul className="p-5 flex flex-wrap justify-center gap-5">
             {products.slice(idx, idx + productsPerPage).map(product => (
-              <li
-                key={product.id}
-                className="w-[calc(25%-15px)] min-w-[240px] h-[330px]">
+              <li key={product.id} className="w-[calc(25%-15px)] min-w-[240px]">
                 <ProductCard product={product} />
               </li>
             ))}

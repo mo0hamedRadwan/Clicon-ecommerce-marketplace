@@ -21,10 +21,12 @@ export default function CartDetailsSection({
     return (
       <div className="h-60 flex flex-col gap-16">
         <h2 className="text-2xl font-medium">{trans("cart")}</h2>
-        <p className="text-center">{trans("yourCartIsEmpty")}</p>
-        <LinkAsButton href={URLS.shop.root} className="w-full">
-          {trans("continueShopping")}
-        </LinkAsButton>
+        <div className="flex flex-col items-center gap-16">
+          <p className="text-center">{trans("yourCartIsEmpty")}</p>
+          <LinkAsButton href={URLS.shop.root}>
+            {trans("continueShopping")}
+          </LinkAsButton>
+        </div>
       </div>
     );
   }

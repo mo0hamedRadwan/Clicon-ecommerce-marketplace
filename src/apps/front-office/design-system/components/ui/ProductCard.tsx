@@ -1,6 +1,6 @@
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { browseHistoryAtom } from "../../atoms/browseHistoryAtom";
 import { Product } from "../../types";
@@ -23,7 +23,16 @@ export default function ProductCard({
   showRating = false,
   className,
 }: ProductCardPropsType) {
-  const [viewProduct, setViewProduct] = useState(false);
+  const [viewProduct, setViewProduct] = useState<boolean | undefined>(
+    undefined,
+  );
+
+  useEffect(() => {
+    if (viewProduct === undefined) return;
+
+    const body = document.querySelector("body")!;
+    body.classList.toggle("noScroll");
+  }, [viewProduct]);
 
   return (
     <div

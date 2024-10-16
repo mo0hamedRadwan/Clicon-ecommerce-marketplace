@@ -13,27 +13,36 @@ export default function BottomCompareTableRow({
 }: BottomCompareTableRowPropsType) {
   const value = getValue(product, row.productKey);
 
-  return (
-    <div className="">
-      <span
-        className={`${row.productKey === "salePrice" ? "text-xl text-sky-550" : ""} ${
-          row.productKey === "inStock"
-            ? product.inStock
-              ? "text-green-500"
-              : "text-red-500"
-            : ""
-        }`}>
-        {row.productKey === "inStock"
-          ? trans(product.inStock ? "inStock" : "outStock")
-          : value || "data"}
-        {/* {productValue === true
-          ? trans("inStock")
-          : productValue === false
-            ? trans("outStock")
-            : !productValue
-              ? "notFound"
-              : productValue} */}
-      </span>
-    </div>
-  );
+  if (row.productKey === "salePrice") {
+    return (
+      <div className="">
+        <span className="text-xl text-sky-550">${value} </span>
+        <span className="text-gray-400 text-sm line-through">
+          ${product.price}
+        </span>
+      </div>
+    );
+  } else if (row.productKey === "inStock") {
+    return (
+      <div className="font-semibold">
+        {product.inStock ? (
+          <span className="text-green-500 font-semibold">
+            {trans("inStock").toUpperCase()}
+          </span>
+        ) : (
+          <span className="text-red-500 font-semibold">
+            {trans("outOfStock").toUpperCase()}
+          </span>
+        )}
+      </div>
+    );
+  } else if (!value) {
+    return (
+      <div className="text-gray-400 text-sm font-semibold">
+        {trans("notFound")}
+      </div>
+    );
+  } else {
+    return <div className="text-sm font-semibold">{value}</div>;
+  }
 }

@@ -49,7 +49,7 @@ export function reverseGuardedRoutes(routes: Route[]) {
 export function accountRoutes(routes: Route[]) {
   return router.group({
     layout: AccountDashboardLayout,
-    // middleware: [Guardian],
+    middleware: [Guardian],
     routes,
   });
 }

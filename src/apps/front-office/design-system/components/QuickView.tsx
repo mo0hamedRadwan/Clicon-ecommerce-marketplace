@@ -1,4 +1,5 @@
 import { isRTL } from "apps/front-office/utils/helpers";
+import { createPortal } from "react-dom";
 import { twMerge } from "tailwind-merge";
 import { Product } from "../types";
 import ProductDetails from "./ProductDetails/ProductDetails";
@@ -12,8 +13,8 @@ export default function QuickView({
   product,
   setCloseViewProduct,
 }: QuickViewPropsType) {
-  return (
-    <div className="z-50 absolute top-1/2 left-0 min-w-full min-h-full flex-center bg-[rgba(0,0,0,0.8)]">
+  return createPortal(
+    <div className="z-50 fixed top-0 bottom-0 left-0 right-0 flex-center bg-[rgba(0,0,0,0.8)]">
       <div className="relative">
         <button
           onClick={() => setCloseViewProduct(false)}
@@ -25,6 +26,7 @@ export default function QuickView({
         </button>
         <ProductDetails product={product} />
       </div>
-    </div>
+    </div>,
+    document.getElementById("quickView")!,
   );
 }

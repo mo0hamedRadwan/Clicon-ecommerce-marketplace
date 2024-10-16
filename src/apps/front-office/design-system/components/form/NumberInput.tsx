@@ -26,7 +26,11 @@ export default function NumberInput(props: NumberInputPropsType) {
         type="number"
         placeholder={props.placeholder}
         value={value}
-        onChange={e => changeValue(e.target.value)}
+        onChange={e =>
+          changeValue(e.target.value, {
+            event: e,
+          })
+        }
         className={twMerge(
           "p-2 text-black border border-gray-150 rounded",
           props.className,

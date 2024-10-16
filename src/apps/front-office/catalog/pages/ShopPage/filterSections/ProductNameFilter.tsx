@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { useOnce } from "@mongez/react-hooks";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
 import TextInput from "apps/front-office/design-system/components/form/TextInput";
@@ -16,6 +17,11 @@ export default function ProductNameFilter() {
       name: productName,
     });
   };
+
+  useOnce(() => {
+    const query = queryString.all();
+    if (query.name) handleByProductName(query.name);
+  });
 
   return (
     <div className="relative w-96 border border-gray-150">

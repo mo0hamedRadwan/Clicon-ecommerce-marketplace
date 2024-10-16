@@ -12,7 +12,7 @@ export default function BillingAddressCard() {
         {trans("billingAddress").toUpperCase()}
       </h3>
       <div className="p-5 flex flex-col items-start gap-y-5">
-        <div className="flex flex-col gap-y-2 mb-5">
+        <div className="flex flex-col gap-y-2">
           <p className="font-semibold">{user.name}</p>
           <p className="text-sm text-gray-550">
             East Tejturi Bazar, Word No. 04, Road No. 13/x, House no. 1320/C,

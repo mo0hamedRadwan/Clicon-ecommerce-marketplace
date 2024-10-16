@@ -62,26 +62,6 @@ export default function MiddleHeader() {
             </Link>
             {user.isGuest ? <AccountMenu /> : <MyAccountMenu />}
           </li>
-
-          {/* {middleHeaderIcons.map(icon => (
-            <li key={icon.name} className="relative pb-3 group">
-              {icon.name === "cart" ? (
-                <CartMenu />
-              ) : icon.name === "wishlist" ? (
-                <WishlistMenu />
-              ) : (
-                <AccountMenu />
-              )}
-              <Link to={`/${icon.name}`} className="">
-                <i className={`bx ${icon.icon}`}></i>
-              </Link>
-              {icon.numOfItems !== 0 && (
-                <span className="absolute -top-2 -right-2 w-6 h-6 flex-center bg-white rounded-full text-sm text-black">
-                  {icon.numOfItems}
-                </span>
-              )}
-            </li>
-          ))} */}
         </ul>
       </div>
     </div>

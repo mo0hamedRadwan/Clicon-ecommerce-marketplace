@@ -1,4 +1,5 @@
 import { trans } from "@mongez/localization";
+import { useOnce } from "@mongez/react-hooks";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
 import Select from "apps/front-office/design-system/components/form/Select";
@@ -33,6 +34,13 @@ export default function SortProducts() {
       page: 1, // Reset page to 1 when sorting by new sorting option
     });
   };
+
+  useOnce(() => {
+    const query = queryString.all();
+    if (query.orderBy) {
+      handleSortProducts(query.orderBy);
+    }
+  });
 
   return (
     <div className="center-y gap-x-5">

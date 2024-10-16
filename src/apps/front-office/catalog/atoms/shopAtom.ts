@@ -1,7 +1,10 @@
 import { atom } from "@mongez/react-atom";
-import { queryString } from "@mongez/react-router";
 import { PaginationInfo, Product } from "apps/front-office/design-system/types";
 import { getProducts } from "apps/front-office/home/services/home-service";
+
+export const minPrice = 1;
+export const maxPrice = 10000;
+export const priceGap = 100;
 
 type shopDataType = {
   loading: boolean;
@@ -9,18 +12,20 @@ type shopDataType = {
   paginationInfo: PaginationInfo;
   error: string;
   filter: {
-    productName?: string;
+    name?: string;
     sortByOption?: string;
     category?: string;
     brand?: string;
     tag?: string;
     minPrice?: number;
     maxPrice?: number;
+    limit?: number;
   };
 };
 
 type shopActionsType = {
   loadProducts: (params?: any) => void;
+  updateFilter: (key: string, value: string | number) => void;
 };
 
 export const shopAtom = atom<shopDataType, shopActionsType>({
@@ -36,20 +41,40 @@ export const shopAtom = atom<shopDataType, shopActionsType>({
       total: 0,
     },
     error: "",
-    filter: {},
+    filter: {
+      minPrice: minPrice,
+      maxPrice: maxPrice,
+      // change limit to 2 products to see pagination
+      limit: 16,
+    },
   },
   actions: {
     loadProducts: (params?: any) => {
-      shopAtom.change("loading", true);
-      shopAtom.change("filter", {
-        ...params,
-        ...queryString.all(),
-      });
+      shopAtom.update(state => ({
+        loading: true,
+        products: state.products,
+        paginationInfo: {
+          limit: 0,
+          page: 1,
+          pages: 1,
+          result: 0,
+          total: 0,
+        },
+        error: "",
+        filter: {
+          name: params?.name || state.filter.name,
+          sortByOption: params?.sortByOption || state.filter.sortByOption,
+          category: params?.category || state.filter.category,
+          brand: params?.brand || state.filter.brand,
+          tag: params?.tag || state.filter.tag,
+          minPrice: params?.minPrice || state.filter.minPrice,
+          maxPrice: params?.maxPrice || state.filter.maxPrice,
+          limit: params?.limit || state.filter.limit,
+        },
+      }));
+
       getProducts({
-        ...queryString.all(),
-        ...params,
-        // change limit to 2 products to see pagination
-        limit: 16,
+        ...shopAtom.get("filter"),
       })
         .then(response => {
           console.log(response);
@@ -64,6 +89,13 @@ export const shopAtom = atom<shopDataType, shopActionsType>({
           shopAtom.change("loading", false);
           shopAtom.change("error", error.response.message);
         });
+    },
+
+    updateFilter: (key: string, value: string | number) => {
+      shopAtom.change("filter", {
+        ...shopAtom.get("filter"),
+        [key]: value,
+      });
     },
   },
 });

@@ -13,7 +13,8 @@ export const routerConfigurations: RouterConfigurations = {
   appendLocaleCodeToUrl: true,
   localization: {
     // hard reload is recommended if the application is large as it will make a full reload
-    changeLanguageReloadMode: "soft",
+    // changeLanguageReloadMode: "soft",
+    changeLanguageReloadMode: "hard",
     localeCodes: Object.keys(localeCodesList),
   },
   lazyLoading: {

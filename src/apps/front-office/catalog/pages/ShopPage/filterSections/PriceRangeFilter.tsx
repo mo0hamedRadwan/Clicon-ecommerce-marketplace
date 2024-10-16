@@ -1,7 +1,13 @@
 import { trans } from "@mongez/localization";
+import { FormControlChangeOptions } from "@mongez/react-form";
 import { useOnce } from "@mongez/react-hooks";
 import { queryString } from "@mongez/react-router";
-import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
+import {
+  maxPrice,
+  minPrice,
+  priceGap,
+  shopAtom,
+} from "apps/front-office/catalog/atoms/shopAtom";
 import NumberInput from "apps/front-office/design-system/components/form/NumberInput";
 import RadioInput from "apps/front-office/design-system/components/form/RadioInput";
 import { useDebounce } from "apps/front-office/design-system/hooks/use-debounce";
@@ -17,14 +23,10 @@ const pricesOptions = [
   { min: 5000, max: 10000 },
 ];
 
-const minPrice = 0;
-const maxPrice = 10000;
-const priceGap = 100;
-
 export default function PriceRangeFilter() {
-  const query = queryString.all();
-  const [minValue, setMinValue] = useState(minPrice);
-  const [maxValue, setMaxValue] = useState(maxPrice);
+  const filter = shopAtom.use("filter");
+  const [minValue, setMinValue] = useState<number>(filter.minPrice!);
+  const [maxValue, setMaxValue] = useState<number>(filter.maxPrice!);
 
   // To delay requests
   const debouncedMinPrice = useDebounce(minValue.toString(), 1000);
@@ -32,6 +34,8 @@ export default function PriceRangeFilter() {
 
   // Load initial values from query string if exists
   useOnce(() => {
+    const query = queryString.all();
+
     if (query.minPrice) {
       const e = {
         target: {
@@ -53,16 +57,15 @@ export default function PriceRangeFilter() {
   });
 
   useEffect(() => {
-    if (!query.minPrice && !query.maxPrice) return;
     shopAtom.loadProducts({
       minPrice: debouncedMinPrice,
       maxPrice: debouncedMaxPrice,
     });
-    // Query not dependencyList
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedMinPrice, debouncedMaxPrice]);
 
   const handleRangeSliderChange = e => {
+    const query = queryString.all();
+
     console.log("Slider range change");
     const { name, value } = e.target;
 
@@ -82,14 +85,12 @@ export default function PriceRangeFilter() {
   };
 
   const handlePricesOptionsChange = (value: string) => {
+    const query = queryString.all();
+
     const [min, max] = value.split("-");
     setMinValue(Number(min));
     setMaxValue(Number(max));
-    // const query = queryString.toQueryString({
-    //   ...queryString.all(),
-    //   minPrice: min,
-    //   maxPrice: max,
-    // });
+
     query.minPrice = min;
     query.maxPrice = max;
 
@@ -118,8 +119,11 @@ export default function PriceRangeFilter() {
             number
             min={minPrice}
             max={maxPrice}
-            value={minValue}
-            onChange={handleRangeSliderChange}
+            defaultValue={minValue}
+            onChange={(value: any, options?: FormControlChangeOptions) => {
+              console.log("Number Input", options?.event.target.value);
+              handleRangeSliderChange(options?.event);
+            }}
           />
           <NumberInput
             name="max_price"
@@ -127,7 +131,7 @@ export default function PriceRangeFilter() {
             number
             min={minPrice}
             max={maxPrice}
-            value={maxValue}
+            defaultValue={maxValue}
             onChange={handleRangeSliderChange}
           />
         </div>
