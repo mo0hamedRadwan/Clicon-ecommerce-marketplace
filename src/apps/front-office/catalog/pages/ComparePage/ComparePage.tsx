@@ -1,3 +1,5 @@
+import { trans } from "@mongez/localization";
+import Helmet from "@mongez/react-helmet";
 import { compareAtom } from "apps/front-office/design-system/atoms/compareAtom";
 import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import CompareList from "./sections/CompareList";
@@ -16,24 +18,27 @@ export default function ComparePage() {
   }
 
   return (
-    <div className="py-20 container">
-      {loading ? (
-        <div className="w-full h-[500px] flex justify-center">
-          <Loader1 />
-        </div>
-      ) : (
-        <>
-          <div className="hidden lg:block">
-            <CompareTable3Cols products={products} />
+    <>
+      <Helmet title={trans("comparePage")} />
+      <div className="py-20 container">
+        {loading ? (
+          <div className="w-full h-[500px] flex justify-center">
+            <Loader1 />
           </div>
-          <div className="hidden sm:block lg:hidden">
-            <CompareTable2Cols products={products} />
-          </div>
-          <div className="block sm:hidden">
-            <CompareList products={products} />
-          </div>
-        </>
-      )}
-    </div>
+        ) : (
+          <>
+            <div className="hidden lg:block">
+              <CompareTable3Cols products={products} />
+            </div>
+            <div className="hidden sm:block lg:hidden">
+              <CompareTable2Cols products={products} />
+            </div>
+            <div className="block sm:hidden">
+              <CompareList products={products} />
+            </div>
+          </>
+        )}
+      </div>
+    </>
   );
 }

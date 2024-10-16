@@ -1,3 +1,8 @@
+export type LocaleCodeType = {
+  localeCode: string;
+  value: string;
+};
+
 export type SelectOption = {
   img?: string;
   label: string;
@@ -200,8 +205,35 @@ export type UserType = {
   gender: string;
 };
 
-export type changePasswordDataType = {
+export type ChangePasswordDataType = {
   currentPassword: string;
   password: string;
   confirmPassword: string;
+};
+
+export type CityType = {
+  id: string;
+  name: string;
+  isActive: boolean;
+  region?: RegionType;
+};
+
+export type RegionType = {
+  id: string;
+  name: string;
+  isActive: true;
+  country: {
+    _id: string;
+    name: string;
+    isActive: boolean;
+    id: string;
+  };
+};
+
+export type AddressType = {
+  name: string;
+  phoneNumber: string;
+  email: string;
+  address: string;
+  city: string;
 };

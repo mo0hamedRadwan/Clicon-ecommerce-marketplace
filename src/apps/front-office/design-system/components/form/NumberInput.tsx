@@ -13,7 +13,7 @@ type NumberInputPropsType = FormControlProps & {
 };
 
 export default function NumberInput(props: NumberInputPropsType) {
-  const { value, changeValue, error } = useFormControl({
+  const { value, changeValue, name, error } = useFormControl({
     ...props,
     rules: [numberRule, minRule, maxRule],
   });
@@ -24,6 +24,7 @@ export default function NumberInput(props: NumberInputPropsType) {
       <input
         //https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
         type="number"
+        name={name}
         placeholder={props.placeholder}
         value={value}
         onChange={e =>

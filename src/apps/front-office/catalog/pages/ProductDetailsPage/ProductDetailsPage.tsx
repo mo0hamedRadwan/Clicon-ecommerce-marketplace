@@ -1,3 +1,5 @@
+import { trans } from "@mongez/localization";
+import Helmet from "@mongez/react-helmet";
 import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import { Product } from "apps/front-office/design-system/types";
 import { getProduct } from "apps/front-office/home/services/home-service";
@@ -37,6 +39,7 @@ export default function ProductDetailsPage({
 
   return (
     <>
+      <Helmet title={trans(product?.name || trans("product"))} />
       {loading ? (
         <div className="w-full h-screen flex-center">
           <Loader1 />

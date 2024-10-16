@@ -1,4 +1,4 @@
-import { changePasswordDataType } from "apps/front-office/design-system/types";
+import { ChangePasswordDataType } from "apps/front-office/design-system/types";
 import endpoint from "shared/endpoint";
 
 /**
@@ -18,6 +18,6 @@ export function editProfile(data: any) {
 /**
  * Change password
  */
-export function changePassword(data: changePasswordDataType) {
+export function changePassword(data: ChangePasswordDataType) {
   return endpoint.post("/change-password", data);
 }

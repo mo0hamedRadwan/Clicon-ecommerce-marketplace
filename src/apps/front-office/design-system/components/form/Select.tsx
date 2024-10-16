@@ -6,6 +6,7 @@ import { useClickOutside } from "../../hooks/use-click-outside";
 import { SelectOption } from "../../types";
 
 type SelectPropsType = {
+  name: string;
   triggerValue: string;
   options: SelectOption[];
   optionsImg?: string[];

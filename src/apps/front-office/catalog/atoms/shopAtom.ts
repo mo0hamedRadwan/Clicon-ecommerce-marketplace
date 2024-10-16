@@ -4,7 +4,7 @@ import { getProducts } from "apps/front-office/home/services/home-service";
 
 export const minPrice = 1;
 export const maxPrice = 10000;
-export const priceGap = 100;
+export const priceGap = 0;
 
 type shopDataType = {
   loading: boolean;
@@ -25,7 +25,7 @@ type shopDataType = {
 
 type shopActionsType = {
   loadProducts: (params?: any) => void;
-  updateFilter: (key: string, value: string | number) => void;
+  updateFilter: (key: string, value: number | string) => void;
 };
 
 export const shopAtom = atom<shopDataType, shopActionsType>({
@@ -62,9 +62,13 @@ export const shopAtom = atom<shopDataType, shopActionsType>({
         },
         error: "",
         filter: {
-          name: params?.name || state.filter.name,
+          name:
+            params?.name ||
+            (params?.name === "" ? undefined : state.filter.name),
           sortByOption: params?.sortByOption || state.filter.sortByOption,
-          category: params?.category || state.filter.category,
+          category:
+            params?.category ||
+            (params?.category === "" ? undefined : state.filter.category),
           brand: params?.brand || state.filter.brand,
           tag: params?.tag || state.filter.tag,
           minPrice: params?.minPrice || state.filter.minPrice,
@@ -91,11 +95,12 @@ export const shopAtom = atom<shopDataType, shopActionsType>({
         });
     },
 
-    updateFilter: (key: string, value: string | number) => {
+    updateFilter: (key: string, value: number | string) => {
       shopAtom.change("filter", {
         ...shopAtom.get("filter"),
         [key]: value,
       });
+      shopAtom.loadProducts();
     },
   },
 });

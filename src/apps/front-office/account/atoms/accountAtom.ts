@@ -1,6 +1,6 @@
 import { atom } from "@mongez/react-atom";
 import {
-  changePasswordDataType,
+  ChangePasswordDataType,
   UserType,
 } from "apps/front-office/design-system/types";
 import {
@@ -18,7 +18,7 @@ type AccountDataType = {
 type AccountActionsType = {
   loadUser: () => void;
   updateUser: (user: UserType) => void;
-  changeUserPassword: (data: changePasswordDataType) => void;
+  changeUserPassword: (data: ChangePasswordDataType) => void;
 };
 
 export const accountAtom = atom<AccountDataType, AccountActionsType>({
@@ -72,7 +72,7 @@ export const accountAtom = atom<AccountDataType, AccountActionsType>({
           accountAtom.change("loading", false);
         });
     },
-    changeUserPassword: (data: changePasswordDataType) => {
+    changeUserPassword: (data: ChangePasswordDataType) => {
       accountAtom.change("loading", true);
       changePassword(data)
         .then(response => {

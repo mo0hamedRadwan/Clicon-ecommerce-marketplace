@@ -68,6 +68,7 @@ export default function PriceRangeFilter() {
 
     console.log("Slider range change");
     const { name, value } = e.target;
+    console.log("name: " + name + " value: " + value);
 
     if (name === "min_price") {
       if (+value + priceGap <= maxValue) {
@@ -116,23 +117,22 @@ export default function PriceRangeFilter() {
           <NumberInput
             name="min_price"
             placeholder={trans("minPrice")}
-            number
             min={minPrice}
             max={maxPrice}
-            defaultValue={minValue}
+            value={minValue}
             onChange={(value: any, options?: FormControlChangeOptions) => {
-              console.log("Number Input", options?.event.target.value);
               handleRangeSliderChange(options?.event);
             }}
           />
           <NumberInput
             name="max_price"
             placeholder={trans("maxPrice")}
-            number
             min={minPrice}
             max={maxPrice}
-            defaultValue={maxValue}
-            onChange={handleRangeSliderChange}
+            value={maxValue}
+            onChange={(value: any, options?: FormControlChangeOptions) => {
+              handleRangeSliderChange(options?.event);
+            }}
           />
         </div>
         <ul className="flex flex-col gap-y-2">

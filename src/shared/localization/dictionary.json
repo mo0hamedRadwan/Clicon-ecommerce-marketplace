@@ -575,5 +575,37 @@
   "actions": {
     "en": "Actions",
     "ar": "الأجراءات"
+  },
+  "orderSummary": {
+    "en": "Order Summary",
+    "ar": "ملخص الطلب"
+  },
+  "username": {
+    "en": "Username",
+    "ar": "اسم المستخدم"
+  },
+  "address": {
+    "en": "Address",
+    "ar": "العنوان"
+  },
+  "country": {
+    "en": "Country",
+    "ar": "البلد"
+  },
+  "region": {
+    "en": "Region",
+    "ar": "المنطقة"
+  },
+  "city": {
+    "en": "City",
+    "ar": "المدينة"
+  },
+  "phoneNumber": {
+    "en": "Phone Number",
+    "ar": "رقم الهاتف"
+  },
+  "egypt": {
+    "en": "Egypt",
+    "ar": "مصر"
   }
 }

@@ -39,6 +39,7 @@ export default function TopHeader() {
           <div className="w-[1px] h-6 bg-white bg-opacity-15"></div>
           <div className={`${isRTL() ? "mr-10" : "ml-10"}`}>
             <Select
+              name="lang"
               triggerValue={localeCodesList[getCurrentLocaleCode()].name}
               options={languageOptions}
               onValueChange={(value: string) =>

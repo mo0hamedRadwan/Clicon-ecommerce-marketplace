@@ -4,15 +4,20 @@ import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
 import TextInput from "apps/front-office/design-system/components/form/TextInput";
 import { isRTL } from "apps/front-office/utils/helpers";
+import { removeUndefinedKeys } from "apps/front-office/utils/methods";
 
 export default function ProductNameFilter() {
+  const searchProductName = shopAtom.use("filter").name;
+
   const handleByProductName = (productName: string) => {
     productName = productName.trim();
-    const query = queryString.toQueryString({
-      ...queryString.all(),
-      name: productName,
-    });
-    queryString.update(query);
+
+    if (searchProductName === productName) return;
+
+    const query = queryString.all();
+    query.name = productName ? productName : undefined;
+    const newQuery = removeUndefinedKeys(query);
+    queryString.update(newQuery);
     shopAtom.loadProducts({
       name: productName,
     });

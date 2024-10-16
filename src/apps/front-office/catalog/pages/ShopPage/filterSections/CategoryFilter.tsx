@@ -25,7 +25,7 @@ export default function CategoryFilter() {
 
     console.log(queryString.all());
     shopAtom.loadProducts({
-      category: id,
+      category: id ? id : "",
     });
   };
 

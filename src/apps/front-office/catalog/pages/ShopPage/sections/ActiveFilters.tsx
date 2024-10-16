@@ -19,15 +19,12 @@ export default function ActiveFilters() {
     queryString.update(newQuery);
 
     if (key === "minPrice") {
-      filter.minPrice = minPrice;
-      shopAtom.updateFilter(key, 0);
+      shopAtom.updateFilter(key, minPrice);
     } else if (key === "maxPrice") {
-      filter.maxPrice = maxPrice;
       shopAtom.updateFilter(key, maxPrice);
     } else {
       filter[key] = undefined;
-      shopAtom.updateFilter(key, maxPrice);
-      shopAtom.loadProducts();
+      shopAtom.updateFilter(key, "");
     }
   };
 

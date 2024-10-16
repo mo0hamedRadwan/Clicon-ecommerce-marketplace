@@ -1,3 +1,4 @@
+import Helmet from "@mongez/react-helmet";
 import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import SubscribeSection from "apps/front-office/design-system/components/sections/SubscribeSection";
 import TopProducts from "apps/front-office/design-system/components/sections/TopProducts";
@@ -43,6 +44,7 @@ export default function HomePage() {
         </div>
       ) : (
         <>
+          <Helmet title="Clicon" />
           <HeroSection
             slider={rows[0].columns[0].module.slider!}
             banners={[

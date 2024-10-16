@@ -1,13 +1,8 @@
-import paypalIcon from "assets/images/paypal.png";
 import profileImg from "assets/images/profileImg/profile.jpg";
-import amazonIcon from "assets/images/SVGs/Amazon.svg";
 import creditCardIcon from "assets/images/SVGs/CreditCard.svg";
-import creditCardIcon2 from "assets/images/SVGs/CreditCard2.svg";
-import cashIcon from "assets/images/SVGs/CurrencyDollar.svg";
 import headphonesIcon from "assets/images/SVGs/Headphones.svg";
 import packageIcon from "assets/images/SVGs/Package.svg";
 import trophyIcon from "assets/images/SVGs/Trophy.svg";
-import venmoIcon from "assets/images/venmo.png";
 
 import { OrderType } from "apps/front-office/design-system/types";
 
@@ -36,14 +31,6 @@ export const features = [
     title: "support",
     subtitle: "liveContact",
   },
-];
-
-export const paymentMethods = [
-  { name: "cash", icon: cashIcon, label: "cashOnDelivery" },
-  { name: "venmo", icon: venmoIcon, label: "venmo" },
-  { name: "paypal", icon: paypalIcon, label: "paypal" },
-  { name: "amazon", icon: amazonIcon, label: "amazonPay" },
-  { name: "creditcard", icon: creditCardIcon2, label: "debitCreditcard" },
 ];
 
 export const orderStatus = [
