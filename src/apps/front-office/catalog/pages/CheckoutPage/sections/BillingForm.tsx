@@ -1,7 +1,12 @@
-import { getCurrentLocaleCode, trans } from "@mongez/localization";
+import { trans } from "@mongez/localization";
 import { useOnce } from "@mongez/react-hooks";
 import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
-import { getShippingCities } from "apps/front-office/catalog/services/catalog-service";
+import {
+  setPaymentMethod,
+  setShippingMethod,
+} from "apps/front-office/catalog/services/catalog-service";
+import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
+import { citiesAtom } from "apps/front-office/design-system/atoms/citiesAtom";
 import RadioInput from "apps/front-office/design-system/components/form/RadioInput";
 import Select from "apps/front-office/design-system/components/form/Select";
 import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
@@ -14,53 +19,56 @@ import venmoIcon from "assets/images/venmo.png";
 import CheckboxInput from "components/form/CheckboxInput";
 import TextareaInput from "components/form/TextareaInput";
 import TextInput from "components/form/TextInput";
-import { useState } from "react";
-import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 const paymentMethods = [
   { name: "cashOnDelivery", icon: cashIcon, label: "cashOnDelivery" },
-  { name: "card", icon: venmoIcon, label: "venmo" },
-  { name: "card", icon: paypalIcon, label: "paypal" },
+  { name: "venomCard", icon: venmoIcon, label: "venmo" },
+  { name: "paypalCard", icon: paypalIcon, label: "paypal" },
   { name: "wallet", icon: amazonIcon, label: "amazonPay" },
-  { name: "card", icon: creditCardIcon2, label: "debitCreditcard" },
+  { name: "debitCreditCard", icon: creditCardIcon2, label: "debitCreditcard" },
 ];
 
 export default function BillingForm() {
   const { loading, user } = accountAtom.useValue();
+  const { loading: loadingCities, cities } = citiesAtom.useValue();
   const [paymentMethodSelected, setPaymentMethodSelected] = useState<string>(
     paymentMethods[0].name,
   );
-  const [loadingCities, setLoadingCities] = useState(false);
   const [citiesSelectOptions, setCitiesSelectOptions] = useState<
     SelectOption[]
   >([]);
 
+  const handleCityChange = (city: string) => {
+    cartAtom.changeShippingAddressCity(city);
+  };
+
   useOnce(() => {
-    setLoadingCities(true);
-    getShippingCities()
-      .then(response => {
-        const cities = response.data.cities.map(city => ({
-          ...city,
-          name: city.name.find(
-            code => code.localeCode === getCurrentLocaleCode(),
-          ).value,
-        }));
-
-        console.log(cities);
-
-        const citiesOtions = cities.map(c => ({
-          label: c.name,
-          value: c.id,
-        }));
-        setCitiesSelectOptions(citiesOtions);
-        setLoadingCities(false);
-      })
-      .catch(error => {
-        console.error(error);
-        toast.error("Error when fetching shipping cities");
-        setLoadingCities(false);
-      });
+    Promise.all([
+      // loading cities
+      citiesAtom.loadCities(),
+      // setting Shipping Method to standard
+      setShippingMethod()
+        .then(response => console.log(response))
+        .catch(error => console.error(error)),
+      // setting Payment Method to cashOnDelivary
+      setPaymentMethod()
+        .then(response => console.log(response))
+        .catch(error => console.error(error)),
+    ]);
   });
+
+  useEffect(() => {
+    // After loading cities
+    if (cities.length > 0 && citiesSelectOptions.length === 0) {
+      setCitiesSelectOptions(
+        cities.map(city => ({
+          value: city.id,
+          label: city.name,
+        })),
+      );
+    }
+  }, [cities, citiesSelectOptions]);
 
   if (loading || loadingCities) {
     return (
@@ -80,22 +88,26 @@ export default function BillingForm() {
             placeholder={trans("firstName")}
             label={trans("username")}
             defaultValue={user.firstName}
+            required
           />
           <TextInput
             name="lastName"
             placeholder={trans("lastName")}
             defaultValue={user.lastName}
+            required
           />
         </div>
         <TextInput name="companyName" label={trans("companyName")} optional />
       </div>
       <div className="flex items-end flex-wrap md:flex-nowrap gap-5">
-        <TextInput name="address" label={trans("address")} />
+        <TextInput name="address" label={trans("address")} required />
         <Select
           name="city"
-          triggerValue={"city"}
+          triggerValue={""}
           options={citiesSelectOptions}
           className="w-[400px] border border-gray-150"
+          onValueChange={handleCityChange}
+          required
         />
       </div>
       {/* <div className="flex flex-wrap lg:flex-nowrap gap-x-5">
@@ -112,11 +124,13 @@ export default function BillingForm() {
           name="emailAdress"
           label={trans("emailAddress")}
           defaultValue={user.email}
+          required
         />
         <TextInput
           name="phoneNumber"
           label={trans("phoneNumber")}
           defaultValue={user.phoneNumber}
+          required
         />
       </div>
       <div className="flex gap-x-2">

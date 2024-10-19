@@ -92,16 +92,6 @@ export type OrderActivityType = {
   date: Date;
 };
 
-export type OrderType = {
-  id: number;
-  productsNum: number;
-  totalPrice: number;
-  statusNumber: number;
-  orderDate: Date;
-  expectedDate: Date;
-  orderActivities: OrderActivityType[];
-};
-
 export type Row = {
   columns: {
     module: {
@@ -144,9 +134,35 @@ export type Post = {
   };
 };
 
-export type Order = {
+export type OrderType = {
   id: number;
-  products: Product[];
+  totals: {
+    subtotal: number;
+    discount: number;
+    shippingFees: number;
+    tax: number;
+    total: number;
+  };
+  paymentStatus: string;
+  finalPrice: number;
+  status: {
+    name: string;
+    label: string;
+    createdAt: {
+      format: string;
+      timestamp: string;
+    };
+  };
+  statusLog: {
+    name: string;
+    label: string;
+    createdAt: {
+      format: string;
+      timestamp: string;
+      date: string;
+      time: string;
+    };
+  }[];
 };
 
 export type CartItem = {
@@ -171,10 +187,12 @@ export type User = {
 export type Cart = {
   items: CartItem[];
   totals: {
+    price: number;
     subtotal: number;
     discount: number;
     shippingFees: number;
     tax: number;
+    coupon: number;
   };
 };
 
@@ -230,7 +248,7 @@ export type RegionType = {
   };
 };
 
-export type AddressType = {
+export type AddressDataType = {
   name: string;
   phoneNumber: string;
   email: string;

@@ -3,6 +3,7 @@ import {
   addToCart,
   getCartItems,
   removeFromCart,
+  setShippingAddressByCity,
   updateCartItem,
 } from "apps/front-office/catalog/services/catalog-service";
 import { Cart, CartItem } from "../types";
@@ -30,6 +31,9 @@ type CartActionsType = {
     item: CartItem,
     quantity: number,
   ) => void;
+
+  changeShippingAddressCity: (city: string) => void;
+  setCart: (cart: CartItem[]) => void;
 };
 
 export const cartAtom = atom<CartDataType, CartActionsType>({
@@ -42,6 +46,8 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
         discount: 0,
         shippingFees: 0,
         tax: 0,
+        coupon: 0,
+        price: 0,
       },
     },
     totalProducts: 0,
@@ -168,6 +174,28 @@ export const cartAtom = atom<CartDataType, CartActionsType>({
           console.log(error);
           setLoading(false);
         });
+    },
+    changeShippingAddressCity: (city: string) => {
+      cartAtom.change("loading", true);
+      setShippingAddressByCity(city)
+        .then(response => {
+          console.log(response.data);
+          const cart = response.data.cart;
+          cartAtom.merge({
+            cart,
+            loading: false,
+          });
+        })
+        .catch(error => {
+          console.error("Error changing shipping address:", error);
+          cartAtom.merge({
+            error: "Failed to change shipping address",
+          });
+          cartAtom.change("loading", false);
+        });
+    },
+    setCart: (cart: CartItem[]) => {
+      cartAtom.change("cart", cart);
     },
   },
 });

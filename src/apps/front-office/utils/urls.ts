@@ -1,6 +1,6 @@
 // append urls here, DO NOT remove this line
 
-import { Order } from "../design-system/types";
+import { OrderType } from "../design-system/types";
 
 const URLS = {
   home: "/",
@@ -35,7 +35,7 @@ const URLS = {
       root: "/track-order",
       details: "/track-order/order-details",
       viewRoute: "/track-order/details/:order-id",
-      view: (order: Order) => `/track-order/details/${order.id}`,
+      view: (order: OrderType) => `/track-order/details/${order.id}`,
     },
     viewRoute: "/pages/:slug",
     view: (page: any) => `/pages/${page.id}/${page.slug}`,

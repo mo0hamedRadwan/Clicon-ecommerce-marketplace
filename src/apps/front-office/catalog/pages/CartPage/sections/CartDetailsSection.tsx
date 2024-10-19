@@ -1,6 +1,8 @@
 import { trans } from "@mongez/localization";
+import { Form } from "@mongez/react-form";
 import ShoppingCartList from "apps/front-office/catalog/pages/CartPage/sections/ShoppingCartList";
 import ShoppingCartTable from "apps/front-office/catalog/pages/CartPage/sections/ShoppingCartTable";
+import { applyCoupon } from "apps/front-office/catalog/services/catalog-service";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import Button from "apps/front-office/design-system/components/form/Button";
 import TextInput from "apps/front-office/design-system/components/form/TextInput";
@@ -16,6 +18,15 @@ export default function CartDetailsSection({
   size = "page",
 }: CartDetailsSectionPropsType) {
   const { cart, loading } = cartAtom.useValue();
+
+  const handleApplyCoupon = ({ values }) => {
+    applyCoupon(values.coupon)
+      .then(response => {
+        console.log(response.data);
+        cartAtom.setCart(response.data.cart);
+      })
+      .catch(error => console.error(error));
+  };
 
   if (cart.items.length === 0 && !loading) {
     return (
@@ -80,19 +91,29 @@ export default function CartDetailsSection({
                   <p>{trans("tax")}</p>
                   <p className="font-semibold">${cart.totals.tax.toFixed(2)}</p>
                 </li>
+                <li className="space-between">
+                  <p>{trans("coupon")}</p>
+                  <p className="font-semibold">
+                    ${cart.totals.coupon.toFixed(2)}
+                  </p>
+                </li>
               </ul>
               <div className="w-full h-[1px] bg-gray-150"></div>
-              <p className="space-between text-lg">
+              <div className="space-between text-lg">
                 <span>{trans("total")}</span>
-                <span className="font-semibold">
-                  $
-                  {cart.totals.subtotal +
-                    cart.totals.shippingFees +
-                    cart.totals.tax -
-                    cart.totals.discount}
-                  USD
-                </span>
-              </p>
+                <div className="font-semibold">
+                  <span>$</span>
+                  <span>
+                    {(
+                      cart.totals.subtotal +
+                      cart.totals.shippingFees +
+                      cart.totals.tax -
+                      cart.totals.coupon
+                    ).toFixed(2)}
+                  </span>
+                  <span className="mx-1">USD</span>
+                </div>
+              </div>
               <LinkAsButton
                 href={URLS.checkout.root}
                 disabled={cart.items.length === 0}>
@@ -103,18 +124,22 @@ export default function CartDetailsSection({
               <h3 className="p-5 text-lg font-medium border-b border-gray-150">
                 {trans("couponCode")}
               </h3>
-              <div className="p-5 w-full flex flex-col items-start gap-y-5">
+              <Form
+                onSubmit={handleApplyCoupon}
+                className="p-5 w-full flex flex-col items-start gap-y-5">
                 <TextInput
                   name="coupon"
                   placeholder={trans("coupon")}
                   className="block"
                 />
                 <Button
+                  type="submit"
+                  disabled={Boolean(cart.totals.coupon !== 0)}
                   className="bg-sky-550 hover:bg-sky-600"
                   onClick={() => console.log("apply coupon")}>
                   {trans("applyCoupon")}
                 </Button>
-              </div>
+              </Form>
             </div>
           </div>
         </div>

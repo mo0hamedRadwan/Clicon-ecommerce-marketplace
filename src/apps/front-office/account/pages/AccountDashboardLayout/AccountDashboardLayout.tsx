@@ -1,3 +1,5 @@
+import { useOnce } from "@mongez/react-hooks";
+import { ordersAtom } from "apps/front-office/design-system/atoms/ordersAtom";
 import BaseLayout from "apps/front-office/design-system/layouts/BaseLayout";
 import AccountDashboardNavigationTabs from "./sections/AccountDashboardNavigationTabs";
 
@@ -8,6 +10,10 @@ export type AccountDashboardLayoutProps = {
 export default function AccountDashboardLayout({
   children,
 }: AccountDashboardLayoutProps) {
+  useOnce(() => {
+    ordersAtom.loadingOrders();
+  });
+
   return (
     <BaseLayout>
       <div className="py-10 container flex items-start flex-wrap gap-10 xl:gap-20">

@@ -1,7 +1,62 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { isRTL } from "apps/front-office/utils/helpers";
-import { order, orderStatus } from "shared/data/homeData";
+import { orderStatus } from "shared/data/homeData";
+
+export const order = {
+  id: 96459761,
+  productsNum: 3,
+  finalPrice: 1199.99,
+  statusNumber: 1,
+  orderDate: new Date("2024-8-15"),
+  expectedDate: new Date("2024-8-30"),
+  orderActivities: [
+    {
+      icon: "bx-notepad",
+      iconColor: "text-blue-400",
+      iconBgColor: "bg-blue-50",
+      description: "Your order has been confirmed.",
+      date: new Date(""),
+    },
+    {
+      icon: "bx-check-circle",
+      iconColor: "text-green-400",
+      iconBgColor: "bg-green-50",
+      description: "Your order is successfully verified.",
+      date: new Date(""),
+    },
+    {
+      icon: "bx-map-alt",
+      iconColor: "text-blue-400",
+      iconBgColor: "bg-blue-50",
+      description: "Your order on the way to (last mile) hub.",
+      date: new Date(""),
+    },
+    {
+      icon: "bx-map",
+      iconColor: "text-blue-400",
+      iconBgColor: "bg-blue-50",
+      description: "Your order has reached at last mile hub.",
+      date: new Date(""),
+    },
+    {
+      icon: "bx-user",
+      iconColor: "text-blue-400",
+      iconBgColor: "bg-blue-50",
+      description:
+        "Our delivery man (John Wick) Has picked-up your order for delvery. ",
+      date: new Date(""),
+    },
+    {
+      icon: "bx-check-double",
+      iconColor: "text-green-400",
+      iconBgColor: "bg-green-50",
+      description:
+        "Your order has been delivered. Thank you for shopping at Clicon!",
+      date: new Date(""),
+    },
+  ],
+};
 
 export default function TrackOrderDetailsPage() {
   return (
@@ -22,7 +77,7 @@ export default function TrackOrderDetailsPage() {
             </div>
             <div>
               <p className="text-3xl text-sky-550 font-semibold">
-                ${order.totalPrice}
+                ${order.finalPrice}
               </p>
             </div>
           </div>

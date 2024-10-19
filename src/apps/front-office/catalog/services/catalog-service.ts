@@ -1,4 +1,4 @@
-import { AddressType } from "apps/front-office/design-system/types";
+import { AddressDataType } from "apps/front-office/design-system/types";
 import endpoint from "shared/endpoint";
 
 export function getCartItems() {
@@ -30,18 +30,22 @@ export function removeFromWishlist(productId: string) {
 }
 
 export function applyCoupon(code: string) {
-  return endpoint.post(`/checkout/apply-coupon`, { code });
+  return endpoint.patch(`/checkout/apply-coupon`, { code });
 }
 
 export function getShippingCities() {
   return endpoint.get("/cities/shipping");
 }
 
-export function createAddress(address: AddressType) {
+export function getAddresses() {
+  return endpoint.get("/addresses");
+}
+
+export function createAddress(address: AddressDataType) {
   return endpoint.post("/addresses", address);
 }
 
-export function updateAddress(addressId: string, address: AddressType) {
+export function updateAddress(addressId: string, address: AddressDataType) {
   return endpoint.put(`/addresses/${addressId}`, address);
 }
 
@@ -49,16 +53,16 @@ export function deleteAddress(addressId: string) {
   return endpoint.delete(`/addresses/${addressId}`);
 }
 
-export function setPaymentMethod(paymentMethod: string = "cashOnDelivery") {
-  return endpoint.patch("/checkout/set-payment-method", { paymentMethod });
+export function setPaymentMethod(method: string = "cashOnDelivery") {
+  return endpoint.patch("/checkout/set-payment-method", { method });
 }
 
 export function setShippingMethod(type: string = "standard") {
-  return endpoint.post("/checkout/set-shipping-method", { type });
+  return endpoint.patch("/checkout/set-shipping-method", { type });
 }
 
-export function createCheckout(notes: string = "") {
-  return endpoint.post("/checkout", { notes });
+export function createCheckout(data?: any) {
+  return endpoint.post("/checkout", data);
 }
 
 export function getOrders() {
@@ -71,4 +75,16 @@ export function getOrderDetails(orderId: string) {
 
 export function cancelOrder(orderId: string) {
   return endpoint.post(`/orders/${orderId}/cancel`);
+}
+
+export function setShippingAddressByCity(city: string) {
+  return endpoint.patch("/checkout/set-shipping-address-by-city", {
+    city,
+  });
+}
+
+export function setShippingAddress(address: string) {
+  return endpoint.post("/checkout/set-shipping-address", {
+    address,
+  });
 }

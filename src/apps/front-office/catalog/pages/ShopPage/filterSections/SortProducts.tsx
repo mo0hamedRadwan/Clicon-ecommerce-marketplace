@@ -44,9 +44,9 @@ export default function SortProducts() {
 
   return (
     <div className="center-y gap-x-5">
-      <p>{trans("sortBy")}</p>
+      <p>{trans("orderBy")}</p>
       <Select
-        name="sortBy"
+        name="orderBy"
         triggerValue="mostViewed"
         options={sortByOptions}
         className="w-[250px] border border-gray-150"

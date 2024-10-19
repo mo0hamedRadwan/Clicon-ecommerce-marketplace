@@ -30,7 +30,7 @@ export default function BillingAddressCard() {
         <LinkAsButton
           variant="outlined"
           href={URLS.userAccount.cardsAndAddresses}
-          className="border-sky-550 text-sky-550">
+          className="border-sky-550 text-sky-550 hover:bg-sky-100">
           {trans("editAddress").toUpperCase()}
         </LinkAsButton>
       </div>

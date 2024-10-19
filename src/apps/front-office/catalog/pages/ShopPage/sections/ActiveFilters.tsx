@@ -38,7 +38,7 @@ export default function ActiveFilters() {
               <li
                 key={key}
                 className="py-1 px-2 center-y bg-gray-300 rounded-lg">
-                <span>{`${trans(key)}: ${query[key]}`}</span>
+                <span>{`${trans(key)}: ${trans(query[key])}`}</span>
                 <button
                   className={`text-xs text-red-500 font-bold py-[1px] px-[5px] border border-red-500 rounded-full ${isRTL() ? "mr-3" : "ml-3"}`}
                   onClick={() => handleRemoveFilter(key)}>

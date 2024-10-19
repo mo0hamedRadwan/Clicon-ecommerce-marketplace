@@ -1,29 +1,39 @@
 import { trans } from "@mongez/localization";
+import {
+  FormControlProps,
+  requiredRule,
+  useFormControl,
+} from "@mongez/react-form";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { useClickOutside } from "../../hooks/use-click-outside";
 import { SelectOption } from "../../types";
 
-type SelectPropsType = {
+type SelectPropsType = FormControlProps & {
   name: string;
   triggerValue: string;
   options: SelectOption[];
-  optionsImg?: string[];
   className?: string;
   menuClassName?: string;
   itemClassName?: string;
   onValueChange?: (value: string) => void;
 };
 
-export default function Select({
-  triggerValue,
-  options,
-  className,
-  menuClassName,
-  itemClassName,
-  onValueChange,
-}: SelectPropsType) {
+export default function Select(props: SelectPropsType) {
+  const { value, changeValue, error, id } = useFormControl({
+    ...props,
+    rules: [requiredRule],
+  });
+  const {
+    name,
+    triggerValue,
+    options,
+    className,
+    menuClassName,
+    itemClassName,
+    onValueChange,
+  } = props;
   const [selectedValue, setSelectedValue] = useState(triggerValue);
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const menuRef = useClickOutside(() => setOpenMenu(false));
@@ -31,12 +41,39 @@ export default function Select({
   const handleValueChange = (value: string, label: string) => {
     setSelectedValue(label);
     setOpenMenu(false);
+    // Custom on change
     onValueChange?.(value);
+    changeValue(value);
   };
 
   return (
-    <div className="relative" ref={menuRef}>
+    <div
+      className={`relative ${error ? "border border-red-500" : ""}`}
+      ref={menuRef}>
+      {/* Hidden input for form */}
+      <input
+        type="hidden"
+        name={name}
+        id={id}
+        value={value}
+        readOnly
+        required={
+          selectedValue === "" ||
+          selectedValue === undefined ||
+          selectedValue === null
+        }
+      />
+      {error && (
+        <span
+          style={{
+            color: "red",
+          }}>
+          {error}
+        </span>
+      )}
+
       <button
+        type="button"
         className={twMerge(
           "space-between-center p-2 text-xs sm:text-base",
           className,

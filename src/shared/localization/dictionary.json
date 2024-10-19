@@ -607,5 +607,17 @@
   "egypt": {
     "en": "Egypt",
     "ar": "مصر"
+  },
+  "orders": {
+    "en": "Orders",
+    "ar": "الطلبات"
+  },
+  "pending": {
+    "en": "Pending",
+    "ar": "قيد الانتظار"
+  },
+  "processing": {
+    "en": "Processing",
+    "ar": "تحت التنفيذ"
   }
 }

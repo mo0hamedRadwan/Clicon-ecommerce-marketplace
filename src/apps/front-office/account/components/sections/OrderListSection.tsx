@@ -1,10 +1,11 @@
 import { trans } from "@mongez/localization";
+import { ordersAtom } from "apps/front-office/design-system/atoms/ordersAtom";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import Pagination from "apps/front-office/design-system/components/ui/Pagination";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import { useState } from "react";
-import { ordersData } from "shared/data/accountData";
+// import { ordersData } from "shared/data/accountData";
 
 type OrderListSectionPropsType = {
   heading?: string;
@@ -12,7 +13,8 @@ type OrderListSectionPropsType = {
 };
 
 const statusStyle = {
-  inProgress: "bg-orange-100",
+  pending: "bg-orange-100",
+  progressing: "bg-orange-100",
   completed: "bg-green-100",
   canceled: "bg-red-100",
 };
@@ -21,6 +23,7 @@ export default function OrderListSection({
   heading = "recentOrders",
   showPagination = true,
 }: OrderListSectionPropsType) {
+  const orders = ordersAtom.use("orders");
   const [activePage, setActivePage] = useState(1);
 
   return (
@@ -37,38 +40,39 @@ export default function OrderListSection({
 
       <div className="py-5 flex justify-center">
         <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5">
-          {ordersData.map(order => (
+          {orders.map(order => (
             <li
               key={order.id}
               className="p-3 min-w-[320px] max-w-[380px] space-between-center border border-gray-150">
               <div className="flex flex-col gap-y-2">
                 <p
-                  className={`p-1 w-[100px] text-center font-semibold rounded ${statusStyle[order.status]}`}>
-                  {trans(order.status)}
+                  className={`p-1 w-[100px] text-center font-semibold rounded ${statusStyle[order.status.name]}`}>
+                  {trans(order.status.name)}
                 </p>
                 <p className="center-y gap-x-2">
                   <span className="text-gray-550">{trans("orderID")}</span>
                   <span className="font-bold">#{order.id}</span>
                 </p>
                 <p className="center-y gap-x-2 text-sm text-gray-450">
-                  <span>
+                  <span>{order.status.createdAt.format}</span>
+                  {/* <span>
                     {order.date.toLocaleDateString("US", {
                       day: "numeric",
                       month: "short",
                       year: "numeric",
                     })}
-                  </span>
-                  <span>
+                  </span> */}
+                  {/* <span>
                     {order.date.toLocaleTimeString("US", {
                       hour: "numeric",
                       minute: "numeric",
                       hour12: false,
                     })}
-                  </span>
-                  <span>- 5 products</span>
+                  </span> */}
+                  {/* <span>- 5 products</span> */}
                 </p>
                 <p className="text-sky-550 text-lg font-semibold">
-                  ${order.total.toFixed(2)}
+                  ${order.finalPrice.toFixed(2)}
                 </p>
               </div>
               <button

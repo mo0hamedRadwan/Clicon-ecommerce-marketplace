@@ -1,8 +1,10 @@
 import { trans } from "@mongez/localization";
 import TextInput from "apps/front-office/design-system/components/form/TextInput";
+import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import { accountAtom } from "../../atoms/accountAtom";
 
 type TrackOrderSectionPropsType = {
   size?: "page" | "tab";
@@ -11,6 +13,16 @@ type TrackOrderSectionPropsType = {
 export default function TrackOrderSection({
   size = "page",
 }: TrackOrderSectionPropsType) {
+  const { loading, user } = accountAtom.useValue();
+
+  if (loading) {
+    return (
+      <div className="w-full h-[500px] flex justify-center">
+        <Loader1 />
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col items-start gap-y-5">
       <h2 className="text-2xl font-semibold">{trans("trackOrder")}</h2>
@@ -33,6 +45,7 @@ export default function TrackOrderSection({
           name="billingEmail"
           label="billingEmail"
           placeholder="emailAddress"
+          defaultValue={user.email}
         />
       </div>
       <p className="center-y gap-x-2 text-gray-550">

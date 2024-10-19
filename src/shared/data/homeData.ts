@@ -4,8 +4,6 @@ import headphonesIcon from "assets/images/SVGs/Headphones.svg";
 import packageIcon from "assets/images/SVGs/Package.svg";
 import trophyIcon from "assets/images/SVGs/Trophy.svg";
 
-import { OrderType } from "apps/front-office/design-system/types";
-
 export const features = [
   {
     // icon: "bx-package",
@@ -39,61 +37,6 @@ export const orderStatus = [
   { label: "onTheRoad", icon: "bxs-truck" },
   { label: "delivered", icon: "bxs-like" },
 ];
-
-export const order: OrderType = {
-  id: 96459761,
-  productsNum: 3,
-  totalPrice: 1199.99,
-  statusNumber: 1,
-  orderDate: new Date("2024-8-15"),
-  expectedDate: new Date("2024-8-30"),
-  orderActivities: [
-    {
-      icon: "bx-notepad",
-      iconColor: "text-blue-400",
-      iconBgColor: "bg-blue-50",
-      description: "Your order has been confirmed.",
-      date: new Date(""),
-    },
-    {
-      icon: "bx-check-circle",
-      iconColor: "text-green-400",
-      iconBgColor: "bg-green-50",
-      description: "Your order is successfully verified.",
-      date: new Date(""),
-    },
-    {
-      icon: "bx-map-alt",
-      iconColor: "text-blue-400",
-      iconBgColor: "bg-blue-50",
-      description: "Your order on the way to (last mile) hub.",
-      date: new Date(""),
-    },
-    {
-      icon: "bx-map",
-      iconColor: "text-blue-400",
-      iconBgColor: "bg-blue-50",
-      description: "Your order has reached at last mile hub.",
-      date: new Date(""),
-    },
-    {
-      icon: "bx-user",
-      iconColor: "text-blue-400",
-      iconBgColor: "bg-blue-50",
-      description:
-        "Our delivery man (John Wick) Has picked-up your order for delvery. ",
-      date: new Date(""),
-    },
-    {
-      icon: "bx-check-double",
-      iconColor: "text-green-400",
-      iconBgColor: "bg-green-50",
-      description:
-        "Your order has been delivered. Thank you for shopping at Clicon!",
-      date: new Date(""),
-    },
-  ],
-};
 
 export const aboutFeatures = [
   "Great 24/7 customer services.",

@@ -29,10 +29,10 @@ export default function CheckoutSuccessPage() {
             <LinkAsButton
               variant="contained"
               startIcon="bx-home"
-              href={"order/:id"}
+              href={URLS.userAccount.orderHistory.root}
               className="md:text-base font-semibold"
               iconClassName="text-lg">
-              {`${trans("view")} ${trans("order")}`.toUpperCase()}
+              {`${trans("view")} ${trans("orders")}`.toUpperCase()}
             </LinkAsButton>
           </div>
         </div>

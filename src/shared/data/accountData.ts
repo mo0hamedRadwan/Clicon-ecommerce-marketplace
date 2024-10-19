@@ -41,30 +41,6 @@ export const accountNavItems = [
   },
 ];
 
-export const accountStatsItems = [
-  {
-    icon: "bx bx-rocket",
-    number: 154,
-    subtitle: "totalOrders",
-    className: "bg-sky-100",
-    iconClassName: "text-sky-550",
-  },
-  {
-    icon: "bx-receipt",
-    number: 5,
-    subtitle: "pendingOrders",
-    className: "bg-orange-100",
-    iconClassName: "text-orange-450",
-  },
-  {
-    icon: "bx-package",
-    number: 149,
-    subtitle: "completedOrders",
-    className: "bg-green-100",
-    iconClassName: "text-green-500",
-  },
-];
-
 export const paymentOptionsItems = [
   {
     cardNumber: "1223 3445 5667 7889",

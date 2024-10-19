@@ -3,8 +3,8 @@
     "en": "Category",
     "ar": "تصنيف"
   },
-  "sortBy": {
-    "en": "Sort By",
+  "orderBy": {
+    "en": "Order By",
     "ar": "ترتيب حسب"
   },
   "mostPopular": {

@@ -1,9 +1,30 @@
+// Checkout Steps:
+// =================================================================
+// 0) get User Addresses
+// 1) Set Shipping Method to "standard"
+// 2) Set Shipping Address By Selected city
+// 3) Set Payment Method "cashOnDelivery"
+// 4) Create New Address { name: "", email: "", phoneNumber: "", address: "", city: "CityID"}
+// 5) Set Shipping address
+// 6) Set Billing address or "useShippingAddressAsBillingAddress" in new checkout
+// 7) Create New Checkout { note: "", useShippingAddressAsBillingAddress: true}
+// 8) Add Order to Order Atom
+
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import Helmet from "@mongez/react-helmet";
+import { navigateTo } from "@mongez/react-router";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
+import { ordersAtom } from "apps/front-office/design-system/atoms/ordersAtom";
 import Button from "apps/front-office/design-system/components/form/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
+import URLS from "apps/front-office/utils/urls";
+import toast from "react-hot-toast";
+import {
+  createAddress,
+  createCheckout,
+  setShippingAddress,
+} from "../../services/catalog-service";
 import BillingForm from "./sections/BillingForm";
 
 export default function CheckoutPage() {
@@ -11,7 +32,43 @@ export default function CheckoutPage() {
 
   const handleBillingForm = ({ values }) => {
     console.log(values);
-    // What requests i will be sending to create a new order ?
+    const addressData = {
+      name: values.firstName + " " + values.lastName,
+      email: values.email,
+      phoneNumber: values.phoneNumber,
+      address: values.address,
+      city: values.city,
+    };
+
+    // return;
+
+    // create a new address
+    createAddress(addressData)
+      .then(response => {
+        console.log(response.data);
+        const address = response.data.address;
+        // set address id to shipping address
+        setShippingAddress(address.id)
+          .then(response => {
+            console.log(response.data);
+            // create a new checkout
+            createCheckout({
+              notes: values.orderNotes,
+              useShippingAddressAsBillingAddress: true,
+            })
+              .then(response => {
+                console.log(response.data);
+                toast.success("checkout created successfully");
+                ordersAtom.addOrderToOrders(response.data.order);
+                navigateTo(URLS.checkout.success);
+              })
+              .catch(error => console.error(error));
+          })
+          .catch(error => console.error(error));
+      })
+      .catch(error => console.log(error));
+
+    createCheckout();
   };
 
   return (
@@ -61,35 +118,49 @@ export default function CheckoutPage() {
               <ul className="flex flex-col gap-y-2">
                 <li className="space-between">
                   <p>{trans("subtotal")}</p>
-                  <p className="font-semibold">${cart.totals.subtotal}</p>
+                  <p className="font-semibold">
+                    ${cart.totals.subtotal.toFixed(2)}
+                  </p>
                 </li>
                 <li className="space-between">
                   <p>{trans("shipping")}</p>
-                  <p className="font-semibold">${cart.totals.shippingFees}</p>
+                  <p className="font-semibold">
+                    ${cart.totals.shippingFees.toFixed(2)}
+                  </p>
                 </li>
                 <li className="space-between">
                   <p>{trans("discount")}</p>
-                  <p className="font-semibold">${cart.totals.discount}</p>
+                  <p className="font-semibold">
+                    ${cart.totals.discount.toFixed(2)}
+                  </p>
                 </li>
                 <li className="space-between">
                   <p>{trans("tax")}</p>
-                  <p className="font-semibold">${cart.totals.tax}</p>
+                  <p className="font-semibold">${cart.totals.tax.toFixed(2)}</p>
+                </li>
+                <li className="space-between">
+                  <p>{trans("coupon")}</p>
+                  <p className="font-semibold">
+                    ${cart.totals.coupon.toFixed(2)}
+                  </p>
                 </li>
               </ul>
               <div className="w-full h-[1px] bg-gray-150"></div>
-              <p className="space-between text-lg">
+              <div className="space-between text-lg">
                 <span>{trans("total")}</span>
                 <p className="font-semibold">
                   <span>$</span>
                   <span>
-                    {cart.totals.subtotal +
+                    {(
+                      cart.totals.subtotal +
                       cart.totals.shippingFees +
                       cart.totals.tax -
-                      cart.totals.discount}
+                      cart.totals.coupon
+                    ).toFixed(2)}
                   </span>
-                  <span className="mx-2">USD</span>
+                  <span className="mx-1">USD</span>
                 </p>
-              </p>
+              </div>
               <Button
                 type="submit"
                 endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
