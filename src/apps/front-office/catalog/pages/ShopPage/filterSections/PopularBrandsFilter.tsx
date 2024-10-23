@@ -28,7 +28,7 @@ export default function PopularBrandsFilter() {
   };
 
   return (
-    <>
+    <div className="w-full md:w-[330px] xl:w-full flex flex-col gap-3">
       <h2 className="text-xl">{trans("popularBrands").toUpperCase()}</h2>
       <ul className="grid grid-cols-2">
         {brands.map(brand => (
@@ -43,6 +43,6 @@ export default function PopularBrandsFilter() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

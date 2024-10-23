@@ -39,7 +39,7 @@ export default function ProductCard({
       className={twMerge(
         "min-h-[310px] rounded border border-gray-200 hover:shadow-3",
         largeProduct
-          ? "min-h-[634px] max-w-full lg:max-w-[350px] px-6 pb-6 pt-3"
+          ? "min-h-[540px] sm:min-h-[634px] max-w-full lg:max-w-[350px] px-6 pb-6 pt-3"
           : "min-w-[225px] p-3",
         className,
       )}>
@@ -51,11 +51,11 @@ export default function ProductCard({
       )}
       <div className="flex flex-col gap-y-2">
         <div
-          className={`relative ${largeProduct ? "min-h-[250px] my-9" : "h-[250px] lg:h-[188px]"} flex justify-center items-end group`}>
+          className={`relative ${largeProduct ? "min-h-[250px] my-0 md:my-9" : "h-[250px] lg:h-[188px]"} flex justify-center items-end group`}>
           <img
             src={product.images[0].url}
             alt="Product image"
-            className="h-full"
+            className="h-full object-contain"
           />
           <ProductButtons
             setViewProductQuick={setViewProduct}

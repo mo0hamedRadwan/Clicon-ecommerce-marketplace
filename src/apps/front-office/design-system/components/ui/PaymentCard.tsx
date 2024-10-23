@@ -30,7 +30,7 @@ export default function PaymentCard({
         </div>
       </div>
       <div className="w-full space-between">
-        <img src={paymentTypeImg} alt="" />
+        <img src={paymentTypeImg} alt="payment types image" />
         <span>Kevin Gilbert</span>
       </div>
     </div>

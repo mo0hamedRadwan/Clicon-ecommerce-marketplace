@@ -31,13 +31,6 @@ export const features = [
   },
 ];
 
-export const orderStatus = [
-  { label: "orderPlaced", icon: "bx-notepad" },
-  { label: "packaging", icon: "bx-package" },
-  { label: "onTheRoad", icon: "bxs-truck" },
-  { label: "delivered", icon: "bxs-like" },
-];
-
 export const aboutFeatures = [
   "Great 24/7 customer services.",
   "600+ Dedicated employe.",

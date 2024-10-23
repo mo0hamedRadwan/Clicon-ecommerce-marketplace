@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import { Link } from "@mongez/react-router";
+import URLS from "apps/front-office/utils/urls";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -62,7 +63,7 @@ export default function ShopCategories({
             <SwiperSlide key={index}>
               <div className="w-36 h-36 md:w-56 md:h-56">
                 <Link
-                  to={"category/:id"}
+                  to={`${URLS.shop.root}?category=${category.id}`}
                   className="p-5 w-full h-full flex-center flex-col gap-y-5 border border-gray-150 hover:border-orange-450 duration-150">
                   <img
                     src={category.image.url}
@@ -79,12 +80,12 @@ export default function ShopCategories({
         </Swiper>
         <div className="">
           <button
-            className="z-20 absolute top-20 -left-3 2xl:-left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-12 md:top-20 -left-3 2xl:-left-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slidePrev()}>
             <i className="bx bx-left-arrow-alt"></i>
           </button>
           <button
-            className="z-20 absolute top-20 -right-3 2xl:-right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
+            className="z-20 absolute top-12 md:top-20 -right-3 2xl:-right-6 w-12 h-12 text-4xl font-light bg-orange-450 text-white rounded-full"
             onClick={() => swiperRef.current.slideNext()}>
             <i className="bx bx-right-arrow-alt"></i>
           </button>

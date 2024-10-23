@@ -24,7 +24,11 @@ export default function ProductSliderImages({
   return (
     <div className="w-full sm:w-[620px] flex flex-col items-center gap-y-5">
       <div className="w-full h-[460px] p-5 sm:p-10 border border-gray-200">
-        <img src={images[currentImage]} alt="" className="w-full h-full" />
+        <img
+          src={images[currentImage]}
+          alt="product main image"
+          className="w-full h-full"
+        />
       </div>
 
       <div className="relative w-full h-24">
@@ -44,7 +48,11 @@ export default function ProductSliderImages({
               <div
                 className={`w-24 h-24 cursor-pointer border ${currentImage === index ? "border-orange-450" : "border-gray-200"}`}
                 onClick={() => setCurrentImage(index)}>
-                <img src={image} alt="" className="w-full h-full" />
+                <img
+                  src={image}
+                  alt="product image slider"
+                  className="w-full h-full"
+                />
               </div>
             </SwiperSlide>
           ))}

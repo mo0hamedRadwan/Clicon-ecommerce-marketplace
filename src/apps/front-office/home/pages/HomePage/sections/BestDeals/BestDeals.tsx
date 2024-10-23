@@ -25,7 +25,7 @@ export default function BestDeals({
         </div>
         <LinkAsButton
           variant="text"
-          href={URLS.deals}
+          href={URLS.shop.root}
           endIcon={isRTL() ? "bx-left-arrow-alt" : "bx-right-arrow-alt"}
           className="p-0 text-sky-550 hover:bg-sky-200">{`${trans("browse")} ${trans("all")} ${trans("products")}`}</LinkAsButton>
       </div>

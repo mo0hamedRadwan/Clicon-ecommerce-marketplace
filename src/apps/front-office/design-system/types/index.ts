@@ -163,6 +163,7 @@ export type OrderType = {
       time: string;
     };
   }[];
+  items: CartItem[];
 };
 
 export type CartItem = {

@@ -99,10 +99,10 @@ export default function PriceRangeFilter() {
   };
 
   return (
-    <>
+    <div className="w-full md:w-[330px] xl:w-full flex flex-col gap-3">
       <h2 className="text-xl">{trans("priceRange").toUpperCase()}</h2>
       <div className="flex flex-col gap-y-5">
-        <div className="w-full">
+        <div className="min-w-[310px] max-w-[310px]">
           <MultiRangeSliderPrice
             minPrice={minPrice}
             maxPrice={maxPrice}
@@ -154,6 +154,6 @@ export default function PriceRangeFilter() {
           ))}
         </ul>
       </div>
-    </>
+    </div>
   );
 }

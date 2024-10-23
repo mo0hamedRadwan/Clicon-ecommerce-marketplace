@@ -37,7 +37,7 @@ export default function FeaturesProducts({
               iconClassName="ml-3 text-xl">{`${trans("shop")} ${trans("now")}`}</LinkAsButton>
           </div>
           <div className="">
-            <img src={homeImages.productsImage} alt="" />
+            <img src={homeImages.productsImage} alt="banner image" />
           </div>
         </div>
 

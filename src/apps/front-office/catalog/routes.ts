@@ -1,4 +1,4 @@
-import { publicRoutes } from "apps/front-office/utils/router";
+import { guardedRoutes, publicRoutes } from "apps/front-office/utils/router";
 import URLS from "../utils/urls";
 import CartPage from "./pages/CartPage";
 import CheckoutPage from "./pages/CheckoutPage";
@@ -16,6 +16,17 @@ publicRoutes([
     component: ProductDetailsPage,
   },
   {
+    path: URLS.pages.trackOrder.root,
+    component: TrackOrderPage,
+  },
+  {
+    path: URLS.shop.root,
+    component: ShopPage,
+  },
+]);
+
+guardedRoutes([
+  {
     path: URLS.wishlist,
     component: WishlistPage,
   },
@@ -32,19 +43,11 @@ publicRoutes([
     component: CheckoutSuccessPage,
   },
   {
-    path: URLS.pages.trackOrder.root,
-    component: TrackOrderPage,
-  },
-  {
-    path: URLS.pages.trackOrder.details,
-    component: TrackOrderDetailsPage,
-  },
-  {
-    path: URLS.shop.root,
-    component: ShopPage,
-  },
-  {
     path: URLS.compare,
     component: ComparePage,
+  },
+  {
+    path: URLS.pages.trackOrder.viewRoute,
+    component: TrackOrderDetailsPage,
   },
 ]);

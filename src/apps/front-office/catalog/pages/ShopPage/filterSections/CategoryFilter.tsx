@@ -45,7 +45,7 @@ export default function CategoryFilter() {
   }, [categories]);
 
   return (
-    <>
+    <div className="w-full md:w-[330px] xl:w-full flex flex-col gap-3">
       <h2 className="text-xl">{trans("category").toUpperCase()}</h2>
       <ul className="flex flex-col gap-y-2">
         <li className="flex items-start">
@@ -73,6 +73,6 @@ export default function CategoryFilter() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

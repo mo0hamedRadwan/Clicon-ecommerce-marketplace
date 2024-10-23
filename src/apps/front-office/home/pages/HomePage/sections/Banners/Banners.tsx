@@ -1,5 +1,6 @@
 import { Link } from "@mongez/react-router";
 import { Banner } from "apps/front-office/design-system/types";
+import URLS from "apps/front-office/utils/urls";
 
 type BannersPropsType = {
   banners: Banner[];
@@ -11,7 +12,7 @@ export default function Banners({ banners }: BannersPropsType) {
       {/* <MediumBanner product={product1} varient="primary" center />
       <MediumBanner product={product2} varient="secondary" showPrice /> */}
       {banners.map(banner => (
-        <Link to="/product/:id" key={banner.id} className="flex-grow">
+        <Link to={URLS.shop.root} key={banner.id} className="flex-grow">
           <img
             src={banner.image.url}
             alt="Product Banner"

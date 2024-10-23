@@ -43,7 +43,7 @@ export default function OfferNotification({
           <button
             className={`absolute ${isRTL() ? "left-5" : "right-5"} py-3 px-3 bg-neutral-750 rounded text-xl`}
             onClick={() => setCloseNotification(!closeNotification)}>
-            <img src={XIcon} alt="" />
+            <img src={XIcon} alt="icon" />
           </button>
         </div>
       )}

@@ -51,7 +51,11 @@ export default function MediumBanner({
         </LinkAsButton>
       </div>
       <div className={`relative ${center ? "py-10" : "pt-10"}`}>
-        <img src={product.images[0].url} alt="" className="h-full" />
+        <img
+          src={product.images[0].url}
+          alt="medium banner"
+          className="h-full"
+        />
         {showPrice && (
           <p className="absolute top-5 right-0 w-24 h-24 bg-sky-550 rounded-full flex-center text-xl">
             ${product.price}

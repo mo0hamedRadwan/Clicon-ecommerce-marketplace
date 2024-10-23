@@ -1,7 +1,5 @@
 // append urls here, DO NOT remove this line
 
-import { OrderType } from "../design-system/types";
-
 const URLS = {
   home: "/",
   notFound: "/404",
@@ -33,9 +31,9 @@ const URLS = {
     customerSupport: "/customer-support",
     trackOrder: {
       root: "/track-order",
-      details: "/track-order/order-details",
-      viewRoute: "/track-order/details/:order-id",
-      view: (order: OrderType) => `/track-order/details/${order.id}`,
+      // details: "/track-order/order-details",
+      viewRoute: "/track-order/order-details/:id",
+      view: (orderId: number) => `/track-order/order-details/${orderId}`,
     },
     viewRoute: "/pages/:slug",
     view: (page: any) => `/pages/${page.id}/${page.slug}`,
@@ -59,13 +57,13 @@ const URLS = {
     dashboard: "/user-account/dashboard",
     orderHistory: {
       root: "/user-account/order-history",
-      viewRoute: "/user-account/order-history/order-details/:order-id",
+      viewRoute: "/user-account/order-history/order-details/:id",
       view: (orderId: number) =>
         `/user-account/order-history/order-details/${orderId}`,
     },
     trackOrder: {
       root: "/user-account/track-order",
-      viewRoute: "/user-account/track-order/details/:order-id",
+      viewRoute: "/user-account/track-order/order-details/:id",
       view: (orderId: number) => `/user-account/track-order/details/${orderId}`,
     },
     cart: "/user-account/cart",

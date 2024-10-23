@@ -57,11 +57,7 @@ export default function Select(props: SelectPropsType) {
         id={id}
         value={value}
         readOnly
-        required={
-          selectedValue === "" ||
-          selectedValue === undefined ||
-          selectedValue === null
-        }
+        required={selectedValue?.length === 0}
       />
       {error && (
         <span

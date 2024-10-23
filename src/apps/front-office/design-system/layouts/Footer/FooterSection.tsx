@@ -48,7 +48,9 @@ export default function FooterSection() {
               </li>
             ))}
           </ul>
-          <Link className="mt-2 center-y hover:bg-neutral-750 text-yellow-450 rounded cursor-pointer">
+          <Link
+            href={URLS.shop.root}
+            className="mt-2 center-y hover:bg-neutral-750 text-yellow-450 rounded cursor-pointer">
             <span>{`${trans("browse")} ${trans("all")} ${trans("categories")}`}</span>
             <span className="relative top-[2px] ml-1">
               <i

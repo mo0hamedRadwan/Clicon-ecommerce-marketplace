@@ -30,23 +30,23 @@ export default function ProductDescription({
         <h3 className="font-semibold text-lg">{trans("features")}</h3>
         <ul className="w-full sm:w-[280px] flex flex-col gap-y-3 font-semibold">
           <li className="center-y gap-x-2">
-            <img src={medalIcon} alt="" />
+            <img src={medalIcon} alt="icon" />
             <span>{trans("freeYearWarranty")}</span>
           </li>
           <li className="center-y gap-x-2">
-            <img src={truckIcon} alt="" />
+            <img src={truckIcon} alt="icon" />
             <span>{`${trans("freeShipping")} & ${trans("fastedDelivery")}`}</span>
           </li>
           <li className="center-y gap-x-2">
-            <img src={creditCardIcon} alt="" />
+            <img src={creditCardIcon} alt="icon" />
             <span>{`100% ${trans("moneyBackGuarantee")}`}</span>
           </li>
           <li className="center-y gap-x-2">
-            <img src={handshakeIcon} alt="" />
+            <img src={handshakeIcon} alt="icon" />
             <span>{`24/7 ${trans("customerSupport")}`}</span>
           </li>
           <li className="center-y gap-x-2">
-            <img src={headphoneIcon} alt="" />
+            <img src={headphoneIcon} alt="icon" />
             <span>{trans("securePaymentMethod")}</span>
           </li>
         </ul>

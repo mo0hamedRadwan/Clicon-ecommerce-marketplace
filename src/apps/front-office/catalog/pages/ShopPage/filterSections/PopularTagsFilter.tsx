@@ -4,7 +4,7 @@ import { popularTags } from "shared/data/footerData";
 
 export default function PopularTagsFilter() {
   return (
-    <>
+    <div className="w-full flex flex-col gap-3">
       <h2 className="text-xl">{trans("popularTags").toUpperCase()}</h2>
       <ul className="flex flex-row flex-wrap gap-2">
         {popularTags.map(popularTag => (
@@ -15,6 +15,6 @@ export default function PopularTagsFilter() {
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

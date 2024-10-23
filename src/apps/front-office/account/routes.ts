@@ -23,7 +23,7 @@ accountRoutes([
   },
   {
     path: URLS.userAccount.orderHistory.viewRoute,
-    component: OrderHistoryTab,
+    component: TrackOrderDetailsTab,
   },
   {
     path: URLS.userAccount.trackOrder.root,

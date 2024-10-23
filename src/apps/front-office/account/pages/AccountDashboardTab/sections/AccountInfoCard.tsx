@@ -1,12 +1,21 @@
 import { trans } from "@mongez/localization";
 import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
+import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import URLS from "apps/front-office/utils/urls";
 import femaleProfileImg from "shared/assets/images/profileImg/female.png";
 import maleProfileImg from "shared/assets/images/profileImg/male.png";
 
 export default function AccountInfoCard() {
-  const user = accountAtom.use("user");
+  const { loading, user } = accountAtom.useValue();
+
+  if (loading) {
+    return (
+      <div className="w-full h-[330px] flex-center border border-gray-150 shadow-2">
+        <Loader2 />
+      </div>
+    );
+  }
 
   return (
     <div className="w-full border border-gray-150 shadow-2">

@@ -15,7 +15,7 @@ export default function FeatureItem({
     <div className="w-60 md:w-[260px] center-y gap-x-3">
       <div className="text-4xl">
         {/* <i className={`bx ${icon}`}></i> */}
-        <img src={icon} alt="" />
+        <img src={icon} alt="icon" />
       </div>
       <div className="flex flex-col gap-y-[2px]">
         <span className="text-base md:text-lg font-medium">

@@ -21,13 +21,13 @@ export default function ShopPage() {
       <Helmet title={trans("shopPage")} />
       <div className="py-10 container">
         <div className="flex flex-wrap xl:flex-nowrap gap-5">
-          <div className="min-w-[310px] max-w-[310px] flex flex-col gap-y-5">
+          <div className="min-w-full xl:min-w-[310px] max-w-full xl:max-w-[310px] flex flex-row flex-wrap xl:flex-col xl:flex-nowrap gap-5">
             <CategoryFilter />
-            <hr className="bg-gray-150" />
+            <div className="block xs:hidden xl:block w-full h-[1px] bg-gray-150" />
             <PriceRangeFilter />
-            <hr className="bg-gray-150" />
+            <div className="block xs:hidden xl:block w-full h-[1px] bg-gray-150" />
             <PopularBrandsFilter />
-            <hr className="bg-gray-150" />
+            <div className="block xs:hidden xl:block w-full h-[1px] bg-gray-150" />
             <PopularTagsFilter />
             {/* <Banner
             product={product2}

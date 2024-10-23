@@ -1,6 +1,7 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { navigateTo } from "@mongez/react-router";
+import user from "apps/front-office/account/user";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import appleIcon from "assets/images/Apple.png";
@@ -16,19 +17,20 @@ export default function SignInForm() {
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSignInForm = ({ values }) => {
-    const user = {
+    const userData = {
       email: values.email,
       password: values.password,
     };
 
     setLoading(true);
-    login(user)
+    login(userData)
       .then(response => {
         // notification that user is signed in successfully.
         toast.success(trans("userSignedinSuccessfully"));
         setLoading(false);
         // add access token to local storage
-        localStorage.setItem("accessToken", response.data.user.accessToken);
+        // localStorage.setItem("accessToken", response.data.user.accessToken);
+        user.login(response.data.user);
         // navigate to home page
         navigateTo(URLS.home);
       })
@@ -50,7 +52,6 @@ export default function SignInForm() {
         minLength={10}
         maxLength={100}
         email
-        // pattern={}
       />
       <PasswordInput
         name="password"
@@ -60,7 +61,6 @@ export default function SignInForm() {
         required
         minLength={8}
         maxLength={100}
-        // pattern={}
       />
       <Button
         type="submit"

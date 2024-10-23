@@ -16,8 +16,12 @@ export default function LargeBanner({ product, banner }: LargeBannerPropsType) {
     <>
       {banner ? (
         <div className="w-full flex justify-center">
-          <Link to="/product/:id" className="w-full xl:w-[1550px]">
-            <img src={banner.image.url} alt="" className="w-full h-full" />
+          <Link to={URLS.shop.root} className="w-full xl:w-[1550px]">
+            <img
+              src={banner.image.url}
+              alt="large banner"
+              className="w-full h-full object-contain"
+            />
           </Link>
         </div>
       ) : (
@@ -42,7 +46,7 @@ export default function LargeBanner({ product, banner }: LargeBannerPropsType) {
                   </LinkAsButton>
                 </div>
                 <div className="relative">
-                  <img src={product?.images[0].url} alt="" />
+                  <img src={product?.images[0].url} alt="product image" />
                   <p className="absolute top-5 left-5 w-24 h-24 bg-orange-250 rounded-full flex-center text-xl border-4 border-white">
                     ${product.price}
                   </p>
