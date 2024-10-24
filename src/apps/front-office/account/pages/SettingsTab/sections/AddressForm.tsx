@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import Button from "apps/front-office/design-system/components/form/Button";
-import EmailInput from "apps/front-office/design-system/components/form/EmailInput";
-import TextInput from "apps/front-office/design-system/components/form/TextInput";
+import Button from "components/form/Button";
+import EmailInput from "components/form/EmailInput";
+import TextInput from "components/form/TextInput";
 
 type AddressFormPropsType = {
   heading: string;

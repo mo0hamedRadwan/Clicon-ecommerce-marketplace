@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import URLS from "apps/front-office/utils/urls";
+import LinkAsButton from "components/ui/LinkAsButton";
 import femaleProfileImg from "shared/assets/images/profileImg/female.png";
 import maleProfileImg from "shared/assets/images/profileImg/male.png";
 

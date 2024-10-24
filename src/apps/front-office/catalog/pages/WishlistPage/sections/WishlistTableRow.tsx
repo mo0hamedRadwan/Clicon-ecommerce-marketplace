@@ -2,10 +2,10 @@ import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
-import Button from "apps/front-office/design-system/components/form/Button";
-import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import { Product } from "apps/front-office/design-system/types";
 import URLS from "apps/front-office/utils/urls";
+import Button from "components/form/Button";
+import Loader2 from "components/loaders/Loader2";
 import { useState } from "react";
 
 type WishlistTableRowPropsType = {

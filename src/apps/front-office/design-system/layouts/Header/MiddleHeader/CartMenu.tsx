@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
-import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import Loader2 from "components/loaders/Loader2";
 import LinkAsButton from "components/ui/LinkAsButton";
 import CartMenuItem from "./CartMenuItem";
 

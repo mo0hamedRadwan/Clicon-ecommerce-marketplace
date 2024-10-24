@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
-import CheckboxInput from "apps/front-office/design-system/components/form/CheckboxInput";
+import CheckboxInput from "components/form/CheckboxInput";
 
 const brands = [
   "brand1",

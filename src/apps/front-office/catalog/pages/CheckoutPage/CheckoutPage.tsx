@@ -16,9 +16,9 @@ import Helmet from "@mongez/react-helmet";
 import { navigateTo } from "@mongez/react-router";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { ordersAtom } from "apps/front-office/design-system/atoms/ordersAtom";
-import Button from "apps/front-office/design-system/components/form/Button";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import Button from "components/form/Button";
 import toast from "react-hot-toast";
 import {
   createAddress,

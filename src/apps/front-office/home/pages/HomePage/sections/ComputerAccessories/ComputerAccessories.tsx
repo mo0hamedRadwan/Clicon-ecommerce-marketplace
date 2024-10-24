@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
-import CategoryTabs from "apps/front-office/design-system/components/CategoryTabs/CategoryTabs";
 import { Category, Product } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import Banner from "components/Banner";
+import CategoryTabs from "components/CategoryTabs/CategoryTabs";
 import Badge from "components/ui/Badge";
 import LinkAsButton from "components/ui/LinkAsButton";
 import { productsImage } from "shared/data/images2";

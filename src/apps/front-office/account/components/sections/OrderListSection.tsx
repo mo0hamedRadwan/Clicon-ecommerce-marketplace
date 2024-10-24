@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import { ordersAtom } from "apps/front-office/design-system/atoms/ordersAtom";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
-import Pagination from "apps/front-office/design-system/components/ui/Pagination";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import LinkAsButton from "components/ui/LinkAsButton";
+import Pagination from "components/ui/Pagination";
 import { useState } from "react";
 // import { ordersData } from "shared/data/accountData";
 

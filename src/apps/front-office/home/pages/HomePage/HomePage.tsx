@@ -1,8 +1,8 @@
 import Helmet from "@mongez/react-helmet";
-import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
-import SubscribeSection from "apps/front-office/design-system/components/sections/SubscribeSection";
-import TopProducts from "apps/front-office/design-system/components/sections/TopProducts";
 import { Row } from "apps/front-office/design-system/types";
+import Loader1 from "components/loaders/Loader1";
+import SubscribeSection from "components/sections/SubscribeSection";
+import TopProducts from "components/sections/TopProducts";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { getHome } from "../../services/home-service";

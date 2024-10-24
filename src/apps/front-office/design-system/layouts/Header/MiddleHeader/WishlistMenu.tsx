@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
-import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import Loader2 from "components/loaders/Loader2";
 import LinkAsButton from "components/ui/LinkAsButton";
 import { useState } from "react";
 

@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
-import CategoryTabs from "apps/front-office/design-system/components/CategoryTabs/CategoryTabs";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { Category } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
+import CategoryTabs from "components/CategoryTabs/CategoryTabs";
+import LinkAsButton from "components/ui/LinkAsButton";
 import { homeImages } from "shared/data/images";
 
 type FeaturesProductsPropsType = {

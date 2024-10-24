@@ -2,8 +2,8 @@ import { trans } from "@mongez/localization";
 import { useOnce } from "@mongez/react-hooks";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
-import Select from "apps/front-office/design-system/components/form/Select";
 import { SelectOption } from "apps/front-office/design-system/types";
+import Select from "components/form/Select";
 
 export const sortByOptions: SelectOption[] = [
   {

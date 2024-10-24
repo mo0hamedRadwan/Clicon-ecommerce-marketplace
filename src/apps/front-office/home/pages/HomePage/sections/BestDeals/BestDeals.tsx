@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
-import ProductCard from "apps/front-office/design-system/components/ui/ProductCard";
 import { Product } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import ProductsGrid from "components/ProductsGrid";
 import LinkAsButton from "components/ui/LinkAsButton";
+import ProductCard from "components/ui/ProductCard";
 import CountDownComponent from "./CountDownComponent";
 
 type BestDealsPropsType = {

@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
-import TextInput from "apps/front-office/design-system/components/form/TextInput";
-import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import TextInput from "components/form/TextInput";
+import Loader1 from "components/loaders/Loader1";
+import LinkAsButton from "components/ui/LinkAsButton";
 import { accountAtom } from "../../atoms/accountAtom";
 
 type TrackOrderSectionPropsType = {

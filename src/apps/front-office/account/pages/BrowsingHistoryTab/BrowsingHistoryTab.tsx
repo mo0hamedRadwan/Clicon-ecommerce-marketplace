@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
 import { browseHistoryAtom } from "apps/front-office/design-system/atoms/browseHistoryAtom";
-import ProductCard from "apps/front-office/design-system/components/ui/ProductCard";
+import ProductCard from "components/ui/ProductCard";
 
 export default function BrowsingHistoryTab() {
   const browserHistory = browseHistoryAtom.use("productsHistory");

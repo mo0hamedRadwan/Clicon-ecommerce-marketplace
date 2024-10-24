@@ -8,9 +8,9 @@ import {
   priceGap,
   shopAtom,
 } from "apps/front-office/catalog/atoms/shopAtom";
-import NumberInput from "apps/front-office/design-system/components/form/NumberInput";
-import RadioInput from "apps/front-office/design-system/components/form/RadioInput";
 import { useDebounce } from "apps/front-office/design-system/hooks/use-debounce";
+import NumberInput from "components/form/NumberInput";
+import RadioInput from "components/form/RadioInput";
 import { useEffect, useState } from "react";
 import MultiRangeSliderPrice from "./MultiRangeSliderPrice";
 

@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { Banner, Product } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Badge from "components/ui/Badge";
+import LinkAsButton from "components/ui/LinkAsButton";
 
 type LargeBannerPropsType = {
   product?: Product;

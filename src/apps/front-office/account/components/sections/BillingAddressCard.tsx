@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import URLS from "apps/front-office/utils/urls";
+import LinkAsButton from "components/ui/LinkAsButton";
 import { accountAtom } from "../../atoms/accountAtom";
 
 export default function BillingAddressCard() {

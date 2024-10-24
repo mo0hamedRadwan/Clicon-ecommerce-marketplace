@@ -2,9 +2,9 @@ import { trans } from "@mongez/localization";
 import { useOnce } from "@mongez/react-hooks";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
-import TextInput from "apps/front-office/design-system/components/form/TextInput";
 import { isRTL } from "apps/front-office/utils/helpers";
 import { removeUndefinedKeys } from "apps/front-office/utils/methods";
+import TextInput from "components/form/TextInput";
 
 export default function ProductNameFilter() {
   const searchProductName = shopAtom.use("filter").name;

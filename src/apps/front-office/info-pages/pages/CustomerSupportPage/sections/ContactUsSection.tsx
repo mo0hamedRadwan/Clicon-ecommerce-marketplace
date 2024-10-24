@@ -1,5 +1,5 @@
 import { trans } from "@mongez/localization";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
+import LinkAsButton from "components/ui/LinkAsButton";
 
 export default function ContactUsSection() {
   return (

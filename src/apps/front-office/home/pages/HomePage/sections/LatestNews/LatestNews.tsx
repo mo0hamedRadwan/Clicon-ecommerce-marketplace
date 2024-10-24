@@ -1,6 +1,6 @@
 import { trans } from "@mongez/localization";
-import NewsCard from "apps/front-office/design-system/components/NewsCard";
 import { Post } from "apps/front-office/design-system/types";
+import NewsCard from "components/NewsCard";
 
 type LatestNewsPropsType = {
   news: Post[];
