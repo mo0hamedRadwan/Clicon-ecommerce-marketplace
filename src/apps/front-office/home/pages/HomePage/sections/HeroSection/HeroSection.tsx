@@ -1,5 +1,5 @@
-import SmallBanner from "apps/front-office/design-system/components/SmallBanner";
 import { Banner, Product, Slider } from "apps/front-office/design-system/types";
+import SmallBanner from "components/SmallBanner";
 import { productsImage } from "shared/data/images2";
 import Carousel from "./Carousel";
 

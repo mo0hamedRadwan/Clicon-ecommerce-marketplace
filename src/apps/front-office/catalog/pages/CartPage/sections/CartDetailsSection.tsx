@@ -4,11 +4,11 @@ import ShoppingCartList from "apps/front-office/catalog/pages/CartPage/sections/
 import ShoppingCartTable from "apps/front-office/catalog/pages/CartPage/sections/ShoppingCartTable";
 import { applyCoupon } from "apps/front-office/catalog/services/catalog-service";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
-import Button from "apps/front-office/design-system/components/form/Button";
-import TextInput from "apps/front-office/design-system/components/form/TextInput";
-import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import URLS from "apps/front-office/utils/urls";
+import Button from "components/form/Button";
+import TextInput from "components/form/TextInput";
+import Loader1 from "components/loaders/Loader1";
+import LinkAsButton from "components/ui/LinkAsButton";
 
 type CartDetailsSectionPropsType = {
   size?: "page" | "tab";

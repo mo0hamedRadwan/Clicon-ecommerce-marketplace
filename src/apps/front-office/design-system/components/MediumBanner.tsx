@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Badge from "components/ui/Badge";
+import LinkAsButton from "components/ui/LinkAsButton";
 import { twMerge } from "tailwind-merge";
 import { Product } from "../types";
 

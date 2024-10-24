@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
-import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
-import QuantityInput from "apps/front-office/design-system/components/ui/QuantityInput";
 import { CartItem } from "apps/front-office/design-system/types";
 import Button from "components/form/Button";
+import Loader2 from "components/loaders/Loader2";
+import QuantityInput from "components/ui/QuantityInput";
 import { useState } from "react";
 
 type CartListItemPropsType = {

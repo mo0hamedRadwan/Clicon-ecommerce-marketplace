@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
 import { getProducts } from "apps/front-office/home/services/home-service";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import LinkAsButton from "components/ui/LinkAsButton";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Category, Product } from "../../types";

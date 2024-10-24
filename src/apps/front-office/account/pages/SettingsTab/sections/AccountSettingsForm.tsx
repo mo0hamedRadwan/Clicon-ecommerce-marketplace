@@ -1,10 +1,10 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
-import Button from "apps/front-office/design-system/components/form/Button";
-import EmailInput from "apps/front-office/design-system/components/form/EmailInput";
-import TextInput from "apps/front-office/design-system/components/form/TextInput";
-import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
+import Button from "components/form/Button";
+import EmailInput from "components/form/EmailInput";
+import TextInput from "components/form/TextInput";
+import Loader2 from "components/loaders/Loader2";
 import { useState } from "react";
 import femaleProfileImg from "shared/assets/images/profileImg/female.png";
 import maleProfileImg from "shared/assets/images/profileImg/male.png";

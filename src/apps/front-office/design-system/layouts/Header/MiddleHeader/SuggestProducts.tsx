@@ -1,7 +1,7 @@
 import { Link } from "@mongez/react-router";
-import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import { Product } from "apps/front-office/design-system/types";
 import URLS from "apps/front-office/utils/urls";
+import Loader2 from "components/loaders/Loader2";
 
 type SuggestProductsPropsType = {
   loading: boolean;

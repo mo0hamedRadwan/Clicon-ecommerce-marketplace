@@ -1,11 +1,11 @@
 import { trans } from "@mongez/localization";
 import { browseHistoryAtom } from "apps/front-office/design-system/atoms/browseHistoryAtom";
-import LinkAsButton from "apps/front-office/design-system/components/ui/LinkAsButton";
-import Pagination from "apps/front-office/design-system/components/ui/Pagination";
-import ProductCard from "apps/front-office/design-system/components/ui/ProductCard";
 import { Product } from "apps/front-office/design-system/types";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
+import LinkAsButton from "components/ui/LinkAsButton";
+import Pagination from "components/ui/Pagination";
+import ProductCard from "components/ui/ProductCard";
 import { useState } from "react";
 
 const productsPerPage = 4;

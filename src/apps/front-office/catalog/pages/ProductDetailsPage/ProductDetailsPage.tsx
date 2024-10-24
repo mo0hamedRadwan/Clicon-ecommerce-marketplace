@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
-import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import { Product } from "apps/front-office/design-system/types";
 import { getProduct } from "apps/front-office/home/services/home-service";
+import Loader1 from "components/loaders/Loader1";
 import ProductDetails from "components/ProductDetails/ProductDetails";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";

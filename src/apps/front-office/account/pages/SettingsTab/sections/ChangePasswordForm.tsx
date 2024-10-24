@@ -1,8 +1,8 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
-import Button from "apps/front-office/design-system/components/form/Button";
-import PasswordInput from "apps/front-office/design-system/components/form/PasswordInput";
+import Button from "components/form/Button";
+import PasswordInput from "components/form/PasswordInput";
 import { useState } from "react";
 import toast from "react-hot-toast";
 

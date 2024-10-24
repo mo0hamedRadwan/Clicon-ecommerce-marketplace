@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
 import Helmet from "@mongez/react-helmet";
 import { compareAtom } from "apps/front-office/design-system/atoms/compareAtom";
-import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
+import Loader1 from "components/loaders/Loader1";
 import CompareList from "./sections/CompareList";
 import CompareTable2Cols from "./sections/CompareTable2Cols";
 import CompareTable3Cols from "./sections/CompareTable3Cols";

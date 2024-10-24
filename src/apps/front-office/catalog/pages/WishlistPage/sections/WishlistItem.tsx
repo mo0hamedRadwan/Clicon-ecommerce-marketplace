@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { wishlistAtom } from "apps/front-office/design-system/atoms/wishlistAtom";
-import Button from "apps/front-office/design-system/components/form/Button";
-import Loader2 from "apps/front-office/design-system/components/loaders/Loader2";
 import { Product } from "apps/front-office/design-system/types";
+import Button from "components/form/Button";
+import Loader2 from "components/loaders/Loader2";
 import { useState } from "react";
 
 type WishlistItemPropsType = {

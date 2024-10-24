@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import Button from "apps/front-office/design-system/components/form/Button";
-import EmailInput from "apps/front-office/design-system/components/form/EmailInput";
 import { subscribeNewLetters } from "apps/front-office/home/services/home-service";
 import { isRTL } from "apps/front-office/utils/helpers";
+import Button from "components/form/Button";
+import EmailInput from "components/form/EmailInput";
 
 export default function SubscribeForm() {
   const handleFormSubmit = ({ values }) => {

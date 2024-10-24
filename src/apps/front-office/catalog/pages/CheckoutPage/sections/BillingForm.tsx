@@ -7,9 +7,6 @@ import {
 } from "apps/front-office/catalog/services/catalog-service";
 import { cartAtom } from "apps/front-office/design-system/atoms/cartAtom";
 import { citiesAtom } from "apps/front-office/design-system/atoms/citiesAtom";
-import RadioInput from "apps/front-office/design-system/components/form/RadioInput";
-import Select from "apps/front-office/design-system/components/form/Select";
-import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
 import { SelectOption } from "apps/front-office/design-system/types";
 import paypalIcon from "assets/images/paypal.png";
 import amazonIcon from "assets/images/SVGs/Amazon.svg";
@@ -17,8 +14,11 @@ import creditCardIcon2 from "assets/images/SVGs/CreditCard2.svg";
 import cashIcon from "assets/images/SVGs/CurrencyDollar.svg";
 import venmoIcon from "assets/images/venmo.png";
 import CheckboxInput from "components/form/CheckboxInput";
+import RadioInput from "components/form/RadioInput";
+import Select from "components/form/Select";
 import TextareaInput from "components/form/TextareaInput";
 import TextInput from "components/form/TextInput";
+import Loader1 from "components/loaders/Loader1";
 import { useEffect, useState } from "react";
 
 const paymentMethods = [

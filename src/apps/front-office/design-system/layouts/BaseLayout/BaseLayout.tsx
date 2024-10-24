@@ -1,6 +1,6 @@
 import { useOnce } from "@mongez/react-hooks";
 import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
-import CustomBreadcrumb from "apps/front-office/design-system/components/ui/CustomBreadcrumb";
+import CustomBreadcrumb from "components/ui/CustomBreadcrumb";
 import { cartAtom } from "../../atoms/cartAtom";
 import { categoriesAtom } from "../../atoms/categoriesAtom";
 import { compareAtom } from "../../atoms/compareAtom";

@@ -1,9 +1,9 @@
 import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
-import Loader1 from "apps/front-office/design-system/components/loaders/Loader1";
-import ProductsGrid from "apps/front-office/design-system/components/ProductsGrid";
-import Pagination from "apps/front-office/design-system/components/ui/Pagination";
+import Loader1 from "components/loaders/Loader1";
+import ProductsGrid from "components/ProductsGrid";
+import Pagination from "components/ui/Pagination";
 
 export default function ShopProductsGrid() {
   const { loading, products, paginationInfo } = shopAtom.useValue();

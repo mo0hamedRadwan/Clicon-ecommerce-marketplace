@@ -2,8 +2,8 @@ import { trans } from "@mongez/localization";
 import { queryString } from "@mongez/react-router";
 import { shopAtom } from "apps/front-office/catalog/atoms/shopAtom";
 import { categoriesAtom } from "apps/front-office/design-system/atoms/categoriesAtom";
-import RadioInput from "apps/front-office/design-system/components/form/RadioInput";
 import { removeUndefinedKeys } from "apps/front-office/utils/methods";
+import RadioInput from "components/form/RadioInput";
 import { useEffect, useState } from "react";
 
 export default function CategoryFilter() {

@@ -1,7 +1,7 @@
 import { trans } from "@mongez/localization";
-import Button from "apps/front-office/design-system/components/form/Button";
-import TextInput from "apps/front-office/design-system/components/form/TextInput";
 import customerServiceImg from "assets/images/customerService.jpg";
+import Button from "components/form/Button";
+import TextInput from "components/form/TextInput";
 
 export default function HelpCenterSection() {
   return (
