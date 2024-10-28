@@ -1,7 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { navigateTo } from "@mongez/react-router";
-import user from "apps/front-office/account/user";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import appleIcon from "assets/images/Apple.png";
@@ -24,13 +23,10 @@ export default function SignInForm() {
 
     setLoading(true);
     login(userData)
-      .then(response => {
+      .then(() => {
         // notification that user is signed in successfully.
         toast.success(trans("userSignedinSuccessfully"));
         setLoading(false);
-        // add access token to local storage
-        // localStorage.setItem("accessToken", response.data.user.accessToken);
-        user.login(response.data.user);
         // navigate to home page
         navigateTo(URLS.home);
       })

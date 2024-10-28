@@ -183,6 +183,11 @@ export type User = {
   totalCart: number;
   totalCompare: number;
   totalWishlist: number;
+  email?: string;
+  userType: "guest" | "user";
+  name?: string;
+  phoneNumber?: string;
+  gender?: string;
 };
 
 export type Cart = {

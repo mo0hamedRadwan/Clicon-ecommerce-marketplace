@@ -1,6 +1,5 @@
 import { trans } from "@mongez/localization";
 import { useOnce } from "@mongez/react-hooks";
-import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
 import {
   setPaymentMethod,
   setShippingMethod,
@@ -20,6 +19,7 @@ import TextareaInput from "components/form/TextareaInput";
 import TextInput from "components/form/TextInput";
 import Loader1 from "components/loaders/Loader1";
 import { useEffect, useState } from "react";
+import user from "../../../../account/user";
 
 const paymentMethods = [
   { name: "cashOnDelivery", icon: cashIcon, label: "cashOnDelivery" },
@@ -30,7 +30,6 @@ const paymentMethods = [
 ];
 
 export default function BillingForm() {
-  const { loading, user } = accountAtom.useValue();
   const { loading: loadingCities, cities } = citiesAtom.useValue();
   const [paymentMethodSelected, setPaymentMethodSelected] = useState<string>(
     paymentMethods[0].name,
@@ -70,7 +69,7 @@ export default function BillingForm() {
     }
   }, [cities, citiesSelectOptions]);
 
-  if (loading || loadingCities) {
+  if (loadingCities) {
     return (
       <div className="w-full h-[500px] flex justify-center">
         <Loader1 />

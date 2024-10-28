@@ -1,11 +1,9 @@
 import { trans } from "@mongez/localization";
 import URLS from "apps/front-office/utils/urls";
 import LinkAsButton from "components/ui/LinkAsButton";
-import { accountAtom } from "../../atoms/accountAtom";
+import user from "../../user";
 
 export default function ShippingAddressCard() {
-  const user = accountAtom.use("user");
-
   return (
     <div className="w-full border border-gray-150 shadow-2">
       <h3 className="p-5 font-semibold border-b border-gray-150">

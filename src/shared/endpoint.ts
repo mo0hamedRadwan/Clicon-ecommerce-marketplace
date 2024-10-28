@@ -5,6 +5,8 @@ import { navigateTo } from "@mongez/react-router";
 import user from "apps/front-office/account/user";
 import URLS from "apps/front-office/utils/urls";
 import { AxiosResponse } from "axios";
+import { userAtom } from "../apps/front-office/account/atoms";
+import { User } from "../apps/front-office/design-system/types";
 import { apiBaseUrl, clientId } from "./flags";
 
 const endpoint = new Endpoint({
@@ -26,12 +28,8 @@ const endpointEvents = endpoint.events;
 
 endpointEvents.beforeSending(config => {
   const headers: any = config.headers;
-  headers["lang"] = getCurrentLocaleCode();
+  headers["locale"] = getCurrentLocaleCode();
   headers["client-id"] = clientId;
-  config.params = {
-    ...config.params,
-    locale: getCurrentLocaleCode(),
-  };
 });
 
 endpointEvents.onSuccess((response: AxiosResponse) => {
@@ -41,6 +39,7 @@ endpointEvents.onSuccess((response: AxiosResponse) => {
 
   if (response.data.user) {
     user.login(response.data.user);
+    userAtom.update(user.all() as User);
   }
 });
 

@@ -1,29 +1,34 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
 import Button from "components/form/Button";
 import PasswordInput from "components/form/PasswordInput";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { changePassword } from "../../../services/account-services";
 
 export default function ChangePasswordForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handleChangePassword = ({ values }) => {
-    console.log(values);
     if (values.newPassword !== values.confirmPassword) {
+      // TODO: translate this message
       toast.error("new password is dismatching confirm password");
       return;
     } else if (values.newPassword !== values.currentPassword) {
+      // TODO: translate this message
       toast.error("new password is same old password");
       return;
     }
 
     setFormSubmitted(true);
-    accountAtom.changeUserPassword({
+    changePassword({
+      confirmPassword: values.confirmPassword,
       currentPassword: values.currentPassword,
       password: values.newPassword,
-      confirmPassword: values.confirmPassword,
+    }).then(() => {
+      // TODO: translate this message
+      toast.success("password changed successfully");
+      setFormSubmitted(false);
     });
   };
 

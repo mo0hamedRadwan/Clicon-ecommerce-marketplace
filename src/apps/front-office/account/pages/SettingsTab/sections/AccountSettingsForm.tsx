@@ -1,6 +1,5 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
-import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
 import Button from "components/form/Button";
 import EmailInput from "components/form/EmailInput";
 import TextInput from "components/form/TextInput";
@@ -8,17 +7,14 @@ import Loader2 from "components/loaders/Loader2";
 import { useState } from "react";
 import femaleProfileImg from "shared/assets/images/profileImg/female.png";
 import maleProfileImg from "shared/assets/images/profileImg/male.png";
+import user from "../../../user";
 
 export default function AccountSettingsForm() {
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const { user, loading } = accountAtom.useValue();
 
   const handleEditAccount = ({ values }) => {
     setFormSubmitted(true);
-    accountAtom.updateUser(values);
   };
-
-  if (loading || !user) return <div>loading...</div>;
 
   return (
     <div className="border border-gray-150">
@@ -55,15 +51,9 @@ export default function AccountSettingsForm() {
           </div>
           <div className="w-full center-y gap-5">
             <TextInput
-              name="firstName"
-              label="firstName"
-              defaultValue={user.firstName}
-              required
-            />
-            <TextInput
-              name="lastName"
-              label="lastName"
-              defaultValue={user.lastName}
+              name="name"
+              label="name"
+              defaultValue={user.name}
               required
             />
           </div>
@@ -89,9 +79,9 @@ export default function AccountSettingsForm() {
           </div>
           <Button
             type="submit"
-            disabled={loading || formSubmitted}
+            disabled={formSubmitted}
             onClick={() => console.log("User Account Update")}>
-            {loading ? <Loader2 /> : <span>{trans("saveChanges")}</span>}
+            {formSubmitted ? <Loader2 /> : <span>{trans("saveChanges")}</span>}
           </Button>
         </Form>
       </div>

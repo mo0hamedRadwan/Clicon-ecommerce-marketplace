@@ -21,11 +21,10 @@ export default function AppWithUser({ children }: any) {
   const [canPass, setCanPass] = useState(user.isLoggedIn());
 
   useOnce(() => {
-    if (user.isLoggedIn()) return;
+    if (canPass) return;
 
     getGuestToken()
-      .then(response => {
-        user.login(response.data.user);
+      .then(() => {
         setCanPass(true);
       })
       .catch(error => console.log(error));

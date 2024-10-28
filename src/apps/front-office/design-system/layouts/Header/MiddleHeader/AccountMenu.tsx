@@ -1,7 +1,6 @@
 import { trans } from "@mongez/localization";
 import { Form } from "@mongez/react-form";
 import { navigateTo } from "@mongez/react-router";
-import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
 import { login } from "apps/front-office/auth/services/auth-services";
 import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
@@ -23,16 +22,10 @@ export default function AccountMenu() {
 
     setLoading(true);
     login(user)
-      .then(response => {
+      .then(() => {
         // notification user is logged in successfully.
         toast.success(trans("userSignedinSuccessfully"));
         setLoading(false);
-        // add access token to local storage
-        // localStorage.setItem("accessToken", response.data.user.accessToken);
-
-        // load user details from the server
-        accountAtom.loadUser();
-        accountAtom.updateUser(response.data.user);
 
         // navigate to home page
         navigateTo(URLS.home);

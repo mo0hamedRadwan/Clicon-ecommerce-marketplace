@@ -1,5 +1,4 @@
 import { useOnce } from "@mongez/react-hooks";
-import { accountAtom } from "apps/front-office/account/atoms/accountAtom";
 import CustomBreadcrumb from "components/ui/CustomBreadcrumb";
 import { cartAtom } from "../../atoms/cartAtom";
 import { categoriesAtom } from "../../atoms/categoriesAtom";
@@ -17,7 +16,6 @@ export type BaseLayoutProps = {
  */
 export default function BaseLayout({ children }: BaseLayoutProps) {
   useOnce(() => {
-    accountAtom.loadUser();
     cartAtom.loadCartItems();
     wishlistAtom.loadWishlistItems();
     categoriesAtom.loadCategories();

@@ -1,18 +1,16 @@
 import { trans } from "@mongez/localization";
 import { Link } from "@mongez/react-router";
 import URLS from "apps/front-office/utils/urls";
-import { accountAtom } from "../../atoms/accountAtom";
 import BillingAddressCard from "../../components/sections/BillingAddressCard";
 import BrowseHistorySection from "../../components/sections/BrowseHistorySection";
 import OrderListSection from "../../components/sections/OrderListSection";
 import OrdersTableSection from "../../components/sections/OrdersTableSection";
 import PaymentOptionsSection from "../../components/sections/PaymentOptionsSection";
+import user from "../../user";
 import AccountInfoCard from "./sections/AccountInfoCard";
 import AccountStatsCards from "./sections/AccountStatsCards";
 
 export default function AccountDashboardTab() {
-  const user = accountAtom.use("user");
-
   return (
     <div className="flex flex-col gap-y-10">
       <div>

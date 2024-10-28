@@ -5,8 +5,7 @@ import { isRTL } from "apps/front-office/utils/helpers";
 import URLS from "apps/front-office/utils/urls";
 import Button from "components/form/Button";
 import TextInput from "components/form/TextInput";
-import Loader1 from "components/loaders/Loader1";
-import { accountAtom } from "../../atoms/accountAtom";
+import user from "../../user";
 
 type TrackOrderSectionPropsType = {
   size?: "page" | "tab";
@@ -15,19 +14,9 @@ type TrackOrderSectionPropsType = {
 export default function TrackOrderSection({
   size = "page",
 }: TrackOrderSectionPropsType) {
-  const { loading, user } = accountAtom.useValue();
-
   const handleTrackOrderSubmit = ({ values }) => {
     navigateTo(URLS.pages.trackOrder.view(values.orderID));
   };
-
-  if (loading) {
-    return (
-      <div className="w-full h-[500px] flex justify-center">
-        <Loader1 />
-      </div>
-    );
-  }
 
   return (
     <Form
