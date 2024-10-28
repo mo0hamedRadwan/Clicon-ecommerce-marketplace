@@ -25,7 +25,6 @@ export default function HomePage() {
     getHome()
       .then(response => {
         setRows(response.data.rows);
-        console.log(response.data);
         setLoading(false);
       })
       .catch(error => {
