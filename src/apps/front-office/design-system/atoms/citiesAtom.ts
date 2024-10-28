@@ -25,12 +25,14 @@ export const citiesAtom = atom<CitiesDataType, CitiesActionType>({
       citiesAtom.change("loading", true);
       getShippingCities()
         .then(response => {
-          const cities = response.data.cities.map(city => ({
-            ...city,
-            name: city.name.find(
-              code => code.localeCode === getCurrentLocaleCode(),
-            ).value,
-          }));
+          // const cities = response.data.cities.map(city => ({
+          //   ...city,
+          //   name: city.name.find(
+          //     code => code.localeCode === getCurrentLocaleCode(),
+          //   ).value,
+          // }));
+
+          const cities = response.data.cities;
 
           console.log(cities);
 
